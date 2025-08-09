@@ -2,7 +2,7 @@
 title:               Constructor Maths Society
 tagline:             Website
 description:         >- # this means to ignore newlines until "url:"
-  Proof is a minimal Jekyll theme for collaborating and documenting mathematics.
+  Minimal site for collaborating and documenting mathematics.
 url:                 https://constructor-maths.github.io
 baseurl:             # the subpath of your site, e.g. /blog
 gtag:                # Google Analytics Tag
