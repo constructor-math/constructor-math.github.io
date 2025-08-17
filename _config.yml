@@ -3,7 +3,7 @@ title:               Constructor Maths Society
 tagline:             Website
 description:         >- # this means to ignore newlines until "url:"
   Minimal site for collaborating and documenting mathematics.
-url:                 https://constructor-maths.github.io
+url:                 https://constructor-math.github.io
 baseurl:             # the subpath of your site, e.g. /blog
 gtag:                # Google Analytics Tag
 
