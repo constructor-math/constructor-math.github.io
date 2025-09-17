@@ -7,6 +7,11 @@
 
 @use 'config';
 
+:root {
+  --global-theme-color: #841212; /* Default theme color */
+  --global-text-color: #454545;  /* Default text color */
+}
+
 /*
  * General
  *
@@ -606,4 +611,10 @@ a.sidebar-nav-item:focus {
 /* Only one tweak for a reverse layout */
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
+}
+
+swiper-container {
+  --swiper-navigation-color: var(--global-theme-color);
+  --swiper-pagination-color: var(--global-theme-color);
+  --swiper-pagination-bullet-inactive-color: var(--global-text-color);
 }

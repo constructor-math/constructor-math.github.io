@@ -10,4 +10,7 @@ To start publishing, please see [the manual]({{ site.baseurl }}/manual/).
 
 ## posts.
 {% for item in site.posts %}
-* [{{ item.title }}]({{ site.baseurl }}{{ item.url }}){% if item.author %} by {{ item.author }}{% endif %}{% endfor %}
+{% unless item.exclude_from_loop %}
+* [{{ item.title }}]({{ site.baseurl }}{{ item.url }}){% if item.author %} by {{ item.author }}{% endif %}
+{% endunless %}
+{% endfor %}
