@@ -1,0 +1,16 @@
+console.log("Math Society website loaded.");
+
+// Example: Add a simple "click" event listener to the main button
+// This JS is very simple.
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ctaButton = document.querySelector('.cta-button');
+    
+    if (ctaButton) {
+        ctaButton.addEventListener('click', (e) => {
+            // We use the 'scroll-behavior' in CSS for the actual scroll,
+            // but we can add more actions here if needed.
+            console.log("Learn More button clicked!");
+        });
+    }
+});
