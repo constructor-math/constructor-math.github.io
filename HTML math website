@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Society</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <nav class="container">
+        <a href="#" class="logo">
+            <img src="PHOTO-2025-11-02-23-22-34.jpg" alt="Math Society Logo">
+            <span>Math Society</span>
+        </a>
+        <ul class="nav-links">
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#resources">Resources</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="hero">
+        <div class="container">
+            <h1>Welcome to the Math Society</h1>
+            <p>Exploring the beauty and logic of mathematics together.</p>
+            <a href="#about" class="cta-button">Learn More</a>
+        </div>
+    </section>
+
+    <section id="about" class="container content-section">
+        <h2>About Us</h2>
+        <p>Welcome to the Math Society! Our mission is to foster a community of students and faculty passionate about mathematics. We organize events, host guest speakers, and provide resources to help you succeed.</p>
+        <p>Whether you're a math major or just curious about the subject, everyone is welcome!</p>
+    </section>
+
+    <section id="resources" class="container content-section alt-bg">
+        <h2>Resources</h2>
+        <p>Here are some helpful links and materials for your mathematical journey.</p>
+        <ul class="resource-list">
+            <li><a href="https://constructor-math.github.io/ai-event/" target="_blank">AI event</a></li>
+            <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank">Integration Bee</a></li>
+            <li><a href="https://constructor-math.github.io/club-fair/" target="_blank">CLUB FAIR</a></li>
+            <li><a href="https://constructor-math.github.io/ugs/" target="_blank">UGS</a></li>
+            <li><a href="https://constructor-math.github.io/katex/" target="_blank">Typesetting Math with $\KaTeX$</a></li>
+            <li><a href="https://constructor-math.github.io/ams-latex/" target="_blank">AMS-$\LaTeX$ Theorem Styles</a></li>
+        </ul>
+    </section>
+
+    <section id="contact" class="container content-section">
+        <h2>Get In Touch</h2>
+        <p>Have questions? Want to join? Reach out to us!</p>
+        <p>Email: <a href="mailto:constructor.maths@gmail.com" style="color:red">contact@mathsociety.example.com</a></p>
+    </section>
+    <section>
+        <h1>
+            <ul style="font-size:12px">
+
+
+            <li style="color:red"><a href="https://constructor-math.github.io/manual/" target="_blank">Manual</a></li>
+                <li><a href="https://github.com/mahrud/proof" target="_blank">Github</a></li>
+            </ul>
+        </h1>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2025 Math Society. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+
+:root {
+    --primary-color: #005A9C;
+    --secondary-color: #DD4A48;
+    --light-gray: #f4f4f4;
+    --dark-gray: #333;
+    --text-color: #555;
+    --font-family: 'Arial', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-family);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--text-color);
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1, h2 {
+    color: #7D1201;
+}
+
+/* Header & Navigation */
+header {
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-gray);
+}
+
+.logo img {
+    height: 50px; /* Adjust as needed */
+    margin-right: 10px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
+}
+
+/* Hero Section */
+.hero {
+    background-color: #7D1201;
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background: black;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+    background: #c33a38;
+}
+
+/* Content Sections */
+.content-section {
+    padding: 4rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.content-section h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.alt-bg {
+    background: var(--light-gray);
+}
+
+/* Resource List Styling */
+.resource-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.resource-list li {
+    margin-bottom: 1rem;
+}
+
+.resource-list a {
+    text-decoration: none;
+    color: #7D1201;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
+.resource-list a:hover {
+    text-decoration: underline;
+}
+
+
+footer {
+    background: var(--dark-gray);
+    color: white;
+    text-align: center;
+    padding: 2rem 0;
+    margin-top: 2rem;
+}
+</style>
+<script>
+    console.log("Math Society website loaded.");
+
+// Example: Add a simple "click" event listener to the main button
+// This JS is very simple.
+
+document.addEventListener('DOMContentLoaded', () => {
+    const ctaButton = document.querySelector('.cta-button');
+
+    if (ctaButton) {
+        ctaButton.addEventListener('click', (e) => {
+            // We use the 'scroll-behavior' in CSS for the actual scroll,
+            // but we can add more actions here if needed.
+            console.log("Learn More button clicked!");
+        });
+    }
+});
+
+
+</script>
+
