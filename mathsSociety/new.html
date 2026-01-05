@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Maths Society Olympiad</title>
+
+    <!-- Inter font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+        rel="stylesheet"
+    />
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        :root {
+            scroll-behavior: smooth;
+            --cherry: #b3122f;       /* main accent */
+            --cherry-soft: #ffe5ec;  /* soft background tint */
+            --ink: #111827;          /* dark text */
+            --paper: #fdfbfb;        /* base light background */
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont,
+                "Segoe UI", sans-serif;
+        }
+
+        /* ========= DARK THEME (default) ========= */
+
+        body {
+            background: radial-gradient(circle at top left, #1f2937 0, #020617 40%, #0b1120 100%);
+            color: #e5e7eb;
+        }
+
+        .sidebar {
+            width: 18rem;
+            position: fixed;
+            inset-block: 0;
+            inset-inline-start: 0;
+            z-index: 30;
+            height: 100vh;
+            overflow-y: auto;
+            backdrop-filter: blur(14px);
+            background: linear-gradient(
+                180deg,
+                rgba(15, 23, 42, 0.95),
+                rgba(15, 23, 42, 0.9)
+            );
+            box-shadow: 10px 0 35px rgba(0, 0, 0, 0.45);
+        }
+
+        .glass-card {
+            backdrop-filter: blur(20px);
+            background: linear-gradient(
+                135deg,
+                rgba(15, 23, 42, 0.88),
+                rgba(15, 23, 42, 0.92)
+            );
+            border: 1px solid rgba(148, 163, 184, 0.2);
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .accordion-content.open {
+            max-height: 500px;
+        }
+
+        .chevron-rotated {
+            transform: rotate(180deg);
+        }
+
+        @media (max-width: 1279px) {
+            .sidebar {
+                display: none !important;
+            }
+        }
+
+        /* ========= LIGHT THEME OVERRIDES =========
+           body.light-theme is toggled by JS
+        =========================================== */
+
+        body.light-theme {
+            background: radial-gradient(circle at top left, #fff5f7 0, #ffffff 50%, #e5e7eb 100%);
+            color: var(--ink);
+        }
+
+        /* soften hero blur in light mode */
+        body.light-theme section > .absolute.inset-0 {
+            opacity: 0.15 !important;
+        }
+
+        /* Global text inside MAIN in light mode */
+        body.light-theme main h1,
+        body.light-theme main h2,
+        body.light-theme main h3,
+        body.light-theme main h4 {
+            color: #111827;
+        }
+
+        body.light-theme main p,
+        body.light-theme main li,
+        body.light-theme main span {
+            color: #374151;
+        }
+
+        /* HARD OVERRIDE all Tailwind "slate" text utilities so nothing stays washed out */
+        body.light-theme .text-slate-50,
+        body.light-theme .text-slate-100 {
+            color: #111827 !important;
+        }
+        body.light-theme .text-slate-200 {
+            color: #1f2937 !important;
+        }
+        body.light-theme .text-slate-300 {
+            color: #374151 !important;
+        }
+        body.light-theme .text-slate-400,
+        body.light-theme .text-slate-500 {
+            color: #4b5563 !important;
+        }
+
+        /* make red text more visible on white */
+        body.light-theme .text-red-300,
+        body.light-theme .text-red-400 {
+            color: var(--cherry) !important;
+        }
+
+        /* Mobile header */
+        body.light-theme header {
+            background-color: #ffffff !important;
+            border-bottom: 1px solid #e5e7eb !important;
+        }
+        body.light-theme header p {
+            color: #111827;
+        }
+        body.light-theme header a {
+            color: #4b5563;
+        }
+        body.light-theme header a:hover {
+            color: var(--cherry);
+        }
+
+        /* Sidebar */
+        body.light-theme .sidebar {
+            background: linear-gradient(180deg, #ffffff 0%, #fdfbfb 100%);
+            box-shadow: 8px 0 25px rgba(15, 23, 42, 0.08);
+            border-right: 1px solid #e5e7eb;
+        }
+        body.light-theme .sidebar h1 {
+            color: #111827;
+        }
+        body.light-theme .sidebar p {
+            color: #6b7280;
+        }
+        body.light-theme .sidebar nav a {
+            color: #111827;
+        }
+        body.light-theme .sidebar nav a:hover {
+            background-color: #f3f4f6;
+            color: var(--cherry);
+        }
+
+        /* Hero */
+        body.light-theme main > section:first-of-type {
+            background: linear-gradient(135deg, #ffe4ea 0, #ffffff 55%, #eef2ff 100%);
+            border-bottom-color: #e5e7eb;
+        }
+
+        /* Snapshot card in hero and all main glass cards */
+        body.light-theme .glass-card {
+            background: #ffffff;
+            border: 1px solid rgba(148, 163, 184, 0.35);
+            box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        /* inner small stat cards in hero: keep icons dark but base light */
+        body.light-theme .glass-card .bg-slate-900,
+        body.light-theme .glass-card .bg-slate-900\/70,
+        body.light-theme .glass-card .bg-slate-900\/80,
+        body.light-theme .glass-card .bg-slate-950\/80 {
+            background-color: #f3f4f6 !important;
+            border-color: #e5e7eb !important;
+        }
+
+        /* Agenda section */
+        body.light-theme #agenda-section {
+            background: #ffffff;
+            border-color: #e5e7eb;
+        }
+        body.light-theme #agenda-section li {
+            background: #f9fafb;
+            border-color: #e5e7eb;
+        }
+        body.light-theme #agenda-section span.text-xs {
+            color: var(--cherry) !important;
+        }
+
+        /* Rules */
+        body.light-theme #rules-section {
+            background: #ffffff;
+            border-color: #e5e7eb;
+        }
+        body.light-theme #rules-section p.border-l-4 {
+            border-color: var(--cherry);
+            background-color: #fff7fb;
+        }
+
+        /* Topics */
+        body.light-theme #topics-section {
+            background: #ffffff;
+            border-color: #e5e7eb;
+        }
+        body.light-theme #topics-section article {
+            background: #fff7fb;
+            border-color: #fecdd3;
+        }
+        body.light-theme #topics-section .accordion-trigger {
+            background: transparent;
+        }
+        body.light-theme #topics-section .accordion-trigger:hover {
+            background: #ffe5ec;
+        }
+        body.light-theme #topics-section .accordion-content {
+            background: #ffffff;
+            border-top-color: #fecdd3;
+        }
+
+        /* Solutions */
+        body.light-theme #material-section {
+            background: #ffffff;
+            border-color: #e5e7eb;
+        }
+
+        /* Contact & social cards */
+        body.light-theme #contact-section {
+            background: #ffffff;
+            border-color: #e5e7eb;
+        }
+        body.light-theme #contact-section .social-card {
+            background: #ffffff !important;
+            border-color: #e5e7eb !important;
+        }
+        body.light-theme #contact-section .social-card .inline-flex.h-11 {
+            background-color: #111827 !important; /* keep icons on dark chip */
+        }
+
+        /* Footer */
+        body.light-theme footer {
+            background: #ffffff;
+            border-top-color: #e5e7eb;
+            color: #6b7280 !important;
+        }
+
+        /* Floating theme toggle button (bottom-right) */
+        #theme-toggle {
+            position: fixed;
+            right: 1.5rem;
+            bottom: 1.5rem;
+            z-index: 60;
+        }
+        /* make toggle fit the theme as well */
+        body.light-theme #theme-toggle {
+            background: #ffffff;
+            border-color: #e5e7eb;
+            color: #111827;
+            box-shadow: 0 8px 20px rgba(15, 23, 42, 0.12);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <!-- Floating Theme Toggle Button (bottom-right) -->
+    <button
+        id="theme-toggle"
+        type="button"
+        class="h-12 w-12 rounded-full flex items-center justify-center shadow-lg border border-slate-700 bg-slate-950 text-yellow-300 text-xl hover:scale-105 hover:border-yellow-400 hover:text-yellow-200 transition transform"
+        aria-label="Toggle theme"
+        title="Toggle light/dark theme"
+    >
+        <span id="theme-toggle-icon">☼</span>
+    </button>
+
+    <!-- Top Nav (Mobile / Tablet) -->
+    <header
+        class="xl:hidden sticky top-0 z-40 bg-slate-950/80 backdrop-blur border-b border-slate-800"
+    >
+        <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <span
+                    class="inline-flex h-9 w-9 rounded-xl bg-gradient-to-tr from-red-500 via-red-400 to-amber-300 items-center justify-center shadow-lg"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="22"
+                        height="22"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="text-white"
+                    >
+                        <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                        <path d="M16 8l-4 4-4-4" />
+                        <path d="M8 16l4-4 4 4" />
+                    </svg>
+                </span>
+                <div>
+                    <p class="text-sm font-semibold text-slate-100 leading-none">
+                        Maths Society
+                    </p>
+                    <p class="text-xs text-slate-400">Olympiad 2024</p>
+                </div>
+            </div>
+            <nav class="flex items-center space-x-4 text-xs font-medium">
+                <a href="#agenda-section" class="text-slate-300 hover:text-red-400"
+                    >Agenda</a>
+                <a href="#rules-section" class="text-slate-300 hover:text-red-400"
+                    >Rules</a>
+                <a href="#topics-section" class="text-slate-300 hover:text-red-400"
+                    >Topics</a>
+                <a href="#material-section" class="text-slate-300 hover:text-red-400"
+                    >Solutions</a>
+                <a href="#contact-section" class="text-slate-300 hover:text-red-400"
+                    >Join</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Sidebar (Desktop) -->
+    <aside class="sidebar hidden xl:block border-r border-slate-800">
+        <div class="p-6 pt-8">
+            <!-- Brand -->
+            <div class="flex items-center space-x-3 mb-10 pb-5 border-b border-red-700/40">
+                <span
+                    class="inline-flex h-11 w-11 rounded-2xl bg-gradient-to-tr from-red-500 via-red-400 to-amber-300 items-center justify-center shadow-xl"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="26"
+                        height="26"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="text-slate-950"
+                    >
+                        <path d="M12 2L2 12l10 10 10-10L12 2z" />
+                        <path d="M16 8l-4 4-4-4" />
+                        <path d="M8 16l4-4 4 4" />
+                    </svg>
+                </span>
+                <div>
+                    <h1 class="text-2xl font-black tracking-tight text-slate-50">
+                        Olympiad
+                    </h1>
+                    <p class="text-xs text-slate-400">
+                        Maths Society · 5h Challenge
+                    </p>
+                </div>
+            </div>
+
+            <nav class="flex flex-col space-y-2 text-sm" aria-label="Sidebar">
+                <a
+                    href="#agenda-section"
+                    class="flex items-center space-x-3 px-3 py-2 rounded-xl text-slate-200 hover:text-red-400 hover:bg-slate-800/80 transition"
+                >
+                    <span
+                        class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-slate-900 border border-slate-700"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="17"
+                            height="17"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-red-400"
+                        >
+                            <rect
+                                width="18"
+                                height="18"
+                                x="3"
+                                y="4"
+                                rx="2"
+                                ry="2"
+                            />
+                            <path d="M16 2v4" />
+                            <path d="M8 2v4" />
+                            <path d="M3 10h18" />
+                            <path d="m12 16h6" />
+                        </svg>
+                    </span>
+                    <span>Agenda</span>
+                </a>
+
+                <a
+                    href="#rules-section"
+                    class="flex items-center space-x-3 px-3 py-2 rounded-xl text-slate-200 hover:text-red-400 hover:bg-slate-800/80 transition"
+                >
+                    <span
+                        class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-slate-900 border border-slate-700"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="17"
+                            height="17"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-red-400"
+                        >
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                            <path
+                                d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"
+                            />
+                        </svg>
+                    </span>
+                    <span>Rules &amp; Info</span>
+                </a>
+
+                <a
+                    href="#topics-section"
+                    class="flex items-center space-x-3 px-3 py-2 rounded-xl text-slate-200 hover:text-red-400 hover:bg-slate-800/80 transition"
+                >
+                    <span
+                        class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-slate-900 border border-slate-700"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="17"
+                            height="17"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-red-400"
+                        >
+                            <path
+                                d="M2 17h16.5c2.4 0 4-2.3 4-4.7V12c0-2.4-1.6-4.7-4-4.7H2"
+                            />
+                        </svg>
+                    </span>
+                    <span>Topics</span>
+                </a>
+
+                <a
+                    href="#material-section"
+                    class="flex items-center space-x-3 px-3 py-2 rounded-xl text-slate-200 hover:text-red-400 hover:bg-slate-800/80 transition"
+                >
+                    <span
+                        class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-slate-900 border border-slate-700"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="17"
+                            height="17"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-red-400"
+                        >
+                            <path
+                                d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v18z"
+                            />
+                            <path d="M14 2v6h6" />
+                        </svg>
+                    </span>
+                    <span>Solutions</span>
+                </a>
+
+                <a
+                    href="#contact-section"
+                    class="flex items-center space-x-3 px-3 py-2 rounded-xl text-slate-200 hover:text-red-400 hover:bg-slate-800/80 transition"
+                >
+                    <span
+                        class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-slate-900 border border-slate-700"
+                    >
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="17"
+                            height="17"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="text-red-400"
+                        >
+                            <path
+                                d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"
+                            />
+                            <circle cx="12" cy="7" r="4" />
+                        </svg>
+                    </span>
+                    <span>Contact / Join</span>
+                </a>
+
+                <div class="pt-4 mt-4 border-t border-slate-800/80">
+                    <a
+                        href="https://github.com/SkylersWorld/Maths-society-Website/tree/main"
+                        target="_blank"
+                        class="flex items-center space-x-3 px-3 py-2 rounded-xl text-slate-300 hover:text-red-400 hover:bg-slate-800/80 transition"
+                    >
+                        <span
+                            class="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-slate-900 border border-slate-700"
+                        >
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="17"
+                                height="17"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="text-slate-200"
+                            >
+                                <path
+                                    d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6.2a4.8 4.8 0 0 0-1.3-3.3 4.4 4.4 0 0 0-.1-3.3s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0c-2.4-1.6-3.5-1.3-3.5-1.3a4.4 4.4 0 0 0-.1 3.3A4.8 4.8 0 0 0 3 9.5c0 4.8 2.7 5.9 5.5 6.2-.6.4-.6 1.2-.5 2v3.5"
+                                />
+                            </svg>
+                        </span>
+                        <span>GitHub Project</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="xl:ml-[18rem] min-h-screen relative z-10">
+        <!-- Hero -->
+        <section
+            class="relative overflow-hidden border-b border-slate-800/80"
+        >
+            <div
+                class="absolute inset-0 opacity-60 pointer-events-none"
+                aria-hidden="true"
+            >
+                <div
+                    class="absolute -top-40 -left-32 h-80 w-80 bg-red-500/40 blur-3xl"
+                ></div>
+                <div
+                    class="absolute top-32 right-0 h-80 w-80 bg-indigo-500/40 blur-3xl"
+                ></div>
+            </div>
+
+            <div
+                class="relative max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14 sm:py-18"
+            >
+                <div class="grid lg:grid-cols-[minmax(0,3fr)_minmax(0,2fr)] gap-10 items-center">
+                    <div>
+                        <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-4">
+                            Maths Society · Constructor
+                        </p>
+                        <h2
+                            class="text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight text-slate-50 mb-4"
+                        >
+                            The Maths Society Olympiad
+                        </h2>
+                        <p class="text-lg sm:text-xl text-slate-300 max-w-xl">
+                            A 5-hour, 5-topic challenge designed for curious
+                            problem-solvers — from first-years to seasoned
+                            math enthusiasts.
+                        </p>
+
+                        <div class="mt-8 flex flex-wrap items-center gap-4">
+                            <a
+                                href="#material-section"
+                                class="inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-red-500 via-red-400 to-amber-300 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-red-500/40 hover:scale-105 hover:shadow-red-400/60 transition"
+                            >
+                                View solutions (soon)
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M5 12h14" />
+                                    <path d="m12 5 7 7-7 7" />
+                                </svg>
+                            </a>
+                            <p class="text-xs text-slate-400">
+                                11:00–16:00 · Closed-book · Individual effort
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right hero stats card -->
+                    <div
+                        class="glass-card rounded-3xl p-6 sm:p-7 shadow-2xl"
+                    >
+                        <p class="text-xs uppercase tracking-[0.2em] text-slate-400 mb-4">
+                            Snapshot
+                        </p>
+                        <div class="grid grid-cols-2 gap-6 mb-6">
+                            <div class="flex flex-col space-y-2">
+                                <div
+                                    class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 border border-slate-700"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="22"
+                                        height="22"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="text-red-400"
+                                    >
+                                        <circle cx="12" cy="12" r="10" />
+                                        <polyline
+                                            points="12 6 12 12 16 14"
+                                        />
+                                    </svg>
+                                </div>
+                                <p class="text-3xl font-black text-slate-50">
+                                    5
+                                </p>
+                                <p class="text-xs text-slate-400 uppercase">
+                                    hours of problem-solving
+                                </p>
+                            </div>
+                            <div class="flex flex-col space-y-2">
+                                <div
+                                    class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-slate-900 border border-slate-700"
+                                >
+                                    <svg
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="22"
+                                        height="22"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        stroke="currentColor"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        class="text-amber-300"
+                                    >
+                                        <line
+                                            x1="8"
+                                            y1="6"
+                                            x2="21"
+                                            y2="6"
+                                        />
+                                        <line
+                                            x1="8"
+                                            y1="12"
+                                            x2="21"
+                                            y2="12"
+                                        />
+                                        <line
+                                            x1="8"
+                                            y1="18"
+                                            x2="21"
+                                            y2="18"
+                                        />
+                                        <path d="M3 6l.01 0" />
+                                        <path d="M3 12l.01 0" />
+                                        <path d="M3 18l.01 0" />
+                                    </svg>
+                                </div>
+                                <p class="text-3xl font-black text-slate-50">
+                                    5
+                                </p>
+                                <p class="text-xs text-slate-400 uppercase">
+                                    topics to explore
+                                </p>
+                            </div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-4">
+                            <p class="text-xs text-slate-400">
+                                Opening ceremony · 10:00 · Awards at 19:00 ·
+                                Hosted by the Maths Society.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main inner content -->
+        <div
+            class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12 lg:space-y-16"
+        >
+            <!-- Agenda -->
+            <section
+                id="agenda-section"
+                class="glass-card rounded-3xl p-7 sm:p-8 shadow-2xl"
+            >
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-50">
+                        Agenda
+                    </h2>
+                    <span
+                        class="inline-flex items-center gap-2 rounded-full bg-slate-900/70 border border-slate-700/70 px-3 py-1 text-[11px] font-medium text-slate-300"
+                    >
+                        <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+                        Full-day event
+                    </span>
+                </div>
+                <p class="text-sm sm:text-base text-slate-300 mb-6">
+                    We structure the day to give you deep focus time for
+                    solving, plus moments to meet other problem-solvers.
+                </p>
+
+                <ul class="space-y-3">
+                    <li
+                        class="flex items-center justify-between gap-4 rounded-2xl bg-slate-900/80 px-4 py-3 border border-slate-800"
+                    >
+                        <span class="text-xs font-semibold text-red-300">
+                            10:00
+                        </span>
+                        <span class="text-sm sm:text-base text-slate-100">
+                            Opening ceremony &amp; briefing
+                        </span>
+                    </li>
+                    <li
+                        class="flex items-center justify-between gap-4 rounded-2xl bg-slate-900/80 px-4 py-3 border border-slate-800"
+                    >
+                        <span class="text-xs font-semibold text-red-300">
+                            11:00
+                        </span>
+                        <span class="text-sm sm:text-base font-semibold text-slate-50">
+                            Competition begins · 5-hour session
+                        </span>
+                    </li>
+                    <li
+                        class="flex items-center justify-between gap-4 rounded-2xl bg-slate-900/80 px-4 py-3 border border-slate-800"
+                    >
+                        <span class="text-xs font-semibold text-red-300">
+                            16:00
+                        </span>
+                        <span class="text-sm sm:text-base font-semibold text-slate-50">
+                            Submissions close
+                        </span>
+                    </li>
+                    <li
+                        class="flex items-center justify-between gap-4 rounded-2xl bg-slate-900/80 px-4 py-3 border border-slate-800"
+                    >
+                        <span class="text-xs font-semibold text-red-300">
+                            19:00
+                        </span>
+                        <span class="text-sm sm:text-base text-slate-100">
+                            Closing ceremony &amp; awards
+                        </span>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Rules -->
+            <section
+                id="rules-section"
+                class="glass-card rounded-3xl p-7 sm:p-8 shadow-2xl"
+            >
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-50 mb-4">
+                    Information &amp; Rules
+                </h2>
+                <p
+                    class="text-sm sm:text-base text-slate-200 border-l-4 border-red-500 pl-4 py-2 mb-6"
+                >
+                    Open to all levels — whether you’re just discovering proofs
+                    or already playing with Olympiad-style problems.
+                </p>
+                <p class="text-base sm:text-lg font-semibold text-red-300 mb-3">
+                    Core competition rules (11:00–16:00)
+                </p>
+                <ul class="list-disc space-y-2 pl-6 text-sm sm:text-base text-slate-200">
+                    <li>
+                        Closed-book: no calculators, phones, tablets, notes, or
+                        digital references.
+                    </li>
+                    <li>Work individually — no discussion or collaboration.</li>
+                    <li>Show all reasoning: partial credit depends on clear working.</li>
+                    <li>
+                        Submit your answers before <span class="font-semibold">16:00</span>; late
+                        submissions cannot be accepted.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Topics Accordion -->
+            <section
+                id="topics-section"
+                class="glass-card rounded-3xl p-7 sm:p-8 shadow-2xl"
+            >
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-50 mb-3">
+                    Olympiad Topics
+                </h2>
+                <p class="text-sm sm:text-base text-slate-300 mb-6">
+                    Choose where your strengths lie — or challenge yourself in a
+                    new area. Each of the five topics supports deep, creative
+                    problem-solving.
+                </p>
+
+                <div
+                    id="topics-accordion"
+                    class="space-y-3"
+                    aria-label="Olympiad topics"
+                ></div>
+            </section>
+
+            <!-- Solutions Button -->
+            <section
+                id="material-section"
+                class="glass-card rounded-3xl p-7 sm:p-8 shadow-2xl text-center"
+            >
+                <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-50 mb-4">
+                    Solutions
+                </h2>
+                <p class="text-sm sm:text-base text-slate-300 mb-8 max-w-xl mx-auto">
+                    Full written and annotated solutions will be available from
+                    <span class="font-semibold text-slate-100"
+                        >Monday 17th November</span
+                    >. Re-work the problems, compare approaches, and learn new
+                    techniques.
+                </p>
+                <a
+                    href="Solutions.html"
+                    target="_blank"
+                    class="inline-flex group"
+                >
+                    <button
+                        class="inline-flex items-center gap-3 bg-gradient-to-r from-red-500 via-red-400 to-amber-300 text-slate-950 font-semibold py-3 px-10 rounded-full shadow-xl shadow-red-500/40 transition transform group-hover:scale-105 group-hover:shadow-red-400/70"
+                    >
+                        Access solutions
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="18"
+                            height="18"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="group-hover:translate-x-0.5 transition"
+                        >
+                            <path d="M5 12h14" />
+                            <path d="m12 5 7 7-7 7" />
+                        </svg>
+                    </button>
+                </a>
+            </section>
+
+            <!-- Contact / Join with better social media logos -->
+            <section
+                id="contact-section"
+                class="glass-card rounded-3xl p-7 sm:p-8 shadow-2xl"
+            >
+                <div class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-50 mb-3">
+                        Contact &amp; Join the Society
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-300 max-w-xl mx-auto">
+                        Ask questions, see upcoming events, and stay in touch
+                        with the Maths Society community.
+                    </p>
+                </div>
+
+                <!-- Social cards -->
+                <div
+                    class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8"
+                >
+                    <!-- Instagram -->
+                    <a
+                        href="#"
+                        target="_blank"
+                        class="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 hover:bg-slate-950 group transition social-card"
+                        aria-label="Instagram"
+                    >
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-pink-500 via-purple-500 to-amber-300 opacity-60 group-hover:opacity-80 mix-blend-screen transition"
+                        ></div>
+                        <div
+                            class="relative flex flex-col items-center px-4 py-5 space-y-2"
+                        >
+                            <div
+                                class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-black/70 shadow-lg"
+                            >
+                                <!-- IG icon -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="white"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <rect
+                                        width="20"
+                                        height="20"
+                                        x="2"
+                                        y="2"
+                                        rx="5"
+                                        ry="5"
+                                    />
+                                    <path
+                                        d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"
+                                    />
+                                    <line
+                                        x1="17.5"
+                                        y1="6.5"
+                                        x2="17.51"
+                                        y2="6.5"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="text-xs font-semibold text-slate-50">
+                                Instagram
+                            </p>
+                            <p class="text-[11px] text-slate-200/90">
+                                @maths.society
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- YouTube -->
+                    <a
+                        href="#"
+                        target="_blank"
+                        class="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 hover:bg-slate-950 group transition social-card"
+                        aria-label="YouTube"
+                    >
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-red-600 via-red-500 to-orange-400 opacity-60 group-hover:opacity-80 mix-blend-screen transition"
+                        ></div>
+                        <div
+                            class="relative flex flex-col items-center px-4 py-5 space-y-2"
+                        >
+                            <div
+                                class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-black/70 shadow-lg"
+                            >
+                                <!-- YouTube icon -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="white"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path
+                                        d="M15.46 3H8.54A6.5 6.5 0 0 0 2 9.5v5A6.5 6.5 0 0 0 8.54 21h6.92A6.5 6.5 0 0 0 22 14.5v-5A6.5 6.5 0 0 0 15.46 3z"
+                                    />
+                                    <polygon points="10 17 10 7 16 12 10 17" />
+                                </svg>
+                            </div>
+                            <p class="text-xs font-semibold text-slate-50">
+                                YouTube
+                            </p>
+                            <p class="text-[11px] text-slate-200/90">
+                                Maths Society Sessions
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a
+                        href="#"
+                        target="_blank"
+                        class="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 hover:bg-slate-950 group transition social-card"
+                        aria-label="LinkedIn"
+                    >
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-sky-500 via-blue-500 to-indigo-500 opacity-60 group-hover:opacity-80 mix-blend-screen transition"
+                        ></div>
+                        <div
+                            class="relative flex flex-col items-center px-4 py-5 space-y-2"
+                        >
+                            <div
+                                class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-black/70 shadow-lg"
+                            >
+                                <!-- New LinkedIn icon -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 382 382"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill="#0077B7"
+                                        d="M347.445,0H34.555C15.471,0,0,15.471,0,34.555v312.889C0,366.529,15.471,382,34.555,382h312.889
+                                        C366.529,382,382,366.529,382,347.444V34.555C382,15.471,366.529,0,347.445,0z M118.207,329.844c0,5.554-4.502,10.056-10.056,10.056
+                                        H65.345c-5.554,0-10.056-4.502-10.056-10.056V150.403c0-5.554,4.502-10.056,10.056-10.056h42.806
+                                        c5.554,0,10.056,4.502,10.056,10.056V329.844z M86.748,123.432c-22.459,0-40.666-18.207-40.666-40.666S64.289,42.1,86.748,42.1
+                                        s40.666,18.207,40.666,40.666S109.208,123.432,86.748,123.432z M341.91,330.654c0,5.106-4.14,9.246-9.246,9.246H286.73
+                                        c-5.106,0-9.246-4.14-9.246-9.246v-84.168c0-12.556,3.683-55.021-32.813-55.021c-28.309,0-34.051,29.066-35.204,42.11v97.079
+                                        c0,5.106-4.139,9.246-9.246,9.246h-44.426c-5.106,0-9.246-4.14-9.246-9.246V149.593c0-5.106,4.14-9.246,9.246-9.246h44.426
+                                        c5.106,0,9.246,4.14,9.246,9.246v15.655c10.497-15.753,26.097-27.912,59.312-27.912c73.552,0,73.131,68.716,73.131,106.472
+                                        L341.91,330.654L341.91,330.654z"
+                                    />
+                                </svg>
+                            </div>
+                            <p class="text-xs font-semibold text-slate-50">
+                                LinkedIn
+                            </p>
+                            <p class="text-[11px] text-slate-200/90">
+                                Maths Society · Updates
+                            </p>
+                        </div>
+                    </a>
+
+                    <!-- Email -->
+                    <a
+                        href="mailto:contact@mathsociety.com"
+                        class="relative overflow-hidden rounded-2xl border border-slate-800 bg-slate-950/80 hover:bg-slate-950 group transition social-card"
+                        aria-label="Email"
+                    >
+                        <div
+                            class="absolute inset-0 bg-gradient-to-tr from-slate-500 via-slate-400 to-zinc-300 opacity-50 group-hover:opacity-70 mix-blend-screen transition"
+                        ></div>
+                        <div
+                            class="relative flex flex-col items-center px-4 py-5 space-y-2"
+                        >
+                            <div
+                                class="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-black/70 shadow-lg"
+                            >
+                                <!-- Email icon -->
+                                <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="white"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path
+                                        d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                                    />
+                                    <polyline points="22,6 12,13 2,6" />
+                                </svg>
+                            </div>
+                            <p class="text-xs font-semibold text-slate-50">
+                                Email
+                            </p>
+                            <p class="text-[11px] text-slate-200/90">
+                                contact@mathsociety.com
+                            </p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Join CTA -->
+                <div class="text-center pt-4 border-t border-slate-800 mt-4">
+                    <p class="text-sm text-slate-300 mb-4">
+                        Want to help organise future events, or just join the
+                        community?
+                    </p>
+                    <a
+                        href="https://example.com/join-us"
+                        target="_blank"
+                        class="inline-flex group"
+                    >
+                        <button
+                            class="inline-flex items-center gap-2 rounded-full bg-slate-900 border border-slate-700 px-7 py-3 text-xs font-semibold text-slate-100 hover:bg-slate-800 hover:border-slate-500 transition"
+                        >
+                            Join the Maths Society
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="16"
+                                height="16"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="group-hover:translate-x-0.5 transition"
+                            >
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </button>
+                    </a>
+                </div>
+            </section>
+        </div>
+
+        <!-- Footer -->
+        <footer
+            class="border-t border-slate-800/80 py-6 text-center text-[11px] text-slate-500"
+        >
+            <p>&copy; 2024 Maths Society Olympiad. All rights reserved.</p>
+            <p>Crafted for curious minds and late-night problem sets.</p>
+        </footer>
+    </main>
+
+    <script>
+        // ============ THEME TOGGLE LOGIC ============
+        function updateThemeIcon() {
+            const body = document.body;
+            const icon = document.getElementById("theme-toggle-icon");
+            const isLight = body.classList.contains("light-theme");
+            // in dark mode -> show SUN (meaning click for light)
+            // in light mode -> show MOON (meaning click for dark)
+            icon.textContent = isLight ? "☾" : "☼";
+        }
+
+        function applyStoredTheme() {
+            const stored = localStorage.getItem("theme");
+            if (stored === "light") {
+                document.body.classList.add("light-theme");
+            }
+            updateThemeIcon();
+        }
+
+        function toggleTheme() {
+            const body = document.body;
+            body.classList.toggle("light-theme");
+            const isLight = body.classList.contains("light-theme");
+            localStorage.setItem("theme", isLight ? "light" : "dark");
+            updateThemeIcon();
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            applyStoredTheme();
+            const themeBtn = document.getElementById("theme-toggle");
+            if (themeBtn) {
+                themeBtn.addEventListener("click", toggleTheme);
+            }
+        });
+
+        // ============ TOPICS ACCORDION LOGIC ============
+        const olympiadTopics = [
+            {
+                iconSvg:
+                    '<polyline points="22 12 18 8 12 16 6 4 2 8"/><circle cx="22" cy="12" r="1.5"/><circle cx="2" cy="8" r="1.5"/>',
+                title: "Financial Math",
+                description:
+                    "Model interest, growth, and risk. Think discrete compounding, expected value, optimisation, and clean algebraic reasoning applied to real-world financial contexts.",
+            },
+            {
+                iconSvg:
+                    '<path d="M2 12s2-4 8-4c9 0 10 4 10 4s-1 4-10 4c-6 0-8-4-8-4Z"/><path d="M22 12s-2 4-8 4c-9 0-10-4-10-4s1-4 10-4c6 0 8 4 8 4Z"/>',
+                title: "Pure Math",
+                description:
+                    "Dive into number theory, algebra and combinatorics. Proofs by induction, invariants, clever counting and structural thinking are at the heart of this track.",
+            },
+            {
+                iconSvg:
+                    '<circle cx="12" cy="12" r="3"/><path d="M16.2 7.8c0-3.3-2.7-6-6-6S4.2 4.5 4.2 7.8"/><path d="M19.8 16.2c0 3.3-2.7 6-6 6s-6-2.7-6-6"/>',
+                title: "Mathematical Physics",
+                description:
+                    "Use calculus and differential equations to describe motion, fields and energy. Expect conservation laws, ODEs, and translating physical intuition into equations.",
+            },
+            {
+                iconSvg:
+                    '<polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/><line x1="12" y1="4" x2="12" y2="20"/>',
+                title: "CS Math",
+                description:
+                    "Graphs, complexity, discrete structures and logic. Problems focus on reasoning about algorithms, counting states and proving correctness or bounds.",
+            },
+            {
+                iconSvg:
+                    '<rect x="2" y="6" width="20" height="12" rx="2"/><path d="M5 12h2l2 4 4-8 2 4h2"/>',
+                title: "Medicinal Math",
+                description:
+                    "Model populations, dosage, and data. Expect probability, statistics and simple differential systems applied to biological and medical scenarios.",
+            },
+        ];
+
+        function renderTopicsAccordion() {
+            const container = document.getElementById("topics-accordion");
+            if (!container) return;
+
+            container.innerHTML = olympiadTopics
+                .map((topic, index) => {
+                    const contentId = `topic-content-${index}`;
+                    return `
+                <article class="rounded-2xl border border-slate-800 bg-slate-950/80 overflow-hidden">
+                    <button
+                        type="button"
+                        class="accordion-trigger w-full px-4 py-3 flex items-center justify-between cursor-pointer hover:bg-slate-900/80 transition"
+                        aria-expanded="false"
+                        aria-controls="${contentId}"
+                        data-accordion-target="${contentId}"
+                    >
+                        <span class="flex items-center gap-3 text-sm sm:text-base font-semibold text-slate-100">
+                            <span
+                                class="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-slate-900 border border-slate-700"
+                            >
+                                <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                     viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                     stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                     class="text-red-300">
+                                    ${topic.iconSvg}
+                                </svg>
+                            </span>
+                            <span>${topic.title}</span>
+                        </span>
+                        <span
+                            class="chevron-icon inline-flex items-center justify-center h-7 w-7 rounded-full bg-slate-900 border border-slate-700 text-slate-300 transition-transform"
+                        >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"
+                                 viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="6 9 12 15 18 9" />
+                            </svg>
+                        </span>
+                    </button>
+                    <div
+                        id="${contentId}"
+                        class="accordion-content border-t border-slate-800 bg-slate-950/90"
+                        hidden
+                    >
+                        <div class="px-4 py-3 text-xs sm:text-sm text-slate-300">
+                            ${topic.description}
+                        </div>
+                    </div>
+                </article>
+            `;
+                })
+                .join("");
+
+            setupAccordionBehavior(container);
+        }
+
+        function setupAccordionBehavior(container) {
+            const triggers = container.querySelectorAll(".accordion-trigger");
+
+            triggers.forEach((trigger, index) => {
+                trigger.addEventListener("click", () => {
+                    const targetId = trigger.getAttribute(
+                        "data-accordion-target"
+                    );
+                    const content = document.getElementById(targetId);
+                    const isOpen =
+                        trigger.getAttribute("aria-expanded") === "true";
+
+                    // Close all
+                    triggers.forEach((btn) => {
+                        btn.setAttribute("aria-expanded", "false");
+                        const chevron =
+                            btn.querySelector(".chevron-icon");
+                        const cid = btn.getAttribute(
+                            "data-accordion-target"
+                        );
+                        const c = document.getElementById(cid);
+                        if (chevron) {
+                            chevron.classList.remove("chevron-rotated");
+                        }
+                        if (c) {
+                            c.classList.remove("open");
+                            c.hidden = true;
+                        }
+                    });
+
+                    // Open this one if it was closed
+                    if (!isOpen) {
+                        trigger.setAttribute("aria-expanded", "true");
+                        const chevron =
+                            trigger.querySelector(".chevron-icon");
+                        if (chevron) {
+                            chevron.classList.add("chevron-rotated");
+                        }
+                        content.classList.add("open");
+                        content.hidden = false;
+                    }
+                });
+
+                // Auto-open the first topic by default
+                if (index === 0) {
+                    trigger.click();
+                }
+            });
+        }
+
+        window.addEventListener("DOMContentLoaded", renderTopicsAccordion);
+    </script>
+</body>
+</html>

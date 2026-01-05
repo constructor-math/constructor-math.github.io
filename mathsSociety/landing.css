@@ -1,0 +1,207 @@
+/* --- Variables & Reset --- */
+:root {
+    --bg-beige: #F5F5DC;
+    --bg-maroon: #800000;
+    --text-beige: #F5F5DC;
+    --text-maroon: #800000;
+    --font-main: "Roboto Slab", serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-main);
+}
+
+/* --- Navbar --- */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: var(--bg-maroon); /* Maroon Navbar usually looks best for contrast */
+    padding: 1rem 2rem;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nav-logo {
+    height: 40px; /* Adjust based on your logo */
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-beige);
+    text-decoration: none;
+    font-weight: 700;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.hamburger {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+}
+.logo_title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    color: var(--text-beige);
+    font-size: 1.1rem;
+}
+
+/* --- Hero Section --- */
+#hero {
+    background-color: var(--bg-beige);
+    color: var(--text-maroon);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 60px; /* Offset for fixed navbar */
+}
+
+.hero-logo {
+    max-width: 200px;
+    margin-bottom: 1rem;
+}
+
+#hero h1 {
+    font-size: 4.3rem;
+    font-weight: 900;
+}
+
+/* --- Mission Section --- */
+#mission {
+    background-color: var(--bg-maroon);
+    color: var(--text-beige);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+#mission h2 {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* --- Explanation Section --- */
+#explanation {
+    background-color: var(--bg-beige);
+    color: var(--text-maroon);
+    padding: 4rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.grid-item {
+    text-align: center;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid var(--text-maroon);
+    margin-bottom: 1rem;
+}
+
+.grid-item h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+
+/* --- Footer --- */
+footer {
+    background-color: var(--bg-maroon);
+    color: var(--text-beige);
+    padding: 2rem;
+    text-align: center;
+}
+
+.socials {
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.socials a {
+    color: var(--text-beige);
+    text-decoration: underline;
+}
+.link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.link a{
+    text-decoration: none;
+}
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    
+    .hamburger span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        margin: 5px;
+        background-color: var(--text-beige);
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: var(--bg-maroon);
+        flex-direction: column;
+        width: 50%;
+        height: calc(100vh - 60px);
+        align-items: center;
+        padding-top: 2rem;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .nav-links.active {
+        transform: translateX(0%);
+    }
+
+    #hero h1 {
+        font-size: 3.3rem;
+    }
+}
