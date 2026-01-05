@@ -6,6 +6,9 @@
     --text-maroon: #800000;
     --font-main: "Roboto Slab", serif;
 }
+html{
+    scroll-behavior: smooth;
+}
 
 * {
     margin: 0;
@@ -22,7 +25,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: var(--bg-maroon); /* Maroon Navbar usually looks best for contrast */
+    background-color: var(--bg-maroon); 
     padding: 1rem 2rem;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -65,7 +68,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    gap: 1rem;
     color: var(--text-beige);
     font-size: 1.1rem;
 }
@@ -90,6 +93,14 @@ body {
 #hero h1 {
     font-size: 4.3rem;
     font-weight: 900;
+    padding-bottom: 30px;
+}
+#hero a {
+    text-decoration: none;
+    background-color: var(--text-maroon);
+    color: var(--text-beige);
+    padding: 15px 15px;
+    border-radius: 10%;
 }
 
 /* --- Mission Section --- */
@@ -183,6 +194,7 @@ footer {
         background-color: var(--text-beige);
     }
 
+
     .nav-links {
         position: absolute;
         top: 60px;
@@ -203,5 +215,11 @@ footer {
 
     #hero h1 {
         font-size: 3.3rem;
+    }
+}
+/*Stretching the navbar on desktop*/
+@media (min-width: 769px) {
+    .nav-container {
+        max-width: 95%; /* Stretches the content wide */
     }
 }
