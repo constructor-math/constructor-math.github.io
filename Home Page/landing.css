@@ -6,9 +6,6 @@
     --text-maroon: #800000;
     --font-main: "Roboto Slab", serif;
 }
-html{
-    scroll-behavior: smooth;
-}
 
 * {
     margin: 0;
@@ -25,8 +22,8 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: var(--bg-maroon); 
-    padding: 2rem 2rem;
+    background-color: var(--bg-maroon); /* Maroon Navbar usually looks best for contrast */
+    padding: 1.5rem 2rem;
     z-index: 1000;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
@@ -40,21 +37,21 @@ body {
 }
 
 .nav-logo {
-    height: 50px; 
+    height: 50px; /* Adjust based on your logo */
 }
 
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .nav-links a {
     color: var(--text-beige);
     text-decoration: none;
     font-weight: 700;
+    font-size: 1.1rem;
     transition: opacity 0.3s;
-    font-size: 1.3rem;
 }
 
 .nav-links a:hover {
@@ -69,9 +66,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 2rem;
     color: var(--text-beige);
-    font-size: 1.5rem;
+    font-size: 1.3rem;
 }
 
 /* --- Hero Section --- */
@@ -83,7 +80,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 60px; /* Offset for fixed navbar */
+    padding-top: 80px; /* Offset for fixed navbar */
 }
 
 .hero-logo {
@@ -94,14 +91,24 @@ body {
 #hero h1 {
     font-size: 4.3rem;
     font-weight: 900;
-    padding-bottom: 30px;
 }
-#hero a {
-    text-decoration: none;
-    background-color: var(--text-maroon);
+
+.hero-btn {
+    display: inline-block;
+    margin-top: 2rem;
+    padding: 1rem 2.5rem;
+    background-color: var(--bg-maroon);
     color: var(--text-beige);
-    padding: 15px 15px;
-    border-radius: 10%;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.hero-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(128, 0, 0, 0.4);
 }
 
 /* --- Mission Section --- */
@@ -150,17 +157,22 @@ body {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
-#team{
-    background-color: var(--bg-maroon);
-    color: var(--text-beige);
-    padding: 4rem 2rem;
-    text-align: center;
+
+.content-block {
+    text-align: left;
+    padding: 2rem;
 }
-#team h2{
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+
+.content-block h2 {
+    color: var(--text-maroon);
+    border-bottom: 3px solid var(--bg-maroon);
+    padding-bottom: 0.5rem;
 }
+
+.content-block p {
+    color: var(--text-maroon);
+}
+
 
 /* --- Footer --- */
 footer {
@@ -205,15 +217,14 @@ footer {
         background-color: var(--text-beige);
     }
 
-
     .nav-links {
         position: absolute;
-        top: 60px;
+        top: 80px;
         right: 0;
         background-color: var(--bg-maroon);
         flex-direction: column;
         width: 50%;
-        height: calc(100vh - 60px);
+        height: calc(100vh - 80px);
         align-items: center;
         padding-top: 2rem;
         transform: translateX(100%);
@@ -226,11 +237,5 @@ footer {
 
     #hero h1 {
         font-size: 3.3rem;
-    }
-}
-/*Stretching the navbar on desktop*/
-@media (min-width: 769px) {
-    .nav-container {
-        max-width: 95%; /* Stretches the content wide */
     }
 }
