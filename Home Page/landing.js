@@ -13,4 +13,13 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.remove('active');
         });
     });
+
+    // Highlight active page
+    const currentPage = window.location.pathname.split('/').pop() || 'landing.html';
+    document.querySelectorAll('.nav-link').forEach(link => {
+        const linkPage = link.getAttribute('href').split('/').pop();
+        if (linkPage === currentPage) {
+            link.classList.add('active');
+        }
+    });
 });
