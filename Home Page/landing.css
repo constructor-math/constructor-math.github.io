@@ -61,6 +61,12 @@ body {
     opacity: 0.8;
 }
 
+.nav-links a.active {
+    color: var(--bg-beige);
+    border-bottom: 3px solid var(--bg-beige);
+    padding-bottom: 5px;
+}
+
 .hamburger {
     display: none; /* Hidden on desktop */
     cursor: pointer;
