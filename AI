@@ -180,12 +180,19 @@
 
       <ul class="nav-links">
         <li><a href="/Home%20Page/landing.html">Home</a></li>
-        <li><a href="/ai-event/" target="_blank" rel="noopener" class="active">AI/ML</a></li>
+
+        <!-- This page will be /ai-event/index.html -->
+        <li><a href="/ai-event/" class="active">AI/ML</a></li>
+
         <li><a href="/integration-bee/" target="_blank" rel="noopener">Integration Bee</a></li>
+
+        <!-- You will create /ugs/index.html -->
         <li><a href="/ugs/" target="_blank" rel="noopener">UGS</a></li>
+
         <li><a href="/Home%20Page/new.html" target="_blank" rel="noopener">Olympiad</a></li>
-        <li><a href="poker.html">Poker</a></li>
-        <li><a href="interstellar.html">Interstellar</a></li>
+
+        <li><a href="/Poker%20and%20Interstellar/poker.html" target="_blank" rel="noopener">Poker</a></li>
+        <li><a href="/Poker%20and%20Interstellar/interstellar.html" target="_blank" rel="noopener">Interstellar</a></li>
       </ul>
     </div>
   </nav>
@@ -260,12 +267,12 @@
       <h2>🎯 Upcoming Events</h2>
       <ul>
         <li><a href="/Home%20Page/landing.html" class="nav-link">Home</a></li>
-        <li><a href="https://constructor-math.github.io/ai-event/" target="_blank">AI/ML</a></li>
+        <li><a href="https://constructor-math.github.io/ai-event/">AI/ML</a></li>
         <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank">Integration Bee</a></li>
         <li><a href="https://constructor-math.github.io/ugs/" target="_blank">UGS</a></li>
         <li><a href="/Home%20Page/new.html" target="_blank">Olympiad</a></li>
-        <li><a href="poker.html" class="nav-link">Poker</a></li>
-        <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
+        <li><a href="/Poker%20and%20Interstellar/poker.html" class="nav-link" target="_blank">Poker</a></li>
+        <li><a href="/Poker%20and%20Interstellar/interstellar.html" class="nav-link" target="_blank">Interstellar</a></li>
       </ul>
 
       <p style="margin-top:2rem; font-style:italic; text-align:center;">
