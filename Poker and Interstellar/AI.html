@@ -3,17 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI & ML Event — Math Society</title>
+  <title>AI &amp; ML Event — Math Society</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet" />
-
-  <!-- MAIN WEBSITE CSS -->
-  <link rel="stylesheet" href="https://constructor-math.github.io/Home%20Page/landing.css">
-
-  <!-- Icons -->
   <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
 
   <style>
@@ -21,8 +15,9 @@
       --bg-maroon:#800000;
       --text-maroon:#7a1e1e;
       --page-bg:#f6f2ee;
+      --card-bg:#ffffff;
     }
-
+    *{ box-sizing:border-box; }
     body{
       margin:0;
       font-family:"Roboto Slab", serif;
@@ -30,150 +25,253 @@
       color:#1f1f1f;
     }
 
-    #hero{
-      padding-top:180px;
-      padding-bottom:2.5rem;
-      text-align:center;
+    /* ===== NAVBAR (match screenshot outcome) ===== */
+    .navbar{
+      position:fixed;
+      top:0; left:0; right:0;
+      z-index:9999;
+      height:76px;
+      display:flex;
+      align-items:center;
+      background:linear-gradient(90deg, #5b0000 0%, #7a0f0f 45%, #5b0000 100%);
+      box-shadow:0 6px 18px rgba(0,0,0,0.18);
     }
-
-    #explanation{
-      padding:3rem 0;
-    }
-
-    .container{
-      max-width:900px;
+    .nav-container{
+      width:100%;
+      max-width:1200px;
       margin:0 auto;
       padding:0 1.25rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1.25rem;
     }
-
-    .video-container{
-      position:relative;
-      padding-bottom:56.25%;
-      height:0;
-      overflow:hidden;
-      margin:2.5rem 0;
-      border-radius:8px;
-      box-shadow:0 4px 12px rgba(128,0,0,0.3);
+    .logo-container{
+      display:flex;
+      align-items:center;
+      gap:0.75rem;
+      min-width:max-content;
     }
-
-    .video-container iframe{
-      position:absolute;
-      inset:0;
-      width:100%;
-      height:100%;
-      border:none;
-    }
-
-    img{
-      max-width:100%;
-      border-radius:8px;
+    .nav-logo{
+      width:42px;
+      height:42px;
+      object-fit:contain;
       display:block;
-      margin:2rem auto;
+    }
+    .logo_title h3{
+      margin:0;
+      font-size:1.25rem;
+      font-weight:700;
+      color:#ffffff;
+      letter-spacing:0.2px;
+    }
+    .nav-links{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:flex;
+      align-items:center;
+      gap:2.05rem;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color:#ffffff;
+      font-weight:650;
+      font-size:1.05rem;
+      padding:0.25rem 0;
+      border-bottom:2px solid transparent;
+      transition:border-color 0.15s ease, opacity 0.15s ease;
+      opacity:0.95;
+      white-space:nowrap;
+    }
+    .nav-links a:hover{
+      border-bottom-color:rgba(255,255,255,0.8);
+      opacity:1;
+    }
+    .nav-links a.active{
+      border-bottom-color:#ffffff;
+      opacity:1;
     }
 
-    h2{
-      color:var(--bg-maroon);
-      margin-top:3rem;
+    /* ===== PAGE CONTENT (kept unchanged) ===== */
+    #hero {
+      min-height: auto !important;
+      height: auto !important;
+      max-height: none !important;
+      padding-top: 180px !important;
+      padding-bottom: 2.5rem !important;
+      display: block !important;
     }
-
-    .intro-emphasis{
-      font-size:1.2rem;
-      line-height:1.9;
-      margin:2rem 0;
-      padding-left:1rem;
-      border-left:3px solid rgba(128,0,0,0.3);
+    .hero-content {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+      text-align: center;
     }
+    #explanation {
+      padding-top: 3rem !important;
+      padding-bottom: 3rem !important;
+    }
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      margin: 2.5rem 0;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
+    .video-container iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    h2 { color: var(--bg-maroon); margin-top: 3rem; }
+    img { max-width: 100%; border-radius: 8px; display: block; margin: 2rem auto; }
+    .intro-emphasis {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin: 2rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(128, 0, 0, 0.3);
+    }
+    .highlight-box {
+      background-color: rgba(128, 0, 0, 0.1);
+      padding: 1.5rem;
+      border-left: 4px solid var(--bg-maroon);
+      margin: 2rem 0;
+      border-radius: 4px;
+    }
+    ul { margin-top: 1.5rem; }
 
-    .highlight-box{
-      background-color:rgba(128,0,0,0.1);
-      padding:1.5rem;
-      border-left:4px solid var(--bg-maroon);
-      margin:2rem 0;
-      border-radius:4px;
+    @media (max-width: 900px){
+      .nav-links{ gap:1.25rem; }
+      .logo_title h3{ font-size:1.12rem; }
+    }
+    @media (max-width: 680px){
+      .navbar{ height:auto; padding:0.65rem 0; }
+      .nav-container{ align-items:flex-start; }
+      .nav-links{
+        width:100%;
+        justify-content:flex-start;
+        gap:1rem 1.25rem;
+        padding:0.5rem 0 0.15rem;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!--NAVBAR-->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-container logo_title">
+        <img src="/Home%20Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo" />
+        <h3>Math Society</h3>
+      </div>
 
-<!-- NAVBAR (NEW WEBSITE, ABSOLUTE LINKS) -->
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="logo-container logo_title">
-      <img src="https://constructor-math.github.io/Home%20Page/images/logo_final.png"
-           alt="Math Soc Logo" class="nav-logo">
-      <h3>Math Society</h3>
+      <ul class="nav-links">
+        <li><a href="/Home%20Page/landing.html">Home</a></li>
+        <li><a href="/ai-event/" target="_blank" rel="noopener" class="active">AI/ML</a></li>
+        <li><a href="/integration-bee/" target="_blank" rel="noopener">Integration Bee</a></li>
+        <li><a href="/ugs/" target="_blank" rel="noopener">UGS</a></li>
+        <li><a href="/Home%20Page/new.html" target="_blank" rel="noopener">Olympiad</a></li>
+        <li><a href="poker.html">Poker</a></li>
+        <li><a href="interstellar.html">Interstellar</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <ul class="nav-links">
-      <li><a href="https://constructor-math.github.io/Home%20Page/landing.html">Home</a></li>
-      <li><a href="https://constructor-math.github.io/ai-event/">AI/ML</a></li>
-      <li><a href="https://constructor-math.github.io/integration-bee/">Integration Bee</a></li>
-      <li><a href="https://constructor-math.github.io/ugs/">UGS</a></li>
-      <li><a href="https://constructor-math.github.io/Home%20Page/new.html">Olympiad</a></li>
-      <li><a href="https://constructor-math.github.io/poker/">Poker</a></li>
-      <li><a href="https://constructor-math.github.io/interstellar/">Interstellar</a></li>
-    </ul>
-
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>Math Club Event: AI &amp; Machine Learning</h1>
+      <p style="font-size:1.3rem; max-width:800px; margin:0.5rem auto;">
+        Artificial Intelligence is not magic — it’s mathematics.
+      </p>
     </div>
-  </div>
-</nav>
+  </section>
 
-<!-- HERO -->
-<section id="hero">
-  <h1>Math Club Event: AI & Machine Learning</h1>
-  <p style="font-size:1.3rem; max-width:800px; margin:0.5rem auto;">
-    Artificial Intelligence is not magic — it’s mathematics.
-  </p>
-</section>
+  <!-- CONTENT -->
+  <section id="explanation">
+    <div class="container">
+      <p class="intro-emphasis">
+        <em>Is it hot here, or is it just our audience for the AI &amp; ML event?</em><br>
+        Sorry for the bad joke — but that really made me crack my code.
+      </p>
 
-<!-- CONTENT -->
-<section id="explanation">
-  <div class="container">
+      <p>
+        This event was one of the <strong>largest audiences</strong> we’ve had this year, and that says a lot.
+        The term <em>AI</em> continues to be thrown mercilessly around by inexperienced “AI gurus” in an attempt to stay relevant.
+        This naturally raises the question of what <strong>machine learning and artificial intelligence</strong> truly are — which,
+        to the surprise of many, is a purely <strong>mathematical procedure</strong>.
+      </p>
 
-    <p class="intro-emphasis">
-      <em>Is it hot here, or is it just our audience for the AI & ML event?</em><br>
-      Sorry for the bad joke — but that really made me crack my code.
-    </p>
+      <img width="567" height="302" alt="Capture d’écran 2025-10-28 200953" src="https://github.com/user-attachments/assets/b0363b4e-2642-45fc-a085-a0dabbfb3ef6" />
 
-    <p>
-      This event was one of the <strong>largest audiences</strong> we’ve had this year.
-      AI is often mystified, but at its core it is built on
-      <strong>linear algebra, probability, optimization, and statistics</strong>.
-    </p>
+      <p>
+        And that, as a <strong>Maths Society event</strong>, is cool! Most of us once dreamt of being astronauts, building cool machines,
+        working with technology, or curing diseases. But one thing many of us (modulo a few hypermotivated math majors) didn’t dream of doing was... math itself.
+      </p>
 
-    <img src="https://github.com/user-attachments/assets/b0363b4e-2642-45fc-a085-a0dabbfb3ef6" alt="Audience">
+      <p>
+        Math has often felt like an additional topic without much symbolic meaning. But to truly <strong>comprehend the machinery behind building and innovation</strong>,
+        we must understand the math behind every step. This is exactly what <strong>Ahmed Maghri</strong> explored in his delightful talk.
+      </p>
 
-    <div class="video-container">
-      <iframe
-        src="https://www.youtube.com/embed/7bPgCvI6ark"
-        title="AI & ML Math Society Talk"
-        allowfullscreen>
-      </iframe>
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/7bPgCvI6ark" title="AI & ML Math Society Talk" allowfullscreen></iframe>
+      </div>
+
+      <img width="423" height="463" alt="math 3" src="https://github.com/user-attachments/assets/cb039048-d7d9-44a1-81eb-e3b7bed8e830" />
+
+      <p>
+        Don’t worry — we did the deconfiguration of our minds <em>after</em> that equation.
+        It turns out that <strong>ChatGPT itself needs math</strong> to process questions and compute answers.
+        The large language model uses <strong>probability</strong> to predict the next word — kind of like when you’re struck for words yourself.
+        (At that point, our wires were exploding in curiousness!)
+      </p>
+
+      <img width="552" height="472" alt="math 1" src="https://github.com/user-attachments/assets/6e5241d7-d308-43cf-b148-8034b751a107" />
+
+      <div class="highlight-box">
+        In a place full of casual students in casual clothes, we had people like <strong>Ahmed</strong>,
+        who can never be too dressed for an event — he probably sleeps in a suit!
+      </div>
+
+      <p>
+        This event was our <strong>first official Math Society event</strong>, and it was a success.
+        Besides the laughs, we learned to appreciate the <strong>mathematical beauty behind AI</strong>.
+        So no, we can’t say, “He tried to impress me, but his humor was <em>artificial</em>.”
+      </p>
+
+      <p>
+        If you have more questions, visit our amazing tutors during <strong>Math Support Center (Saturday, 14:00, West Hall 7)</strong>!
+      </p>
+
+      <h2>🎯 Upcoming Events</h2>
+      <ul>
+        <li><a href="/Home%20Page/landing.html" class="nav-link">Home</a></li>
+        <li><a href="https://constructor-math.github.io/ai-event/" target="_blank">AI/ML</a></li>
+        <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank">Integration Bee</a></li>
+        <li><a href="https://constructor-math.github.io/ugs/" target="_blank">UGS</a></li>
+        <li><a href="/Home%20Page/new.html" target="_blank">Olympiad</a></li>
+        <li><a href="poker.html" class="nav-link">Poker</a></li>
+        <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
+      </ul>
+
+      <p style="margin-top:2rem; font-style:italic; text-align:center;">
+        Stay aware of our next events — if not, you might be “gambling” away all your chances of a fun semester with us!
+      </p>
     </div>
-
-    <div class="highlight-box">
-      This was our <strong>first official Math Society event</strong>,
-      and it set the tone for everything that followed.
-    </div>
-
-    <h2>🎯 Upcoming Events</h2>
-    <ul>
-      <li><a href="https://constructor-math.github.io/integration-bee/">Integration Bee</a></li>
-      <li><a href="https://constructor-math.github.io/ugs/">UGS</a></li>
-      <li><a href="https://constructor-math.github.io/interstellar/">Interstellar</a></li>
-      <li><a href="https://constructor-math.github.io/poker/">Poker</a></li>
-    </ul>
-
-  </div>
-</section>
-
-<!-- MAIN WEBSITE JS -->
-<script src="https://constructor-math.github.io/Home%20Page/landing.js"></script>
-
+  </section>
 </body>
 </html>
