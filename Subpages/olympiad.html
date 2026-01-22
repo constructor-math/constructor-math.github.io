@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Olympiad 2025 - Math Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Home Page/landing.css">
+  <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+  <style>
+    #hero {
+      min-height: auto !important;
+      height: auto !important;
+      max-height: none !important;
+      padding-top: 180px !important;
+      padding-bottom: 2.5rem !important;
+      display: block !important;
+    }
+
+    .hero-content {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    #explanation {
+      padding-top: 3rem !important;
+      margin-top: 0 !important;
+    }
+
+    .highlight-box {
+      background-color: rgba(128, 0, 0, 0.1);
+      padding: 1.5rem;
+      border-left: 4px solid var(--bg-maroon);
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .intro-emphasis {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin: 2rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(128, 0, 0, 0.3);
+    }
+
+    .key-takeaway {
+      background-color: rgba(128, 0, 0, 0.05);
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+      font-size: 1.05rem;
+    }
+
+    h2 {
+      color: var(--bg-maroon);
+      margin-top: 3.5rem;
+      font-size: 2rem;
+    }
+
+    #hero h3,
+    section h3 {
+      color: var(--text-maroon);
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+
+    /* Snapshot stats */
+    .snapshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .snapshot-item {
+      background: rgba(128, 0, 0, 0.05);
+      border: 1px solid rgba(128, 0, 0, 0.15);
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .snapshot-number {
+      font-size: 3rem;
+      font-weight: bold;
+      color: var(--bg-maroon);
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+
+    .snapshot-label {
+      font-size: 1rem;
+      color: var(--text-maroon);
+    }
+
+    /* Agenda timeline */
+    .timeline {
+      list-style: none;
+      padding: 0;
+      margin: 2rem 0;
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      margin-bottom: 1.5rem;
+      padding: 1.25rem;
+      background: rgba(128, 0, 0, 0.03);
+      border-radius: 8px;
+      border-left: 4px solid rgba(128, 0, 0, 0.3);
+    }
+
+    .timeline-time {
+      font-weight: bold;
+      color: var(--bg-maroon);
+      font-size: 1.2rem;
+      min-width: 80px;
+      margin-right: 1.5rem;
+    }
+
+    .timeline-content {
+      flex: 1;
+    }
+
+    .timeline-content h4 {
+      margin: 0 0 0.5rem 0;
+      color: var(--text-maroon);
+      font-size: 1.1rem;
+    }
+
+    /* Rules list */
+    .rules-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .rules-list li {
+      background: rgba(128, 0, 0, 0.05);
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.75rem;
+      border-radius: 8px;
+      border-left: 3px solid rgba(128, 0, 0, 0.25);
+      position: relative;
+      padding-left: 3rem;
+    }
+
+    .rules-list li:before {
+      content: "→";
+      position: absolute;
+      left: 1.25rem;
+      color: var(--bg-maroon);
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+
+    /* Topics grid */
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+
+    .topic-card {
+      background: rgba(128, 0, 0, 0.05);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border: 1px solid rgba(128, 0, 0, 0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 6px 16px rgba(128, 0, 0, 0.2);
+    }
+
+    /* Image containers - FIXED */
+    .image-container {
+      text-align: center;
+      margin: 2rem auto;
+      max-width: 900px;
+      overflow: hidden;
+    }
+
+    .image-container img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 600px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+      border: 2px solid var(--bg-maroon);
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+    }
+
+    .image-caption {
+      font-style: italic;
+      margin-top: 0.75rem;
+      color: var(--text-maroon);
+      font-size: 1rem;
+    }
+
+    .topic-card h4 {
+      color: var(--bg-maroon);
+      margin: 0 0 0.75rem 0;
+      font-size: 1.2rem;
+    }
+
+    /* PDF buttons */
+    .pdf-buttons {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin: 2rem 0;
+      flex-wrap: wrap;
+    }
+
+    .pdf-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: var(--bg-maroon);
+      color: var(--text-beige);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: transform 0.3s, box-shadow 0.3s;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .pdf-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
+
+    .pdf-button i {
+      font-size: 1.3rem;
+    }
+
+    /* External link button */
+    .external-link {
+      display: inline-block;
+      background-color: var(--bg-maroon);
+      color: var(--text-beige);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 1rem 0;
+      transition: opacity 0.3s;
+      font-weight: 600;
+    }
+
+    .external-link:hover {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .timeline-item {
+        flex-direction: column;
+      }
+
+      .timeline-time {
+        margin-bottom: 0.75rem;
+      }
+
+      .pdf-buttons {
+        flex-direction: column;
+        align-items: stretch;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--NAVBAR-->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-container logo_title">
+        <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+        <h3>Math Society</h3>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+        <li><a href="ai-ml.html" class="nav-link">AI/ML</a></li>
+        <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank" class="nav-link">Integration
+            Bee</a></li>
+        <li><a href="ugs.html" class="nav-link">UGS</a></li>
+        <li><a href="olympiad.html" class="nav-link active">Olympiad</a></li>
+        <li><a href="poker.html" class="nav-link">Poker</a></li>
+        <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!--HERO SECTION-->
+  <section id="hero" style="padding-top: 0; padding-bottom: 0; min-height: auto; margin-top: 0;">
+    <div class="hero-content" style="text-align: center; padding-top: 1rem;">
+      <h1 style="margin-top: 0;">Maths Society Olympiad 2025</h1>
+      <p style="font-size: 1.3rem; margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        A 5-hour, 5-topic challenge designed for curious problem-solvers
+      </p>
+      <p style="font-size: 1.1rem; font-style: italic; margin-top: 0.5rem;">
+        From first-years to seasoned math enthusiasts
+      </p>
+    </div>
+  </section>
+
+  <!--CONTENT-->
+  <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
+    <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
+      <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
+
+        <!-- Introduction -->
+        <h2 style="margin-top: 0;">When Math Gets Competitive</h2>
+
+        <p class="intro-emphasis">
+          <em>Five hours. Five topics. Infinite caffeine.</em><br>
+          Welcome to the Math Society Olympiad 2025—where sleep is optional but problem-solving is mandatory.
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          If you thought math was just about sitting in class and nodding along, think again. The <strong>Math Society
+            Olympiad</strong> brought together students from all levels to tackle five challenging mathematical
+          categories in a marathon problem-solving session. From first-years nervously sharpening their pencils to
+          seasoned math enthusiasts cracking their knuckles, this event proved one thing: math competitions are the
+          <em>ultimate</em> spectator sport... if you're into equations instead of touchdowns.
+        </p>
+
+        <!-- Trophy and Opening Photos -->
+        <div class="image-container">
+          <img src="images/20251115_183824.jpg" alt="Olympiad Trophy">
+          <p class="image-caption">The Math Society Olympiad 2025 Trophy - Crafted with precision by the Makers Club</p>
+        </div>
+
+        <div class="highlight-box">
+          <strong>Special Thanks:</strong> A huge shoutout to the <strong>Makers Club</strong> for designing and
+          creating our stunning trophy! Their craftsmanship turned mathematical beauty into a physical award worth
+          competing for.
+        </div>
+
+        <div class="image-container">
+          <img src="images/20251115_105631.jpg" alt="Opening ceremony presentation">
+          <p class="image-caption">Opening ceremony: Showcasing the Math Society's "Mathematics Behind" series</p>
+        </div>
+
+        <div class="image-container">
+          <img src="images/20251115_105650.jpg" alt="Ahmed presenting">
+          <p class="image-caption">Ahmed Maghri kicking off the Olympiad with style (and yes, in a suit—as always)</p>
+        </div>
+
+        <h2>The Day That Was</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          The day started at 10:00 AM with an opening ceremony that reminded everyone why they love (or love to hate)
+          mathematics. We showcased highlights from our <strong>"Mathematics Behind"</strong> series—covering AI/ML,
+          Poker & Game Theory, and Interstellar—because nothing says "good morning" like neural networks and black
+          holes.
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 1rem;">
+          Then came the real challenge: <strong>five hours</strong> of closed-book problem-solving across
+          five mathematical domains. No collaboration. No Googling. Just you, your brain, and a whole lot of scratch
+          paper.
+        </p>
+
+        <!-- Snapshot Stats -->
+        <h2>The Numbers Don't Lie</h2>
+
+        <div class="snapshot-grid">
+          <div class="snapshot-item">
+            <span class="snapshot-number">5</span>
+            <span class="snapshot-label">hours of pure mathematics</span>
+          </div>
+          <div class="snapshot-item">
+            <span class="snapshot-number">5</span>
+            <span class="snapshot-label">categories to conquer</span>
+          </div>
+          <div class="snapshot-item">
+            <span class="snapshot-number">∞</span>
+            <span class="snapshot-label">cups of coffee consumed</span>
+          </div>
+        </div>
+
+        <div class="highlight-box" style="text-align: center;">
+          <strong>From 10:00 AM opening ceremony to 7:00 PM awards · One unforgettable day of mathematical
+            excellence</strong>
+        </div>
+
+        <!-- Agenda Section -->
+        <h2>How The Day Unfolded</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Picture this: a room full of mathematically-inclined students, armed with nothing but pencils, paper, and
+          unwavering determination. Here's how the marathon went down:
+        </p>
+
+        <ul class="timeline">
+          <li class="timeline-item">
+            <div class="timeline-time">10:00</div>
+            <div class="timeline-content">
+              <h4>Opening ceremony & briefing</h4>
+              <p>Welcome to all participants, rules overview, and final instructions</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">11:00</div>
+            <div class="timeline-content">
+              <h4>Competition begins · 5-hour session</h4>
+              <p>Dive into the problems across all five topics</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">16:00</div>
+            <div class="timeline-content">
+              <h4>Submissions close</h4>
+              <p>All answers must be submitted by this time</p>
+            </div>
+          </li>
+          <li class="timeline-item">
+            <div class="timeline-time">19:00</div>
+            <div class="timeline-content">
+              <h4>Closing ceremony & awards</h4>
+              <p>Results announcement and recognition of top performers</p>
+            </div>
+          </li>
+        </ul>
+
+        <!-- Olympiad Topics -->
+        <h2>Olympiad Topics</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Choose where your strengths lie — or challenge yourself in a new area. Each of the five topics supports deep,
+          creative problem-solving.
+        </p>
+
+        <div class="topics-grid">
+          <div class="topic-card">
+            <h4>Medicinal/Chemical Mathematics</h4>
+            <p>Thermodynamics, chemical equations, and mathematical modeling in medicine</p>
+          </div>
+          <div class="topic-card">
+            <h4>Mathematical Economics</h4>
+            <p>Utility functions, optimization, and resource allocation</p>
+          </div>
+          <div class="topic-card">
+            <h4>Mathematical Computer Science</h4>
+            <p>Algorithms, probability, network theory, and computational complexity</p>
+          </div>
+          <div class="topic-card">
+            <h4>Mathematical Physics</h4>
+            <p>Classical mechanics, rotational dynamics, and conservation laws</p>
+          </div>
+          <div class="topic-card">
+            <h4>Pure Mathematics</h4>
+            <p>Algebra, number theory, polynomials, and abstract structures</p>
+          </div>
+        </div>
+
+        <!-- Solutions Section -->
+        <h2>Questions & Solutions</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Access the full question paper and detailed solutions with step-by-step explanations. Review the problems,
+          compare approaches, and learn new techniques.
+        </p>
+
+        <div class="pdf-buttons">
+          <a href="Olympiad_Question_Paper.pdf" target="_blank" class="pdf-button">
+            <i class="fa-solid fa-file-pdf"></i>
+            View Question Paper
+          </a>
+          <a href="Math_Olympiads_sample solution_final.pdf" target="_blank" class="pdf-button">
+            <i class="fa-solid fa-file-lines"></i>
+            View Solutions
+          </a>
+        </div>
+
+        <!-- Winners Section -->
+        <h2>🏆 And The Winners Are...</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          After five hours of intense mathematical warfare, the results were in. Some solved problems that would make
+          Euler proud. Others discovered new ways to creatively interpret "show your work." But these champions? They
+          dominated.
+        </p>
+
+        <!-- Category Winners -->
+        <h3>The Power Girls - CS Math & Medicinal Math Champions</h3>
+
+        <div class="image-container">
+          <img src="images/20251115_185008.jpg" alt="The Power Girls">
+          <p class="image-caption"><strong>The Power Girls</strong> - Conquering both Computer Science Math and
+            Medicinal Math with style</p>
+        </div>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          This team showed us that when it comes to algorithms and dosage calculations, four brilliant minds are better
+          than one. They tackled discrete structures, complexity theory, probability models, and medical statistics like
+          absolute legends.
+        </p>
+
+        <h3>Mpumelelo - Mathematical Physics Master</h3>
+
+        <div class="image-container">
+          <img src="images/20251115_185347_new.jpg" alt="Mpumelelo">
+          <p class="image-caption"><strong>Mpumelelo</strong> - Mastering Mathematical Physics with precision and skill
+          </p>
+        </div>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Conservation laws? Check. Differential equations? Easy. Translating physical intuition into mathematical
+          proof? Mpumelelo made it look effortless. Someone give this person a lab coat and a Fields Medal.
+        </p>
+
+        <h3>Amine & Aya - Financial Mathematics Wizards</h3>
+
+        <div class="image-container">
+          <img src="images/20251115_185232.jpg" alt="Amine & Aya">
+          <p class="image-caption"><strong>Amine & Aya</strong> - Making compound interest look cooler than it has any
+            right to be</p>
+        </div>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          While the rest of us were still figuring out our student budgets, these two were optimizing portfolios and
+          calculating risk like Wall Street pros. Interest rates? Modeled. Expected values? Maximized. Future careers in
+          finance? Guaranteed.
+        </p>
+
+        <!-- Overall Winner -->
+        <div class="highlight-box" style="background-color: rgba(128, 0, 0, 0.15); border-left: 4px solid #FFD700;">
+          <h3 style="margin-top: 0; color: var(--bg-maroon);">🥇 Overall Champion: Rishay Gulab</h3>
+
+          <div class="image-container">
+            <img src="images/20251115_185711.jpg" alt="Rishay Gulab with trophy">
+            <p class="image-caption"><strong>Rishay Gulab</strong> - Overall Champion & Pure Math Winner, holding the
+              trophy like he was born for this moment</p>
+          </div>
+
+          <p style="font-size: 1.15rem; line-height: 1.8;">
+            Not only did Rishay dominate the <strong>Pure Math</strong> category, but he also scored the highest across
+            <em>all five categories</em>.
+          </p>
+
+          <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 1rem;">
+            If there's a mathematical Mount Olympus, Rishay just planted a flag on it. Congratulations to our champion!
+          </p>
+        </div>
+
+        <div class="key-takeaway" style="margin-top: 2rem;">
+          <strong>A Standing Ovation for All Participants</strong>
+          <p style="margin-top: 1rem;">
+            Whether you won a category, solved a single problem, or spent the entire time wondering why you signed up—
+            <strong>thank you</strong> for participating. Every attempt, every scratched-out equation, every "wait, I
+            think I got it!" moment made this event what it was. The Math Society is lucky to have such a dedicated
+            community of problem-solvers.
+          </p>
+          <p style="margin-top: 0.5rem; font-style: italic;">
+            And remember: if you didn't win this time, there's always next year. Start training now.
+          </p>
+        </div>
+
+        <!-- Contact Section -->
+        <h2>Contact & Join the Society</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Ask questions, see upcoming events, and stay in touch with the Maths Society community.
+        </p>
+
+        <div class="key-takeaway" style="margin-top: 2rem;">
+          <strong>Want to help organise future events, or just join the community?</strong>
+          <p style="margin-top: 1rem;">
+            Connect with us through our social media channels or reach out directly via email. We're always looking for
+            passionate members to join our society!
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--FOOTER-->
+  <footer>
+    <div class="footer-content">
+      <p>CONNECT WITH US:</p>
+      <div class="socials">
+        <div class="link">
+          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/mathclub.cube/#" target="_blank">Instagram</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/"
+            target="_blank">LinkedIn</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-share"></i>
+          <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438"
+            target="_blank">
+            Sharepoint
+          </a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-youtube"></i>
+          <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+        </div>
+      </div>
+      <p>&copy; 2025 The Math Society</p>
+    </div>
+  </footer>
+
+  <script src="../Home Page/landing.js"></script>
+</body>
+
+</html>
