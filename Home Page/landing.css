@@ -168,6 +168,19 @@ body {
     letter-spacing: 2px;
 }
 
+/*Testimonial section*/
+#testimonial{
+    background-color: var(--bg-maroon);
+    color: var(--text-beige);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+#testimonial h2{
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 /* --- Footer --- */
 footer {
     background-color: var(--bg-maroon);
