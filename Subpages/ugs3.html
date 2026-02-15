@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UGS 3 – Undergraduate Seminar - Math Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Home Page/landing.css">
+  <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+  <style>
+    #hero {
+      min-height: auto !important;
+      height: auto !important;
+      max-height: none !important;
+      padding-top: 180px !important;
+      padding-bottom: 2.5rem !important;
+      display: block !important;
+    }
+
+    .hero-content {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    #explanation {
+      padding-top: 3rem !important;
+      margin-top: 0 !important;
+    }
+
+    .highlight-box {
+      background-color: rgba(128, 0, 0, 0.1);
+      padding: 1.5rem;
+      border-left: 4px solid var(--bg-maroon);
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .intro-emphasis {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin: 2rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(128, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: var(--bg-maroon);
+      margin-top: 3.5rem;
+      font-size: 2rem;
+    }
+
+    #hero h3,
+    section h3 {
+      color: var(--text-maroon);
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+
+    /* Image carousel */
+    .image-carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
+
+    .carousel-container {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      border: 2px solid var(--bg-maroon);
+      border-radius: 8px;
+    }
+
+    .carousel-caption {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-style: italic;
+      color: var(--text-maroon);
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(128, 0, 0, 0.7);
+      color: var(--text-beige);
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: background 0.3s;
+      z-index: 10;
+      border-radius: 4px;
+    }
+
+    .carousel-button:hover {
+      background: rgba(128, 0, 0, 0.9);
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(128, 0, 0, 0.3);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .indicator.active {
+      background: var(--bg-maroon);
+    }
+
+    /* Talk list styling */
+    .talk-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .talk-list li {
+      background: rgba(128, 0, 0, 0.05);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid rgba(128, 0, 0, 0.3);
+    }
+
+    .talk-list li strong {
+      color: var(--bg-maroon);
+      font-size: 1.1rem;
+    }
+
+    .topic-explain {
+      display: block;
+      margin-top: 0.75rem;
+      font-style: italic;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-button {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--NAVBAR-->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-container logo_title">
+        <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+        <h3>Math Society</h3>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+        <li><a href="ai-ml.html" class="nav-link">AI/ML</a></li>
+        <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank" class="nav-link">Integration
+            Bee</a></li>
+        <li class="dropdown">
+          <a href="ugs.html" class="nav-link active">UGS</a>
+          <ul class="dropdown-menu">
+            <li><a href="ugs1.html">UGS 1</a></li>
+            <li><a href="ugs2.html">UGS 2</a></li>
+            <li><a href="ugs3.html">UGS 3</a></li>
+            <li><a href="ugs4.html">UGS 4</a></li>
+          </ul>
+        </li>
+        <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
+        <li><a href="poker.html" class="nav-link">Poker</a></li>
+        <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!--HEADER-->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>The Mathematics Undergraduate Seminar<br>(III)</h1>
+      <p style="font-size: 1.1rem; font-style: italic; margin-top: 0.5rem;">20th October 2025</p>
+    </div>
+  </section>
+
+  <!--CONTENT-->
+  <section id="explanation">
+    <div class="container" style="max-width: 900px;">
+      <div class="content-block">
+
+        <h2 style="margin-top: 0;">The Third Undergraduate Seminar Session</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          The third edition of UGS brought together three fascinating talks spanning physics, computer science, and
+          engineering.
+        </p>
+
+        <h3>Speakers & Topics</h3>
+
+        <ul class="talk-list">
+          <li>
+            <strong>Noah Horne</strong> (3rd year PhDS) – <em>Lagrangian Putt-Putt: Forced Geodesic Motion on Arbitrary
+              C² Surfaces</em>
+            <span class="topic-explain">Models motion constrained to curved surfaces using variational (Lagrangian)
+              mechanics, explaining how curvature affects trajectories (geodesics).</span>
+
+            <!-- Image Carousel for Noah -->
+            <div class="image-carousel" style="max-width: 700px;">
+              <div class="carousel-container" id="carousel-noah">
+                <div class="carousel-slide">
+                  <img src="images/ugs3-extra/noah1.jpg" alt="Noah Horne presenting" style="max-height: 400px;">
+                  <p class="carousel-caption">Noah Horne presenting equations of motion</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/ugs3-extra/noah2.jpg" alt="Noah Horne explaining Christoffel symbols"
+                    style="max-height: 400px;">
+                  <p class="carousel-caption">Explaining the Christoffel symbol visually</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/ugs3-extra/noah3.jpg" alt="Noah Horne on Lagrangian mechanics"
+                    style="max-height: 400px;">
+                  <p class="carousel-caption">Discussing the Lagrangian mechanics framework</p>
+                </div>
+              </div>
+              <button class="carousel-button prev" onclick="moveCarousel('noah', -1)">‹</button>
+              <button class="carousel-button next" onclick="moveCarousel('noah', 1)">›</button>
+            </div>
+            <div class="carousel-indicators" id="indicators-noah"></div>
+          </li>
+          <li>
+            <strong>Zakaria Ghoddane</strong> (1st year CS) – <em>Mathematical and Algorithmic Optimization of
+              Irrigation and Drone Use</em>
+            <span class="topic-explain">Combines optimization and sensing: using drone data (e.g., vegetation indices)
+              to schedule irrigation efficiently under water and cost constraints.</span>
+
+            <!-- Image Carousel for Zakaria -->
+            <div class="image-carousel" style="max-width: 700px;">
+              <div class="carousel-container" id="carousel-zakaria">
+                <div class="carousel-slide">
+                  <img src="images/ugs3-extra/zakaria1.jpg" alt="Zakaria Ghoddane presenting irrigation optimization"
+                    style="max-height: 400px;">
+                  <p class="carousel-caption">Zakaria Ghoddane presenting irrigation allocation optimization</p>
+                </div>
+              </div>
+              <button class="carousel-button prev" onclick="moveCarousel('zakaria', -1)">‹</button>
+              <button class="carousel-button next" onclick="moveCarousel('zakaria', 1)">›</button>
+            </div>
+            <div class="carousel-indicators" id="indicators-zakaria"></div>
+          </li>
+          <li>
+            <strong>Natia Ramishvili</strong> (1st year ECE) – <em>Dynamics of String Theory</em>
+            <span class="topic-explain">Introduces how strings evolve and interact mathematically, and why their
+              dynamics are studied as a framework for unifying physical laws.</span>
+
+            <!-- Image Carousel for Natia -->
+            <div class="image-carousel" style="max-width: 700px;">
+              <div class="carousel-container" id="carousel-natia">
+                <div class="carousel-slide">
+                  <img src="images/natia1.jpg" alt="Natia Ramishvili presenting String Theory"
+                    style="max-height: 400px;">
+                  <p class="carousel-caption">Natia Ramishvili presenting "Dynamics of String Theory"</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/natia2.jpg" alt="Natia discussing boundary conditions" style="max-height: 400px;">
+                  <p class="carousel-caption">Exploring Dirichlet boundary conditions in string motion</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/natia3.jpg" alt="String theory mathematical framework" style="max-height: 400px;">
+                  <p class="carousel-caption">Understanding the mathematical framework of string theory</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/natia4.jpg" alt="Dual resonance discovery presentation" style="max-height: 400px;">
+                  <p class="carousel-caption">Presenting dual resonance discovery in particle physics</p>
+                </div>
+              </div>
+              <button class="carousel-button prev" onclick="moveCarousel('natia', -1)">‹</button>
+              <button class="carousel-button next" onclick="moveCarousel('natia', 1)">›</button>
+            </div>
+            <div class="carousel-indicators" id="indicators-natia"></div>
+          </li>
+        </ul>
+
+        <!-- YouTube Video for UGS III -->
+        <div style="max-width: 900px; margin: 2rem auto;">
+          <div
+            style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);">
+            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              src="https://www.youtube.com/embed/6XzCRY7pZyQ" title="UGS III - Full Session" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p style="text-align: center; margin-top: 1rem; font-style: italic; color: var(--text-maroon);">
+            Watch the full UGS III session
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--FOOTER-->
+  <footer>
+    <div class="footer-content">
+      <p>CONNECT WITH US:</p>
+      <div class="socials">
+        <div class="link">
+          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/mathclub.cube/#" target="_blank">Instagram</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/"
+            target="_blank">LinkedIn</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-share"></i>
+          <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438"
+            target="_blank">
+            Sharepoint
+          </a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-youtube"></i>
+          <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:constructor.maths@gmail.com">Email</a>
+        </div>
+      </div>
+      <p>&copy; 2025 The Math Society</p>
+    </div>
+  </footer>
+
+  <script src="../Home Page/landing.js"></script>
+  <script>
+    // Carousel functionality
+    const carousels = {
+      'noah': { currentIndex: 0, totalSlides: 3 },
+      'zakaria': { currentIndex: 0, totalSlides: 1 },
+      'natia': { currentIndex: 0, totalSlides: 4 }
+    };
+
+    function initCarousel(id) {
+      const indicatorsContainer = document.getElementById(`indicators-${id}`);
+      if (!indicatorsContainer) return;
+      for (let i = 0; i < carousels[id].totalSlides; i++) {
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator' + (i === 0 ? ' active' : '');
+        indicator.onclick = () => goToSlide(id, i);
+        indicatorsContainer.appendChild(indicator);
+      }
+    }
+
+    function moveCarousel(id, direction) {
+      const carousel = carousels[id];
+      carousel.currentIndex += direction;
+
+      if (carousel.currentIndex < 0) {
+        carousel.currentIndex = carousel.totalSlides - 1;
+      } else if (carousel.currentIndex >= carousel.totalSlides) {
+        carousel.currentIndex = 0;
+      }
+
+      updateCarousel(id);
+    }
+
+    function goToSlide(id, index) {
+      carousels[id].currentIndex = index;
+      updateCarousel(id);
+    }
+
+    function updateCarousel(id) {
+      const carousel = carousels[id];
+      const container = document.getElementById(`carousel-${id}`);
+      const indicators = document.querySelectorAll(`#indicators-${id} .indicator`);
+
+      container.style.transform = `translateX(-${carousel.currentIndex * 100}%)`;
+
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === carousel.currentIndex);
+      });
+    }
+
+    // Initialize carousels
+    initCarousel('noah');
+    initCarousel('zakaria');
+    initCarousel('natia');
+
+    // Auto-advance carousels every 5 seconds
+    setInterval(() => {
+      moveCarousel('noah', 1);
+      moveCarousel('zakaria', 1);
+      moveCarousel('natia', 1);
+    }, 5000);
+  </script>
+</body>
+
+</html>

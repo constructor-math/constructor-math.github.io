@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UGS 1 – Undergraduate Seminar - Math Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Home Page/landing.css">
+  <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+  <style>
+    #hero {
+      min-height: auto !important;
+      height: auto !important;
+      max-height: none !important;
+      padding-top: 180px !important;
+      padding-bottom: 2.5rem !important;
+      display: block !important;
+    }
+
+    .hero-content {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    #explanation {
+      padding-top: 3rem !important;
+      margin-top: 0 !important;
+    }
+
+    h2 {
+      color: var(--bg-maroon);
+      margin-top: 3.5rem;
+      font-size: 2rem;
+    }
+
+    #hero h3,
+    section h3 {
+      color: var(--text-maroon);
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+
+    /* Talk list styling */
+    .talk-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .talk-list li {
+      background: rgba(128, 0, 0, 0.05);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid rgba(128, 0, 0, 0.3);
+    }
+
+    .talk-list li strong {
+      color: var(--bg-maroon);
+      font-size: 1.1rem;
+    }
+
+    .talk-time {
+      display: block;
+      font-style: italic;
+      color: #666;
+      margin-top: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .topic-explain {
+      display: block;
+      margin-top: 0.75rem;
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .intro-emphasis {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin: 2rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(128, 0, 0, 0.3);
+      font-style: italic;
+    }
+
+    .papers-section {
+      margin-top: 2rem;
+    }
+
+    .papers-section h3 {
+      margin-bottom: 1rem;
+    }
+
+    .paper-item {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(128, 0, 0, 0.1);
+    }
+
+    .paper-item:last-child {
+      border-bottom: none;
+    }
+
+    .paper-item a {
+      color: var(--bg-maroon);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .paper-item a:hover {
+      text-decoration: underline;
+    }
+
+    .poster-image {
+      max-width: 600px;
+      width: 100%;
+      margin: 2rem auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
+
+    /* Image carousel */
+    .image-carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
+
+    .carousel-container {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      border: 2px solid var(--bg-maroon);
+      border-radius: 8px;
+    }
+
+    .carousel-caption {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-style: italic;
+      color: var(--text-maroon);
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(128, 0, 0, 0.7);
+      color: var(--text-beige);
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: background 0.3s;
+      z-index: 10;
+      border-radius: 4px;
+    }
+
+    .carousel-button:hover {
+      background: rgba(128, 0, 0, 0.9);
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(128, 0, 0, 0.3);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .indicator.active {
+      background: var(--bg-maroon);
+    }
+
+    @media (max-width: 768px) {
+      .carousel-button {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--NAVBAR-->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-container logo_title">
+        <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+        <h3>Math Society</h3>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+        <li><a href="ai-ml.html" class="nav-link">AI/ML</a></li>
+        <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank" class="nav-link">Integration
+            Bee</a></li>
+        <li class="dropdown">
+          <a href="ugs.html" class="nav-link active">UGS</a>
+          <ul class="dropdown-menu">
+            <li><a href="ugs1.html">UGS 1</a></li>
+            <li><a href="ugs2.html">UGS 2</a></li>
+            <li><a href="ugs3.html">UGS 3</a></li>
+            <li><a href="ugs4.html">UGS 4</a></li>
+          </ul>
+        </li>
+        <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
+        <li><a href="poker.html" class="nav-link">Poker</a></li>
+        <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!--HEADER-->
+  <section id="hero">
+    <div class="hero-content">
+      <h1 style="margin-top: 0;">The Mathematics Undergraduate Seminar<br>(I)</h1>
+      <p style="font-size: 1.1rem; font-style: italic; margin-top: 0.5rem;">31st March 2025</p>
+      
+      <!-- Event Poster -->
+      <img src="https://constructor-math.github.io/static/teaching/ugs/UgS-poster.png" alt="UGS 1 Poster"
+        class="poster-image" style="max-width: 400px; margin-top: 2rem;">
+    </div>
+  </section>
+
+  <!--CONTENT-->
+  <section id="explanation">
+    <div class="container" style="max-width: 900px;">
+      <div class="content-block">
+
+        <h2 style="margin-top: 0;">The First Undergraduate Seminar Session</h2>
+
+        <p class="intro-emphasis">
+          The very-first undergraduate seminar displayed three motivated speakers. To them, we extend our gratitude for
+          the amazing talks!
+        </p>
+
+        <h3>Speakers & Topics</h3>
+
+        <ul class="talk-list">
+          <li>
+            <strong>Klesta Qehaja</strong> – <em>Random Walks on ℤᵈ</em>
+            <span class="talk-time">19:00—19:30</span>
+            <span class="topic-explain">"A drunk man will find his way home, but a drunk bird may get lost forever" —
+              why does dimension dictate destiny? This intriguing observation lies at the heart of random walks, a
+              fundamental concept bridging probability, physics, and real-world phenomena. In this talk, we explore how
+              the behavior of random walks shifts dramatically with dimensionality. We sketch a proof of this dichotomy,
+              linking combinatorial intuition to deeper mathematical principles. Beyond theory, we highlight
+              applications—from stock market modeling to reveal how random walks underpin unpredictability in financial
+              systems.</span>
+
+            <!-- Image Carousel for Klesta -->
+            <div class="image-carousel" style="max-width: 700px;">
+              <div class="carousel-container" id="carousel-klesta">
+                <div class="carousel-slide">
+                  <img src="images/ugs1/klesta1.jpg" alt="Klesta Qehaja presenting" style="max-height: 400px;">
+                  <p class="carousel-caption">Klesta Qehaja presenting Random Walks on ℤᵈ</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/ugs1/klesta2.jpg" alt="Klesta Qehaja explaining concepts" style="max-height: 400px;">
+                  <p class="carousel-caption">Exploring the mathematics of random walks</p>
+                </div>
+              </div>
+              <button class="carousel-button prev" onclick="moveCarousel('klesta', -1)">‹</button>
+              <button class="carousel-button next" onclick="moveCarousel('klesta', 1)">›</button>
+            </div>
+            <div class="carousel-indicators" id="indicators-klesta"></div>
+
+            <!-- Video for Klesta -->
+            <div style="max-width: 600px; margin: 1.5rem auto;">
+              <div
+                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                  src="https://www.youtube.com/embed/Zp8sxpsh_ZE" title="Klesta Qehaja - Random Walks" frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+          </li>
+          <li>
+            <strong>Ahmed Maghri</strong> – <em>Shor's Quantum Algorithm</em>
+            <span class="talk-time">20:00—20:30</span>
+            <span class="topic-explain">Shor's algorithm presents a polynomial-time quantum solution to the integer
+              factorization problem, threatening classical encryption protocols like RSA. We introduce the mathematical
+              and computational foundations required to understand the algorithm, including modular arithmetic,
+              continued fractions, and quantum principles. We then provide a step-by-step breakdown of Shor's algorithm
+              and its quantum subroutine, emphasizing accessibility and conceptual clarity, while also addressing
+              practical constraints in current quantum hardware.</span>
+
+            <!-- Image Carousel for Ahmed -->
+            <div class="image-carousel" style="max-width: 700px;">
+              <div class="carousel-container" id="carousel-ahmed">
+                <div class="carousel-slide">
+                  <img src="images/ugs1/ahmed1.jpg" alt="Ahmed Maghri presenting Shor's Algorithm"
+                    style="max-height: 400px;">
+                  <p class="carousel-caption">Ahmed Maghri presenting Shor's Quantum Algorithm</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/ugs1/ahmed2.jpg" alt="Ahmed Maghri explaining quantum concepts"
+                    style="max-height: 400px;">
+                  <p class="carousel-caption">Explaining quantum computing principles</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/ugs1/ahmed3.jpg" alt="Ahmed Maghri during presentation" style="max-height: 400px;">
+                  <p class="carousel-caption">Breaking down the algorithm step-by-step</p>
+                </div>
+              </div>
+              <button class="carousel-button prev" onclick="moveCarousel('ahmed', -1)">‹</button>
+              <button class="carousel-button next" onclick="moveCarousel('ahmed', 1)">›</button>
+            </div>
+            <div class="carousel-indicators" id="indicators-ahmed"></div>
+
+            <!-- Video for Ahmed -->
+            <div style="max-width: 600px; margin: 1.5rem auto;">
+              <div
+                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                  src="https://www.youtube.com/embed/G_0H_Fy2vOc" title="Ahmed Maghri - Shor's Quantum Algorithm"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+          </li>
+          <li>
+            <strong>Pablo Santos Guerrero</strong> – <em>On the Piccard—Vessiot Theory of Differential Equations</em>
+            <span class="talk-time">20:30—21:00</span>
+            <span class="topic-explain">This talk focuses on the convenience of combining Algebraic Geometry to study
+              differential equations. The statement of interest is Liouville's Theorem, regarding the general solutions
+              of Linear Differential systems. We demonstrate how solutions to linear differential equations generate
+              field extensions and how their symmetries are captured by linear algebraic groups. Just as Galois
+              revolutionized algebra with his work, this talk is an invitation to share the regard for algebra and its
+              usefulness in many areas of mathematics.</span>
+
+            <!-- Image Carousel for Pablo -->
+            <div class="image-carousel" style="max-width: 700px;">
+              <div class="carousel-container" id="carousel-pablo">
+                <div class="carousel-slide">
+                  <img src="images/ugs1/pablo1.jpg" alt="Pablo Santos Guerrero presenting" style="max-height: 400px;">
+                  <p class="carousel-caption">Pablo Santos Guerrero presenting Piccard-Vessiot Theory</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/ugs1/pablo2.jpg" alt="Pablo Santos Guerrero explaining Galois theory"
+                    style="max-height: 400px;">
+                  <p class="carousel-caption">Connecting Galois theory to differential equations</p>
+                </div>
+                <div class="carousel-slide">
+                  <img src="images/ugs1/pablo3.jpg" alt="Pablo Santos Guerrero during talk" style="max-height: 400px;">
+                  <p class="carousel-caption">Demonstrating field extensions and algebraic groups</p>
+                </div>
+              </div>
+              <button class="carousel-button prev" onclick="moveCarousel('pablo', -1)">‹</button>
+              <button class="carousel-button next" onclick="moveCarousel('pablo', 1)">›</button>
+            </div>
+            <div class="carousel-indicators" id="indicators-pablo"></div>
+
+            <!-- Video for Pablo -->
+            <div style="max-width: 600px; margin: 1.5rem auto;">
+              <div
+                style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);">
+                <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                  src="https://www.youtube.com/embed/k_PkUqePO5w" title="Pablo Santos Guerrero - Piccard-Vessiot Theory"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+          </li>
+        </ul>
+
+        <h2>Papers & Extended Articles</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Participation in the UGS concludes with extended articles on the chosen topics.
+        </p>
+
+        <div class="papers-section">
+          <div class="paper-item">
+            <a href="https://constructor-math.github.io/assets/pdf/teaching/ugs/Maghri-Qubit-Shor-i-1.pdf"
+              target="_blank">Shor's Quantum Algorithm</a> — Ahmed Maghri
+          </div>
+          <div class="paper-item">
+            Random Walks on ℤᵈ — Klesta Qehaja <em>(coming soon)</em>
+          </div>
+          <div class="paper-item">
+            On the Piccard—Vessiot Theory of Differential Equations — Pablo Santos Guerrero <em>(coming soon)</em>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--FOOTER-->
+  <footer>
+    <div class="footer-content">
+      <p>CONNECT WITH US:</p>
+      <div class="socials">
+        <div class="link">
+          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/mathclub.cube/#" target="_blank">Instagram</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/"
+            target="_blank">LinkedIn</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-share"></i>
+          <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438"
+            target="_blank">
+            Sharepoint
+          </a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-youtube"></i>
+          <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:constructor.maths@gmail.com">Email</a>
+        </div>
+      </div>
+      <p>&copy; 2025 The Math Society</p>
+    </div>
+  </footer>
+
+  <script src="../Home Page/landing.js"></script>
+  <script>
+    // Carousel functionality
+    const carousels = {
+      'klesta': { currentIndex: 0, totalSlides: 2 },
+      'ahmed': { currentIndex: 0, totalSlides: 3 },
+      'pablo': { currentIndex: 0, totalSlides: 3 }
+    };
+
+    function initCarousel(id) {
+      const indicatorsContainer = document.getElementById(`indicators-${id}`);
+      if (!indicatorsContainer) return;
+      for (let i = 0; i < carousels[id].totalSlides; i++) {
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator' + (i === 0 ? ' active' : '');
+        indicator.onclick = () => goToSlide(id, i);
+        indicatorsContainer.appendChild(indicator);
+      }
+    }
+
+    function moveCarousel(id, direction) {
+      const carousel = carousels[id];
+      carousel.currentIndex += direction;
+
+      if (carousel.currentIndex < 0) {
+        carousel.currentIndex = carousel.totalSlides - 1;
+      } else if (carousel.currentIndex >= carousel.totalSlides) {
+        carousel.currentIndex = 0;
+      }
+
+      updateCarousel(id);
+    }
+
+    function goToSlide(id, index) {
+      carousels[id].currentIndex = index;
+      updateCarousel(id);
+    }
+
+    function updateCarousel(id) {
+      const carousel = carousels[id];
+      const container = document.getElementById(`carousel-${id}`);
+      const indicators = document.querySelectorAll(`#indicators-${id} .indicator`);
+
+      container.style.transform = `translateX(-${carousel.currentIndex * 100}%)`;
+
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === carousel.currentIndex);
+      });
+    }
+
+    // Initialize carousels
+    initCarousel('klesta');
+    initCarousel('ahmed');
+    initCarousel('pablo');
+
+    // Auto-advance carousels every 5 seconds
+    setInterval(() => {
+      moveCarousel('klesta', 1);
+      moveCarousel('ahmed', 1);
+      moveCarousel('pablo', 1);
+    }, 5000);
+  </script>
+</body>
+
+</html>

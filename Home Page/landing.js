@@ -7,10 +7,34 @@ document.addEventListener('DOMContentLoaded', () => {
         navLinks.classList.toggle('active');
     });
 
-    // Close menu when a link is clicked
+    // Close menu when a link is clicked (except dropdown toggle)
     document.querySelectorAll('.nav-links li a').forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.classList.remove('active');
+        link.addEventListener('click', (e) => {
+            // Don't close menu if it's a dropdown toggle on mobile
+            if (!link.classList.contains('dropdown-toggle')) {
+                navLinks.classList.remove('active');
+            }
+        });
+    });
+
+    // Dropdown functionality for mobile
+    const dropdowns = document.querySelectorAll('.dropdown');
+    dropdowns.forEach(dropdown => {
+        const toggle = dropdown.querySelector('.dropdown-toggle');
+        
+        // On mobile, clicking the dropdown toggle should toggle the submenu
+        toggle.addEventListener('click', (e) => {
+            if (window.innerWidth <= 768) {
+                e.preventDefault();
+                dropdown.classList.toggle('active');
+                
+                // Close other dropdowns
+                dropdowns.forEach(otherDropdown => {
+                    if (otherDropdown !== dropdown) {
+                        otherDropdown.classList.remove('active');
+                    }
+                });
+            }
         });
     });
 

@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UGS 2 – Undergraduate Seminar - Math Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Home Page/landing.css">
+  <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+  <style>
+    #hero {
+      min-height: auto !important;
+      height: auto !important;
+      max-height: none !important;
+      padding-top: 180px !important;
+      padding-bottom: 2.5rem !important;
+      display: block !important;
+    }
+
+    .hero-content {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    #explanation {
+      padding-top: 3rem !important;
+      margin-top: 0 !important;
+    }
+
+    h2 {
+      color: var(--bg-maroon);
+      margin-top: 3.5rem;
+      font-size: 2rem;
+    }
+
+    #hero h3,
+    section h3 {
+      color: var(--text-maroon);
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+
+    /* Talk list styling */
+    .talk-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .talk-list li {
+      background: rgba(128, 0, 0, 0.05);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid rgba(128, 0, 0, 0.3);
+    }
+
+    .talk-list li strong {
+      color: var(--bg-maroon);
+      font-size: 1.1rem;
+    }
+
+    .talk-time {
+      display: block;
+      font-style: italic;
+      color: #666;
+      margin-top: 0.25rem;
+      font-size: 0.9rem;
+    }
+
+    .topic-explain {
+      display: block;
+      margin-top: 0.75rem;
+      color: #333;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .intro-emphasis {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin: 2rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(128, 0, 0, 0.3);
+      font-style: italic;
+    }
+
+    .papers-section {
+      margin-top: 2rem;
+    }
+
+    .papers-section h3 {
+      margin-bottom: 1rem;
+    }
+
+    .paper-item {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid rgba(128, 0, 0, 0.1);
+    }
+
+    .paper-item:last-child {
+      border-bottom: none;
+    }
+
+    .paper-item a {
+      color: var(--bg-maroon);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .paper-item a:hover {
+      text-decoration: underline;
+    }
+
+    .poster-image {
+      max-width: 600px;
+      width: 100%;
+      margin: 2rem auto;
+      display: block;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
+
+    .livestream-link {
+      display: inline-block;
+      background-color: var(--bg-maroon);
+      color: var(--text-beige);
+      padding: 1rem 2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      margin: 1.5rem 0;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: opacity 0.3s;
+    }
+
+    .livestream-link:hover {
+      opacity: 0.8;
+    }
+
+    /* Image carousel */
+    .image-carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
+
+    .carousel-container {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      border: 2px solid var(--bg-maroon);
+      border-radius: 8px;
+    }
+
+    .carousel-caption {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-style: italic;
+      color: var(--text-maroon);
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(128, 0, 0, 0.7);
+      color: var(--text-beige);
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: background 0.3s;
+      z-index: 10;
+      border-radius: 4px;
+    }
+
+    .carousel-button:hover {
+      background: rgba(128, 0, 0, 0.9);
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(128, 0, 0, 0.3);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .indicator.active {
+      background: var(--bg-maroon);
+    }
+
+    @media (max-width: 768px) {
+      .carousel-button {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--NAVBAR-->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-container logo_title">
+        <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+        <h3>Math Society</h3>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+        <li><a href="ai-ml.html" class="nav-link">AI/ML</a></li>
+        <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank" class="nav-link">Integration
+            Bee</a></li>
+        <li class="dropdown">
+          <a href="ugs.html" class="nav-link active">UGS</a>
+          <ul class="dropdown-menu">
+            <li><a href="ugs1.html">UGS 1</a></li>
+            <li><a href="ugs2.html">UGS 2</a></li>
+            <li><a href="ugs3.html">UGS 3</a></li>
+            <li><a href="ugs4.html">UGS 4</a></li>
+          </ul>
+        </li>
+        <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
+        <li><a href="poker.html" class="nav-link">Poker</a></li>
+        <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!--HEADER-->
+  <section id="hero">
+    <div class="hero-content">
+      <h1>The Mathematics Undergraduate Seminar<br>(II)</h1>
+      <p style="font-size: 1.1rem; font-style: italic; margin-top: 0.5rem;">1st May 2025</p>
+      
+      <!-- Event Poster -->
+      <img src="https://constructor-math.github.io/static/teaching/ugs/ugs-2-poster.png" alt="UGS 2 Poster"
+        class="poster-image" style="max-width: 400px; margin-top: 2rem;">
+    </div>
+  </section>
+
+  <!--CONTENT-->
+  <section id="explanation">
+    <div class="container" style="max-width: 900px;">
+      <div class="content-block">
+
+        <h2 style="margin-top: 0;">The Second Undergraduate Seminar Session</h2>
+
+            <p style="font-size: 1.15rem; line-height: 1.8;">
+              The second session of UGS continued our exploration of mathematics across disciplines, featuring talks on
+              protein structure determination, coding theory, and legendary mathematical problems.
+            </p>
+
+            <h3>Speakers & Topics</h3>
+
+            <ul class="talk-list">
+              <li>
+                <strong>Loredana-Maria Iacob</strong> – <em>Mathematics of Protein Structure Determination</em>
+                <span class="talk-time">18:30—19:05</span>
+                <span class="topic-explain">Scientists lacked a clear understanding of how waves interact with atoms and
+                  crystals. Analysing diffraction peaks determines the spacing between atomic planes and, consequently,
+                  the crystal's structure. In this talk, we introduce Bragg's law in the context of X-ray
+                  Crystallography. We outline the protein structure determination by crystallization, Fourier analysis
+                  on diffraction intensities, and finally solving the electron density map. Even in a field where
+                  mathematics is assumably absent, this talk illustrates the power of mathematical construction and its
+                  unforeseen applicability to complex systems and real-world phenomena.</span>
+
+                <!-- Image Carousel for Loredana -->
+                <div class="image-carousel" style="max-width: 700px;">
+                  <div class="carousel-container" id="carousel-loredana">
+                    <div class="carousel-slide">
+                      <img src="images/ugs2/loredana1.jpg" alt="Loredana-Maria Iacob at UGS 2"
+                        style="max-height: 400px;">
+                      <p class="carousel-caption">Loredana-Maria Iacob at the Mathematics Undergraduate Seminar</p>
+                    </div>
+                  </div>
+                  <button class="carousel-button prev" onclick="moveCarousel('loredana', -1)">‹</button>
+                  <button class="carousel-button next" onclick="moveCarousel('loredana', 1)">›</button>
+                </div>
+                <div class="carousel-indicators" id="indicators-loredana"></div>
+
+                <!-- Video for Loredana -->
+                <div style="max-width: 700px; margin: 1.5rem auto;">
+                  <div
+                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                      src="https://www.youtube.com/embed/JwmG4S3d9e0" title="Loredana-Maria Iacob - Protein Structure"
+                      frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong>Aly Assaf</strong> – <em>On the Problem of Reliable Communication: Shannon's Theorem and Polar Codes</em>
+                <span class="talk-time">19:30—20:05</span>
+                <span class="topic-explain">Coding Theory is responsible for facilitating reliable message-passing over
+                  communication channels. In 1948, Claude Shannon proved that for every channel, there exists a family
+                  of error-correcting codes that allow reliable communication at any rate below the channel's capacity.
+                  This talk introduces the general Coding Theory scheme and outlines Shannon's key arguments. We explore
+                  Erdal Arikan's polar codes, the first constructive example to achieve Shannon's maximum capacity over
+                  symmetric binary-input memoryless channels—a discovery presenting a strong candidate for future 6G
+                  communication.</span>
+
+                <!-- Image Carousel for Aly -->
+                <div class="image-carousel" style="max-width: 700px;">
+                  <div class="carousel-container" id="carousel-aly">
+                    <div class="carousel-slide">
+                      <img src="images/ugs2/aly1.jpg" alt="Aly Assaf at UGS 2" style="max-height: 400px;">
+                      <p class="carousel-caption">Aly Assaf at the Mathematics Undergraduate Seminar</p>
+                    </div>
+                  </div>
+                  <button class="carousel-button prev" onclick="moveCarousel('aly', -1)">‹</button>
+                  <button class="carousel-button next" onclick="moveCarousel('aly', 1)">›</button>
+                </div>
+                <div class="carousel-indicators" id="indicators-aly"></div>
+
+                <!-- Video for Aly -->
+                <div style="max-width: 700px; margin: 1.5rem auto;">
+                  <div
+                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                      src="https://www.youtube.com/embed/NYPzR_iTFDA"
+                      title="Aly Assaf - Shannon's Theorem and Polar Codes" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+                </div>
+              </li>
+
+              <li>
+                <strong>Vano Kakiashvili</strong> – <em>The Legend of Question Six</em>
+                <span class="talk-time">20:10—20:45</span>
+                <span class="topic-explain">The Legend of Problem 6 goes back to the 1988 International Mathematics
+                  Olympiad for high school students. The problem is so challenging that four brilliant number theorists
+                  could not solve it in six hours. Behind this problem lies a powerful and elegant technique known as
+                  Vieta Jumping, used to tackle Diophantine equations. Our goal is to explore the underlying ideas of
+                  Vieta Jumping, its strategic use in proofs by contradiction, and its role in unlocking unexpected
+                  symmetries. This talk offers both insight and inspiration for problem-solving.</span>
+
+                <!-- Image Carousel for Vano -->
+                <div class="image-carousel" style="max-width: 700px;">
+                  <div class="carousel-container" id="carousel-vano">
+                    <div class="carousel-slide">
+                      <img src="images/ugs2/vano1.jpg" alt="Vano Kakiashvili at UGS 2" style="max-height: 400px;">
+                      <p class="carousel-caption">Vano Kakiashvili at the Mathematics Undergraduate Seminar</p>
+                    </div>
+                  </div>
+                  <button class="carousel-button prev" onclick="moveCarousel('vano', -1)">‹</button>
+                  <button class="carousel-button next" onclick="moveCarousel('vano', 1)">›</button>
+                </div>
+                <div class="carousel-indicators" id="indicators-vano"></div>
+
+                <!-- Video for Vano -->
+                <div style="max-width: 700px; margin: 1.5rem auto;">
+                  <div
+                    style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);">
+                    <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                      src="https://www.youtube.com/embed/SIwjNc6m78U"
+                      title="Vano Kakiashvili - The Legend of Question Six" frameborder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowfullscreen>
+                    </iframe>
+                  </div>
+                </div>
+              </li>
+            </ul>
+
+          </div>
+    </div>
+  </section>
+
+  <!--FOOTER-->
+  <footer>
+    <div class="footer-content">
+      <p>CONNECT WITH US:</p>
+      <div class="socials">
+        <div class="link">
+          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/mathclub.cube/#" target="_blank">Instagram</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/"
+            target="_blank">LinkedIn</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-share"></i>
+          <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438"
+            target="_blank">
+            Sharepoint
+          </a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-youtube"></i>
+          <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:constructor.maths@gmail.com">Email</a>
+        </div>
+      </div>
+      <p>&copy; 2025 The Math Society</p>
+    </div>
+  </footer>
+
+  <script src="../Home Page/landing.js"></script>
+  <script>
+    // Carousel functionality
+    const carousels = {
+      'loredana': { currentIndex: 0, totalSlides: 1 },
+      'aly': { currentIndex: 0, totalSlides: 1 },
+      'vano': { currentIndex: 0, totalSlides: 1 }
+    };
+
+    function initCarousel(id) {
+      const indicatorsContainer = document.getElementById(`indicators-${id}`);
+      if (!indicatorsContainer) return;
+      for (let i = 0; i < carousels[id].totalSlides; i++) {
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator' + (i === 0 ? ' active' : '');
+        indicator.onclick = () => goToSlide(id, i);
+        indicatorsContainer.appendChild(indicator);
+      }
+    }
+
+    function moveCarousel(id, direction) {
+      const carousel = carousels[id];
+      carousel.currentIndex += direction;
+
+      if (carousel.currentIndex < 0) {
+        carousel.currentIndex = carousel.totalSlides - 1;
+      } else if (carousel.currentIndex >= carousel.totalSlides) {
+        carousel.currentIndex = 0;
+      }
+
+      updateCarousel(id);
+    }
+
+    function goToSlide(id, index) {
+      carousels[id].currentIndex = index;
+      updateCarousel(id);
+    }
+
+    function updateCarousel(id) {
+      const carousel = carousels[id];
+      const container = document.getElementById(`carousel-${id}`);
+      const offset = -carousel.currentIndex * 100;
+      container.style.transform = `translateX(${offset}%)`;
+
+      const indicators = document.querySelectorAll(`#indicators-${id} .indicator`);
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === carousel.currentIndex);
+      });
+    }
+
+    // Initialize carousels
+    initCarousel('loredana');
+    initCarousel('aly');
+    initCarousel('vano');
+
+    // Auto-advance carousels every 5 seconds
+    setInterval(() => {
+      moveCarousel('loredana', 1);
+      moveCarousel('aly', 1);
+      moveCarousel('vano', 1);
+    }, 5000);
+  </script>
+</body>
+
+</html>
