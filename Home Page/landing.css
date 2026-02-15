@@ -72,6 +72,17 @@ body {
     position: relative;
 }
 
+/* Create an invisible bridge between link and dropdown */
+.dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
+}
+
 .dropdown-menu {
     position: absolute;
     top: 100%;
@@ -79,7 +90,8 @@ body {
     background-color: var(--bg-maroon);
     list-style: none;
     padding: 0.5rem 0;
-    margin-top: 0.5rem;
+    margin-top: 0;
+    padding-top: 0.5rem;
     min-width: 150px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
