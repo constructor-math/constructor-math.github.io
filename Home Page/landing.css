@@ -72,6 +72,22 @@ body {
     position: relative;
 }
 
+/* Desktop: dropdown-header is invisible, children display normally */
+.dropdown-header {
+    display: contents; /* Makes wrapper invisible on desktop */
+}
+
+/* Mobile dropdown toggle button - hidden on desktop */
+.dropdown-toggle-mobile {
+    display: none;
+    color: var(--text-beige);
+    font-size: 0.9em;
+    cursor: pointer;
+    padding: 0.5rem;
+    user-select: none;
+    transition: transform 0.3s;
+}
+
 /* Create an invisible bridge between link and dropdown */
 .dropdown::after {
     content: '';
@@ -104,6 +120,7 @@ body {
     pointer-events: none;
 }
 
+/* Desktop: dropdown appears on hover */
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
@@ -300,6 +317,13 @@ footer {
         padding-top: 2rem;
         transform: translateX(100%);
         transition: transform 0.3s ease-in-out;
+        gap: 0; /* Remove gap on mobile */
+    }
+    
+    .nav-links > li {
+        width: 100%;
+        text-align: center;
+        padding: 0.8rem 0;
     }
 
     .nav-links.active {
@@ -308,6 +332,7 @@ footer {
 
     /* Mobile dropdown styles */
     .dropdown-menu {
+        display: block !important; /* Show on mobile */
         position: static !important;
         opacity: 0;
         visibility: hidden;
@@ -317,8 +342,10 @@ footer {
         margin-top: 0;
         box-shadow: none;
         border-radius: 0;
-        transition: max-height 0.3s, opacity 0.3s, visibility 0.3s;
+        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
         pointer-events: auto;
+        background-color: rgba(0, 0, 0, 0.3);
+        width: 100%;
     }
 
     .dropdown:hover .dropdown-menu {
@@ -330,12 +357,55 @@ footer {
     .dropdown.active .dropdown-menu {
         opacity: 1;
         visibility: visible;
-        max-height: 300px;
+        max-height: 400px;
+        margin-top: 0;
+        margin-bottom: 0;
     }
 
     .dropdown-menu a {
         padding: 0.6rem 2rem;
         background-color: rgba(0, 0, 0, 0.2);
+        border-bottom: 1px solid rgba(245, 245, 220, 0.1);
+    }
+    
+    .dropdown-menu a:last-child {
+        border-bottom: none;
+    }
+    
+    /* Show and style the mobile dropdown toggle */
+    .dropdown-toggle-mobile {
+        display: inline-block;
+        margin-left: 0.5rem;
+        transition: transform 0.3s ease;
+    }
+    
+    .dropdown.active .dropdown-toggle-mobile {
+        transform: rotate(180deg);
+    }
+    
+    /* Arrange UGS text and arrow horizontally on mobile */
+    .dropdown {
+        width: 100%;
+        display: flex;
+        flex-direction: column; /* Changed to column so dropdown flows below */
+        align-items: center;
+        position: relative;
+    }
+    
+    .dropdown-header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .dropdown .nav-link {
+        margin: 0;
+    }
+    
+    .dropdown-menu {
+        position: static !important; /* Keep static so it pushes content down */
+        width: 100%;
     }
 
     #hero h1 {
