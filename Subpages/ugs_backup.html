@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UGS – Undergraduate Seminar - Math Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Home Page/landing.css">
+  <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+  <style>
+    #hero {
+      min-height: auto !important;
+      height: auto !important;
+      max-height: none !important;
+      padding-top: 180px !important;
+      padding-bottom: 2.5rem !important;
+      display: block !important;
+    }
+
+    .hero-content {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    #explanation {
+      padding-top: 3rem !important;
+      margin-top: 0 !important;
+    }
+
+    .highlight-box {
+      background-color: rgba(128, 0, 0, 0.1);
+      padding: 1.5rem;
+      border-left: 4px solid var(--bg-maroon);
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .intro-emphasis {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin: 2rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(128, 0, 0, 0.3);
+    }
+
+    .key-takeaway {
+      background-color: rgba(128, 0, 0, 0.05);
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+      font-size: 1.05rem;
+    }
+
+    h2 {
+      color: var(--bg-maroon);
+      margin-top: 3.5rem;
+      font-size: 2rem;
+    }
+
+    #hero h3,
+    section h3 {
+      color: var(--text-maroon);
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+
+    /* Image carousel */
+    .image-carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
+
+    .carousel-container {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      border: 2px solid var(--bg-maroon);
+      border-radius: 8px;
+    }
+
+    .carousel-caption {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-style: italic;
+      color: var(--text-maroon);
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(128, 0, 0, 0.7);
+      color: var(--text-beige);
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: background 0.3s;
+      z-index: 10;
+      border-radius: 4px;
+    }
+
+    .carousel-button:hover {
+      background: rgba(128, 0, 0, 0.9);
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(128, 0, 0, 0.3);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .indicator.active {
+      background: var(--bg-maroon);
+    }
+
+    /* Talk list styling */
+    .talk-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .talk-list li {
+      background: rgba(128, 0, 0, 0.05);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid rgba(128, 0, 0, 0.3);
+    }
+
+    .talk-list li strong {
+      color: var(--bg-maroon);
+      font-size: 1.1rem;
+    }
+
+    .topic-explain {
+      display: block;
+      margin-top: 0.75rem;
+      font-style: italic;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    /* External link button */
+    .external-link {
+      display: inline-block;
+      background-color: var(--bg-maroon);
+      color: var(--text-beige);
+      padding: 0.8rem 1.5rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin: 1rem 0;
+      transition: opacity 0.3s;
+      font-weight: 600;
+    }
+
+    .external-link:hover {
+      opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-button {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!--NAVBAR-->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-container logo_title">
+        <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+        <h3>Math Society</h3>
+      </div>
+      <ul class="nav-links">
+        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+        <li><a href="ai-ml.html" class="nav-link">AI/ML</a></li>
+        <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank" class="nav-link">Integration
+            Bee</a></li>
+        <li class="dropdown">
+            <a href="ugs.html" class="nav-link active">UGS</a>
+            <ul class="dropdown-menu">
+                <li><a href="ugs1.html">UGS 1</a></li>
+                <li><a href="ugs2.html">UGS 2</a></li>
+                <li><a href="ugs3.html">UGS 3</a></li>
+                <li><a href="ugs4.html">UGS 4</a></li>
+            </ul>
+        </li>
+        <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
+        <li><a href="poker.html" class="nav-link">Poker</a></li>
+        <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!--HERO SECTION-->
+  <section id="hero" style="padding-top: 0; padding-bottom: 0; min-height: auto; margin-top: 0;">
+    <div class="hero-content" style="text-align: center; padding-top: 1rem;">
+      <h1 style="margin-top: 0;">The Undergraduate Seminar (UGS)</h1>
+      <p style="font-size: 1.3rem; margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        Innovative undergraduate research at the intersection of mathematics, computing, and discovery
+      </p>
+      <p style="font-size: 1.1rem; font-style: italic; margin-top: 0.5rem;">
+        From first principles to cutting-edge research
+      </p>
+    </div>
+  </section>
+
+  <!--CONTENT-->
+  <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
+    <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
+      <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
+
+        <!-- Introduction -->
+        <h2 style="margin-top: 0;">Where Undergraduates Share Their Research</h2>
+
+        <p class="intro-emphasis">
+          <em>Student-led. Research-driven. Pizza-fueled.</em><br>
+          The Undergraduate Seminar is a platform where students explore mathematical ideas, computational methods, and
+          scientific discoveries through expository talks.
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          From string theory to machine learning, from optimization algorithms to cosmological models, UGS showcases the
+          diverse interests and talents of our undergraduate community. Each session features three speakers presenting
+          topics they're passionate about, followed by discussions and networking over pizza.
+        </p>
+
+        <!-- UGS III Section -->
+        <h2>UGS (III) – 20th October 2025</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          The third edition of UGS brought together three fascinating talks spanning physics, computer science, and
+          engineering.
+        </p>
+
+        <h3>Speakers & Topics</h3>
+
+        <ul class="talk-list">
+          <li>
+            <strong>Noah Horne</strong> (3rd year PhDS) – <em>Lagrangian Putt-Putt: Forced Geodesic Motion on Arbitrary
+              C² Surfaces</em>
+            <span class="topic-explain">Models motion constrained to curved surfaces using variational (Lagrangian)
+              mechanics, explaining how curvature affects trajectories (geodesics).</span>
+          </li>
+          <li>
+            <strong>Zakaria Ghoddane</strong> (1st year CS) – <em>Mathematical and Algorithmic Optimization of
+              Irrigation and Drone Use</em>
+            <span class="topic-explain">Combines optimization and sensing: using drone data (e.g., vegetation indices)
+              to schedule irrigation efficiently under water and cost constraints.</span>
+          </li>
+          <li>
+            <strong>Natia Ramishvili</strong> (1st year ECE) – <em>Dynamics of String Theory</em>
+            <span class="topic-explain">Introduces how strings evolve and interact mathematically, and why their
+              dynamics are studied as a framework for unifying physical laws.</span>
+          </li>
+        </ul>
+
+        <!-- Image Carousel for UGS III -->
+        <div class="image-carousel">
+          <div class="carousel-container" id="carousel-ugs3">
+            <div class="carousel-slide">
+              <img src="images/natia1.jpg" alt="Natia Ramishvili presenting String Theory">
+              <p class="carousel-caption">Natia Ramishvili presenting "Dynamics of String Theory"</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/natia2.jpg" alt="Natia discussing boundary conditions">
+              <p class="carousel-caption">Exploring Dirichlet boundary conditions in string motion</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/natia3.jpg" alt="String theory mathematical framework">
+              <p class="carousel-caption">Understanding the mathematical framework of string theory</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/natia4.jpg" alt="Dual resonance discovery presentation">
+              <p class="carousel-caption">Presenting dual resonance discovery in particle physics</p>
+            </div>
+          </div>
+          <button class="carousel-button prev" onclick="moveCarousel('ugs3', -1)">‹</button>
+          <button class="carousel-button next" onclick="moveCarousel('ugs3', 1)">›</button>
+        </div>
+        <div class="carousel-indicators" id="indicators-ugs3"></div>
+
+        <!-- YouTube Video for UGS III -->
+        <div style="max-width: 900px; margin: 2rem auto;">
+          <div
+            style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);">
+            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              src="https://www.youtube.com/embed/6XzCRY7pZyQ" title="UGS III - Full Session" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p style="text-align: center; margin-top: 1rem; font-style: italic; color: var(--text-maroon);">
+            Watch the full UGS III session
+          </p>
+        </div>
+
+        <!-- UGS IV Section -->
+        <h2>UGS (IV) – 22nd November 2025</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          The fourth session continued our exploration of mathematics across disciplines, featuring topics from
+          cosmology to machine learning to forensic accounting.
+        </p>
+
+        <h3>Speakers & Topics</h3>
+
+        <ul class="talk-list">
+          <li>
+            <strong>Mariami Lominashvili</strong> (2nd year PhDS) – <em>Dark Energies and Accelerating Universe</em>
+            <span class="topic-explain">Explores why the universe's expansion speeds up, and how "dark energy" is
+              modeled and tested using cosmological observations.</span>
+          </li>
+          <li>
+            <strong>Tanya Goenka</strong> (1st year CS) – <em>Runge–Kutta method for solving differential equations is
+              used in neural networks</em>
+            <span class="topic-explain">Shows how numerical ODE solvers (like Runge–Kutta) connect to modern ML ideas
+              such as Neural ODEs, improving stability and interpretability.</span>
+          </li>
+          <li>
+            <strong>Rakan Al-Khatib</strong> (1st year IEM) – <em>Benford's law: how many false accounting reports are
+              there in the world</em>
+            <span class="topic-explain">Uses digit-distribution patterns (Benford's law) to flag anomalies in financial
+              data and discuss how it helps detect possible fraud.</span>
+          </li>
+        </ul>
+
+        <!-- Image Carousel for Mariami -->
+        <div class="image-carousel">
+          <div class="carousel-container" id="carousel-mariami">
+            <div class="carousel-slide">
+              <img src="images/mariami1.jpg" alt="Mariami Lominashvili presenting FLRW Metric">
+              <p class="carousel-caption">Mariami Lominashvili explaining the FLRW Metric in cosmology</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/mariami2.jpg" alt="Mariami discussing Copernican principle">
+              <p class="carousel-caption">Presenting the Copernican principle and universe homogeneity</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/mariami3.jpg" alt="Mariami using interactive board for Newtonian limit">
+              <p class="carousel-caption">Interactive demonstration of the Newtonian limit in cosmology</p>
+            </div>
+          </div>
+          <button class="carousel-button prev" onclick="moveCarousel('mariami', -1)">‹</button>
+          <button class="carousel-button next" onclick="moveCarousel('mariami', 1)">›</button>
+        </div>
+        <div class="carousel-indicators" id="indicators-mariami"></div>
+
+        <!-- Image Carousel for Tanya -->
+        <div class="image-carousel">
+          <div class="carousel-container" id="carousel-tanya">
+            <div class="carousel-slide">
+              <img src="images/tanya1.jpg" alt="Tanya Goenka presenting Runge-Kutta methods">
+              <p class="carousel-caption">Tanya Goenka presenting "Runge-Kutta method for solving differential
+                equations"</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/tanya2.jpg" alt="Tanya discussing Neural ODEs">
+              <p class="carousel-caption">Exploring the importance of numerical solvers in Neural ODEs</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/tanya3.jpg" alt="Tanya explaining core idea behind Runge-Kutta">
+              <p class="carousel-caption">Breaking down the core idea behind Runge-Kutta methods</p>
+            </div>
+          </div>
+          <button class="carousel-button prev" onclick="moveCarousel('tanya', -1)">‹</button>
+          <button class="carousel-button next" onclick="moveCarousel('tanya', 1)">›</button>
+        </div>
+        <div class="carousel-indicators" id="indicators-tanya"></div>
+
+        <!-- Image Carousel for Rakan -->
+        <div class="image-carousel">
+          <div class="carousel-container" id="carousel-rakan">
+            <div class="carousel-slide">
+              <img src="images/rakan1.jpg" alt="Rakan Al-Khatib presenting Benford's Law experiment">
+              <p class="carousel-caption">Rakan Al-Khatib presenting his experiment on leading digit distribution</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/rakan2.jpg" alt="Rakan discussing Benford's Law question">
+              <p class="carousel-caption">Exploring how Benford's Law applies to real-world data</p>
+            </div>
+            <div class="carousel-slide">
+              <img src="images/rakan3.jpg" alt="Rakan explaining the discovery of Benford's Law">
+              <p class="carousel-caption">Tracing the historical discovery of Benford's Law from 1881 to 1938</p>
+            </div>
+          </div>
+          <button class="carousel-button prev" onclick="moveCarousel('rakan', -1)">‹</button>
+          <button class="carousel-button next" onclick="moveCarousel('rakan', 1)">›</button>
+        </div>
+        <div class="carousel-indicators" id="indicators-rakan"></div>
+
+        <!-- YouTube Video for UGS IV -->
+        <div style="max-width: 900px; margin: 2rem auto;">
+          <div
+            style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 8px; box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);">
+            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+              src="https://www.youtube.com/embed/H-_EXTiDkhY" title="UGS IV - Full Session" frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+          <p style="text-align: center; margin-top: 1rem; font-style: italic; color: var(--text-maroon);">
+            Watch the full UGS IV session
+          </p>
+        </div>
+
+        <!-- Join Section -->
+        <h2>Present at UGS!</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          This is your sign to give a talk. We walk you through the process of picking, preparing, and presenting a
+          topic. All we require from your side is enthusiasm 🔥
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 1rem;">
+          Whether you're exploring a fascinating theorem, working on a research project, or have discovered an
+          interesting connection between mathematics and another field, UGS is the perfect platform to share your
+          passion with the community.
+        </p>
+
+        <div style="text-align: center; margin: 2rem 0;">
+          <a href="https://forms.gle/2bs7W1YKdb2SQSSQA" target="_blank" class="external-link">
+            Sign-up Form – Propose Your Talk
+          </a>
+        </div>
+
+        <div class="key-takeaway" style="margin-top: 3rem;">
+          <strong>Why Participate?</strong> The Undergraduate Seminar provides a supportive environment for students to
+          develop their presentation skills, receive constructive feedback, and connect with peers who share similar
+          academic interests. Plus, there's always pizza! 🍕
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!--FOOTER-->
+  <footer>
+    <div class="footer-content">
+      <p>CONNECT WITH US:</p>
+      <div class="socials">
+        <div class="link">
+          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/mathclub.cube/#" target="_blank">Instagram</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/"
+            target="_blank">LinkedIn</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-share"></i>
+          <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438"
+            target="_blank">
+            Sharepoint
+          </a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-youtube"></i>
+          <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+        </div>
+      </div>
+      <p>&copy; 2025 The Math Society</p>
+    </div>
+  </footer>
+
+  <script src="../Home Page/landing.js"></script>
+  <script>
+    // Carousel functionality
+    const carousels = {
+      'ugs3': { currentIndex: 0, totalSlides: 4 },
+      'mariami': { currentIndex: 0, totalSlides: 3 },
+      'tanya': { currentIndex: 0, totalSlides: 3 },
+      'rakan': { currentIndex: 0, totalSlides: 3 }
+    };
+
+    function initCarousel(id) {
+      const indicatorsContainer = document.getElementById(`indicators-${id}`);
+      for (let i = 0; i < carousels[id].totalSlides; i++) {
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator' + (i === 0 ? ' active' : '');
+        indicator.onclick = () => goToSlide(id, i);
+        indicatorsContainer.appendChild(indicator);
+      }
+    }
+
+    function moveCarousel(id, direction) {
+      const carousel = carousels[id];
+      carousel.currentIndex += direction;
+
+      if (carousel.currentIndex < 0) {
+        carousel.currentIndex = carousel.totalSlides - 1;
+      } else if (carousel.currentIndex >= carousel.totalSlides) {
+        carousel.currentIndex = 0;
+      }
+
+      updateCarousel(id);
+    }
+
+    function goToSlide(id, index) {
+      carousels[id].currentIndex = index;
+      updateCarousel(id);
+    }
+
+    function updateCarousel(id) {
+      const carousel = carousels[id];
+      const container = document.getElementById(`carousel-${id}`);
+      const indicators = document.querySelectorAll(`#indicators-${id} .indicator`);
+
+      container.style.transform = `translateX(-${carousel.currentIndex * 100}%)`;
+
+      indicators.forEach((indicator, index) => {
+        indicator.classList.toggle('active', index === carousel.currentIndex);
+      });
+    }
+
+    // Initialize all carousels
+    initCarousel('ugs3');
+    initCarousel('mariami');
+    initCarousel('tanya');
+    initCarousel('rakan');
+
+    // Auto-advance carousel every 5 seconds
+    setInterval(() => {
+      Object.keys(carousels).forEach(id => moveCarousel(id, 1));
+    }, 5000);
+  </script>
+</body>
+
+</html>
