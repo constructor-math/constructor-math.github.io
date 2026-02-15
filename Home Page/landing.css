@@ -89,12 +89,14 @@ body {
     transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
     z-index: 1001;
     overflow: hidden;
+    pointer-events: none;
 }
 
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
+    pointer-events: auto;
 }
 
 .dropdown-menu li {
@@ -108,6 +110,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     transition: background-color 0.3s;
+    white-space: nowrap;
 }
 
 .dropdown-menu a:hover {
@@ -293,15 +296,23 @@ footer {
 
     /* Mobile dropdown styles */
     .dropdown-menu {
-        position: static;
+        position: static !important;
         opacity: 0;
         visibility: hidden;
         max-height: 0;
         overflow: hidden;
-        transform: none;
+        transform: none !important;
         margin-top: 0;
         box-shadow: none;
+        border-radius: 0;
         transition: max-height 0.3s, opacity 0.3s, visibility 0.3s;
+        pointer-events: auto;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
     }
 
     .dropdown.active .dropdown-menu {
