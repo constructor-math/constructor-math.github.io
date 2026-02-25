@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptography and Cybersecurity in Mathematics - Math Society</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Home Page/landing.css">
+    <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+    <style>
+        #hero {
+            min-height: auto !important;
+            height: auto !important;
+            max-height: none !important;
+            padding-top: 180px !important;
+            padding-bottom: 2.5rem !important;
+            display: block !important;
+        }
+
+        .hero-content {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        #explanation {
+            padding-top: 3rem !important;
+            margin-top: 0 !important;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 2.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .highlight-box {
+            background-color: rgba(128, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--bg-maroon);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .intro-emphasis {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin: 2rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid rgba(128, 0, 0, 0.3);
+        }
+
+        .key-takeaway {
+            background-color: rgba(128, 0, 0, 0.05);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-size: 1.05rem;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--bg-maroon);
+            font-size: 1.5rem;
+        }
+
+        h2 {
+            color: var(--bg-maroon);
+            margin-top: 3.5rem;
+            font-size: 2rem;
+        }
+
+        #hero h3,
+        section h3 {
+            color: var(--text-maroon);
+            margin-top: 2rem;
+            font-size: 1.4rem;
+        }
+
+        .math-equation {
+            font-style: italic;
+            color: var(--text-maroon);
+            margin: 0.5rem 0;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container logo_title">
+                <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+                <h3>Math Society</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+                <li><a href="ai-ml.html" class="nav-link">AI/ML</a></li>
+                <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank"
+                        class="nav-link">Integration Bee</a></li>
+                <li class="dropdown">
+                    <a href="ugs.html" class="nav-link dropdown-toggle">UGS</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="ugs1.html">UGS 1</a></li>
+                        <li><a href="ugs2.html">UGS 2</a></li>
+                        <li><a href="ugs3.html">UGS 3</a></li>
+                        <li><a href="ugs4.html">UGS 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
+                <li><a href="poker.html" class="nav-link">Poker</a></li>
+                <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
+                <li><a href="cryptography-and-cybersecurity.html" class="nav-link active">Cryptography and Cybersecurity</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!--HERO SECTION-->
+    <section id="hero" style="padding-top: 0; padding-bottom: 0; min-height: auto; margin-top: 0;">
+        <div class="hero-content" style="text-align: center; padding-top: 1rem;">
+            <h1 style="margin-top: 0;">When Mathematics Secures the Digital World</h1>
+            <p style="font-size: 1.3rem; margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                How Cryptography and Cybersecurity Protect Information in the Modern Age</p>
+        </div>
+    </section>
+
+    <!--CONTENT-->
+    <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
+        <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
+            <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
+                <!-- OPENING HOOK -->
+                <p style="font-size: 1.2rem; line-height: 1.9; font-style: italic; margin-top: 0; padding-top: 0.5rem;">
+                    Can information be truly secure? How do we protect our digital secrets in an interconnected world?
+                </p>
+
+                <p class="intro-emphasis">
+                    Cryptography and cybersecurity represent the mathematical foundations of digital security. From ancient ciphers to modern encryption algorithms, these fields use advanced mathematics to protect information, authenticate identities, and ensure privacy in our increasingly digital world. Understanding these concepts is crucial for anyone working with technology, data, or security.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>What Makes Cryptography Essential:</strong> In an era where data breaches affect millions and cyber attacks cost billions, cryptography provides the mathematical tools to secure communications, protect financial transactions, and safeguard personal information. Every time you use online banking, send an email, or browse the web securely, you're relying on cryptographic principles.
+                </div>
+
+                <!-- VIDEO SECTION -->
+                <h2>Exploring Cryptographic Frontiers</h2>
+
+                <p>
+                    Watch as we explore the mathematics behind modern cryptography and cybersecurity, from the elegance of number theory to the complexity of secure communication protocols:
+                </p>
+
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/V4_HV2FFi5c" title="Cryptography and Cybersecurity Math Seminar"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                    </iframe>
+                </div>
+                <p style="text-align: center; font-style: italic; margin-top: 1rem; color: var(--text-maroon);">
+                    Math Society Cryptography and Cybersecurity Exploration
+                </p>
+
+                <!-- CRYPTOGRAPHY BASICS -->
+                <h2>The Mathematics of Cryptography</h2>
+
+                <p>
+                    At the heart of cryptography lies number theory and abstract algebra. Modern encryption relies on mathematical problems that are easy to compute in one direction but extremely difficult to reverse without special information.
+                </p>
+
+                <h3>Public-Key Cryptography</h3>
+                <p>
+                    RSA encryption, one of the most widely used cryptographic systems, is based on the difficulty of factoring large numbers. The security relies on the fact that while it's easy to multiply two large prime numbers, finding the factors of their product is computationally infeasible for large enough numbers.
+                </p>
+
+                <p style="margin-top: 1rem;">
+                    The RSA algorithm uses the mathematical relationship: <strong>(m^e)^d ≡ m mod n</strong>, where e and d are carefully chosen exponents, and n is the product of two large primes.
+                </p>
+
+                <!-- HASH FUNCTIONS -->
+                <h2>Hash Functions and Digital Signatures</h2>
+
+                <p>
+                    Cryptographic hash functions provide the foundation for digital signatures and blockchain technology. These one-way functions take any input and produce a fixed-size output that uniquely represents the input data.
+                </p>
+
+                <h3>SHA-256 and Digital Integrity</h3>
+                <p>
+                    The SHA-256 hash function, used in Bitcoin and many security protocols, produces a 256-bit hash that changes completely if even a single bit of the input is altered. This property ensures data integrity and enables secure verification of digital signatures.
+                </p>
+
+                <div class="key-takeaway">
+                    <strong>The Avalanche Effect:</strong> A small change in input should cause a significant change in the hash output, making it computationally infeasible to find two different inputs that produce the same hash (collision resistance).
+                </div>
+
+                <!-- QUANTUM ALGORITHMS -->
+                <h2>Quantum Algorithms That Change Everything</h2>
+
+                <h3>Shor's Algorithm: Factoring in Polynomial Time</h3>
+                <p>
+                    Peter Shor's 1994 algorithm can factor large numbers exponentially faster than classical algorithms. This threatens modern cryptography, which relies on the difficulty of factoring for security.
+                </p>
+
+                <h3>Grover's Algorithm: Quadratic Speedup for Search</h3>
+                <p>
+                    Lov Grover's algorithm provides a quadratic speedup for searching unsorted databases. While not exponential, this still offers significant advantages for optimization problems.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>The Cryptographic Advantage:</strong> Modern cryptography protects everything from online banking to national security. The RSA algorithm, based on prime factorization, and elliptic curve cryptography provide the mathematical foundation for secure digital communication worldwide.
+                </div>
+
+                <div class="section-divider">⋆ ✦ ⋆</div>
+
+                <!-- CHALLENGES -->
+                <h2>The Challenges of Modern Cryptography</h2>
+
+                <p>
+                    As computing power increases and new attack vectors emerge, cryptography faces evolving challenges:
+                </p>
+
+                <h3>Quantum Threats to Current Systems</h3>
+                <p>
+                    Quantum computers could potentially break widely used encryption schemes like RSA through Shor's algorithm. This has led to the development of post-quantum cryptography—algorithms designed to be secure against quantum attacks.
+                </p>
+
+                <h3>Side-Channel Attacks</h3>
+                <p>
+                    Even mathematically secure encryption can be compromised through side-channel attacks that exploit physical implementations, such as timing attacks, power analysis, or electromagnetic emissions.
+                </p>
+                <p>
+                    Quantum error correction requires many physical qubits to protect a single logical qubit. The overhead is so large that we need millions of physical qubits to create just a few hundred reliable logical qubits.
+                </p>
+
+                <div class="key-takeaway">
+                    <strong>The Threshold Theorem:</strong> Quantum error correction becomes effective only when error rates drop below a certain threshold. Achieving this threshold is one of the greatest challenges in quantum computing today.
+                </div>
+
+                <!-- FUTURE IMPACT -->
+                <h2>Cryptography's Impact on Modern Society</h2>
+
+                <p>
+                    Cryptography isn't just about keeping secrets—it's the foundation of trust in the digital age:
+                </p>
+
+                <h3>Secure Digital Communication</h3>
+                <p>
+                    Every HTTPS connection, encrypted email, and secure messaging app relies on cryptographic protocols. The mathematics ensures that even if data is intercepted, it remains unreadable without the proper keys.
+                </p>
+
+                <h3>Blockchain and Digital Currencies</h3>
+                <p>
+                    Cryptocurrencies like Bitcoin use cryptographic hash functions and digital signatures to create decentralized, trustless systems. The mathematics behind these systems enables secure peer-to-peer transactions without intermediaries.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>The Bottom Line:</strong> Cryptography represents the ultimate marriage of mathematics and security. It protects our privacy, enables e-commerce, and secures national infrastructure. Whether you're interested in number theory, abstract algebra, or practical applications in cybersecurity, cryptography offers endless opportunities for mathematical exploration and real-world impact.
+                </div>
+
+                <div class="section-divider">⋆ ✦ ⋆</div>
+
+                <!-- WHAT WE LEARNED -->
+                <h2>Why Quantum Computing Matters for Mathematicians</h2>
+
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>1. Interdisciplinary Innovation:</strong> Cryptography brings together number theory, abstract algebra, probability theory, and information theory in ways that create secure digital systems.
+                </p>
+
+                <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 1rem;">
+                    <strong>2. Fundamental Questions:</strong> Working with cryptographic systems forces us to confront deep questions about privacy, trust, and the nature of security in an interconnected world.
+                </p>
+
+                <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 1rem;">
+                    <strong>3. Practical Applications:</strong> From securing online transactions to protecting national secrets, cryptographic algorithms are essential for modern cybersecurity and digital infrastructure.
+                </p>
+
+                <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 1rem;">
+                    <strong>4. Future Opportunities:</strong> As cyber threats evolve, mathematicians will be essential in developing new cryptographic schemes, analyzing security protocols, and responding to emerging challenges like quantum computing threats.
+                </p>
+
+                <!-- CLOSING -->
+                <p
+                    style="margin-top: 2.5rem; font-size: 1.2rem; line-height: 1.9; font-style: italic; text-align: center; color: var(--bg-maroon);">
+                    "Cryptography doesn't just protect information—it enables the trust that makes our digital world possible."
+                </p>
+
+                <p style="margin-top: 2.5rem; font-size: 1.15rem; line-height: 1.8;">
+                    As we navigate the complexities of the digital age, remember that every secure connection, every protected transaction, and every private communication relies on solid mathematical foundations. Cryptography is no different—it represents the essential mathematics of trust and security in our modern world.
+                </p>
+
+                <p
+                    style="margin-top: 1.5rem; font-size: 1.15rem; line-height: 1.8; text-align: center; font-style: italic;">
+                    And who knows? The cryptographic breakthroughs of tomorrow might be discovered by the curious minds exploring mathematics today.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-content">
+            <p>CONNECT WITH US:</p>
+            <div class="socials">
+                <div class="link">
+                    <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.instagram.com/mathclub.cube/#" target="_blank">Instagram</a>
+                </div>
+                <div class="link">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/"
+                        target="_blank">LinkedIn</a>
+                </div>
+                <div class="link">
+                    <i class="fa-solid fa-share"></i>
+                    <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438"
+                        target="_blank">
+                        Sharepoint
+                    </a>
+                </div>
+                <div class="link">
+                    <i class="fa-brands fa-youtube"></i>
+                    <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+                </div>
+                <div class="link">
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+                </div>
+            </div>
+            <p>&copy; 2025 The Math Society</p>
+        </div>
+    </footer>
+
+    <script src="../Home Page/landing.js"></script>
+</body>
+
+</html>
