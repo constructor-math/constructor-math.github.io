@@ -1,293 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cryptography & Mathematics - Math Society</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="../Home Page/landing.css">
-  <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
-
   <style>
-    /* --- HERO & BASE STYLES --- */
-    #hero {
-        min-height: auto !important;
-        height: auto !important;
-        max-height: none !important;
-        padding-top: 180px !important;
-        padding-bottom: 2.5rem !important;
-        display: block !important;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+      background-color: #fff;
+      color: #000;
     }
-
-    .hero-content {
-        padding-top: 0 !important;
-        padding-bottom: 0 !important;
+    h1, h2, h3 {
+      margin-top: 20px;
     }
-
-    #explanation {
-        padding-top: 3rem !important;
-        margin-top: 0 !important;
+    p {
+      margin-top: 10px;
     }
-
-    /* --- VIDEO FIX --- */
-    .video-container {
-        position: relative;
-        padding-bottom: 56.25%;
-        height: 0;
-        overflow: hidden;
-        max-width: 900px;
-        margin: 2.5rem auto;
-        border-radius: 8px;
-        box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    iframe {
+      width: 100%;
+      height: 400px;
+      border: none;
     }
-
-    .video-container iframe {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%; border: none;
-    }
-
-    /* --- SIDEBAR LAYOUT --- */
-    .page-wrapper {
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        max-width: 1600px;
-        margin: 0 auto;
-        gap: 40px;
-        padding: 0 20px;
-    }
-
-    .side-media {
-        flex: 0 0 250px;
-        position: sticky;
-        top: 120px;
-    }
-
-    .side-media img {
-        width: 100%;
-        height: auto;
-        border-radius: 12px;
-        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-        border: 1px solid rgba(128, 0, 0, 0.1);
-        margin-bottom: 20px;
-    }
-
-    #explanation .container {
-        flex: 1;
-        max-width: 900px;
-        margin: 0 !important;
-    }
-
-    @media (max-width: 1200px) {
-        .side-media { display: none; }
-    }
-
-    /* --- CONTENT DECORATION --- */
-    .highlight-box {
-        background-color: rgba(128, 0, 0, 0.1);
-        padding: 1.5rem;
-        border-left: 4px solid #800000;
-        margin: 1.5rem 0;
-        border-radius: 4px;
-    }
- .image-container img {
-            max-width: 100%;
-            width: 600px;
-            height: auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
-        }
-
-    .intro-emphasis {
-        font-size: 1.2rem;
-        line-height: 1.9;
-        margin: 2rem 0;
-        padding-left: 1rem;
-        border-left: 3px solid rgba(128, 0, 0, 0.3);
-    }
-
-    h2 { color: #800000; margin-top: 3.5rem; font-size: 2.2rem; }
-    h3 { color: #800000; margin-top: 2rem; }
-
-    /* --- FOOTER STYLING --- */
     footer {
-        background: #1a1a1a;
-        color: white;
-        padding: 3rem 0;
-        margin-top: 5rem;
-        text-align: center;
+      margin-top: 40px;
+      padding: 10px;
+      background-color: #f0f0f0;
+      text-align: center;
     }
-    .socials {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        margin: 1.5rem 0;
+    a {
+      color: blue;
     }
-    .socials a { color: white; text-decoration: none; margin-left: 8px; }
-    .socials a:hover { color: #ff4d4d; }
-    .link i { color: #800000; }
   </style>
 </head>
-
 <body>
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo-container logo_title">
-        <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
-        <h3>Math Society</h3>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
-        <li><a href="ai-ml.html" class="nav-link">AI/ML</a></li>
-        <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank" class="nav-link">Integration Bee</a></li>
-        <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
-        <li><a href="poker.html" class="nav-link">Poker</a></li>
-        <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
-        <li><a href="cryptography-and-cybersecurity.html" class="nav-link active">Cryptography and Cybersecurity</a></li>
-      </ul>
-    </div>
-  </nav>
 
-  <section id="hero">
-    <div class="hero-content" style="text-align: center;">
-      <h1>The Mathematics of Cryptography</h1>
-      <p style="font-size: 1.3rem; max-width: 800px; margin: 0.5rem auto;">
-        From simple ciphers to secure internet communication, it's all number theory.</p>
-    </div>
-  </section>
+<h1>The Mathematics of Cryptography</h1>
+<p>From simple ciphers to secure internet communication, it's all number theory.</p>
 
-  <section id="explanation">
-    <div class="page-wrapper">
+<h2>Missed The Seminar? No Problem!</h2>
+<div>
+  <iframe src="https://www.youtube.com/embed/V4_HV2FFi5c" title="Cryptography Seminar" allowfullscreen></iframe>
+  <p style="text-align:center;font-style:italic;">Ahmed Maghri | The Math Behind Cryptography and Cybersecurity</p>
+</div>
 
-        <aside class="side-media">
-        <img src="content-1.jpg" alt="Cryptography Intro">
-      </aside>
+<h2>Why does your online banking password feel like gibberish? Because it is backed by math.</h2>
+<p><strong>Caesar Cipher:</strong> The historical origin of encryption using simple alphabetic shifts to secure military communication.</p>
+<p>Cryptography is the art of keeping secrets, and at its core it is built on some of the deepest ideas in mathematics. From the humble Caesar cipher to the public-key systems that protect your messages, number theory, modular arithmetic and algebraic structures do the heavy lifting.</p>
+<div style="border-left: 4px solid #800000; background-color: rgba(128, 0, 0, 0.1); padding: 10px; margin: 20px 0;">
+  <strong>Key insight:</strong> A one-way function is easy to compute but hard to invert — the foundation of secure encryption.
+</div>
 
-      <div class="container">
-        <div class="content-section">
-          <p class="intro-emphasis">
-            Why does your online banking password feel like gibberish? Because it is backed by math.
-          </p>
-          <p>
-            <strong>Caesar Cipher:</strong> The historical origin of encryption using simple alphabetic shifts to secure military communication.
-          </p>
-          <p>
-            Cryptography is the art of keeping secrets, and at its core it is built on some of the deepest ideas in mathematics. 
-            From the humble Caesar cipher to the public-key systems that protect your messages, number theory, modular arithmetic 
-            and algebraic structures do the heavy lifting.
-          </p>
-          <div class="highlight-box">
-            <strong>Key insight:</strong> A one-way function is easy to compute but hard to invert — the foundation of secure encryption.
-          </div>
-        </div>
+<h2>Missed The Seminar? No Problem!</h2>
+<div>
+  <iframe src="https://www.youtube.com/embed/V4_HV2FFi5c" title="Cybersecurity and Cryptography Seminar" allowfullscreen></iframe>
+  <p style="text-align:center;font-style:italic;">Ahmed Maghri | The Math Behind Cryptography and Cybersecurity</p>
+</div>
 
-        <div class="content-section">
-          <h2>Missed The Seminar? No Problem!</h2>
-          <div class="video-container">
-            <iframe src="https://www.youtube.com/embed/V4_HV2FFi5c" 
-                    title="Cybersecurity and Cryptography Seminar" allowfullscreen>
-            </iframe>
-          </div>
-          <p style="text-align: center; font-style: italic;">Ahmed Maghri | The Math Behind Cryptography and Cybersecurity</p>
-        </div>
+<h2>What's Happening?</h2>
+<p>Every cryptographic algorithm hides in plain sight a mathematical puzzle.</p>
+<p><strong>RSA:</strong> Understanding how RSA relies on the mathematical difficulty of factoring large semi-prime numbers (the product of two large primes, P and Q).</p>
+<p><strong>Modular Arithmetic and Congruence:</strong> The role of Euler's totient function φ(n), GCD, and modular remainders in creating public and private keys.</p>
+<div style="border-left: 4px solid #800000; background-color: rgba(128, 0, 0, 0.1); padding: 10px; margin: 20px 0;">
+  <strong>Public Key:</strong> used by the sender to encrypt the message.<br />
+  <strong>Private Key:</strong> kept secret by the receiver to decrypt the message.
+</div>
 
-        <div class="content-block">
-          <h3>Wait, So What's Happening?</h3>
-          <p>Every cryptographic algorithm hides in plain sight a mathematical puzzle.</p>
-          <p>
-            <strong>RSA:</strong> Understanding how RSA relies on the mathematical difficulty of factoring large semi-prime numbers 
-            (the product of two large primes, $P$ and $Q$). 
-          </p>
-          <p>
-            <strong>Modular Arithmetic and Congruence:</strong> The role of Euler's totient function $\phi(n)$, Greatest Common Divisor (GCD), 
-            and modular remainders in creating public and private keys.
-          </p>
-          
-            <div class="image-container">
-          <img src="content-4.jpg" alt="AI demonstration" style="max-height: 450px; object-fit: cover;">
-          <p class="image-caption">quontom computing </p>
-        </div>
-          
-          <div class="highlight-box">
-            <strong>Public Key:</strong> used by the sender to encrypt the message. <br>
-            <strong>Private Key:</strong> kept secret by the receiver to decrypt the message.
-          </div>
-        </div>
+<h2>Post-Quantum Solutions: Lattice-Based Cryptography</h2>
+<p><strong>The Geometry of Numbers:</strong> Introduction to the "Lattice"—a linear combination of basis vectors in a D-dimensional space.</p>
+<p><strong>Hard Mathematical Problems:</strong><br />
+• Shortest Vector Problem (SVP): Finding the vector in a lattice closest to the origin.<br />
+• Closest Vector Problem (CVP): Finding the lattice point closest to a random point in space.
+</p>
+<p><strong>Learning With Errors (LWE):</strong> A method of encryption that adds "noise" or errors to linear equations, making them computationally "hard" to solve even for quantum computers.</p>
+<p><strong>Public Key Systems in LWE:</strong> How Alice and Bob can communicate using matrices and error distributions to ensure indistinguishable ciphertexts.</p>
 
-        <div class="content-section">
-          <h2>Post-Quantum Solutions: Lattice-Based Cryptography</h2>
-          <p>
-            <strong>The Geometry of Numbers:</strong> Introduction to the "Lattice"—a linear combination of basis vectors in a D-dimensional space.
-          </p>
-          <p>
-            <strong>Hard Mathematical Problems:</strong><br>
-            • <strong>Shortest Vector Problem (SVP):</strong> Finding the vector in a lattice closest to the origin. <br>
-            • <strong>Closest Vector Problem (CVP):</strong> Finding the lattice point closest to a random point in space.
-          </p>
+<h2>Future Outlook</h2>
+<p><strong>"Harvest Now, Decrypt Later":</strong> The risk of adversaries collecting encrypted data today to decrypt it once quantum hardware matures.</p>
+<p><strong>PQC Transition:</strong> Global mandates are pushing for an immediate shift to Post-Quantum Cryptography (PQC) to secure long-term data privacy.</p>
 
-          
+<footer>
+  <p>&copy; 2026 The Math Society</p>
+</footer>
 
-          <p>
-            <strong>Learning With Errors (LWE):</strong> A method of encryption that adds "noise" or errors to linear equations, 
-            making them computationally "hard" to solve even for quantum computers.
-          </p>
-          <p>
-            <strong>Public Key Systems in LWE:</strong> How Alice and Bob can communicate using matrices and error distributions 
-            to ensure indistinguishable ciphertexts.
-          </p>
-        </div>
-
-        <div class="content-section">
-          <h3>Future Outlook</h3>
-          <p>
-            <strong>"Harvest Now, Decrypt Later":</strong> The risk of adversaries collecting encrypted data today to decrypt it once quantum hardware matures.
-          </p>
-          <p>
-            <strong>PQC Transition:</strong> Global mandates are pushing for an immediate shift to Post-Quantum Cryptography (PQC) to secure long-term data privacy.
-          </p>
-        </div>
-      </div>
-
-      <aside class="side-media">
-        <img src="content-4.jpg" alt="Security Visualization">
-      </aside>
-
-    </div>
-  </section>
-
-  <footer>
-    <div class="footer-content">
-        <p>CONNECT WITH US:</p>
-        <div class="socials">
-            <div class="link">
-                <i class="fa-brands fa-instagram"></i>
-                <a href="https://www.instagram.com/mathclub.cube/#" target="_blank">Instagram</a>
-            </div>
-            <div class="link">
-                <i class="fa-brands fa-linkedin"></i>
-                <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank">LinkedIn</a>
-            </div>
-            <div class="link">
-                <i class="fa-solid fa-share"></i>
-                <a href="https://constructoruniversity.sharepoint.com/" target="_blank">Sharepoint</a>
-            </div>
-            <div class="link">
-                <i class="fa-brands fa-youtube"></i>
-                <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
-            </div>
-            <div class="link">
-                <i class="fa-brands fa-github"></i>
-                <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
-            </div>
-        </div>
-        <p>&copy; <span id="copyright-year">2026</span> The Math Society</p>
-    </div>
-  </footer>
-
-  <script src="../Home Page/landing.js"></script>
 </body>
-</html>               
+</html>
