@@ -42,7 +42,43 @@
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
         }
+/* Layout for side images */
+.page-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 20px;
+}
 
+.side-image-container {
+    flex: 1;
+    max-width: 200px; /* Adjust based on how much "blank space" you want to fill */
+    position: sticky;
+    top: 100px; /* Keeps images visible as you scroll */
+}
+
+.side-image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border: 2px solid var(--bg-maroon);
+}
+
+/* Ensure the main content stays centered */
+#explanation .container {
+    flex: 2;
+    margin: 0 !important; /* Reset margin to let flexbox handle it */
+}
+
+/* Responsive: Hide side images on small screens */
+@media (max-width: 1200px) {
+    .side-image-container {
+        display: none;
+    }
+}
+    
         .video-container iframe {
             position: absolute;
             top: 0;
@@ -197,6 +233,23 @@
    
 
           <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
+            <section id="explanation">
+  <div class="page-wrapper">
+    
+    <aside class="side-image-container">
+      <img src="content-1.jpg" alt="Mathematical Cryptography Concept">
+    </aside>
+
+    <div class="container">
+      </div>
+
+    <aside class="side-image-container">
+      <img src="content-4.jpg" alt="Cybersecurity Visualization">
+    </aside>
+
+  </div>
+</section>
+            
         <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
             <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
                 <!-- OPENING HOOK -->
