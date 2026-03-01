@@ -11,6 +11,69 @@
   <link rel="stylesheet" href="../Home Page/landing.css">
   <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
   <style>
+
+    #explanation {
+  padding: 4rem 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.content-section {
+  margin-bottom: 5rem;
+}
+
+.main-text {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin-top: 1.5rem;
+}
+
+.center-text {
+  text-align: center;
+}
+
+.video-caption {
+  text-align: center;
+  font-style: italic;
+  margin-top: 1rem;
+  color: var(--text-maroon);
+}
+
+.two-column {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.image-column img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  .two-column {
+    grid-template-columns: 1fr;
+  }
+
+  #explanation {
+    padding: 3rem 1.2rem;
+  }
+
+  .main-text {
+    font-size: 1.05rem;
+  }
+
+  h2 {
+    font-size: 1.6rem;
+  }
+}
     #hero {
       min-height: auto !important;
       height: auto !important;
@@ -179,95 +242,135 @@
     </div>
   </section>
 
-  <!--CONTENT-->
-  <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
-    <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
-      <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
+ <!--CONTENT-->
+<section id="explanation">
+  <div class="container">
 
-        <p class="Classical Roots">
-          <em>Why does your online banking password feel like gibberish? Because it is backed by math.
-           Caesar Cipher: The historical origin of encryption using simple alphabetic shifts 
-            to secure military communication. 
-          </em>
-        </p>
+    <!-- Intro Block -->
+    <div class="content-section intro-block">
+      <p class="intro-emphasis">
+        Why does your online banking password feel like gibberish? Because it is backed by math.
+        Caesar Cipher: The historical origin of encryption using simple alphabetic shifts
+        to secure military communication.
+      </p>
 
-        <p style="font-size: 1.15rem; line-height: 1.8;">
-          Cryptography is the art of keeping secrets, and at its core it is built on some of the deepest
-          ideas in mathematics. From the humble Caesar cipher
-          to the public‑key systems that protect your messages, number theory,
-          modular arithmetic and algebraic structures do the heavy lifting.
-        </p>
+      <p class="main-text">
+        Cryptography is the art of keeping secrets, and at its core it is built on some of the deepest
+        ideas in mathematics. From the humble Caesar cipher
+        to the public-key systems that protect your messages, number theory,
+        modular arithmetic and algebraic structures do the heavy lifting.
+      </p>
 
-
-        <div class="highlight-box">
-          <strong>Key insight:</strong> a one-way function is easy to compute but hard to invert — the
-          foundation of secure encryption.
-        </div>
-
-        <h2>Seminar Recording</h2>
-        <p>Watch our club talk where we explore the depths of cryptography: </p>
-        <div class="video-container">
-          <iframe src="https://www.youtube.com/live/V4_HV2FFi5c?si=NyFhKcaQPwGwfomy" title="Cryptography Seminar"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-          </iframe>
-        </div>
-        <p style="text-align: center; font-style: italic; margin-top: 1rem; color: var(--text-maroon);">
-          Ahmed Maghri | The Math Behind Cryptography and Cybersecurity </p>
-
-                 <div class="image-container">
-  <img src="images/content-1.jpg" alt="Cryptography Seminar Presentation">
-  <div class="image-caption">
-    Exploring the future of encryption – “Are we cooked?”
-  </div>
-</div>
-
-        <h2>Wait So What's Happening?</h2>
-        <p>
-          Every cryptographic algorithm hides in plain sight a mathematical puzzle.  
-          For example, RSA:
-         -  Understanding how RSA relies on the mathematical difficulty of factoring large semi-prime numbers 
-          (the product of two large primes, P and Q)
-         - Modular Arithmetic and Congruence: The role of Euler's totient function ϕ(n) Greatest Common Divisor (GCD), 
-          and modular remainders in creating public and private keys.
-                Public Key: used by the sender to encrypt the message.
-                Private Key: kept secret by the receiver to decrypt the message.
-
-        </p>
-
-<div class="image-container">
-  <img src="images/content-4.jpg" alt="Quantum Computing Presentation Slide" 
-  <div class="image-caption">
-    Explaining quantum computing.
-  </div>
-</div>
-        
-        <div class="Post-Quantum Solutions: Lattice-Based Cryptography">
-          - The Geometry of Numbers: Introduction to the "Lattice"—a linear combination
-          of basis vectors in a D-dimensional space.
-          - Hard Mathematical Problems:
-          --Shortest Vector Problem (SVP): Finding the vector in a lattice closest to the origin.
-          --Closest Vector Problem (CVP): Finding the lattice point closest to a random point in space.
-          -Learning With Errors (LWE): A method of encryption that adds "noise" or errors to linear equations, 
-          making them computationally "hard" to solve even for quantum computers.
-          -Public Key Systems in LWE: How Alice and Bob can communicate using matrices
-          and error distributions to ensure indistinguishable ciphertexts.
- </div>
-
-          
-
-<div class="Future Outlook">
-    - "Harvest Now, Decrypt Later": The risk of adversaries collecting encrypted data 
-      today to decrypt it once quantum hardware matures.
-    - PQC Transition: Global mandates are pushing for an immediate shift to Post-Quantum Cryptography (PQC)
-      to secure long-term data privacy.
-</div>     
-
-    
-        
+      <div class="highlight-box">
+        <strong>Key insight:</strong> a one-way function is easy to compute but hard to invert —
+        the foundation of secure encryption.
+      </div>
     </div>
-  </section>
+
+    <!-- Seminar Section -->
+    <div class="content-section">
+      <h2>Missed The Seminar? No Problem!</h2>
+      <p class="center-text">
+        Watch our club talk where we explore the depths of cryptography:
+      </p>
+
+      <div class="video-container">
+        <iframe src="https://www.youtube.com/live/V4_HV2FFi5c?si=yhufFzUgzXQBiVm5"
+          title="Cryptography Seminar"
+          allowfullscreen>
+        </iframe>
+      </div>
+
+      <p class="video-caption">
+        Ahmed Maghri | The Math Behind Cryptography and Cybersecurity
+      </p>
+
+      <div class="image-container">
+        <img src="images/content-1.jpg" alt="Cryptography Seminar Presentation">
+        <div class="image-caption">
+          Exploring the future of encryption – “Are we cooked?”
+        </div>
+      </div>
+    </div>
+
+    <!-- RSA Section -->
+    <div class="content-section">
+      <h2>Wait So What's Happening?</h2>
+
+      <div class="two-column">
+        <div class="text-column">
+          <p>
+            Every cryptographic algorithm hides in plain sight a mathematical puzzle.
+            For example, RSA: Understanding how RSA relies on the mathematical difficulty of factoring large semi-prime numbers
+            (the product of two large primes, P and Q)
+            Modular Arithmetic and Congruence: The role of Euler's totient function ϕ(n) Greatest Common Divisor (GCD),
+            and modular remainders in creating public and private keys.
+          </p>
+
+          <p>
+            Public Key: used by the sender to encrypt the message.
+            Private Key: kept secret by the receiver to decrypt the message.
+          </p>
+        </div>
+
+        <div class="image-column">
+          <img src="images/content-4.jpg" alt="Quantum Computing Presentation Slide">
+          <div class="image-caption">
+            Explaining quantum computing.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Post-Quantum Section -->
+    <div class="content-section">
+      <h2>Post-Quantum Solutions: Lattice-Based Cryptography</h2>
+
+      <div class="two-column">
+        <div>
+          <p>
+            - The Geometry of Numbers: Introduction to the "Lattice"—a linear combination
+            of basis vectors in a D-dimensional space.
+          </p>
+
+          <p>
+            - Hard Mathematical Problems:
+            --Shortest Vector Problem (SVP): Finding the vector in a lattice closest to the origin.
+            --Closest Vector Problem (CVP): Finding the lattice point closest to a random point in space.
+          </p>
+        </div>
+
+        <div>
+          <p>
+            - Learning With Errors (LWE): A method of encryption that adds "noise" or errors to linear equations,
+            making them computationally "hard" to solve even for quantum computers.
+          </p>
+
+          <p>
+            - Public Key Systems in LWE: How Alice and Bob can communicate using matrices
+            and error distributions to ensure indistinguishable ciphertexts.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Future Section -->
+    <div class="content-section">
+      <h2>Future Outlook</h2>
+
+      <p>
+        - "Harvest Now, Decrypt Later": The risk of adversaries collecting encrypted data
+        today to decrypt it once quantum hardware matures.
+      </p>
+
+      <p>
+        - PQC Transition: Global mandates are pushing for an immediate shift to Post-Quantum Cryptography (PQC)
+        to secure long-term data privacy.
+      </p>
+    </div>
+
+  </div>
+</section>
 </body>
 
 </html>
