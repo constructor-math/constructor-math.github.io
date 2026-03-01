@@ -259,17 +259,11 @@
       computers to perform certain calculations exponentially faster than classical ones. Shor’s Algorithm is the primary threat
       in this context; it is a quantum algorithm designed specifically to break RSA by efficiently finding the periodicity of modular
       functions. By utilizing the Quantum Fourier Transform (QFT) as a "black box" to extract frequencies and periods, Shor’s Algorithm 
-      can factor large integers in a fraction of the time it would take a classical supercomputer.    </p>
-
-
-    
-    <p>RSA & Prime Factorization
-
-Core Mechanism: Security relies on the computational difficulty of factoring large semi-prime numbers (n=P×Q).
+      can factor large integers in a fraction of the time it would take a classical supercomputer. RSA & Prime Factorization Core Mechanism: Security relies on the computational difficulty of factoring large semi-prime numbers (n=P×Q).
 Key Logic: Uses modular arithmetic, Euler’s totient function ϕ(n), 
 and congruence to generate public keys 
 (n,e) for encryption and private keys 
-(n,d) for decryption.</p>
+(n,d) for decryption. </p>
     
     
 
@@ -288,7 +282,7 @@ and congruence to generate public keys
       <p>Lattice-Based Cryptography uses the <strong>Geometry of Numbers</strong> to create puzzles that even quantum 
         computers cannot solve efficiently. Lattice-based systems move away from number theory and into the "geometry of numbers." 
         A lattice is defined as a linear combination of basis vectors V1 to VD
-in a high-dimensional space. The security of these systems is derived from hard mathematical 
+        in a high-dimensional space. The security of these systems is derived from hard mathematical 
         problems such as the Shortest Vector Problem (SVP)—finding the vector in a lattice closest to the 
         origin—and the Closest Vector Problem (CVP). A leading implementation of this is Learning With Errors (LWE). 
         In an LWE system, "noise" or errors are intentionally added to a system of linear equations, represented as AS+E=B(modQ). 
