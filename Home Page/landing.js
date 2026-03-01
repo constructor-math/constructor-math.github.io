@@ -20,13 +20,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // Dropdown functionality for mobile
     const dropdowns = document.querySelectorAll('.dropdown');
     dropdowns.forEach(dropdown => {
-        const toggle = dropdown.querySelector('.nav-link') || dropdown.querySelector('.dropdown-toggle');
+        const toggle = dropdown.querySelector('.dropdown-toggle-mobile');
+        const link = dropdown.querySelector('.nav-link');
         
         if (toggle) {
-            // On mobile, clicking the dropdown toggle should toggle the submenu
-            toggle.addEventListener('click', (e) => {
+            // On mobile, clicking the arrow toggles the dropdown
+            const handleDropdownToggle = (e) => {
                 if (window.innerWidth <= 768) {
                     e.preventDefault();
+                    e.stopPropagation();
                     dropdown.classList.toggle('active');
                     
                     // Close other dropdowns
@@ -36,6 +38,22 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     });
                 }
+            };
+            
+            toggle.addEventListener('click', handleDropdownToggle);
+            toggle.addEventListener('touchstart', handleDropdownToggle, { passive: false });
+        }
+        
+        // Make sure the link itself still works normally
+        if (link) {
+            link.addEventListener('click', (e) => {
+                // Only prevent default if we're on desktop (where we don't want dropdown behavior)
+                // On mobile, let the link work normally
+                if (window.innerWidth > 768) {
+                    // Let the link work normally on desktop
+                    return;
+                }
+                // On mobile, the link also works normally now - only the arrow toggles dropdown
             });
         }
     });
@@ -48,4 +66,10 @@ document.addEventListener('DOMContentLoaded', () => {
             link.classList.add('active');
         }
     });
+
+    // Auto-update copyright year
+    const copyrightYear = document.getElementById('copyright-year');
+    if (copyrightYear) {
+        copyrightYear.textContent = new Date().getFullYear();
+    }
 });
