@@ -218,10 +218,14 @@
 
     <h2>Classical Roots</h2>
     <div class="section-divider"></div>
-    <p>Cryptography is the art of keeping secrets, and at its core, 
-      it is built on some of the deepest ideas in mathematics. 
-      From the humble Caesar cipher to the public‑key systems that protect your messages,
-      number theory and algebraic structures do the heavy lifting.</p>
+    <p> Cryptography is the fundamental study of mathematical techniques designed to secure 
+      communication and data against adversaries. At its core, it is built upon the philosophy of 
+      "Think, Calculate, Create"—abstracting a problem, making it precise through calculation, and creating 
+      secure systems that did not exist before. Historically, this journey began centuries ago with simple methods 
+      like the Caesar Cipher, a shift-based algorithm used by Julius Caesar to communicate with his soldiers. 
+      By shifting each letter of the alphabet by three positions, Caesar created a basic form of encryption that, 
+      while primitive by today's standards, established the foundational concept of transforming information so that 
+      only authorized parties could decode it.   </p>
 
     <div class="image-frame">
       <img src="images/content-1.jpg" alt="Cryptography Seminar">
@@ -248,12 +252,14 @@
 
 <h4>Quantum Computing and the Threat to RSA</h4>
     <div class="section-divider"></div>
-    <p> Qubits and Superposition: An explanation of quantum states described by amplitudes A and B
-where the sum of their squares equals 1 (a^2+b^2=1).
-Quantum Gates: The function of the Pauli-X gate (the quantum "NOT" gate) and the Hadamard transform in manipulating quantum states.
-Shor’s Algorithm: A deep dive into the algorithm designed to break RSA encryption by efficiently factoring semi-prime numbers using a quantum computer.
-Period Finding: How the Quantum Fourier Transform (QFT) is used as a "black box" 
-to find the frequency and periodicity (r) necessary to crack the code.      </p>
+    <p>  The landscape of cybersecurity is currently facing a paradigm
+      shift due to the emergence of quantum computing. Unlike classical bits, which are either 0 or 1, a 
+      quantum bit or "qubit" exists in a state of superposition. This state is described by two amplitudes, a and b, where the 
+      probability of measuring the state is determined by the equation (a^2+b^2=1). This unique property allows quantum 
+      computers to perform certain calculations exponentially faster than classical ones. Shor’s Algorithm is the primary threat
+      in this context; it is a quantum algorithm designed specifically to break RSA by efficiently finding the periodicity of modular
+      functions. By utilizing the Quantum Fourier Transform (QFT) as a "black box" to extract frequencies and periods, Shor’s Algorithm 
+      can factor large integers in a fraction of the time it would take a classical supercomputer.    </p>
 
 
     
@@ -280,10 +286,18 @@ and congruence to generate public keys
     </div>
 
     <div class="dark-panel">
-      <h2>Post-Quantum Solutions</h2>
-      <p>Lattice-Based Cryptography uses the <strong>Geometry of Numbers</strong> to create puzzles that even quantum computers cannot solve efficiently.</p>
+      <h6>Post-Quantum Solutions</h6>
+      <p>Lattice-Based Cryptography uses the <strong>Geometry of Numbers</strong> to create puzzles that even quantum 
+        computers cannot solve efficiently. Lattice-based systems move away from number theory and into the "geometry of numbers." 
+        A lattice is defined as a linear combination of basis vectors V1 to VD
+in a high-dimensional space. The security of these systems is derived from hard mathematical 
+        problems such as the Shortest Vector Problem (SVP)—finding the vector in a lattice closest to the 
+        origin—and the Closest Vector Problem (CVP). A leading implementation of this is Learning With Errors (LWE). 
+        In an LWE system, "noise" or errors are intentionally added to a system of linear equations, represented as AS+E=B(modQ). 
+        Without knowing the specific error distribution, an adversary cannot solve the system, even with a quantum computer. 
+        This makes the encrypted data mathematically indistinguishable from random noise.</p>
       
-      <h3>Key Challenges:</h3>
+      <h7>Key Challenges:</h7>
       <ul class="modern-list" style="color: var(--beige);">
         <li>Shortest Vector Problem (SVP)</li>
         <li>Learning With Errors (LWE)</li>
@@ -291,6 +305,14 @@ and congruence to generate public keys
       <p style="margin-top: 2rem; font-style: italic; opacity: 0.8;">The "Harvest Now, Decrypt Later" threat is real. The time to transition is now.</p>
     </div>
 
+     <h8>Nowadays...</h8>
+    <p> The transition to these new standards is urgent because of a strategy known as "Harvest Now, Decrypt Later." 
+      Adversaries and state actors are currently collecting and storing vast amounts of encrypted data, waiting for the day a 
+      sufficiently powerful quantum computer exists to decrypt it. By implementing lattice-based algorithms today, engineers can 
+      ensure that data remains secure even decades into the future. From the European Union’s mandates to global shifts in 
+      organizational encryption, the move toward post-quantum security is no longer a theoretical exercise but a critical necessity
+      for maintaining a safe digital world.   </p>
+    
   </main>
 
   <footer>
