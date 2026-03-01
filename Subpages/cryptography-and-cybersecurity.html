@@ -7,170 +7,201 @@
   <title>Cryptography & Mathematics - Math Society</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300;400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../Home Page/landing.css">
   <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
   <style>
-    /* MATCHING YOUR ORIGINAL COLOR PALETTE */
+    /* CORE PALETTE */
     :root {
       --bg-maroon: #800000;
       --text-maroon: #800000;
-      --text-beige: #f5f5dc;
+      --soft-maroon: rgba(128, 0, 0, 0.08);
+      --beige: #f5f5dc;
     }
 
     body {
-      background-color: var(--text-beige);
-      color: #333;
+      background-color: var(--beige);
+      color: #2d2d2d;
       margin: 0;
       font-family: 'Roboto Slab', serif;
       line-height: 1.8;
     }
 
-    .main-container {
-      max-width: 850px; /* Limits width for readability */
-      margin: 0 auto;
-      padding: 0 20px 4rem;
-    }
-
-    /* HERO SECTION */
+    /* AESTHETIC HERO */
     #hero {
-      background-color: var(--bg-maroon);
-      color: var(--text-beige);
-      padding: 150px 20px 60px !important;
+      background: linear-gradient(rgba(128, 0, 0, 0.9), rgba(128, 0, 0, 0.9)), 
+                  url('images/hero-pattern.png'); /* Add a subtle pattern if you have one */
+      color: var(--beige);
+      padding: 180px 20px 100px !important;
       text-align: center;
-      margin-bottom: 2rem;
+      clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
     }
 
     #hero h1 {
-      margin-top: 0;
-      font-size: 2.5rem;
+      font-weight: 900;
+      font-size: 3rem;
+      letter-spacing: -1px;
+      margin: 0;
     }
 
-    /* TYPOGRAPHY */
-    h2 {
-      color: var(--bg-maroon);
-      font-size: 2.2rem;
-      margin-top: 3rem;
-      margin-bottom: 1rem;
-      border-bottom: 2px solid rgba(128, 0, 0, 0.1);
-      padding-bottom: 10px;
+    /* CONTENT WRAPPER */
+    .content-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 4rem 20px;
     }
 
-    h3 {
-      color: var(--text-maroon);
-      margin-top: 2rem;
+    /* AESTHETIC IMAGE CARDS */
+    .image-frame {
+      margin: 4rem 0;
+      position: relative;
+      transition: transform 0.4s ease;
     }
 
-    p {
-      margin-bottom: 1.5rem;
-    }
-
-    ul {
-      margin-bottom: 1.5rem;
-    }
-
-    /* HIGHLIGHT BOX */
-    .highlight-box {
-      background-color: rgba(128, 0, 0, 0.1);
-      padding: 1.5rem;
-      border-left: 4px solid var(--bg-maroon);
-      margin: 2rem 0;
-      border-radius: 4px;
-      color: var(--text-maroon);
-      font-weight: 500;
-      font-size: 1.1rem;
-    }
-
-    /* FULL-WIDTH IMAGE STYLING */
-    .image-block {
-      text-align: center;
-      margin: 3rem 0;
-    }
-
-    .image-block img {
-      width: 100%; /* Makes image full width of the container */
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 8px 25px rgba(128, 0, 0, 0.2);
+    .image-frame img {
+      width: 100%;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 20px 40px rgba(128, 0, 0, 0.25);
       border: 1px solid rgba(128, 0, 0, 0.1);
     }
 
-    .image-caption {
-      font-style: italic;
-      margin-top: 15px;
-      color: var(--text-maroon);
-      font-size: 1rem;
+    .image-frame::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      right: 15px;
+      bottom: 15px;
+      border: 2px solid var(--bg-maroon);
+      border-radius: 12px;
+      z-index: -1;
+      opacity: 0.3;
     }
 
-    /* YOUTUBE VIDEO FIX */
-    .video-block {
-      text-align: center;
+    .image-caption {
+      text-align: right;
+      font-style: italic;
+      color: var(--text-maroon);
+      margin-top: 1.5rem;
+      font-size: 1rem;
+      border-right: 4px solid var(--bg-maroon);
+      padding-right: 15px;
+    }
+
+    /* SECTION HEADERS */
+    h2 {
+      color: var(--bg-maroon);
+      font-size: 2.4rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+    }
+
+    .section-divider {
+      width: 80px;
+      height: 4px;
+      background: var(--bg-maroon);
+      margin-bottom: 2rem;
+    }
+
+    /* HIGHLIGHTS & LISTS */
+    .quote-box {
+      background: var(--soft-maroon);
+      padding: 2.5rem;
+      border-radius: 0 40px 0 40px;
       margin: 3rem 0;
+      border-left: 8px solid var(--bg-maroon);
+    }
+
+    .modern-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .modern-list li {
+      margin-bottom: 1.5rem;
+      padding-left: 2rem;
+      position: relative;
+    }
+
+    .modern-list li::before {
+      content: "◈";
+      color: var(--bg-maroon);
+      position: absolute;
+      left: 0;
+      font-weight: bold;
+    }
+
+    /* YOUTUBE EMBED */
+    .video-wrapper {
+      background: #000;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      margin: 4rem 0;
     }
 
     .video-container {
       position: relative;
-      padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+      padding-bottom: 56.25%;
       height: 0;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.2);
     }
 
     .video-container iframe {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0; width: 100%; height: 100%;
       border: none;
     }
 
-    /* FOOTER STUB */
-    footer {
-      background-color: var(--bg-maroon);
-      color: var(--text-beige);
-      padding: 40px 20px;
-      text-align: center;
+    /* DARK IMPACT SECTION */
+    .dark-panel {
+      background: var(--bg-maroon);
+      color: var(--beige);
+      padding: 4rem;
+      border-radius: 20px;
+      margin-top: 5rem;
     }
 
-    @media (max-width: 768px) {
-      #hero { padding-top: 100px !important; }
-      h2 { font-size: 1.8rem; }
+    .dark-panel h2 { color: var(--beige); border: none; }
+
+    footer {
+      background: #1a0000;
+      color: var(--beige);
+      padding: 3rem 0;
+      text-align: center;
     }
   </style>
 </head>
 
 <body>
-  <nav class="navbar"></nav>
 
   <section id="hero">
     <div class="container">
       <h1>The Mathematics of Cryptography</h1>
-      <p style="font-size: 1.3rem; max-width: 700px; margin: 10px auto; opacity: 0.9;">
-        From simple ciphers to secure internet communication, it's all number theory.
-      </p>
+      <p style="font-size: 1.4rem; font-weight: 300;">Unlocking the secrets of number theory.</p>
     </div>
   </section>
 
-  <main class="main-container">
-
-    <p style="font-size: 1.15rem;">
-      Cryptography is the art of keeping secrets, and at its core it is built on some of the deepest ideas in mathematics. From the humble Caesar cipher to the public‑key systems that protect your messages, number theory, modular arithmetic, and algebraic structures do the heavy lifting.
-    </p>
+  <main class="content-wrapper">
 
     <h2>Classical Roots</h2>
-    <p>
-      Why does your online banking password feel like gibberish? Because it is backed by math. The <strong>Caesar Cipher</strong> represents the historical origin of encryption, using simple alphabetic shifts to secure military communication.
-    </p>
+    <div class="section-divider"></div>
+    <p>Cryptography is the art of keeping secrets, and at its core, it is built on some of the deepest ideas in mathematics. From the humble Caesar cipher to the public‑key systems that protect your messages, number theory and algebraic structures do the heavy lifting.</p>
 
-    <div class="highlight-box">
-      <strong>Key insight:</strong> A one-way function is easy to compute but hard to invert — the foundation of secure encryption.
+    <div class="image-frame">
+      <img src="images/content-1.jpg" alt="Cryptography Seminar">
+      <div class="image-caption">“Are we cooked?” – Exploring the horizon of modern security.</div>
     </div>
 
-    <div class="video-block">
-      <h2>Missed The Seminar? No Problem!</h2>
-      <p>Watch our club talk where we explore the depths of cryptography:</p>
+    <div class="quote-box">
+      <p style="font-size: 1.25rem; font-weight: 700; margin: 0;">"A one-way function is easy to compute but hard to invert—this simple asymmetry is the bedrock of your digital life."</p>
+    </div>
+
+    <h2>The Seminar</h2>
+    <div class="section-divider"></div>
+    <p>If you missed our live session, you can catch the full deep-dive into cybersecurity math below.</p>
+    
+    <div class="video-wrapper">
       <div class="video-container">
         <iframe src="https://www.youtube.com/embed/V4_HV2FFi5c" 
                 title="Cryptography Seminar" 
@@ -178,79 +209,44 @@
                 allowfullscreen>
         </iframe>
       </div>
-      <p style="font-style: italic; margin-top: 1rem; color: var(--text-maroon);">Ahmed Maghri | The Math Behind Cryptography and Cybersecurity</p>
     </div>
 
-    <div class="image-block">
-      <img src="images/content-1.jpg" alt="Cryptography Seminar Presentation">
-      <div class="image-caption">
-        Exploring the future of encryption – “Are we cooked?”
-      </div>
-    </div>
+    <h2>The RSA Puzzle</h2>
+    <div class="section-divider"></div>
+    <p>RSA encryption relies on a beautifully simple problem: it is easy to multiply two large prime numbers, but nearly impossible to factor the result back into those primes.</p>
+    
+    
 
-    <h2>Wait, So What's Happening?</h2>
-    <p>
-      Every cryptographic algorithm hides a mathematical puzzle in plain sight. For example, <strong>RSA</strong> relies on the mathematical difficulty of factoring large semi-prime numbers (the product of two large primes, P and Q).
-    </p>
-
-    <h3>Modular Arithmetic and Congruence</h3>
-    <p>We utilize Euler's totient function $\phi(n)$, the Greatest Common Divisor (GCD), and modular remainders to create keys:</p>
-    <ul>
-      <li><strong>Public Key:</strong> Used by the sender to encrypt the message.</li>
-      <li><strong>Private Key:</strong> Kept secret by the receiver to decrypt the message.</li>
+    <ul class="modern-list">
+      <li><strong>Euler's Totient Function:</strong> The secret ingredient $\phi(n)$ that makes decryption possible.</li>
+      <li><strong>Asymmetric Keys:</strong> One key to lock the door (Public), and a completely different key to open it (Private).</li>
     </ul>
 
-    <div class="image-block">
-      <img src="images/content-4.jpg" alt="Quantum Computing Presentation Slide">
-      <div class="image-caption">
-        Explaining the transition to quantum computing.
-      </div>
+    <div class="image-frame">
+      <img src="images/content-4.jpg" alt="Quantum Discussion">
+      <div class="image-caption">Discussing the transition to Post-Quantum Cryptography (PQC).</div>
     </div>
 
-    <h2>Post-Quantum Solutions</h2>
-    <p>
-      <strong>Lattice-Based Cryptography</strong> uses the "Geometry of Numbers"—linear combinations of basis vectors in a D-dimensional space—to create security that resists quantum attacks.
-    </p>
-
-    <h3>Hard Mathematical Problems</h3>
-    <ul>
-      <li><strong>Shortest Vector Problem (SVP):</strong> Finding the vector in a lattice closest to the origin.</li>
-      <li><strong>Closest Vector Problem (CVP):</strong> Finding the lattice point closest to a random point in space.</li>
-    </ul>
-
-    <h3>Learning With Errors (LWE)</h3>
-    <p>
-      This method encrypts data by adding "noise" or errors to linear equations, making them computationally "hard" to solve even for quantum computers. Alice and Bob communicate using matrices and error distributions to ensure indistinguishable ciphertexts.
-    </p>
-
-    <div class="highlight-box" style="background-color: var(--bg-maroon); color: var(--text-beige);">
-      <h3>Future Outlook</h3>
-      <p style="margin-bottom: 0;">
-        <strong>"Harvest Now, Decrypt Later":</strong> Adversaries are collecting encrypted data today to decrypt it once quantum hardware matures. Global mandates are pushing for an immediate shift to Post-Quantum Cryptography (PQC) to secure long-term data privacy.
-      </p>
+    <div class="dark-panel">
+      <h2>Post-Quantum Solutions</h2>
+      <p>Lattice-Based Cryptography uses the <strong>Geometry of Numbers</strong> to create puzzles that even quantum computers cannot solve efficiently.</p>
+      
+      <h3>Key Challenges:</h3>
+      <ul class="modern-list" style="color: var(--beige);">
+        <li>Shortest Vector Problem (SVP)</li>
+        <li>Learning With Errors (LWE)</li>
+      </ul>
+      <p style="margin-top: 2rem; font-style: italic; opacity: 0.8;">The "Harvest Now, Decrypt Later" threat is real. The time to transition is now.</p>
     </div>
 
   </main>
 
   <footer>
-    <div class="footer-content">
-      <p>CONNECT WITH US:</p>
-      <div class="socials">
-        <a href="https://www.instagram.com/mathclub.cube/#"><i class="fa-brands fa-instagram"></i> Instagram</a>
-        <a href="https://www.youtube.com/@MathClubCUB"><i class="fa-brands fa-youtube"></i> Youtube</a>
-      </div>
-      <p style="margin-top: 20px;">&copy; <span id="copyright-year"></span> The Math Society</p>
-    </div>
+    <p>&copy; 2026 The Math Society | Built with Rigor</p>
   </footer>
 
   <script>
-    document.getElementById('copyright-year').textContent = new Date().getFullYear();
+    // For mobile menu or other interactions
   </script>
-
-  <script>
-    // Simple script to update the copyright year
-    document.getElementById('copyright-year').textContent = new Date().getFullYear();
-  </script>
-
 </body>
 </html>
