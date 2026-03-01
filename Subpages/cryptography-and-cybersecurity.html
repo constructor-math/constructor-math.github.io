@@ -12,137 +12,121 @@
   <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
 
   <style>
- #hero {
-            min-height: auto !important;
-            height: auto !important;
-            max-height: none !important;
-            padding-top: 180px !important;
-            padding-bottom: 2.5rem !important;
-            display: block !important;
-        }
-
-        .hero-content {
-            padding-top: 0 !important;
-            padding-bottom: 0 !important;
-        }
-
-        #explanation {
-            padding-top: 3rem !important;
-            margin-top: 0 !important;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            max-width: 900px;
-            margin: 2.5rem auto;
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
-        }
-/* Layout for side images */
-.page-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
-    padding: 0 20px;
-}
-
-.side-image-container {
-    flex: 1;
-    max-width: 200px; /* Adjust based on how much "blank space" you want to fill */
-    position: sticky;
-    top: 100px; /* Keeps images visible as you scroll */
-}
-
-.side-image-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border: 2px solid var(--bg-maroon);
-}
-
-/* Ensure the main content stays centered */
-#explanation .container {
-    flex: 2;
-    margin: 0 !important; /* Reset margin to let flexbox handle it */
-}
-
-/* Responsive: Hide side images on small screens */
-@media (max-width: 1200px) {
-    .side-image-container {
-        display: none;
+    /* --- HERO & BASE STYLES --- */
+    #hero {
+        min-height: auto !important;
+        height: auto !important;
+        max-height: none !important;
+        padding-top: 180px !important;
+        padding-bottom: 2.5rem !important;
+        display: block !important;
     }
-}
-    
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
 
-        .highlight-box {
-            background-color: rgba(128, 0, 0, 0.1);
-            padding: 1.5rem;
-            border-left: 4px solid var(--bg-maroon);
-            margin: 1.5rem 0;
-            border-radius: 4px;
-        }
+    .hero-content {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+    }
 
-        .intro-emphasis {
-            font-size: 1.2rem;
-            line-height: 1.9;
-            margin: 2rem 0;
-            padding-left: 1rem;
-            border-left: 3px solid rgba(128, 0, 0, 0.3);
-        }
+    #explanation {
+        padding-top: 3rem !important;
+        margin-top: 0 !important;
+    }
 
-        .key-takeaway {
-            background-color: rgba(128, 0, 0, 0.05);
-            padding: 1.25rem;
-            margin: 1.5rem 0;
-            border-radius: 4px;
-            font-size: 1.05rem;
-        }
+    /* --- VIDEO FIX --- */
+    .video-container {
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 900px;
+        margin: 2.5rem auto;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
 
-        .section-divider {
-            text-align: center;
-            margin: 3rem 0;
-            color: var(--bg-maroon);
-            font-size: 1.5rem;
-        }
+    .video-container iframe {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%; border: none;
+    }
 
-        h2 {
-            color: var(--bg-maroon);
-            margin-top: 3.5rem;
-            font-size: 2rem;
-        }
+    /* --- SIDEBAR LAYOUT --- */
+    .page-wrapper {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        max-width: 1600px;
+        margin: 0 auto;
+        gap: 40px;
+        padding: 0 20px;
+    }
 
-        #hero h3,
-        section h3 {
-            color: var(--text-maroon);
-            margin-top: 2rem;
-            font-size: 1.4rem;
-        }
+    .side-media {
+        flex: 0 0 250px;
+        position: sticky;
+        top: 120px;
+    }
 
-        .movie-detail {
-            font-style: italic;
-            color: var(--text-maroon);
-            margin: 0.5rem 0;
-        }
-    </style>
+    .side-media img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        border: 1px solid rgba(128, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
 
+    #explanation .container {
+        flex: 1;
+        max-width: 900px;
+        margin: 0 !important;
+    }
+
+    @media (max-width: 1200px) {
+        .side-media { display: none; }
+    }
+
+    /* --- CONTENT DECORATION --- */
+    .highlight-box {
+        background-color: rgba(128, 0, 0, 0.1);
+        padding: 1.5rem;
+        border-left: 4px solid #800000;
+        margin: 1.5rem 0;
+        border-radius: 4px;
+    }
+
+    .intro-emphasis {
+        font-size: 1.2rem;
+        line-height: 1.9;
+        margin: 2rem 0;
+        padding-left: 1rem;
+        border-left: 3px solid rgba(128, 0, 0, 0.3);
+    }
+
+    h2 { color: #800000; margin-top: 3.5rem; font-size: 2.2rem; }
+    h3 { color: #800000; margin-top: 2rem; }
+
+    /* --- FOOTER STYLING --- */
+    footer {
+        background: #1a1a1a;
+        color: white;
+        padding: 3rem 0;
+        margin-top: 5rem;
+        text-align: center;
+    }
+    .socials {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin: 1.5rem 0;
+    }
+    .socials a { color: white; text-decoration: none; margin-left: 8px; }
+    .socials a:hover { color: #ff4d4d; }
+    .link i { color: #800000; }
+  </style>
 </head>
 
 <body>
-  <!--NAVBAR-->
   <nav class="navbar">
     <div class="nav-container">
       <div class="logo-container logo_title">
@@ -153,182 +137,147 @@
         <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
         <li><a href="ai-ml.html" class="nav-link">AI/ML</a></li>
         <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank" class="nav-link">Integration Bee</a></li>
-        <li class="dropdown">
-            <a href="ugs.html" class="nav-link dropdown-toggle">UGS</a>
-            <ul class="dropdown-menu">
-                <li><a href="ugs1.html">UGS 1</a></li>
-                <li><a href="ugs2.html">UGS 2</a></li>
-                <li><a href="ugs3.html">UGS 3</a></li>
-                <li><a href="ugs4.html">UGS 4</a></li>
-            </ul>
-        </li>
         <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
         <li><a href="poker.html" class="nav-link">Poker</a></li>
         <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
         <li><a href="cryptography-and-cybersecurity.html" class="nav-link active">Cryptography and Cybersecurity</a></li>
       </ul>
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
     </div>
   </nav>
 
-  <!--HERO SECTION-->
-  <section id="hero" style="padding-top: 0; padding-bottom: 0; min-height: auto; margin-top: 0;">
-    <div class="hero-content" style="text-align: center; padding-top: 1rem;">
-      <h1 style="margin-top: 0; text-align: center;">The Mathematics of Cryptography</h1>
-      <p style="font-size: 1.3rem; margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+  <section id="hero">
+    <div class="hero-content" style="text-align: center;">
+      <h1>The Mathematics of Cryptography</h1>
+      <p style="font-size: 1.3rem; max-width: 800px; margin: 0.5rem auto;">
         From simple ciphers to secure internet communication, it's all number theory.</p>
     </div>
   </section>
 
- <!--CONTENT-->
-<section id="explanation">
-  <div class="container">
+  <section id="explanation">
+    <div class="page-wrapper">
 
-    <!-- Intro Block -->
-    <div class="content-section intro-block">
-      <p class="intro-emphasis">
-        Why does your online banking password feel like gibberish? Because it is backed by math.
-        Caesar Cipher: The historical origin of encryption using simple alphabetic shifts
-        to secure military communication. 
-      </p>
+      <aside class="side-media">
+        <img src="content-1.jpg" alt="Cryptography Intro">
+      </aside>
 
-      <p class="main-text">
-        Cryptography is the art of keeping secrets, and at its core it is built on some of the deepest
-        ideas in mathematics. From the humble Caesar cipher
-        to the public-key systems that protect your messages, number theory,
-        modular arithmetic and algebraic structures do the heavy lifting.
-      </p>
+      <div class="container">
+        <div class="content-section">
+          <p class="intro-emphasis">
+            Why does your online banking password feel like gibberish? Because it is backed by math.
+          </p>
+          <p>
+            <strong>Caesar Cipher:</strong> The historical origin of encryption using simple alphabetic shifts to secure military communication.
+          </p>
+          <p>
+            Cryptography is the art of keeping secrets, and at its core it is built on some of the deepest ideas in mathematics. 
+            From the humble Caesar cipher to the public-key systems that protect your messages, number theory, modular arithmetic 
+            and algebraic structures do the heavy lifting.
+          </p>
+          <div class="highlight-box">
+            <strong>Key insight:</strong> A one-way function is easy to compute but hard to invert — the foundation of secure encryption.
+          </div>
+        </div>
 
-      <div class="highlight-box">
-        <strong>Key insight:</strong> a one-way function is easy to compute but hard to invert —
-        the foundation of secure encryption.
-      </div>
-    </div>
+        <div class="content-section">
+          <h2>Missed The Seminar? No Problem!</h2>
+          <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/V4_HV2FFi5c" 
+                    title="Cybersecurity and Cryptography Seminar" allowfullscreen>
+            </iframe>
+          </div>
+          <p style="text-align: center; font-style: italic;">Ahmed Maghri | The Math Behind Cryptography and Cybersecurity</p>
+        </div>
 
-    <!-- Seminar Section -->
-    <div class="content-section">
-      <h2>Missed The Seminar? No Problem!</h2>
-      <p class="center-text">
-        Watch our club talk where we explore the depths of cryptography:
-      </p>
-
-        <div class="video-container">
-                    <iframe src="https://www.youtube.com/watch?v=V4_HV2FFi5c" title="Cybersecurity and Cryptography Seminar"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                    </iframe>
-                </div>
-
-      <p class="video-caption">
-        Ahmed Maghri | The Math Behind Cryptography and Cybersecurity
-      </p>
-
-      
-    <!-- RSA Section -->
-   
-
-          <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
-            <section id="explanation">
-  <div class="page-wrapper">
-    
-    <aside class="side-image-container">
-      <img src="content-1.jpg" alt="Mathematical Cryptography Concept">
-    </aside>
-
-    <div class="container">
-      </div>
-
-    <aside class="side-image-container">
-      <img src="content-4.jpg" alt="Cybersecurity Visualization">
-    </aside>
-
-  </div>
-</section>
-            
-        <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
-            <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
-                <!-- OPENING HOOK -->
-                <p style="font-size: 1.2rem; line-height: 1.9; font-style: italic; margin-top: 0; padding-top: 0.5rem;">
-                    Wait So What's Happening?
-                </p>
-
-                <p class="intro-emphasis">
-                     Every cryptographic algorithm hides in plain sight a mathematical puzzle.
-            For example, RSA: Understanding how RSA relies on the mathematical difficulty of factoring large semi-prime numbers
-            (the product of two large primes, P and Q)
-            Modular Arithmetic and Congruence: The role of Euler's totient function ϕ(n) Greatest Common Divisor (GCD),
+        <div class="content-block">
+          <h3>Wait, So What's Happening?</h3>
+          <p>Every cryptographic algorithm hides in plain sight a mathematical puzzle.</p>
+          <p>
+            <strong>RSA:</strong> Understanding how RSA relies on the mathematical difficulty of factoring large semi-prime numbers 
+            (the product of two large primes, $P$ and $Q$). 
+          </p>
+          <p>
+            <strong>Modular Arithmetic and Congruence:</strong> The role of Euler's totient function $\phi(n)$, Greatest Common Divisor (GCD), 
             and modular remainders in creating public and private keys.
-                </p>
-
-                <div class="highlight-box">
-                    <strong> Public Key:</strong> used by the sender to encrypt the message. <strong>  
-                      Private Key: </strong> kept secret by the receiver to decrypt the message. 
-                </div>
-
-        </div>
-      </div>
-    </div>
-
-    <!-- Post-Quantum Section -->
-    <div class="content-section">
-      <h2>Post-Quantum Solutions: Lattice-Based Cryptography</h2>
-
-   
-        <div>
-          <p>
-             The Geometry of Numbers: Introduction to the "Lattice"—a linear combination
-            of basis vectors in a D-dimensional space.
           </p>
-
-          <p>
-            - Hard Mathematical Problems:
-            Shortest Vector Problem (SVP): Finding the vector in a lattice closest to the origin And
-            Closest Vector Problem (CVP): Finding the lattice point closest to a random point in space.
-          </p>
+          
+          
+          
+          <div class="highlight-box">
+            <strong>Public Key:</strong> used by the sender to encrypt the message. <br>
+            <strong>Private Key:</strong> kept secret by the receiver to decrypt the message.
+          </div>
         </div>
 
-         <h2>Post-Quantum Solutions: Lattice-Based Cryptography</h2>
-
-                <p>
-                     The Geometry of Numbers: Introduction to the "Lattice". A linear combination
-            of basis vectors in a D-dimensional space.
-                </p>
-
-        <div>
+        <div class="content-section">
+          <h2>Post-Quantum Solutions: Lattice-Based Cryptography</h2>
           <p>
-            Learning With Errors (LWE): A method of encryption that adds "noise" or errors to linear equations,
+            <strong>The Geometry of Numbers:</strong> Introduction to the "Lattice"—a linear combination of basis vectors in a D-dimensional space.
+          </p>
+          <p>
+            <strong>Hard Mathematical Problems:</strong><br>
+            • <strong>Shortest Vector Problem (SVP):</strong> Finding the vector in a lattice closest to the origin. <br>
+            • <strong>Closest Vector Problem (CVP):</strong> Finding the lattice point closest to a random point in space.
+          </p>
+
+          
+
+          <p>
+            <strong>Learning With Errors (LWE):</strong> A method of encryption that adds "noise" or errors to linear equations, 
             making them computationally "hard" to solve even for quantum computers.
           </p>
-
           <p>
-             Public Key Systems in LWE: How Alice and Bob can communicate using matrices
-            and error distributions to ensure indistinguishable ciphertexts.
+            <strong>Public Key Systems in LWE:</strong> How Alice and Bob can communicate using matrices and error distributions 
+            to ensure indistinguishable ciphertexts.
+          </p>
+        </div>
+
+        <div class="content-section">
+          <h3>Future Outlook</h3>
+          <p>
+            <strong>"Harvest Now, Decrypt Later":</strong> The risk of adversaries collecting encrypted data today to decrypt it once quantum hardware matures.
+          </p>
+          <p>
+            <strong>PQC Transition:</strong> Global mandates are pushing for an immediate shift to Post-Quantum Cryptography (PQC) to secure long-term data privacy.
           </p>
         </div>
       </div>
+
+      <aside class="side-media">
+        <img src="content-4.jpg" alt="Security Visualization">
+      </aside>
+
     </div>
+  </section>
 
-    <!-- Future Section -->
-    <div class="content-section">
-      <h3>Future Outlook</h3>
-
-      <p>
-         "Harvest Now, Decrypt Later": The risk of adversaries collecting encrypted data
-        today to decrypt it once quantum hardware matures.
-         PQC Transition: Global mandates are pushing for an immediate shift to Post-Quantum Cryptography (PQC)
-        to secure long-term data privacy.
-      </p>
-
-    
+  <footer>
+    <div class="footer-content">
+        <p>CONNECT WITH US:</p>
+        <div class="socials">
+            <div class="link">
+                <i class="fa-brands fa-instagram"></i>
+                <a href="https://www.instagram.com/mathclub.cube/#" target="_blank">Instagram</a>
+            </div>
+            <div class="link">
+                <i class="fa-brands fa-linkedin"></i>
+                <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank">LinkedIn</a>
+            </div>
+            <div class="link">
+                <i class="fa-solid fa-share"></i>
+                <a href="https://constructoruniversity.sharepoint.com/" target="_blank">Sharepoint</a>
+            </div>
+            <div class="link">
+                <i class="fa-brands fa-youtube"></i>
+                <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+            </div>
+            <div class="link">
+                <i class="fa-brands fa-github"></i>
+                <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+            </div>
+        </div>
+        <p>&copy; <span id="copyright-year">2026</span> The Math Society</p>
     </div>
-  </div>
-</section>
+  </footer>
+
+  <script src="../Home Page/landing.js"></script>
 </body>
-
-</html>
-                   
+</html>               
