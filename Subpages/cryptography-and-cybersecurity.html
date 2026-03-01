@@ -184,14 +184,17 @@
     <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
       <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
 
-        <p class="intro-emphasis">
-          <em>Why does your online banking password feel like gibberish? Because it is backed by math.</em>
+        <p class="Classical Roots">
+          <em>Why does your online banking password feel like gibberish? Because it is backed by math.
+           Caesar Cipher: The historical origin of encryption using simple alphabetic shifts 
+            to secure military communication. 
+          </em>
         </p>
 
         <p style="font-size: 1.15rem; line-height: 1.8;">
           Cryptography is the art of keeping secrets, and at its core it is built on some of the deepest
-          ideas in mathematics.  From the humble Caesar cipher
-to the public‑key systems that protect your messages, number theory,
+          ideas in mathematics. From the humble Caesar cipher
+          to the public‑key systems that protect your messages, number theory,
           modular arithmetic and algebraic structures do the heavy lifting.
         </p>
 
@@ -202,8 +205,7 @@ to the public‑key systems that protect your messages, number theory,
         </div>
 
         <h2>Seminar Recording</h2>
-        <p>Watch our club talk where we explored prime numbers, RSA, and the surprising role of
-          elliptic curves:</p>
+        <p>Watch our club talk where we explore the depths of cryptography: </p>
         <div class="video-container">
           <iframe src="https://www.youtube.com/live/V4_HV2FFi5c?si=NyFhKcaQPwGwfomy" title="Cryptography Seminar"
             frameborder="0"
@@ -212,7 +214,7 @@ to the public‑key systems that protect your messages, number theory,
           </iframe>
         </div>
         <p style="text-align: center; font-style: italic; margin-top: 1rem; color: var(--text-maroon);">
-          Math Society Topic Tutorial Series – Cryptography</p>
+          Ahmed Maghri | The Math Behind Cryptography and Cybersecurity </p>
 
                  <div class="image-container">
   <img src="images/content-1.jpg" alt="Cryptography Seminar Presentation">
@@ -221,43 +223,49 @@ to the public‑key systems that protect your messages, number theory,
   </div>
 </div>
 
-        <h2>Why Mathematics Matters</h2>
+        <h2>Wait So What's Happening?</h2>
         <p>
-          Every cryptographic algorithm hides in plain sight a mathematical puzzle.  For example, RSA
-          relies on the fact that factoring the product of two large primes is computationally
-          infeasible with current technology.  Quantum computers threaten this assumption, which is why
-          researchers are already working on <a href="https://en.wikipedia.org/wiki/Post-quantum_cryptography" target="_blank" class="external-link">post‑quantum schemes</a>.
+          Every cryptographic algorithm hides in plain sight a mathematical puzzle.  
+          For example, RSA:
+         -  Understanding how RSA relies on the mathematical difficulty of factoring large semi-prime numbers 
+          (the product of two large primes, P and Q)
+         - Modular Arithmetic and Congruence: The role of Euler's totient function ϕ(n) Greatest Common Divisor (GCD), 
+          and modular remainders in creating public and private keys.
+                Public Key: used by the sender to encrypt the message.
+                Private Key: kept secret by the receiver to decrypt the message.
+
         </p>
 
-        <div class="key-takeaway">
-          Quantum computers operate very differently from classical computers. 
-          Instead of bits that are either 0 or 1, quantum systems use qubits that can exist in multiple states 
-          simultaneously. This allows certain computations to be performed dramatically faster.
-        </div>
-
-          <div class="image-container">
-  <img src="images/content-4.jpg" alt="Quantum Computing Presentation Slide">
+<div class="image-container">
+  <img src="images/content-4.jpg" alt="Quantum Computing Presentation Slide" 
   <div class="image-caption">
-    Explaining quantum states and superposition during the seminar.
+    Explaining quantum computing.
   </div>
 </div>
+        
+        <div class="Post-Quantum Solutions: Lattice-Based Cryptography">
+          - The Geometry of Numbers: Introduction to the "Lattice"—a linear combination
+          of basis vectors in a D-dimensional space.
+          - Hard Mathematical Problems:
+          --Shortest Vector Problem (SVP): Finding the vector in a lattice closest to the origin.
+          --Closest Vector Problem (CVP): Finding the lattice point closest to a random point in space.
+          -Learning With Errors (LWE): A method of encryption that adds "noise" or errors to linear equations, 
+          making them computationally "hard" to solve even for quantum computers.
+          -Public Key Systems in LWE: How Alice and Bob can communicate using matrices
+          and error distributions to ensure indistinguishable ciphertexts.
+ </div>
 
-<div class="conclusion">
-  RSA has protected digital communication for decades, 
-  but quantum computing may eventually undermine it. 
-  The real question is not whether quantum computers can break today’s encryption — but when.
-  Post-quantum cryptography is not just theoretical research; 
-  it is preparation for the next era of digital security.
+          
+
+<div class="Future Outlook">
+    - "Harvest Now, Decrypt Later": The risk of adversaries collecting encrypted data 
+      today to decrypt it once quantum hardware matures.
+    - PQC Transition: Global mandates are pushing for an immediate shift to Post-Quantum Cryptography (PQC)
+      to secure long-term data privacy.
 </div>     
 
     
-        <div class="section-divider">More Resources</div>
-        <ul style="font-size: 1.1rem; line-height: 1.8;">
-          <li><a href="https://crypto.stanford.edu/~dabo/cryptobook/" target="_blank" class="external-link">A Graduate Course in Applied Cryptography</a></li>
-          <li><a href="https://www.youtube.com/playlist?list=PL5B1C9361A0407BE4" target="_blank" class="external-link">Numberphile: Cryptography Videos</a></li>
-          <li><a href="https://en.wikipedia.org/wiki/cryptography" target="_blank" class="external-link">Cryptography on Wikipedia</a></li>
-        </ul>
-      </div>
+        
     </div>
   </section>
 </body>
