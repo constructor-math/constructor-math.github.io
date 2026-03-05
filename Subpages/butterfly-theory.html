@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Behind Poker - Math Society</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Home Page/landing.css">
+    <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+    <style>
+        #hero {
+            min-height: auto !important;
+            height: auto !important;
+            max-height: none !important;
+            padding-top: 180px !important;
+            padding-bottom: 2.5rem !important;
+            display: block !important;
+        }
+
+        .hero-content {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        #explanation {
+            padding-top: 3rem !important;
+            margin-top: 0 !important;
+        }
+
+        .highlight-box {
+            background-color: rgba(128, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--bg-maroon);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 600px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            width: 600px;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+        }
+
+        .image-caption {
+            font-style: italic;
+            margin-top: 0.75rem;
+            color: var(--text-maroon);
+            font-size: 1rem;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--bg-maroon);
+            font-size: 1.5rem;
+        }
+
+        .intro-emphasis {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin: 2rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid rgba(128, 0, 0, 0.3);
+        }
+
+        .key-takeaway {
+            background-color: rgba(128, 0, 0, 0.05);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-size: 1.05rem;
+        }
+
+        h2 {
+            color: var(--bg-maroon);
+            margin-top: 3.5rem;
+            font-size: 2rem;
+        }
+
+        #hero h3,
+        section h3 {
+            color: var(--text-maroon);
+            margin-top: 2rem;
+            font-size: 1.4rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container logo_title">
+                <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+                <h3>Math Society</h3>
+            </div>
+            <ul class="nav-links">
+                <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+                <li><a href="ai-ml.html" class="nav-link">AI/ML</a></li>
+                <li><a href="https://constructor-math.github.io/integration-bee/" target="_blank"
+                        class="nav-link">Integration Bee</a></li>
+                <li class="dropdown">
+                    <div class="dropdown-header">
+                        <a href="ugs.html" class="nav-link dropdown-toggle">UGS</a>
+                        <span class="dropdown-toggle-mobile">▼</span>
+                    </div>
+                    <ul class="dropdown-menu">
+                        <li><a href="ugs1.html">UGS 1</a></li>
+                        <li><a href="ugs2.html">UGS 2</a></li>
+                        <li><a href="ugs3.html">UGS 3</a></li>
+                        <li><a href="ugs4.html">UGS 4</a></li>
+                    </ul>
+                </li>
+                <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
+                <li><a href="poker.html" class="nav-link">Poker</a></li>
+                <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
+                <li><a href="butterfly-theory.html" class="nav-link active">Butterfly Effect & Chaos Theory</a></li>
+                <li><a href="cryptography-and-cybersecurity.html" class="nav-link">Cryptography and Cybersecurity</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------- -->
+
+    <!--HERO SECTION-->
+    <section id="hero" style="padding-top: 0; padding-bottom: 0; min-height: auto; margin-top: 0;">
+        <div class="hero-content" style="text-align: center; padding-top: 1rem;">
+            <h1 style="margin-top: 0;">The Domino Effect of Tiny Actions</h1>
+            <p style="font-size: 1.3rem; margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Predictability: An Unstoppable force in the mathematical world
+            </p>
+        </div>
+    </section>
+
+
+    <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
+        <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
+            <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
+                <!-- OPENING HOOK -->
+                <p style="font-size: 1.2rem; line-height: 1.9; font-style: italic; margin-top: 0; padding-top: 0.5rem;">
+                    Could we imagine the huge impact that one tiny thought could have made?
+                </p>
+
+                <p class="intro-emphasis">
+                    This was the fourth episode of <strong>"The Math Behind..."</strong> series, where Math Society dove
+                    into the Butterfly Effect and Chaos Theory of Mathematics. Led by <strong>Dr. Ivan
+                        Ovsyannikov</strong>,
+                    ...where he explored how tiny initial changes in complex systems can lead to vast,
+                    unpredictable
+                    outcomes, fundamentally altering our understanding of deterministic patterns.
+                </p>
+
+                <div class="highlight-box">
+                    <strong>The $64,000 Questions:</strong> "It shows that in a world where everything is deeply
+                    connected, even the tiniest 'what if' can snowball into a total
+                    game-changer; like a ball balanced on a jagged peak, the smallest nudge can send a system spiraling
+                    down a completely
+                    different path, proving that no detail is ever truly insignificant. How much can one small nudge
+                    change? When does a
+                    stable system turn chaotic? Could our smallest choice today be the tipping point for our entire
+                    tomorrow?"
+                    <em>essential</em>?
+                </div>
+
+                <h2>A Deep Dive into the world of confusion</h2>
+                <br>
+                <p>
+                    Watch how Dr. Ivan Ovsyannikov unravels the mathematics behind one of the most visually stunning
+                    films
+                    ever made, from Dynamic Systems to the mysteries of the Lorenz Attractors for Robust Chaos:
+                </p>
+                <br>
+                <div class="video-container">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/ws782fTpcW4?si=UurJ7XEKEC-mg4qD"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+
+                <p style="text-align: center; font-style: italic; margin-top: 1rem; color: var(--text-maroon);">
+                    Butterfly Effect and Chaos Theory - Episode 4
+                </p>
+
+                <h2>How and when do we expect things to happen in the real world?</h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    And that is a complex subject! Imagine driving a car: as
+                    a driver, you are laser-focused on the road, knowing that even a tiny
+                    miscalculation in speed can cause significant problems. But the real Chaos Theory starts when our
+                    "almost" affects
+                    everyone else. Just like a discriminant flipping a system from stable to unstable, a single driver
+                    tapping their brakes
+                    for a split second can trigger a massive, unpredictable traffic jam miles behind them. This is the
+                    Butterfly Effect in
+                    action—where tiny nudges on a parabola of factors refuse to stay small, settling instead into the
+                    strange attractors of
+                    real-world gridlock. It proves that in a deeply connected system, "almost" is a luxury the math
+                    simply doesn't forgive.
+                </p>
+
+                <div class="image-container">
+                    <img src="images/butterfly_effect/compressed_images/IMG_1772.jpeg" alt="Intro to Dynamic Systems"
+                        style="max-height: 400px; object-fit: cover;">
+                    <p class="image-caption">Introduction to Dynamic Systems</p>
+                </div>
+
+                <div class="image-container">
+                    <img src="images/butterfly_effect/compressed_images/IMG_1776.jpeg" alt="Stability and Instability"
+                        style="max-height: 400px; object-fit: cover;">
+                    <p class="image-caption">Explaining the concept of stability and Instability in physics</p>
+                </div>
+
+                <div class="highlight-box">
+                    <strong>Fun Fact: Dr. Ivan Ovsyannikov</strong> is a rare mathematical "all-rounder." While most
+                    experts stick to one lane, he bridges
+                    the gap between Physics, Statistics, and Matrix Algebra. It’s this specific combination that allows
+                    him to see the
+                    hidden logic in systems that look like total chaos to the rest of us—proving that whether it’s a
+                    traffic jam or a
+                    complex data set, there’s always a pattern if you know where to look.
+
+                </div>
+
+                <div class="image-container">
+                    <img src="images/butterfly_effect/compressed_images/IMG_1795.jpeg" alt="From Stable to Unstable"
+                        style="max-height: 400px; object-fit: cover;">
+                    <p class="image-caption">How a stable state can move to an unstable state</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>The Visual of Chaos: </strong> Dr. Ovsyannikov showed us how to "see" stability through
+                        <strong>phase
+                            spirals</strong>.
+                        He started with a single <strong>stable dot</strong>—a system at rest. When a system is stable,
+                        any "nudge" just
+                        causes it to spiral
+                        back toward that center point. But as soon as an <strong>external parameter</strong> (like speed
+                        or temperature)
+                        changes, that
+                        dot flips from a magnet into a "repeller." Instead of settling down, the system begins to
+                        <strong>spiral
+                            out</strong>,
+                        getting wider and more unpredictable with every turn. This is the exact moment the
+                        <strong>Butterfly Effect</strong>
+                        takes over:
+                        the further you spiral from that center, the more a tiny mistake changes our entire future
+                        path.
+                    </p>
+
+                </div>
+
+                <div class="image-container">
+                    <img src="images/butterfly_effect/compressed_images/IMG_1791.jpeg"
+                        alt="Application of Lorenz Attractor" style="max-height: 400px; object-fit: cover;">
+                    <p class="image-caption">Examples of the application of Lorenz Attractors to determine Robust
+                        Chaos</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p>
+                        <strong>Explanation: </strong>Dr. Ivan Ovsyannikov took us deeper by explaining that while these
+                        systems seem
+                        random, they often settle into
+                        <strong>strange attractors</strong>. Think of a ball balanced on a wavy hill; the smallest
+                        breeze determines
+                        which valley it lands in, but the
+                        "shape" of the hill remains the same. By studying robust chaos, we learned that unpredictability
+                        isn't just a
+                        mess—it’s
+                        a mathematical structure. This boundary between order and chaos is exactly where the math gets
+                        most interesting,
+                        proving
+                        that in a non-linear world, no detail is ever truly "insignificant."
+                    </p>
+                    <br>
+                    <p>
+                        We even explored the "spy" side of math! Dr. Ovsyannikov showed us how the <strong>Lorenz
+                            Attractor</strong> can
+                        be used for <strong>encryption</strong>.
+                        By using a binary key—like the 110 or 001—to set the starting coordinates of a chaotic system,
+                        we can hide
+                        messages
+                        inside a path of digital noise. To an outsider, the data looks like total randomness, but to
+                        anyone with the
+                        right
+                        mathematical key, it’s a perfectly mapped-out secret. It turns out that the same instability
+                        that makes the
+                        weather hard
+                        to predict is actually the secret to keeping our digital world secure.
+                    </p>
+                </div>
+
+
+                <div class="image-container">
+                    <h2>The Lorenz Attractor</h2>
+                    <img src="images/butterfly_effect/Lorenz_diverging_trajectories.gif"
+                        alt="Application of Lorenz Attractor" style="height: 100%;  width: 100%; object-fit: cover;">
+                    <p class="image-caption">A simple demonstration of the Lorenz Attractor in action</p>
+                </div>
+
+
+                <p style="font-size: 1.25rem; line-height: 1.8; margin-top: 10px;">
+                    <strong>Inside the Lorenz Attractor:</strong> This GIF isn't just a pretty shape—it's a map of
+                    <strong>deterministic chaos</strong>.
+                    Those swirling lines are <strong>trajectories</strong> tracking three weather variables (x, y, z)
+                    at once.
+                </p>
+
+                <p style="font-size: 1.25rem; line-height: 1.8; margin-top: 10px;">
+                    Watch closely as the lines start together but eventually split apart; this is <strong>Sensitive
+                        Dependence on
+                        Initial Conditions</strong>.
+                    Even though the math is precise, the tiniest difference with the variable t causes the paths to
+                    "diverge"
+                    wildly,
+                    proving that while
+                    the system stays within the beautiful shape of a <strong>strange attractor</strong>, its long-term
+                    future
+                    remains
+                    forever unpredictable.
+                </p>
+
+
+
+                <h2>Lessons to learn</h2>
+
+                <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 10px;"><strong>Small Inputs, Huge Outputs
+                        (The Power of
+                        "Almost"): </strong>Just like a tiny change in a discriminant can flip a parabola from stable to
+                    unstable, life doesn't always scale
+                    linearly. A five-minute delay or a single "sent" message can be the "nudge" that sends our entire
+                    trajectory down a
+                    different valley of the wavy hill.</p>
+
+                <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 10px;"><strong>The Limits of Human
+                        Prediction: </strong>Even
+                    if you have the best "sensors" (like a driver focused on the road), complex systems are
+                    deterministically
+                    unpredictable. Because we can never measure the starting state with infinite precision, long-term
+                    forecasting is a
+                    mathematical impossibility. We have to learn to plan for the "unplannable.".</p>
+
+                <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 10px;"><strong>Hidden Order within
+                        Randomness: </strong>Even
+                    when things look like total chaos (like a massive traffic jam), they are often following a Strange
+                    Attractor. Chaos
+                    isn't "messiness"; it’s a complex, bounded pattern. This teaches us that even in the most turbulent
+                    times, there is
+                    usually an underlying structure or "shape" to the madness.</p>
+
+                <!-- CLOSING -->
+                <p
+                    style="margin-top: 2.5rem; font-size: 1.2rem; line-height: 1.9; font-style: italic; text-align: center; color: var(--bg-maroon);">
+                    "Does the flap of a butterfly’s wings in Brazil set off a tornado in Texas?"
+                </p>
+                <p style="text-align: center; font-size: 1.1rem; margin-top: 0.5rem;">
+                    — Edward Lorenz, a meteorologist speaking in a conference in 1972
+                </p>
+
+                <p
+                    style="margin-top: 2.5rem; font-size: 1.2rem; line-height: 1.9; text-align: center; font-style: italic; color: var(--bg-maroon);">
+                    "The things that really change the world, according to Chaos theory, are the tiny things..."
+                </p>
+
+                <p style="text-align: center; font-size: 1.1rem; margin-top: 0.5rem;">
+                    — Neil Gaiman's book (Good Omens)
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-content">
+            <p>CONNECT WITH US:</p>
+            <div class="socials">
+                <div class="link">
+                    <i class="fa-brands fa-instagram"></i>
+                    <a href="https://www.instagram.com/mathclub.cube/#" target="_blank">Instagram</a>
+                </div>
+                <div class="link">
+                    <i class="fa-brands fa-linkedin"></i>
+                    <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/"
+                        target="_blank">LinkedIn</a>
+                </div>
+                <div class="link">
+                    <i class="fa-solid fa-share"></i>
+                    <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438"
+                        target="_blank">
+                        Sharepoint
+                    </a>
+                </div>
+                <div class="link">
+                    <i class="fa-brands fa-youtube"></i>
+                    <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+                </div>
+                <div class="link">
+                    <i class="fa-brands fa-github"></i>
+                    <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+                </div>
+            </div>
+            <p>&copy; <span id="copyright-year"></span> The Math Society</p>
+        </div>
+    </footer>
+
+    <script src="../Home Page/landing.js"></script>
+</body>
+
+</html>
