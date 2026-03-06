@@ -19,17 +19,17 @@
             padding-bottom: 2.5rem !important;
             display: block !important;
         }
-
+    
         .hero-content {
             padding-top: 0 !important;
             padding-bottom: 0 !important;
         }
-
+    
         #explanation {
             padding-top: 3rem !important;
             margin-top: 0 !important;
         }
-
+    
         .highlight-box {
             background-color: rgba(128, 0, 0, 0.1);
             padding: 1.5rem;
@@ -37,35 +37,35 @@
             margin: 1.5rem 0;
             border-radius: 4px;
         }
-
+    
         .image-container {
             text-align: center;
             margin: 2rem auto;
-            max-width: 600px;
+            max-width: 700px;
         }
-
+    
         .image-container img {
             max-width: 100%;
-            width: 600px;
+            width: 100%;
             height: auto;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
         }
-
+    
         .image-caption {
             font-style: italic;
             margin-top: 0.75rem;
             color: var(--text-maroon);
             font-size: 1rem;
         }
-
+    
         .section-divider {
             text-align: center;
             margin: 3rem 0;
             color: var(--bg-maroon);
             font-size: 1.5rem;
         }
-
+    
         .intro-emphasis {
             font-size: 1.2rem;
             line-height: 1.9;
@@ -73,7 +73,7 @@
             padding-left: 1rem;
             border-left: 3px solid rgba(128, 0, 0, 0.3);
         }
-
+    
         .key-takeaway {
             background-color: rgba(128, 0, 0, 0.05);
             padding: 1.25rem;
@@ -81,18 +81,57 @@
             border-radius: 4px;
             font-size: 1.05rem;
         }
-
+    
         h2 {
             color: var(--bg-maroon);
             margin-top: 3.5rem;
             font-size: 2rem;
         }
-
+    
         #hero h3,
         section h3 {
             color: var(--text-maroon);
             margin-top: 2rem;
             font-size: 1.4rem;
+        }
+    
+        /* Video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 2.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+        }
+    
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    
+        /* External link button */
+        .external-link {
+            display: inline-block;
+            background-color: var(--bg-maroon);
+            color: var(--text-beige);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: opacity 0.3s;
+            font-weight: 600;
+        }
+    
+        .external-link:hover {
+            opacity: 0.8;
         }
     </style>
 </head>
