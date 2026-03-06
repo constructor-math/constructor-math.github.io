@@ -133,6 +133,17 @@
         .external-link:hover {
             opacity: 0.8;
         }
+
+        .limited-text {
+            display: -webkit-box;
+            /* Required for line-clamping */
+            -webkit-line-clamp: 3;
+            /* Set the max number of lines */
+            -webkit-box-orient: vertical;
+            /* Required to set clamping direction */
+            overflow: hidden;
+            /* Hides the extra text */
+        }
     </style>
 </head>
 
@@ -164,7 +175,8 @@
                 <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
                 <li><a href="poker.html" class="nav-link">Poker</a></li>
                 <li><a href="interstellar.html" class="nav-link">Interstellar</a></li>
-                <li><a href="butterfly-theory.html" class="nav-link active">Butterfly Effect & Chaos Theory</a></li>
+                <li><a href="butterfly-theory.html" class="nav-link active limited-text">Butterfly
+                        Effect & Chaos Theory</a></li>
                 <li><a href="cryptography-and-cybersecurity.html" class="nav-link">Cryptography and Cybersecurity</a>
                 </li>
             </ul>
