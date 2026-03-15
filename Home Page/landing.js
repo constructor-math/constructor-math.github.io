@@ -1,73 +1,72 @@
 document.addEventListener('DOMContentLoaded', () => {
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
+    const dropdowns = document.querySelectorAll('.dropdown');
 
+    // ── Hamburger open/close ──────────────────────────────────────────────────
     hamburger.addEventListener('click', () => {
-        // Toggle the navigation menu
         navLinks.classList.toggle('active');
+        // Close all dropdowns when closing the menu
+        if (!navLinks.classList.contains('active')) {
+            dropdowns.forEach(d => d.classList.remove('active'));
+        }
     });
 
-    // Close menu when a link is clicked (except dropdown toggle)
-    document.querySelectorAll('.nav-links li a').forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Don't close menu if it's a dropdown toggle on mobile
-            if (!link.classList.contains('dropdown-toggle')) {
+    // ── Dropdown toggle on mobile ─────────────────────────────────────────────
+    dropdowns.forEach(dropdown => {
+        const toggleArrow = dropdown.querySelector('.dropdown-toggle-mobile');
+        const toggleLabel = dropdown.querySelector('.dropdown-toggle'); // the text label
+
+        const handleToggle = (e) => {
+            if (window.innerWidth > 768) return; // desktop: CSS hover handles it
+            e.preventDefault();
+            e.stopPropagation();
+
+            const isOpen = dropdown.classList.contains('active');
+
+            // Close all dropdowns first
+            dropdowns.forEach(d => d.classList.remove('active'));
+
+            // Then open this one if it wasn't already open
+            if (!isOpen) {
+                dropdown.classList.add('active');
+            }
+        };
+
+        // Clicking the ▼ arrow toggles dropdown
+        if (toggleArrow) {
+            toggleArrow.addEventListener('click', handleToggle);
+            toggleArrow.addEventListener('touchstart', handleToggle, { passive: false });
+        }
+
+        // Clicking the label (e.g. "Events") with no href also toggles dropdown
+        if (toggleLabel && !toggleLabel.getAttribute('href')) {
+            toggleLabel.addEventListener('click', handleToggle);
+            toggleLabel.addEventListener('touchstart', handleToggle, { passive: false });
+        }
+    });
+
+    // ── Close menu when a non-toggle nav link is clicked ─────────────────────
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (!link.classList.contains('dropdown-toggle') || link.getAttribute('href')) {
                 navLinks.classList.remove('active');
+                dropdowns.forEach(d => d.classList.remove('active'));
             }
         });
     });
 
-    // Dropdown functionality for mobile
-    const dropdowns = document.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
-        const toggle = dropdown.querySelector('.dropdown-toggle-mobile');
-        const link = dropdown.querySelector('.nav-link');
-        
-        if (toggle) {
-            // On mobile, clicking the arrow toggles the dropdown
-            const handleDropdownToggle = (e) => {
-                if (window.innerWidth <= 768) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    dropdown.classList.toggle('active');
-                    
-                    // Close other dropdowns
-                    dropdowns.forEach(otherDropdown => {
-                        if (otherDropdown !== dropdown) {
-                            otherDropdown.classList.remove('active');
-                        }
-                    });
-                }
-            };
-            
-            toggle.addEventListener('click', handleDropdownToggle);
-            toggle.addEventListener('touchstart', handleDropdownToggle, { passive: false });
-        }
-        
-        // Make sure the link itself still works normally
-        if (link) {
-            link.addEventListener('click', (e) => {
-                // Only prevent default if we're on desktop (where we don't want dropdown behavior)
-                // On mobile, let the link work normally
-                if (window.innerWidth > 768) {
-                    // Let the link work normally on desktop
-                    return;
-                }
-                // On mobile, the link also works normally now - only the arrow toggles dropdown
-            });
-        }
-    });
-
-    // Highlight active page
+    // ── Highlight active page ─────────────────────────────────────────────────
     const currentPage = window.location.pathname.split('/').pop() || 'landing.html';
     document.querySelectorAll('.nav-link').forEach(link => {
-        const linkPage = link.getAttribute('href').split('/').pop();
-        if (linkPage === currentPage) {
+        const href = link.getAttribute('href');
+        if (!href) return;
+        if (href.split('/').pop() === currentPage) {
             link.classList.add('active');
         }
     });
 
-    // Auto-update copyright year
+    // ── Auto-update copyright year ────────────────────────────────────────────
     const copyrightYear = document.getElementById('copyright-year');
     if (copyrightYear) {
         copyrightYear.textContent = new Date().getFullYear();
