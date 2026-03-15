@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Causal Machine Learning - Math Society</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../Home Page/landing.css">
+  <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+  <style>
+    #hero {
+      min-height: auto !important;
+      height: auto !important;
+      max-height: none !important;
+      padding-top: 180px !important;
+      padding-bottom: 2.5rem !important;
+      display: block !important;
+    }
+
+    .hero-content {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    #explanation {
+      padding-top: 3rem !important;
+      margin-top: 0 !important;
+    }
+
+    .highlight-box {
+      background-color: rgba(128, 0, 0, 0.1);
+      padding: 1.5rem;
+      border-left: 4px solid var(--bg-maroon);
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .section-divider {
+      text-align: center;
+      margin: 3rem 0;
+      color: var(--bg-maroon);
+      font-size: 1.5rem;
+    }
+
+    .intro-emphasis {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin: 2rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(128, 0, 0, 0.3);
+    }
+
+    .key-takeaway {
+      background-color: rgba(128, 0, 0, 0.05);
+      padding: 1.25rem;
+      margin: 1.5rem 0;
+      border-radius: 4px;
+      font-size: 1.05rem;
+    }
+
+    h2 {
+      color: var(--bg-maroon);
+      margin-top: 3.5rem;
+      font-size: 2rem;
+    }
+
+    section h3 {
+      color: var(--text-maroon);
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      max-width: 900px;
+      margin: 2.5rem auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
+
+    .video-container iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 2rem 0;
+      font-size: 1rem;
+    }
+
+    .comparison-table th {
+      background-color: var(--bg-maroon);
+      color: var(--text-beige);
+      padding: 0.9rem 1.2rem;
+      text-align: left;
+    }
+
+    .comparison-table td {
+      padding: 0.85rem 1.2rem;
+      border-bottom: 1px solid rgba(128, 0, 0, 0.15);
+      vertical-align: top;
+      line-height: 1.6;
+    }
+
+    .comparison-table tr:nth-child(even) td {
+      background-color: rgba(128, 0, 0, 0.04);
+    }
+
+    .speaker-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.2rem;
+      background-color: rgba(128, 0, 0, 0.05);
+      border-radius: 8px;
+      padding: 1.2rem 1.4rem;
+      margin: 1rem 0;
+    }
+
+    .speaker-icon {
+      font-size: 2.2rem;
+      flex-shrink: 0;
+    }
+
+    .speaker-info h3 {
+      margin-top: 0 !important;
+      color: var(--bg-maroon);
+      font-size: 1.2rem;
+    }
+
+    .speaker-info p {
+      margin: 0.25rem 0 0;
+      font-size: 1rem;
+      line-height: 1.6;
+    }
+
+    .formula-block {
+      background-color: rgba(128, 0, 0, 0.07);
+      border: 1px solid rgba(128, 0, 0, 0.2);
+      border-radius: 6px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.5rem 0;
+      font-family: "Roboto Slab", serif;
+      font-size: 1.05rem;
+      text-align: center;
+      color: var(--text-maroon);
+    }
+  </style>
+</head>
+
+<body>
+  <!--NAVBAR-->
+  <nav class="navbar">
+    <div class="nav-container">
+      <div class="logo-container logo_title">
+        <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+        <h3>Math Society</h3>
+      </div>
+                              <ul class="nav-links">
+        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a class="nav-link dropdown-toggle active">Events</a>
+            <span class="dropdown-toggle-mobile">▼</span>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="causal-ml.html" class="active">Causal ML</a></li>
+            <li><a href="butterfly-theory.html">Butterfly Effect &amp; Chaos Theory</a></li>
+            <li><a href="cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
+            <li><a href="ai-ml.html">AI &amp; ML</a></li>
+            <li><a href="interstellar.html">Interstellar</a></li>
+            <li><a href="poker.html">Poker</a></li>
+            <li><a href="integration-bee.html" target="_blank">Integration Bee</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a href="ugs.html" class="nav-link dropdown-toggle">The Undergraduate Seminar</a>
+            <span class="dropdown-toggle-mobile">▼</span>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="ugs1.html">UGS 1</a></li>
+            <li><a href="ugs2.html">UGS 2</a></li>
+            <li><a href="ugs3.html">UGS 3</a></li>
+            <li><a href="ugs4.html">UGS 4</a></li>
+          </ul>
+        </li>
+        <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!--HERO SECTION-->
+  <section id="hero" style="padding-top: 0; padding-bottom: 0; min-height: auto; margin-top: 0;">
+    <div class="hero-content" style="text-align: center; padding-top: 1rem;">
+      <h1 style="margin-top: 0;">Causal Machine Learning</h1>
+      <p style="font-size: 1.3rem; margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+        Why does your machine learning model think ice cream causes drownings?
+      </p>
+    </div>
+  </section>
+
+  <!--CONTENT-->
+  <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
+    <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
+      <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
+
+        <p class="intro-emphasis">
+          <em>Correlation is not causation</em> — you've probably heard this before. But what does it actually mean for
+          machines that learn from data? And how do we teach a model not just <em>what</em> happened, but <em>why</em>?
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          At this event, two of our own members — <strong>Eyosiyas</strong> and <strong>Adam</strong> — took us on a
+          journey from basic probability all the way to causal inference, showing how going beyond correlation unlocks a
+          fundamentally more powerful kind of machine learning.
+        </p>
+
+        <!-- Speakers -->
+        <h2>Meet the Speakers</h2>
+
+        <div class="speaker-card">
+          <img src="images/causal-eyosiyas-1.jpg" alt="Eyosiyas presenting" style="width:100%;max-height:420px;object-fit:cover;border-radius:8px;margin-bottom:1rem;box-shadow:0 4px 12px rgba(128,0,0,0.3);">
+          <div class="speaker-info">
+            <h3>Eyosiyas</h3>
+            <p>Second-year IEM student, originally from Ethiopia — and also the Math Society's Logistics & Project
+              Management Lead. He walked us through the mathematical backbone of causal reasoning: random variables,
+              DAGs, d-separation, and structural causal models.</p>
+          </div>
+        </div>
+
+        <div class="speaker-card" style="margin-top:2rem;">
+          <img src="images/causal-adam-1.png" alt="Adam presenting" style="width:100%;max-height:420px;object-fit:cover;border-radius:8px;margin-bottom:1rem;box-shadow:0 4px 12px rgba(128,0,0,0.3);">
+          <div class="speaker-info">
+            <h3>Adam</h3>
+            <p>First-year Industrial Engineering student from the Dominican Republic. Adam brought causal theory to life
+              through the lens of correlation vs. causation, Pearson coefficients, interventions, and the do-operator
+              — drawing the contrast with traditional machine learning throughout.</p>
+          </div>
+        </div>
+
+        <div class="image-container" style="text-align:center;margin:2.5rem auto;max-width:700px;">
+          <img src="images/causal-together.jpg" alt="Eyosiyas and Adam presenting together" style="width:100%;height:auto;border-radius:8px;box-shadow:0 4px 12px rgba(128,0,0,0.3);">
+          <p style="font-style:italic;margin-top:0.75rem;color:var(--text-maroon);font-size:1rem;">Eyosiyas and Adam taking the audience through the session together</p>
+        </div>
+
+        <div class="video-container">
+          <iframe src="https://www.youtube.com/embed/tFOGHgN8Aj4" title="Causal Machine Learning — Math Society"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+          </iframe>
+        </div>
+
+        <div class="section-divider">📊</div>
+
+
+
+        <!-- Probability foundations -->
+        <h2>Starting From Scratch: Probability & Random Variables</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          The talk opened with the question: <em>why do we even need probability?</em> Because the future is uncertain.
+          We can never know exactly how many orders will come in next month, or whether a customer will stay. But we
+          can describe uncertainty mathematically — and that's where <strong>random variables</strong> come in.
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          A random variable converts a qualitative outcome into a number. Flip a coin: heads becomes 1, tails becomes
+          0. There are two flavours:
+        </p>
+
+        <div class="key-takeaway">
+          <strong>Discrete random variables</strong> — countable outcomes. A customer either stays (1) or leaves (0).
+          You cannot have 1.5 customers.<br><br>
+          <strong>Continuous random variables</strong> — measurable outcomes. Delivery time can be 1 day and 10 hours
+          — any real value on the number line.
+        </div>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          The running example for the entire talk: an e-commerce company trying to understand whether
+          <strong>delivery time</strong> affects <strong>customer retention</strong>. Simple enough to follow.
+          Deep enough to reveal all the traps of naive data analysis.
+        </p>
+
+        <h3>Joint & Conditional Probability</h3>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          <strong>Joint probability</strong> captures two things happening at once — for example, a customer receiving
+          fast delivery <em>and</em> staying with the company. <strong>Conditional probability</strong> zooms in: given
+          that delivery was fast, what's the chance the customer stayed? If 80% of fast-delivery customers retained,
+          that conditional probability is 0.8.
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Two variables are <strong>independent</strong> when knowing one gives you no extra information about the
+          other — mathematically, when P(X) × P(Y) = P(X, Y). In our example, delivery speed and retention are
+          <em>dependent</em>: changing the delivery time does shift how likely customers are to stay.
+        </p>
+
+        <div class="section-divider">🔗</div>
+
+        <!-- Causation vs Correlation -->
+        <h2>Correlation vs. Causation: Why It Matters</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Ice cream sales and drowning rates both rise in summer — they are correlated. But ice cream doesn't cause
+          drowning; hot weather causes both. This is the classic trap of correlation without causation, and it's exactly
+          the trap that <strong>traditional machine learning</strong> falls into.
+        </p>
+
+        <div class="highlight-box">
+          <strong>Causation:</strong> one variable directly produces a change in another.<br><br>
+          <strong>Correlation:</strong> two variables move together — but the movement might be caused by a hidden third
+          factor, pure coincidence, or a genuine causal link. Correlation alone can't tell you which.
+        </div>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          To measure correlation numerically, we use the <strong>Pearson correlation coefficient</strong>. It ranges
+          from −1 to +1: a value near +1 means the variables rise together, near −1 means one rises as the other falls,
+          and 0 means no linear relationship. But crucially — a non-zero Pearson coefficient tells you nothing about
+          <em>why</em> those variables are related.
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          A graph of on-time delivery rate versus customer satisfaction shows a clear negative correlation: longer
+          delays, lower satisfaction. A traditional ML model sees this pattern and learns from it. But it has no idea
+          <em>what is causing what</em> — and that ignorance matters the moment you want to intervene.
+        </p>
+
+        <div class="section-divider">🧭</div>
+
+        <!-- DAGs -->
+        <h2>Directed Acyclic Graphs (DAGs): Drawing Causality</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Enter the <strong>Directed Acyclic Graph</strong> — a tool for making causal assumptions explicit. Each
+          variable becomes a <em>node</em>. An arrow from X to Y means "X causes Y." Two rules define a valid DAG:
+        </p>
+
+        <div class="key-takeaway">
+          <strong>Directed:</strong> every edge has a direction — an arrow, not just a line.<br><br>
+          <strong>Acyclic:</strong> you cannot follow the arrows and end up back where you started. No variable
+          can be its own cause.
+        </div>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          In the delivery example, customer income is a <strong>confounder</strong> — it influences both delivery
+          speed (richer customers may pay for faster delivery) and retention (wealthier customers may be more loyal
+          regardless). Ignore it, and you'll wrongly attribute the entire retention effect to delivery time alone.
+        </p>
+
+        <h3>Confounders and Colliders</h3>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Two structural patterns are essential to recognize in any DAG:
+        </p>
+
+        <div class="key-takeaway">
+          <strong>Confounder (fork):</strong> a variable Z with arrows pointing <em>out</em> to both X and Y. Z
+          creates a spurious association between X and Y even if they have no direct causal link.<br><br>
+          <strong>Collider:</strong> a variable Z with arrows pointing <em>in</em> from both X and Y. Conditioning on
+          a collider (or its descendants) actually <em>opens</em> a path between X and Y that was previously blocked
+          — the opposite of what you might expect.
+        </div>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          The cat-and-lamp example from the talk illustrated this beautifully. You observe that on 10 out of 100 days
+          your cat was inside, the lamp was on the floor. Suspicious. But those same 10 days there was an earthquake.
+          The earthquake is a confounder: it drove the cat indoors <em>and</em> knocked the lamp over. To test whether
+          the cat is truly to blame, you need to force the cat inside on days when there is no earthquake — that's
+          an intervention.
+        </p>
+
+        <div class="section-divider">🔀</div>
+
+        <!-- D-separation -->
+        <h2>D-Separation: When Are Two Variables Independent?</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          <strong>D-separation</strong> is the graphical rule for reading conditional independence directly off a DAG
+          — no calculations needed. It relies on three rules:
+        </p>
+
+        <div class="key-takeaway">
+          <strong>Rule 1:</strong> A path is blocked if it passes through a non-collider that has been conditioned on.<br><br>
+          <strong>Rule 2:</strong> A path is blocked if it contains a collider <em>and</em> neither that collider nor
+          any of its descendants has been conditioned on.<br><br>
+          <strong>Rule 3:</strong> Conditioning on a collider (or a descendant of a collider) <em>unblocks</em> the
+          path — the collider no longer acts as a barrier.
+        </div>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Two variables are <strong>d-separated</strong> if every path between them is blocked. D-separated variables
+          are conditionally independent. In practice, this lets you figure out which variables you need to control for
+          in order to isolate a genuine causal effect — and which ones you should <em>not</em> condition on (namely,
+          colliders).
+        </p>
+
+        <div class="section-divider">⚡</div>
+
+        <!-- Interventions -->
+        <h2>Interventions & The Do-Operator</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          There is a fundamental difference between <em>observing</em> that your phone is on the floor after it fell,
+          and <em>throwing</em> the phone on the floor yourself. Both result in the same event — but one is
+          observation, the other is an <strong>intervention</strong>. Causal machine learning is built on this
+          distinction.
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Formally, we write interventions using the <strong>do-operator</strong>. Instead of asking
+          "what is the probability of Y given that X equals x?" — which is merely observational — we ask:
+        </p>
+
+        <div class="formula-block">
+          P(Y = y &nbsp;|&nbsp; do(X = x))
+        </div>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          This asks: if we <em>force</em> X to take the value x — cutting all its incoming arrows in the DAG — what
+          happens to Y? The do-operator is what allows causal models to answer "what if" questions, not just describe
+          past patterns.
+        </p>
+
+        <h3>Structural Causal Models (SCMs)</h3>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          A <strong>Structural Causal Model</strong> brings together a DAG and a set of equations describing how each
+          variable is generated. It distinguishes between <strong>endogenous variables</strong> — the ones you can
+          observe and model directly (delivery time, customer retention) — and <strong>exogenous variables</strong>,
+          the unmeasured noise that affects outcomes in ways you cannot fully control (a customer's mood that day, an
+          unexpected road closure).
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Working with an SCM involves three steps: <strong>abduction</strong> (observe the data), <strong>action</strong>
+          (apply the do-operator to simulate an intervention), and <strong>prediction</strong> (compute the downstream
+          effect). These three steps mirror the scientific method — and they are what make causal ML genuinely
+          capable of answering questions that traditional ML cannot.
+        </p>
+
+        <div class="section-divider">🔑</div>
+
+        <!-- Identifiability & Back-Door -->
+        <h2>Identifiability & The Back-Door Criterion</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Even with a DAG, we still need to know: <em>can we actually estimate the causal effect from the data we have?</em>
+          This question is called <strong>identifiability</strong>. If confounders are creating back-door paths
+          from the treatment variable to the outcome, we need to block those paths before we can trust our estimate.
+        </p>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          The <strong>back-door criterion</strong> gives us a recipe: find a set of variables Z such that conditioning
+          on Z blocks all back-door paths from X to Y (without opening any collider paths). Once that condition is met,
+          the causal effect becomes identifiable using the <strong>adjustment formula</strong>:
+        </p>
+
+        <div class="formula-block">
+          P(Y = y &nbsp;|&nbsp; do(X = x)) &nbsp;=&nbsp; Σ<sub>z</sub> P(Y = y &nbsp;|&nbsp; X = x, Z = z) · P(Z = z)
+        </div>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          Applied to the delivery example: if we want to know the true effect of one-day delivery on retention, we
+          condition on customer income group (the confounder), compute the retention rate separately for each income
+          group, then take a weighted average. With income-group probabilities of 0.6 (high) and 0.4 (low), and
+          observed retention rates of 90% and 70% respectively, the causal estimate comes out at
+          <strong>0.9 × 0.6 + 0.7 × 0.4 = 0.82</strong> — an 82% retention probability under forced one-day delivery,
+          cleaned of any confounding from customer income.
+        </p>
+
+        <div class="section-divider">⚖️</div>
+
+        <!-- Traditional vs Causal ML -->
+        <h2>Traditional vs. Causal Machine Learning</h2>
+
+        <p style="font-size: 1.15rem; line-height: 1.8;">
+          With everything in place, here is how the two paradigms compare:
+        </p>
+
+        <table class="comparison-table">
+          <thead>
+            <tr>
+              <th>Dimension</th>
+              <th>Traditional ML</th>
+              <th>Causal ML</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Core question</strong></td>
+              <td>How are variables correlated?</td>
+              <td>What causes what?</td>
+            </tr>
+            <tr>
+              <td><strong>Uses DAGs?</strong></td>
+              <td>No</td>
+              <td>Yes — central to the approach</td>
+            </tr>
+            <tr>
+              <td><strong>Interventions</strong></td>
+              <td>Not modelled</td>
+              <td>Explicit via the do-operator</td>
+            </tr>
+            <tr>
+              <td><strong>Counterfactuals</strong></td>
+              <td>Cannot answer "what if?"</td>
+              <td>Answered through SCMs</td>
+            </tr>
+            <tr>
+              <td><strong>Confounders</strong></td>
+              <td>May absorb without noticing</td>
+              <td>Blocked explicitly via back-door adjustment</td>
+            </tr>
+            <tr>
+              <td><strong>What it learns</strong></td>
+              <td>Patterns in the surface statistics</td>
+              <td>The underlying data-generating mechanism</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <div class="highlight-box">
+          <strong>The bottom line:</strong> a traditional model trained on the delivery data would learn to predict
+          retention from delivery speed — but might confidently recommend "always deliver fast," oblivious to the fact
+          that high-income customers both request fast delivery <em>and</em> retain at higher rates regardless.
+          A causal model conditions on income, isolates the true delivery effect, and gives you a recommendation you
+          can actually act on.
+        </div>
+
+        <!-- Key takeaways -->
+        <div class="key-takeaway" style="margin-top: 3rem;">
+          <strong>Key Takeaways:</strong>
+          <ul style="margin-top: 1rem; margin-bottom: 0;">
+            <li>Probability quantifies uncertainty; random variables make it computable</li>
+            <li>Correlation measures association — it says nothing about the direction or source of a relationship</li>
+            <li>DAGs make causal assumptions explicit and auditable</li>
+            <li>D-separation lets you read conditional independence directly from the graph</li>
+            <li>The do-operator distinguishes observation from intervention — the heart of causal ML</li>
+            <li>The back-door criterion identifies which variables to control for when estimating causal effects</li>
+            <li>Causal ML can answer "what if?" — traditional ML cannot</li>
+          </ul>
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 1.15rem; font-style: italic; text-align: center;">
+          Machines that only see patterns will always be fooled by coincidence.
+          Machines that understand cause and effect can change the world.
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!--FOOTER-->
+  <footer>
+    <div class="footer-content">
+      <p>CONNECT WITH US:</p>
+      <div class="socials">
+        <div class="link">
+          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/mathclub.cube/#" target="_blank">Instagram</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-share"></i>
+          <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438"
+            target="_blank">Sharepoint</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-youtube"></i>
+          <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="/cdn-cgi/l/email-protection#177478796463656274637865397a76637f6457707a767e7b3974787a">Email</a>
+        </div>
+      </div>
+      <p>&copy; <span id="copyright-year"></span> The Math Society</p>
+    </div>
+  </footer>
+
+  <script src="../Home Page/landing.js"></script>
