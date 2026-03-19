@@ -103,6 +103,40 @@
             color: var(--text-maroon);
             margin: 0.5rem 0;
         }
+
+        .image-container {
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 700px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+        }
+
+        .image-caption {
+            font-style: italic;
+            margin-top: 0.75rem;
+            color: var(--text-maroon);
+            font-size: 1rem;
+        }
+
+        .content-block p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .content-block h3 {
+            margin-top: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
     </style>
 </head>
 
@@ -185,7 +219,7 @@
 
                 <!-- OPENING HOOK -->
                 <p style="font-size: 1.2rem; line-height: 1.9; font-style: italic; margin-top: 0; padding-top: 0.5rem;">
-                    Who Is Caesar Cipher? What Did He Do? What's The Mystery Behind The Locks? Whats The Secret?
+                    Who Is Caesar Cipher? What Did He Do? What's The Mystery Behind The Locks? What's The Secret?
                 </p>
 
                 <p class="intro-emphasis">
@@ -199,6 +233,22 @@
                     foundation of secure encryption.
                 </div>
 
+                <!-- CAESAR -->
+                <h2>It Started 2,000 Years Ago 🏛️</h2>
+
+                <p>
+                    Julius Caesar — yes, the Roman emperor — invented one of the first encryption methods to
+                    communicate with his soldiers without the enemy understanding him. His idea? Shift every letter
+                    in the message by three positions. So <strong>H</strong> becomes <strong>K</strong>,
+                    <strong>E</strong> becomes <strong>H</strong>... and "HELLO" quietly becomes "KHOOR".
+                </p>
+
+                <p>
+                    Reverse the shift and you've got your message back. Simple, elegant — and the direct ancestor
+                    of every encryption system protecting your data today.
+                </p>
+
+                <div class="section-divider">🔐</div>
 
                 <!-- VIDEO SECTION -->
                 <h2>Lets Dig Deep Together And Solve This Mystery Once And For All</h2>
@@ -221,40 +271,43 @@
                     Math Society Topic: Cybersecurity And Cryptography
                 </p>
 
+                <div class="section-divider">🔑</div>
 
                 <!-- RSA -->
-                <h2> RSA And Modern Encryption. Wait What? </h2>
+                <h2>RSA And Modern Encryption. Wait What?</h2>
 
                 <p>
                     One of the most widely used cryptographic systems today is RSA. It works by using two large prime
                     numbers whose product forms a public key. While anyone can encrypt messages using the public key,
-                    only the owner of the private key can decrypt them. RSA’s security relies on the fact that
-                    factoring very large numbers into primes is extremely difficult for classical computers.
+                    only the owner of the private key can decrypt them. Think of it as a padlock anyone can close,
+                    but only one person holds the key to open.
+                </p>
+
+                <p>
+                    RSA's security relies on the fact that factoring very large numbers into primes is extremely
+                    difficult for classical computers. We're talking primes that are at least 300 digits long —
+                    their product becomes a 600-digit number. Go ahead and try to factor that with a for loop.
+                    We'll wait.
                 </p>
 
                 <div class="key-takeaway">
-
                     <p class="cryptography-detail">
-                        <strong>RSA Threat</strong> RSA encryption relies on the difficulty of factoring very large
+                        <strong>RSA Threat:</strong> RSA encryption relies on the difficulty of factoring very large
                         numbers into their prime components. If factoring becomes efficient, attackers could compute
                         the private key from the public key.
                     </p>
-
                     <p class="cryptography-detail">
-                        <strong>Shor's algorithm:</strong> Shor’s algorithm is a quantum algorithm designed to factor
-                        large numbers efficiently.
+                        <strong>Shor's algorithm:</strong> A quantum algorithm designed to factor large numbers
+                        efficiently — and the reason the cryptography world is quietly panicking.
                     </p>
-
                 </div>
-
 
                 <div class="image-container">
                     <img src="images/content-1.jpg" alt="Cryptography Seminar Presentation">
-                    <div class="image-caption">
-                        Exploring the future of encryption – “Are we cooked?”
-                    </div>
+                    <p class="image-caption">Exploring the future of encryption – "Are we cooked?"</p>
                 </div>
 
+                <div class="section-divider">⚛️</div>
 
                 <!-- POST QUANTUM -->
                 <h2>Post-quantum cryptography and lattices</h2>
@@ -264,9 +317,8 @@
                     cryptographic methods based on different mathematical problems. One promising area is
                     lattice-based cryptography, which uses geometric structures formed by combinations of vectors.
                     Problems such as finding the shortest or closest vector in a lattice are extremely hard, even for
-                    quantum computers.
+                    quantum computers. So we traded one hard problem for another — this time in geometry.
                 </p>
-
 
                 <h3>Learning With Errors (LWE) encryption</h3>
 
@@ -278,31 +330,31 @@
                     candidates for future quantum-resistant cryptography.
                 </p>
 
-
                 <div class="image-container">
                     <img src="images/content-4.jpg" alt="Quantum Computing Presentation Slide">
-
-                    <div class="image-caption">
-                        Explaining quantum states and superposition during the seminar.
-                    </div>
+                    <p class="image-caption">Explaining quantum states and superposition during the seminar.</p>
                 </div>
 
+                <div class="section-divider">🌐</div>
 
                 <!-- CONCLUSION -->
-                <h2> CONCLUSION</h2>
+                <h2>Conclusion</h2>
 
                 <p style="font-size: 1.15rem; line-height: 1.8;">
                     Modern cryptography is built on mathematical problems that are difficult for classical computers
                     to solve, with RSA standing as one of the most important examples. However, the development of
-                    quantum computing introduces a fundamental shift in computational power. Through Shor’s algorithm,
+                    quantum computing introduces a fundamental shift in computational power. Through Shor's algorithm,
                     quantum computers could efficiently factor large numbers, threatening the security assumptions
-                    that protect today’s digital communication. This challenge has motivated the search for new
+                    that protect today's digital communication. This challenge has motivated the search for new
                     cryptographic systems, such as lattice-based methods, designed to remain secure even in a quantum
                     era. Ultimately, the future of cybersecurity depends on adapting mathematical tools to evolving
                     technology, showing that advances in mathematics and computing continuously reshape how we protect
                     information.
                 </p>
 
+                <p style="font-size: 1.15rem; line-height: 1.8; font-style: italic; text-align: center; margin-top: 2rem;">
+                    So — are we cooked? Not yet. But the clock is ticking, and mathematics is already working on the answer.
+                </p>
 
             </div>
 
