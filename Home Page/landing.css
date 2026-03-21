@@ -1,12 +1,17 @@
 /* --- Variables & Reset --- */
 :root {
-    --bg-beige: #F5F5DC;
-    --bg-maroon: #800000;
-    --text-beige: #F5F5DC;
-    --text-maroon: #800000;
-    --font-main: "Roboto Slab", serif;
+    /* The New Academic Palette */
+    --bg-dark: #121212;             /* Deep Dark Gray */
+    --bg-card: #1c1c1c;             /* Slightly lighter gray for cards */
+    --gold: #d4af37;                /* Classic Gold */
+    --gold-gradient: linear-gradient(135deg, #d4af37 0%, #f2d472 100%);
+    --accent-red: #8b0000;          /* Deep Academic Red */
+    --text-light: #f5f5dc;          /* Soft Beige for text */
+    --font-main: "Inter", sans-serif;
+    --font-header: "Roboto Slab", serif;
 }
-html{
+
+html {
     scroll-behavior: smooth;
 }
 
@@ -18,6 +23,8 @@ html{
 
 body {
     font-family: var(--font-main);
+    background-color: var(--bg-dark);
+    color: var(--text-light);
 }
 
 /* --- Navbar --- */
@@ -25,18 +32,27 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background-color: var(--bg-maroon); 
-    padding: 2rem 2rem;
+    background-color: rgba(18, 18, 18, 0.95); /* Semi-transparent dark gray */
+    padding: 1.2rem 2rem;
     z-index: 1000;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-bottom: 2px solid var(--gold);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.5);
 }
 
 .nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    max-width: 1200px;
+    max-width: 95%;
     margin: 0 auto;
+}
+
+.logo_title {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--gold);
+    font-family: var(--font-header);
 }
 
 .nav-logo {
@@ -50,20 +66,20 @@ body {
 }
 
 .nav-links a {
-    color: var(--text-beige);
+    color: var(--text-light);
     text-decoration: none;
-    font-weight: 700;
-    transition: opacity 0.3s;
-    font-size: 1.3rem;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: 1.1rem;
 }
 
 .nav-links a:hover {
-    opacity: 0.8;
+    color: var(--gold);
 }
 
 .nav-links a.active {
-    color: var(--bg-beige);
-    border-bottom: 3px solid var(--bg-beige);
+    color: var(--gold);
+    border-bottom: 2px solid var(--gold);
     padding-bottom: 5px;
 }
 
@@ -72,153 +88,125 @@ body {
     position: relative;
 }
 
-/* Desktop: dropdown-header is invisible, children display normally */
-.dropdown-header {
-    display: contents; /* Makes wrapper invisible on desktop */
-}
-
-/* Mobile dropdown toggle button - hidden on desktop */
-.dropdown-toggle-mobile {
-    display: none;
-    color: var(--text-beige);
-    font-size: 0.9em;
-    cursor: pointer;
-    padding: 0.5rem;
-    user-select: none;
-    transition: transform 0.3s;
-}
-
-/* Create an invisible bridge between link and dropdown */
-.dropdown::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background: transparent;
-}
-
 .dropdown-menu {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: var(--bg-maroon);
+    background-color: var(--bg-card);
+    border: 1px solid var(--gold);
     list-style: none;
-    padding: 0.5rem 0;
-    margin-top: 0;
-    padding-top: 0.5rem;
-    min-width: 220px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    min-width: 240px;
+    border-radius: 4px;
     opacity: 0;
     visibility: hidden;
-    transform: translateY(-10px);
-    transition: opacity 0.3s, transform 0.3s, visibility 0.3s;
-    z-index: 1001;
-    overflow: hidden;
-    pointer-events: none;
+    transform: translateY(10px);
+    transition: 0.3s ease;
 }
 
-/* Desktop: dropdown appears on hover */
 .dropdown:hover .dropdown-menu {
     opacity: 1;
     visibility: visible;
     transform: translateY(0);
-    pointer-events: auto;
-}
-
-.dropdown-menu li {
-    padding: 0;
 }
 
 .dropdown-menu a {
-    display: block;
-    padding: 0.7rem 1.2rem;
-    color: var(--text-beige);
-    font-size: 1.1rem;
-    font-weight: 600;
-    transition: background-color 0.3s;
-    white-space: nowrap;
+    padding: 0.8rem 1.2rem;
+    border-bottom: 1px solid #333;
 }
 
 .dropdown-menu a:hover {
-    background-color: rgba(245, 245, 220, 0.1);
-    opacity: 1;
-}
-
-/* Active child item in dropdown */
-.dropdown-menu a.active {
-    background-color: rgba(245, 245, 220, 0.2);
-    border-left: 3px solid var(--bg-beige);
-}
-
-/* Non-link dropdown labels (Talks, Competitions) */
-.dropdown-toggle:not([href]) {
-    cursor: default;
-}
-
-.hamburger {
-    display: none; /* Hidden on desktop */
-    cursor: pointer;
-}
-.logo_title{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    color: var(--text-beige);
-    font-size: 1.5rem;
+    background-color: #252525;
+    color: var(--gold);
 }
 
 /* --- Hero Section --- */
 #hero {
-    background-color: var(--bg-beige);
-    color: var(--text-maroon);
     height: 100vh;
+    /* This creates the Gold-to-Gray gradient background you asked for */
+    background: radial-gradient(circle at center, #2a2a2a 0%, #121212 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding-top: 60px; /* Offset for fixed navbar */
+    border-bottom: 4px solid var(--gold);
 }
 
-.hero-logo {
-    max-width: 200px;
-    margin-bottom: 1rem;
-}
-
-#hero h1 {
-    font-size: 4.3rem;
+.hero-content h1 {
+    font-family: var(--font-header);
+    font-size: 5rem;
     font-weight: 900;
-    padding-bottom: 30px;
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* Makes the text itself the gradient */
+    margin-bottom: 20px;
 }
+
+.hero-tagline {
+    font-size: 1.4rem;
+    color: #bbb;
+    margin-bottom: 40px;
+}
+
+/* Red Buttons */
 #hero a {
     text-decoration: none;
-    background-color: var(--text-maroon);
-    color: var(--text-beige);
-    padding: 15px 15px;
-    border-radius: 10%;
+    background-color: var(--accent-red);
+    color: white;
+    padding: 15px 35px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin: 0 10px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+#hero a:hover {
+    background-color: #660000;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(139, 0, 0, 0.4);
+}
+
+/* --- Platform Hub (The Grid you wanted) --- */
+#hub {
+    padding: 4rem 2rem;
+    margin-top: -60px; /* Overlaps hero slightly for modern look */
+}
+
+.hub-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.hub-card {
+    background: var(--bg-card);
+    padding: 2rem;
+    border-radius: 8px;
+    border-top: 4px solid var(--gold);
+    transition: 0.3s;
+}
+
+.hub-card:hover {
+    transform: translateY(-10px);
+}
+
+.potw-card {
+    border-top: 4px solid var(--accent-red); /* Distinguish Problem of the Week */
 }
 
 /* --- Mission Section --- */
 #mission {
-    background-color: var(--bg-maroon);
-    color: var(--text-beige);
-    padding: 4rem 2rem;
+    background-color: var(--accent-red);
+    color: white;
+    padding: 5rem 2rem;
     text-align: center;
 }
 
-#mission h2 {
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* --- Explanation Section --- */
+/* --- Explanation & Team Grid --- */
 #explanation {
-    background-color: var(--bg-beige);
-    color: var(--text-maroon);
+    background-color: var(--bg-dark);
     padding: 4rem 2rem;
 }
 
@@ -227,205 +215,55 @@ body {
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 2.5rem;
 }
 
 .grid-item {
-    text-align: center;
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid #333;
 }
 
 .grid-item img {
     width: 100%;
-    height: 250px;
+    height: 300px;
     object-fit: cover;
-    border-radius: 8px;
-    border: 2px solid var(--text-maroon);
-    margin-bottom: 1rem;
-}
-
-.grid-item h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-}
-#team{
-    background-color: var(--bg-maroon);
-    color: var(--text-beige);
-    padding: 4rem 2rem;
-    text-align: center;
-}
-#team h2{
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/*Testimonial section*/
-#testimonial{
-    background-color: var(--bg-maroon);
-    color: var(--text-beige);
-    padding: 4rem 2rem;
-    text-align: center;
-}
-#testimonial h2{
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
+    border-radius: 4px;
+    border-bottom: 3px solid var(--gold);
+    margin-bottom: 1.5rem;
 }
 
 /* --- Footer --- */
 footer {
-    background-color: var(--bg-maroon);
-    color: var(--text-beige);
-    padding: 2rem;
+    background-color: #0a0a0a;
+    border-top: 1px solid var(--gold);
+    padding: 4rem 2rem;
     text-align: center;
 }
 
 .socials {
-    margin: 1rem 0;
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
-    flex-wrap: wrap;
+    gap: 2rem;
+    margin: 2rem 0;
 }
 
-.socials a {
-    color: var(--text-beige);
-    text-decoration: underline;
+.socials i {
+    font-size: 1.5rem;
+    color: var(--gold);
 }
-.link{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-.link a{
-    text-decoration: none;
-}
-/* --- Mobile Responsiveness --- */
+
+/* --- Mobile Fixes --- */
 @media (max-width: 768px) {
-    .hamburger {
-        display: block;
-    }
-    
     .hamburger span {
-        display: block;
-        width: 25px;
-        height: 3px;
-        margin: 5px;
-        background-color: var(--text-beige);
+        background-color: var(--gold);
     }
-
-
+    
+    #hero h1 { font-size: 3rem; }
+    
     .nav-links {
-        position: absolute;
-        top: 60px;
-        right: 0;
-        background-color: var(--bg-maroon);
-        flex-direction: column;
-        width: 50%;
-        height: calc(100vh - 60px);
-        align-items: center;
-        padding-top: 2rem;
-        transform: translateX(100%);
-        transition: transform 0.3s ease-in-out;
-        gap: 0; /* Remove gap on mobile */
-    }
-    
-    .nav-links > li {
-        width: 100%;
-        text-align: center;
-        padding: 0.8rem 0;
-    }
-
-    .nav-links.active {
-        transform: translateX(0%);
-    }
-
-    /* Mobile dropdown styles */
-    .dropdown-menu {
-        display: block !important; /* Show on mobile */
-        position: static !important;
-        opacity: 0;
-        visibility: hidden;
-        max-height: 0;
-        overflow: hidden;
-        transform: none !important;
-        margin-top: 0;
-        box-shadow: none;
-        border-radius: 0;
-        transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
-        pointer-events: auto;
-        background-color: rgba(0, 0, 0, 0.3);
-        width: 100%;
-    }
-
-    .dropdown:hover .dropdown-menu {
-        opacity: 0;
-        visibility: hidden;
-        max-height: 0;
-    }
-
-    .dropdown.active .dropdown-menu {
-        opacity: 1;
-        visibility: visible;
-        max-height: 400px;
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .dropdown-menu a {
-        padding: 0.6rem 2rem;
-        background-color: rgba(0, 0, 0, 0.2);
-        border-bottom: 1px solid rgba(245, 245, 220, 0.1);
-    }
-    
-    .dropdown-menu a:last-child {
-        border-bottom: none;
-    }
-    
-    /* Show and style the mobile dropdown toggle */
-    .dropdown-toggle-mobile {
-        display: inline-block;
-        margin-left: 0.5rem;
-        transition: transform 0.3s ease;
-    }
-    
-    .dropdown.active .dropdown-toggle-mobile {
-        transform: rotate(180deg);
-    }
-    
-    /* Arrange UGS text and arrow horizontally on mobile */
-    .dropdown {
-        width: 100%;
-        display: flex;
-        flex-direction: column; /* Changed to column so dropdown flows below */
-        align-items: center;
-        position: relative;
-    }
-    
-    .dropdown-header {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-    }
-    
-    .dropdown .nav-link {
-        margin: 0;
-    }
-    
-    .dropdown-menu {
-        position: static !important; /* Keep static so it pushes content down */
-        width: 100%;
-    }
-
-    #hero h1 {
-        font-size: 3.3rem;
-    }
-}
-/*Stretching the navbar on desktop*/
-@media (min-width: 769px) {
-    .nav-container {
-        max-width: 95%; /* Stretches the content wide */
+        background-color: var(--bg-dark);
+        border-left: 2px solid var(--gold);
     }
 }
