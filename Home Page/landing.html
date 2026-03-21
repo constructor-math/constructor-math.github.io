@@ -1,19 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Math Society</title>
+    <title>The Math Society | Academic Hub</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="landing.css">
     <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
 </head>
-
 <body>
-    <!--NAVBAR-->
     <nav class="navbar">
         <div class="nav-container">
             <div class="logo-container logo_title">
@@ -21,219 +18,133 @@
                 <h3>Math Society</h3>
             </div>
             <ul class="nav-links">
-                <li><a href="landing.html" class="nav-link active">Home</a></li>
+                <li><a href="index.html" class="nav-link active">Home</a></li>
+                <li><a href="#what-we-do" class="nav-link">About</a></li>
                 <li class="dropdown">
                     <div class="dropdown-header">
                         <a class="nav-link dropdown-toggle">Events</a>
                         <span class="dropdown-toggle-mobile">▼</span>
                     </div>
                     <ul class="dropdown-menu">
-                        <li><a href="../Subpages/causal-ml.html">Causal ML</a></li>
-                        <li><a href="../Subpages/butterfly-theory.html">Butterfly Effect &amp; Chaos Theory</a></li>
-                        <li><a href="../Subpages/cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
-                        <li><a href="../Subpages/ai-ml.html">AI &amp; ML</a></li>
-                        <li><a href="../Subpages/interstellar.html">Interstellar</a></li>
-                        <li><a href="../Subpages/poker.html">Poker</a></li>
-                        <li><a href="../Subpages/integration-bee.html" target="_blank">Integration Bee</a></li>
+                        <li><a href="Subpages/causal-ml.html">Causal ML</a></li>
+                        <li><a href="Subpages/butterfly-theory.html">Chaos Theory</a></li>
+                        <li><a href="Subpages/integration-bee.html">Integration Bee</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <div class="dropdown-header">
-                        <a href="../Subpages/ugs.html" class="nav-link dropdown-toggle">The Undergraduate Seminar</a>
-                        <span class="dropdown-toggle-mobile">▼</span>
-                    </div>
-                    <ul class="dropdown-menu">
-                        <li><a href="../Subpages/ugs1.html">UGS 1</a></li>
-                        <li><a href="../Subpages/ugs2.html">UGS 2</a></li>
-                        <li><a href="../Subpages/ugs3.html">UGS 3</a></li>
-                        <li><a href="../Subpages/ugs4.html">UGS 4</a></li>
-                    </ul>
-                </li>
-                <li><a href="../Subpages/olympiad.html" class="nav-link">Olympiad</a></li>
+                <li><a href="Subpages/ugs.html" class="nav-link">Seminars</a></li>
+                <li><a href="Subpages/olympiad.html" class="nav-link">Olympiad</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
             <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </div>
         </div>
     </nav>
 
-
-    <!--HEADER OR HERO SECTION-->
     <section id="hero">
         <div class="hero-content">
-            <img src="images/logo_final.png" alt="Math Society Big Logo" class="hero-logo">
+            <img src="images/logo_final.png" alt="Math Society" class="hero-logo">
             <h1>The Math Society</h1>
-            <a href="#mission">About Us</a>
-            <a href="">Register</a>
+            <p class="hero-tagline">A community for students passionate about mathematics, research, and discovery.</p>
+            <div class="hero-buttons">
+                <a href="#upcoming" class="btn-red">Upcoming Events</a>
+                <a href="#register" class="btn-outline-gold">Register Now</a>
+            </div>
         </div>
     </section>
 
-    <!--MISSION STATEMENT-->
-    <section id="mission">
-        <h2>"Think. Calculate. Create."</h2>
-    </section>
-
-
-    <!--EXPLANATION AND PICTURES SECTION-->
-    <section id="explanation">
+    <section id="what-we-do">
         <div class="container">
-            <div class="grid-item">
-                <img src="images/think.jpg" alt="Thinking">
-                <h3>Think</h3>
-                <p>We delve deep into abstract concepts, challenging our members to visualize the unseen and ponder the
-                    impossible.</p>
+            <div class="grid-item card">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <h3>Undergraduate Seminars</h3>
+                <p>Advanced student-led sessions covering everything from Causal ML to Quantum Logic.</p>
             </div>
-            <div class="grid-item">
-                <img src="images/founders.jpg" alt="Calculating">
-                <h3>Calculate</h3>
-                <p>Precision is key. Through competitions like the Integration Bee, we sharpen our analytical skills.
-                </p>
+            <div class="grid-item card">
+                <i class="fa-solid fa-trophy"></i>
+                <h3>Competitive Training</h3>
+                <p>Sharpening analytical skills for the Olympiad and the annual Integration Bee.</p>
             </div>
-            <div class="grid-item">
-                <img src="images/seminar.jpg" alt="Creating">
-                <h3>Create</h3>
-                <p>Math isn't just theory. We apply logic to build AI models, simulations, and real-world solutions.</p>
+            <div class="grid-item card">
+                <i class="fa-solid fa-flask-vial"></i>
+                <h3>Research & Projects</h3>
+                <p>Collaborative environment for student papers and building sophisticated AI models.</p>
             </div>
         </div>
     </section>
 
-    <!--MEET OUR FOUNDERS-->
+    <section id="upcoming" class="hub-section">
+        <div class="container featured-grid">
+            <div class="next-event">
+                <span class="badge">Next Seminar</span>
+                <h3>The Mathematics of Cryptography</h3>
+                <p>Exploring RSA encryption and secure digital protocols.</p>
+                <a href="#" class="link-btn-red">RSVP Now →</a>
+            </div>
+            <div class="potw">
+                <h3>Problem of the Week</h3>
+                <p class="math-problem">Prove that for any prime $p > 3$, $p^2 - 1$ is divisible by 24.</p>
+                <a href="#" class="link-btn-gold">Submit Solution →</a>
+            </div>
+        </div>
+    </section>
+
     <section id="team">
-        <h2>MEET OUR LEADS</h2>
-    </section>
-
-    <section id="explanation">
-        <div class="container">
+        <h2 class="section-heading">MEET OUR LEADS</h2>
+        <div class="container team-grid">
             <div class="grid-item">
-                <img src="images/ahmad.jpeg" alt="president image">
+                <img src="images/ahmad.jpeg" alt="Ahmed">
                 <h3>Ahmed Maghri</h3>
                 <h4>(President)</h4>
-                <p>I am a Computer Science major with a minor in Mathematics and Modeling,
-                    with a strong interest in problem-solving and intellectual challenges.
-                    I enjoy exploring the intersection of mathematics and computer science.
-                    Outside of academics, you will probably find me playing basketball or swimming,
-                    or maybe playing osu!, where I rank in the top 0.5% worldwide.
-                </p>
+                <p>CS major, Math minor. Problem solver and top 0.5% osu! player worldwide.</p>
             </div>
             <div class="grid-item">
-                <img src="images/zakaria.jpeg" alt="tech lead">
+                <img src="images/zakaria.jpeg" alt="Zakaria">
                 <h3>Zakaria</h3>
                 <h4>(Tech Lead)</h4>
-                <p>Development team leader with a passion for alpinism and mountaineering.
-                    I love solving complex problems whether they're in code or high up in
-                    the mountains.
-                </p>
+                <p>Alpinist and developer. Solving complex problems in code and in the mountains.</p>
             </div>
             <div class="grid-item">
-                <img src="images/Taha.jpeg" alt="Social media lead">
+                <img src="images/Taha.jpeg" alt="Taha">
                 <h3>Taha Hbirri</h3>
                 <h4>(Media Lead)</h4>
-                <p>Tech and computer's enjoyer and lead of audio visual team,
-                    majoring in computer science, there's absolutly no reason
-                    for that but you'll see me on instagram behind the math society posts.
-                </p>
+                <p>CS major and AV lead. The creative force behind our digital presence.</p>
             </div>
             <div class="grid-item">
-                <img src="images/Yusuf.jpeg" alt="Design lead">
+                <img src="images/Yusuf.jpeg" alt="Yusuf">
                 <h3>Yusuf Bugra Balta</h3>
                 <h4>(Design Lead)</h4>
-                <p>Hello, my name is Yusuf Bugra Balta. I am a
-                    student in the MMDA department. I am from Turkey.
-                    In my free time, I enjoy reading books and playing computer games.
-                </p>
+                <p>MMDA student from Turkey. Enthusiast of books and computer games.</p>
             </div>
             <div class="grid-item">
-                <img src="images/Eyosiyas.jpeg" alt="Logistics & Project Management">
+                <img src="images/Eyosiyas.jpeg" alt="Eyosiyas">
                 <h3>Eyosiyas</h3>
-                <h4>(Logistics & Project Management Lead)</h4>
-                <p>Hey there 👋 I'm Eyosiyas, an Industrial Engineering and Management student who genuinely 
-                    enjoys planning and coordinating events (yes, I'm the type of person who finds 
-                    satisfaction in a perfectly organized schedule 😅). When I'm not busy optimizing 
-                    plans or making sure everything runs smoothly, I'm probably traveling, 
-                    hanging out with friends, or somehow turning a "quick outing" into a full-day adventure. ✈️😄
-                </p>
+                <h4>(Logistics Lead)</h4>
+                <p>Industrial Engineering student. Specialist in optimization and planning.</p>
             </div>
         </div>
     </section>
 
-    <!--TESTIMONIALS-->
-    <section id="testimonial">
-        <h2>TESTIMONIALS</h2>
-    </section>
-
-    <!--TESTIMONIAL AND PICTURES SECTION-->
-    <section id="explanation">
-        <div class="container">
-            <div class="grid-item">
-                <img src="images/Alex.png" alt="Participant">
-                <h3>Alex</h3>
-                <h4>(1st Year CS)</h4>
-                <p>"The lecture was "amazing" and "very helpful" for my future learning, 
-                    specifically noting the interesting mathematical aspects included in 
-                    AI and machine learning. I also love the passion of the people in 
-                    the math society and encourage you to join, guranteeing you "will not regret it"."</p>
-            </div>
-            <div class="grid-item">
-                <img src="images/Rehmat.png" alt="Participant">
-                <h3>Rehmatullah</h3>
-                <h4>(1st year CS minor in Robotics)</h4>
-                <p>"As it is the age of technology, especially AI, I am deeply interested in 
-                    learning more about AI and machine learning. Because the math society 
-                    organized the event, I wanted to understand the foundational principles 
-                    behind how AI systems (like chips and other AI) work. I gained 
-                    deep knowledge by attending this session that will help me in future work."
-                </p>
-            </div>
-            <div class="grid-item">
-                <img src="images/Harshal.png" alt="Participant">
-                <h3>Harshal</h3>
-                <h4>(1st year MDDA)</h4>
-                <p>"I personally loved the presentation. I was 
-                    "hooked literally from the first sentence towards the end". 
-                    I appreciate the way Ahmed explained everything, from the 
-                    beginning all the way through LLMs. I also liked how he 
-                    explained heuristics and compared it with machine learning. 
-                    I attribute being so focused and hooked to Ahmed's attention, 
-                    level of awareness during the presentation, and his vast knowledge on the subject."</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
+    <footer id="contact">
         <div class="footer-content">
-            <p>CONNECT WITH US:</p>
-                                <div class="socials">
-                      <div class="link">
-                                <i class="fa-brands fa-instagram"></i>
-                                <a href="https://www.instagram.com/math__society/" target="_blank">Instagram</a>
-                      </div>
-                      <div class="link">
-                                <i class="fa-brands fa-linkedin"></i>
-                                <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank">LinkedIn</a>
-                      </div>
-                      <div class="link">
-                                <i class="fa-solid fa-share"></i>
-                                <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438" target="_blank">Sharepoint</a>
-                      </div>
-                      <div class="link">
-                                <i class="fa-brands fa-youtube"></i>
-                                <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
-                      </div>
-                      <div class="link">
-                                <i class="fa-brands fa-github"></i>
-                                <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
-                      </div>
-                      <div class="link">
-                                <i class="fa-solid fa-envelope"></i>
-                                <a href="mailto:constructor.maths@gmail.com">Email</a>
-                      </div>
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <img src="images/logo_final.png" alt="Logo" class="footer-logo">
+                    <p>Think. Calculate. Create.</p>
+                </div>
+                <div class="footer-socials">
+                    <p><strong>CONNECT</strong></p>
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/math__society/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="mailto:constructor.maths@gmail.com"><i class="fa-solid fa-envelope"></i></a>
                     </div>
-            <p>&copy; <span id="copyright-year"></span> The Math Society</p>
+                </div>
+            </div>
+            <p class="copyright">&copy; <span id="copyright-year"></span> The Math Society</p>
         </div>
     </footer>
 
-  <script src="landing.js"></script>
+    <script src="landing.js"></script>
 </body>
 </html>
