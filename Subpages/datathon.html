@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datathon 2026 - Math Society</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Home Page/landing.css">
+    <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+    <style>
+        #hero {
+            min-height: auto !important;
+            height: auto !important;
+            max-height: none !important;
+            padding-top: 180px !important;
+            padding-bottom: 2.5rem !important;
+            display: block !important;
+        }
+
+        .hero-content {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        #explanation {
+            padding-top: 3rem !important;
+            margin-top: 0 !important;
+        }
+
+        .highlight-box {
+            background-color: rgba(128, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--bg-maroon);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 700px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+        }
+
+        .image-caption {
+            font-style: italic;
+            margin-top: 0.75rem;
+            color: var(--text-maroon);
+            font-size: 1rem;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--bg-maroon);
+            font-size: 1.5rem;
+        }
+
+        .intro-emphasis {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin: 2rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid rgba(128, 0, 0, 0.3);
+        }
+
+        .key-takeaway {
+            background-color: rgba(128, 0, 0, 0.05);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-size: 1.05rem;
+        }
+
+        h2 {
+            color: var(--bg-maroon);
+            margin-top: 3.5rem;
+            font-size: 2rem;
+        }
+
+        #hero h3,
+        section h3 {
+            color: var(--text-maroon);
+            margin-top: 2rem;
+            font-size: 1.4rem;
+        }
+
+        /* Video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 2.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* External link button */
+        .external-link {
+            display: inline-block;
+            background-color: var(--bg-maroon);
+            color: var(--text-beige);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: opacity 0.3s;
+            font-weight: 600;
+        }
+
+        .external-link:hover {
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo-container logo_title">
+                <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+                <h3>Math Society</h3>
+            </div>
+                                    <ul class="nav-links">
+        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a class="nav-link dropdown-toggle active">Events</a>
+            <span class="dropdown-toggle-mobile">▼</span>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="causal-ml.html">Causal ML</a></li>
+            <li><a href="butterfly-theory.html" class="_blank">Butterfly Effect &amp; Chaos Theory</a></li>
+            <li><a href="cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
+            <li><a href="ai-ml.html">AI &amp; ML</a></li>
+            <li><a href="interstellar.html">Interstellar</a></li>
+            <li><a href="poker.html">Poker</a></li>
+            <li><a href="integration-bee.html" target="_blank">Integration Bee</a></li>
+            <li><a href="datathon.html" class="active">Datathon</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a href="ugs.html" class="nav-link dropdown-toggle">The Undergraduate Seminar</a>
+            <span class="dropdown-toggle-mobile">▼</span>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="ugs1.html">UGS 1</a></li>
+            <li><a href="ugs2.html">UGS 2</a></li>
+            <li><a href="ugs3.html">UGS 3</a></li>
+            <li><a href="ugs4.html">UGS 4</a></li>
+          </ul>
+        </li>
+        <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
+      </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------- -->
+
+    <!--HERO SECTION-->
+    <section id="hero" style="padding-top: 0; padding-bottom: 0; min-height: auto; margin-top: 0;">
+        <div class="hero-content" style="text-align: center; padding-top: 1rem;">
+            <h1 style="margin-top: 0;">Presenting The First Ever Datathon!</h1>
+            <p style="font-size: 1.3rem; margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Specially Organised by the <span><strong>Mathematics Society at Constructor University (MSCU)</strong></span>
+            </p>
+        </div>
+    </section>
+
+
+    <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
+        <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
+            <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
+                <!-- OPENING HOOK -->
+                <p style="font-size: 1.2rem; line-height: 1.9; font-style: italic; margin-top: 0; padding-top: 0.5rem;">
+                    Stop guessing what happened and start proving why at the Constructor University Datathon 2026.
+                </p>
+
+                <p class="intro-emphasis">
+                    The <strong>Constructor University Datathon 2026</strong> invites participants to tackle high-level challenges in causal reasoning and probabilistic modeling. Sponsored by <strong>Insytes GmbH</strong>, this <strong>three-day</strong> event challenges teams to apply theory—from directed acyclic graphs to correlation analysis—to practical industry problems. Participants will benefit from the direct support of Insytes GmbH and academic guidance from our specialized faculty.
+                </p>
+
+                <h1>Overview</h1>
+                <br>
+                <p class="highlight-box">
+                    <strong>This year's theme — Causation, Correlation & Causal Inference — challenges participants to go beyond surface-level patterns and uncover the real mechanisms behind data.
+Working in teams, participants will explore real-world datasets, build causal models using Directed Acyclic Graphs (DAGs), and apply probabilistic reasoning to develop and present their solutions.
+The challenge is provided by industry partner Insytes GmbH, with academic mentorship from Constructor University faculty specialising in causality and probabilistic modelling.</strong>
+                </p>
+                <br>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/ws782fTpcW4?si=UurJ7XEKEC-mg4qD"
+                        title="AI & ML Math Society Talk"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                        style="border-radius: 10px; box-shadow: 0px 10px 15px #222;">
+                    </iframe>
+                </div>
+
+                <p style="text-align: center; font-style: italic; margin-top: 1rem; color: var(--text-maroon);">
+                    Math Society Event: Datathon 2026
+                </p>
+
+                <h2>Day 1 — April 17: Opening, Talks & Challenge Launch</h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Day 1 — April 17: Opening, Talks & Challenge Launch</strong>
+                </p>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    Day 1 sets the stage for the entire Datathon. After registration and a welcome from the organisers,
+                    the industry partner Insytes GmbH introduces the challenge problem — giving teams the real-world
+                    context, data, and deliverables they'll be working with over the next three days.
+
+                    The afternoon features a keynote talk on Artificial Intelligence by Omar Elshinawy, followed by an
+                    academic session on causal inference and probabilistic methods covering DAGs, do-calculus,
+                    counterfactuals, and the common pitfalls of correlation vs. causation.
+                </p>
+  
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    The day wraps up with a panel discussion on AI and industry–academia collaboration, before teams
+                    dive into their first working session — exploring the dataset, sketching initial causal structures,
+                    and mapping out their approach.
+                </p>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;"><strong>Day 1 at a glance:</strong></p>
+                <ul style="font-size: 1.15rem; line-height: 1.8; padding-left: 50px; font-weight: 700;">
+                    <li>14:00 — Registration & check-in</li>
+                    <li>14:30 — Opening remarks</li>
+                    <li>14:45 — Challenge introduction by Insytes GmbH</li>
+                    <li>15:15 — Technical briefing</li>
+                    <li>15:45 — Coffee break & networking</li>
+                    <li>16:15 — Keynote: Artificial Intelligence</li>
+                    <li>16:45 — Academic talk: Causal Inference & Probabilistic Methods</li>
+                    <li>17:15 — Panel discussion</li>
+                    <li>17:45 — Team work begins</li>
+                </ul>
+
+                <br>
+                <h2>Day 2 — April 18: Team Work & Support</h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Day 2 — April 18: Team Work & Support</strong>
+                </p>
+                <br>
+                
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    Day 2 is dedicated entirely to the teams. With the challenge framed and the dataset in hand,
+                    participants spend the day building, testing, and refining their causal models — supported by
+                    mentors from both Insytes GmbH and Constructor University faculty.
+                    The morning session focuses on formalising causal hypotheses using DAG structures and developing
+                    probabilistic models, while the afternoon shifts toward optimisation, sensitivity analysis, and
+                    preparing visualisations. Teams also begin drafting their presentation slides and final report.
+                </p>
+                <br>
+                
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    The day takes place in the IRC Seminar Room — a smaller, more collaborative setting ideal for
+                    focused work and one-on-one mentoring. Lunch is self-arranged on this day.
+                </p>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;"><strong>Day 2 at a glance:</strong></p>
+                <ul style="font-size: 1.15rem; line-height: 1.8; padding-left: 50px; font-weight: 700;">
+                    <li>09:00 — Team work: model development</li>
+                    <li>12:00 — Lunch break (self-arranged)</li>
+                    <li>13:00 — Team work: final development & visualisations</li>
+                    <li>17:00 — End of Day 2</li>
+                </ul>
+                <br>
+
+                <h2>Day 3 — April 19: Finalisation, Presentations & Awards</h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Day 3 — April 19: Finalisation, Presentations & Awards</strong>
+                </p>
+                <br>
+
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    The final day brings everything together. Teams spend the morning putting the finishing touches
+                    on their code, report, and slides before the submission deadline at 11:30. All submissions include
+                    a code repository, final report, and presentation slides.
+                    After lunch, teams take to the stage to present their work to a panel of judges from Constructor
+                    University and Insytes GmbH. Each team has 6 minutes to walk through their approach, causal
+                    methodology, and results — followexd by a Q&A. Judges evaluate teams on the creativity of their
+                    causal approach, technical rigour, real-world applicability, and clarity of presentation.
+                </p>
+                <br>
+
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    The event closes with an awards ceremony recognising the top teams, followed by a closing dinner
+                    and networking session — a chance to reflect, connect, and celebrate three days of hard work.
+                </p>
+
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;"><strong>Day 3 at a glance:</strong></p>
+                <ul style="font-size: 1.15rem; line-height: 1.8; padding-left: 50px;">
+                    <li>09:00 — Final team work & polishing</li>
+                    <li>11:30 — Submission deadline</li>
+                    <li>12:00 — Lunch break (self-arranged)</li>
+                    <li>13:00 — Team presentations & Q&A</li>
+                    <li>15:30 — Judging & deliberation</li>
+                    <li>16:00 — Awards ceremony & closing remarks</li>
+                    <li>Evening — Closing dinner & networking</li>
+                </ul>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Funding & Operational Support</strong>
+                </p>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    The Datathon is primarily funded by FAC. Insytes GmbH is not contributing financially — their
+                    contribution is entirely in-kind, covering mentorship, the challenge problem and dataset, and
+                    judging. There is currently no external sponsorship confirmed for the event.
+                </p>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>What FAC covers:</strong>
+                </p>
+                <ul style="font-size: 1.15rem; line-height: 1.8; padding-left: 50px;">
+                    <li>All food — snacks, drinks, and lunch for external attendees via catering request</li>
+                    <li>Lunch on Days 1 and 3: pizza or equivalent (separate catering request required)</li>
+                    <li>Dinner: to be confirmed — separate request, covered by FAC</li>
+                    <li>Pizzas: 10 pizzas at €36 each — total €360 (based on 40 expected participants)</li>
+                </ul>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Additional food & supplies (total from FAC: €134.36):</strong>
+                </p>
+                <ul style="font-size: 1.15rem; line-height: 1.8; padding-left: 50px;">
+                    <li>MadeGood Organic Chocolate Chip Granola Bars 6x24g — 5 units @ €3.15 — €15.75</li>
+                    <li>Huober Organic Crispy Pretzel 175g — 5 units @ €2.26 — €11.30</li>
+                    <li>REWE Organic Date and Peanut Bars 3x30g — 4 units @ €1.79 — €7.16</li>
+                    <li>Tuc Cracker Paprika 100g — 10 units @ €1.49 — €14.90</li>
+                    <li>Dr. Oetker Cinnamon Rolls Baking Mix 292g — 5 units @ €3.14 — €15.70</li>
+                    <li>Lorenz Crunchips Cheese & Onion 150g — 10 units @ €1.99 — €19.90</li>
+                    <li>Yes! Embossed white napkins, 100 pieces — 2 units @ €1.18 — €2.36</li>
+                    <li>Yes! Embossed white napkins, 100 pieces (second order) — 2 units @ €1.18 — €2.36</li>
+                    <li>Gerolsteiner Medium 6x1.5l (ONE-WAY) — 2 units @ €0.94 — €1.88</li>
+                    <li>Coca-Cola Zero Sugar 6x21 (ONE-WAY) — 1 unit @ €13.14 — €13.14</li>
+                    <li>Volvic Juicy Orange-Mango 6x11 — 1 unit @ €11.14 — €11.14</li>
+                    <li>50x Hot and cold beverage cups, paper cups, mixed/PE white, 200ml, fill line Ø 70mm — 2 units @ €5.19 — €10.38</li>
+                    <li>PAPSTAR cardboard plates "pure" round 190mm white, 100 pieces — 1 unit @ €10.75 — €10.75</li>
+                </ul>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>What Math Society handles:</strong>
+                </p>
+                <ul style="font-size: 1.15rem; line-height: 1.8; padding-left: 50px;">
+                    <li>All room setup and teardown</li>
+                    <li>Badge design</li>
+                    <li>Award production via Makers Club — 3D printed trophies at €0</li>
+                    <li>Event hosting and MC duties</li>
+                    <li>Printing of schedules and materials</li>
+                    <li>Coordination with Insytes GmbH</li>
+                </ul>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>What the university provides:</strong>
+                </p>
+                <ul style="font-size: 1.15rem; line-height: 1.8; padding-left: 50px;">
+                    <li>Microphones for talks, panel, and presentations</li>
+                    <li>Projector and screen</li>
+                    <li>Venue booking — East Wing (Days 1 and 3) and IRC Seminar Room (Day 2)</li>
+                    <li>Catering request processing for snacks and drinks</li>
+                    <li>Guidance on badge production process (to be confirmed with Community Coordinator)</li>
+                </ul>
+
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Sponsors & Partners</strong>
+                </p>
+                
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    The Datathon 2026 is organised with the support of <strong>Constructor University</strong> as
+                    the host institution and <strong>Insytes GmbH</strong> as the industry partner. Insytes GmbH
+                    contributes the challenge problem, dataset, mentorship, and judging — bringing real-world
+                    industry expertise directly into the competition.
+                    <br>
+                    <br>
+                    <strong>There is currently no external sponsorship confirmed for this edition. If you are interested
+                    in supporting the event, please get in touch with the organising team!!!</strong>
+                </p>
+                
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-content">
+            <p>CONNECT WITH US:</p>
+                  <div class="socials">
+        <div class="link">
+          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/math__society/" target="_blank">Instagram</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-share"></i>
+          <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438" target="_blank">Sharepoint</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-youtube"></i>
+          <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:constructor.maths@gmail.com">Email</a>
+        </div>
+      </div>
+      <p>&copy; <span id="copyright-year"></span> The Math Society</p>
+        </div>
+    </footer>
+
+    <script src="../Home Page/landing.js"></script>
+</body>
+
+</html>
