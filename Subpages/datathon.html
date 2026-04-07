@@ -199,6 +199,56 @@
                 <img src="images/datathon-banner.jpg" alt="Cryptography Seminar Presentation">
             </div>
         </div>
+
+        <div style="text-align: center; margin: 32px 0;">
+            <p style="font-size: 1rem; color: #800000; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">Datathon Begins In</p>
+            <div id="countdown" style="display: flex; justify-content: center; gap: 24px;">
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span id="days" style="font-size: 3rem; font-weight: bold; color: #800000; background-color: rgba(128,0,0,0.08); padding: 16px 24px; border-radius: 10px; min-width: 80px; text-align: center;">00</span>
+                    <span style="font-size: 0.85rem; letter-spacing: 1px; margin-top: 8px; color: #555;">DAYS</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span id="hours" style="font-size: 3rem; font-weight: bold; color: #800000; background-color: rgba(128,0,0,0.08); padding: 16px 24px; border-radius: 10px; min-width: 80px; text-align: center;">00</span>
+                    <span style="font-size: 0.85rem; letter-spacing: 1px; margin-top: 8px; color: #555;">HOURS</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span id="minutes" style="font-size: 3rem; font-weight: bold; color: #800000; background-color: rgba(128,0,0,0.08); padding: 16px 24px; border-radius: 10px; min-width: 80px; text-align: center;">00</span>
+                    <span style="font-size: 0.85rem; letter-spacing: 1px; margin-top: 8px; color: #555;">MINUTES</span>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: center;">
+                    <span id="seconds" style="font-size: 3rem; font-weight: bold; color: #800000; background-color: rgba(128,0,0,0.08); padding: 16px 24px; border-radius: 10px; min-width: 80px; text-align: center;">00</span>
+                    <span style="font-size: 0.85rem; letter-spacing: 1px; margin-top: 8px; color: #555;">SECONDS</span>
+                </div>
+            </div>
+            <p id="countdown-message" style="display: none; font-size: 1.5rem; font-weight: bold; color: #800000; margin-top: 16px;">🎉 The Datathon has started!</p>
+        </div>
+        
+        <script>
+            function updateCountdown() {
+                const target = new Date('April 17, 2026 14:00:00').getTime();
+                const now = new Date().getTime();
+                const diff = target - now;
+        
+                if (diff <= 0) {
+                    document.getElementById('countdown').style.display = 'none';
+                    document.getElementById('countdown-message').style.display = 'block';
+                    return;
+                }
+        
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+        
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        </script>
     </section>
 
 
