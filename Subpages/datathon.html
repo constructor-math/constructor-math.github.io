@@ -134,6 +134,67 @@
             opacity: 0.8;
         }
 
+        .countdown-wrapper {
+        text-align: center;
+        margin: 32px 0;
+    }
+
+    .countdown-label {
+        font-size: 1rem;
+        color: #800000;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    #countdown {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .countdown-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .countdown-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #800000;
+        background-color: rgba(128, 0, 0, 0.08);
+        padding: 16px 24px;
+        border-radius: 10px;
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .countdown-unit {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        margin-top: 8px;
+        color: #555;
+    }
+
+    @media (max-width: 480px) {
+        #countdown {
+            gap: 12px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            padding: 12px 16px;
+            min-width: 60px;
+        }
+
+        .countdown-unit {
+            font-size: 0.75rem;
+        }
+    }
+
     </style>
 </head>
 
@@ -305,12 +366,12 @@
 
                     <div class="image-container" style="display: flex; flex-direction: row; justify-content: space-between;">
                         <div style="display: flex; flex-direction: column; align-items: center;">
-                            <img src="images/karim.jpg" alt="Karim Abualrish" style="width: 200px; height: 200px; object-fit: cover; border-radius: 100%; margin-bottom: 15px;">
+                            <img src="images/karim.jpg" alt="Karim Abualrish" style="width: 190px; height: 200px; object-fit: cover; border-radius: 100%; margin-bottom: 15px;">
                             <strong>Karim Abualrish</strong>
                         </div>
                     
                         <div style="display: flex; flex-direction: column; align-items: center;">
-                            <img src="images/varun.jpg" alt="Varun Patel" style="width: 200px; height: 200px; object-fit: cover; border-radius: 100%; margin-bottom: 15px;">
+                            <img src="images/varun.jpg" alt="Varun Patel" style="width: 190px; height: 200px; object-fit: cover; border-radius: 100%; margin-bottom: 15px;">
                             <strong>Varun Patel</strong>
                         </div>
                     </div>
