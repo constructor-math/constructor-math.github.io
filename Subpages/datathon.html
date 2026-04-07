@@ -261,24 +261,24 @@
             </div>
         </div>
 
-        <div style="text-align: center; margin: 32px 0;">
-            <p style="font-size: 1rem; color: #800000; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px;">Datathon Begins In</p>
-            <div id="countdown" style="display: flex; justify-content: center; gap: 24px;">
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <span id="days" style="font-size: 3rem; font-weight: bold; color: #800000; background-color: rgba(128,0,0,0.08); padding: 16px 24px; border-radius: 10px; min-width: 80px; text-align: center;">00</span>
-                    <span style="font-size: 0.85rem; letter-spacing: 1px; margin-top: 8px; color: #555;">DAYS</span>
+        <div class="countdown-wrapper">
+            <p class="countdown-label">Datathon Begins In</p>
+            <div id="countdown">
+                <div class="countdown-box">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-unit">DAYS</span>
                 </div>
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <span id="hours" style="font-size: 3rem; font-weight: bold; color: #800000; background-color: rgba(128,0,0,0.08); padding: 16px 24px; border-radius: 10px; min-width: 80px; text-align: center;">00</span>
-                    <span style="font-size: 0.85rem; letter-spacing: 1px; margin-top: 8px; color: #555;">HOURS</span>
+                <div class="countdown-box">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-unit">HOURS</span>
                 </div>
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <span id="minutes" style="font-size: 3rem; font-weight: bold; color: #800000; background-color: rgba(128,0,0,0.08); padding: 16px 24px; border-radius: 10px; min-width: 80px; text-align: center;">00</span>
-                    <span style="font-size: 0.85rem; letter-spacing: 1px; margin-top: 8px; color: #555;">MINUTES</span>
+                <div class="countdown-box">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-unit">MINUTES</span>
                 </div>
-                <div style="display: flex; flex-direction: column; align-items: center;">
-                    <span id="seconds" style="font-size: 3rem; font-weight: bold; color: #800000; background-color: rgba(128,0,0,0.08); padding: 16px 24px; border-radius: 10px; min-width: 80px; text-align: center;">00</span>
-                    <span style="font-size: 0.85rem; letter-spacing: 1px; margin-top: 8px; color: #555;">SECONDS</span>
+                <div class="countdown-box">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-unit">SECONDS</span>
                 </div>
             </div>
             <p id="countdown-message" style="display: none; font-size: 1.5rem; font-weight: bold; color: #800000; margin-top: 16px;">🎉 The Datathon has started!</p>
