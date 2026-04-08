@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datathon 2026 - Math Society</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Home Page/landing.css">
+    <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+    <style>
+        #hero {
+            min-height: auto !important;
+            height: auto !important;
+            max-height: none !important;
+            padding-top: 180px !important;
+            padding-bottom: 2.5rem !important;
+            display: block !important;
+        }
+
+        .hero-content {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        #explanation {
+            padding-top: 3rem !important;
+            margin-top: 0 !important;
+        }
+
+        .highlight-box {
+            background-color: rgba(128, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--bg-maroon);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 700px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+        }
+
+        .image-caption {
+            font-style: italic;
+            margin-top: 0.75rem;
+            color: var(--text-maroon);
+            font-size: 1rem;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--bg-maroon);
+            font-size: 1.5rem;
+        }
+
+        .intro-emphasis {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin: 2rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid rgba(128, 0, 0, 0.3);
+        }
+
+        .key-takeaway {
+            background-color: rgba(128, 0, 0, 0.05);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-size: 1.05rem;
+        }
+
+        h2 {
+            color: var(--bg-maroon);
+            margin-top: 3.5rem;
+            font-size: 2rem;
+        }
+
+        #hero h3,
+        section h3 {
+            color: var(--text-maroon);
+            margin-top: 2rem;
+            font-size: 1.4rem;
+        }
+
+        /* Video container */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 900px;
+            margin: 2.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* External link button */
+        .external-link {
+            display: inline-block;
+            background-color: var(--bg-maroon);
+            color: var(--text-beige);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: opacity 0.3s;
+            font-weight: 600;
+        }
+
+        .external-link:hover {
+            opacity: 0.8;
+        }
+
+        .countdown-wrapper {
+        text-align: center;
+        margin: 32px 0;
+    }
+
+    .countdown-label {
+        font-size: 1rem;
+        color: #800000;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    #countdown {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .countdown-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .countdown-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #800000;
+        background-color: rgba(128, 0, 0, 0.08);
+        padding: 16px 24px;
+        border-radius: 10px;
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .countdown-unit {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        margin-top: 8px;
+        color: #555;
+    }
+
+    @media (max-width: 480px) {
+        #countdown {
+            gap: 12px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            padding: 12px 16px;
+            min-width: 60px;
+        }
+
+        .countdown-unit {
+            font-size: 0.75rem;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar" id="nav">
+        <div class="nav-container">
+            <div class="logo-container logo_title">
+                <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+                <h3>Math Society</h3>
+            </div>
+                                    <ul class="nav-links">
+        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a class="nav-link dropdown-toggle">Events</a>
+            <span class="dropdown-toggle-mobile">▼</span>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="causal-ml.html">Causal ML</a></li>
+            <li><a href="butterfly-theory.html" class="_blank">Butterfly Effect &amp; Chaos Theory</a></li>
+            <li><a href="cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
+            <li><a href="ai-ml.html">AI &amp; ML</a></li>
+            <li><a href="interstellar.html">Interstellar</a></li>
+            <li><a href="poker.html">Poker</a></li>
+            <li><a href="integration-bee.html" target="_blank">Integration Bee</a></li>
+          </ul>
+        </li>
+        <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
+        <li><a href="datathon.html" class="nav-link active">Datathon</a></li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a href="ugs.html" class="nav-link dropdown-toggle">The Undergraduate Seminar</a>
+            <span class="dropdown-toggle-mobile">▼</span>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="ugs1.html">UGS 1</a></li>
+            <li><a href="ugs2.html">UGS 2</a></li>
+            <li><a href="ugs3.html">UGS 3</a></li>
+            <li><a href="ugs4.html">UGS 4</a></li>
+          </ul>
+        </li>
+      </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------- -->
+
+    <!--HERO SECTION-->
+    <section id="hero" style="padding-top: 0; padding-bottom: 0; min-height: auto; margin-top: 0;">
+        <div class="hero-content" style="text-align: center; padding-top: 1rem;">
+            <h1 style="margin-top: 0;">Presenting The First Ever Datathon 2026!</h1>
+            <p style="font-size: 1.3rem; margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Specially Organised by the <span><strong>Mathematics Society at Constructor University (MSCU)</strong></span>
+            </p>
+
+            <div class="image-container highlight-box">
+                <img src="images/datathon-banner.jpg" alt="Cryptography Seminar Presentation">
+            </div>
+        </div>
+
+        <div class="countdown-wrapper">
+            <p class="countdown-label">Datathon Begins In</p>
+            <div id="countdown">
+                <div class="countdown-box">
+                    <span id="days" class="countdown-number">00</span>
+                    <span class="countdown-unit">DAYS</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="hours" class="countdown-number">00</span>
+                    <span class="countdown-unit">HOURS</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="minutes" class="countdown-number">00</span>
+                    <span class="countdown-unit">MINUTES</span>
+                </div>
+                <div class="countdown-box">
+                    <span id="seconds" class="countdown-number">00</span>
+                    <span class="countdown-unit">SECONDS</span>
+                </div>
+            </div>
+            <p id="countdown-message" style="display: none; font-size: 1.5rem; font-weight: bold; color: #800000; margin-top: 16px;">🎉 The Datathon has started!</p>
+        </div>
+        
+        <script>
+            function updateCountdown() {
+                const target = new Date('April 17, 2026 14:00:00').getTime();
+                const now = new Date().getTime();
+                const diff = target - now;
+        
+                if (diff <= 0) {
+                    document.getElementById('countdown').style.display = 'none';
+                    document.getElementById('countdown-message').style.display = 'block';
+                    return;
+                }
+        
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        
+                document.getElementById('days').textContent = String(days).padStart(2, '0');
+                document.getElementById('hours').textContent = String(hours).padStart(2, '0');
+                document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
+                document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+            }
+        
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
+        </script>
+    </section>
+
+
+    <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
+        <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
+            <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
+                <!-- OPENING HOOK -->
+                <p style="font-size: 1.2rem; line-height: 1.9; font-style: italic;">
+                    Given data, can you establish causation — not just correlation?
+                </p>
+
+                <p class="intro-emphasis">
+                    The <strong>Constructor University Datathon 2026</strong> invites participants to tackle high-level challenges in causal reasoning and probabilistic modeling. Sponsored by <strong><a href="https://www.insytes.ai/">Insytes GmbH</a></strong>, this <strong>three-day</strong> event challenges teams to apply theory—from directed acyclic graphs to correlation analysis—to practical industry problems. Participants will benefit from the direct support of Insytes GmbH and academic guidance from our specialized faculty.
+                </p>
+                
+                <h1>📋 Table of Contents</h1>
+                <div style="background-color: rgba(128, 0, 0, 0.05); border: 4px solid #800000; border-radius: 8px; padding: 24px 32px; margin: 32px 0; padding-left: 50px; font-weight: 800;" id="table">
+                    <ol style="font-size: 1.1rem; line-height: 2.2; padding-left: 24px; margin: 0;">
+                        <li><a href="#overview" style="color: #800000; text-decoration: none;">Overview & About Insytes GmbH</a></li>
+                        <li><a href="#theme" style="color: #800000; text-decoration: none;">Theme & Topic</a></li>
+                        <li><a href="#day1" style="color: #800000; text-decoration: none;">Day 1 — Opening, Talks & Challenge Launch</a></li>
+                        <li><a href="#day2" style="color: #800000; text-decoration: none;">Day 2 — Team Work & Support</a></li>
+                        <li><a href="#day3" style="color: #800000; text-decoration: none;">Day 3 — Finalisation, Presentations & Awards</a></li>
+                        <li><a href="#judges" style="color: #800000; text-decoration: none;">Judges & Speakers</a></li>
+                        <li><a href="#prizes" style="color: #800000; text-decoration: none;">Prizes & Awards</a></li>
+                        <li><a href="#sponsors" style="color: #800000; text-decoration: none;">Sponsors & Partners</a></li>
+                        <li><a href="#register" style="color: #800000; text-decoration: none;">Register</a></li>
+                    </ol>
+                </div>
+
+                <h1 id="overview">Overview</h1>
+
+                <div class="highlight-box">
+
+                    <p style="font-size: 1.15rem; line-height: 1.8;">
+                        <strong>About Insytes GmbH</strong>
+                    </p>
+    
+                    <div class="image-container" style="display: flex; flex-direction: row; gap: 16px; width: 100%; overflow: scroll; justify-content: center;">
+                        <img src="images/insytes_ai_logo.jpg" alt="Insytes Logo" style="width: 40%; height: 40%; object-fit: contain;">
+                    </div>
+    
+                    <p style="font-size: 1.15rem; line-height: 1.8;">
+                        Insytes GmbH is a Bremen-based startup founded by Constructor University alumni, working at the
+                        intersection of artificial intelligence and industrial data. The company is backed by the EXIST
+                        programme of the German Federal Ministry for Economic Affairs, supported through the University
+                        of Bremen and BRIDGE.
+                    </p>
+                    <br>
+                    <p style="font-size: 1.15rem; line-height: 1.8;">
+                        The team is led by co-founders <strong>Karim Abualrish</strong> and <strong>Varun Patel</strong>. Karim is also an active member of the Bremen startup
+                        community, helping foster connections between entrepreneurs, researchers, and industry.
+                    </p>
+
+                    <div class="image-container" style="display: flex; flex-direction: row; justify-content: space-between;">
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="images/karim.jpg" alt="Karim Abualrish" style="width: 190px; height: 200px; object-fit: cover; border-radius: 100%; margin-bottom: 15px;">
+                            <strong>Karim Abualrish</strong>
+                        </div>
+                    
+                        <div style="display: flex; flex-direction: column; align-items: center;">
+                            <img src="images/varun.jpg" alt="Varun Patel" style="width: 190px; height: 200px; object-fit: cover; border-radius: 100%; margin-bottom: 15px;">
+                            <strong>Varun Patel</strong>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 style="font-size: 1.15rem; line-height: 1.8;" id="theme">
+                    <strong>Theme & Topic</strong>
+                </h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    This year's Datathon is centred on one of the most fundamental questions in data science:
+                    not just <em>what</em> is happening in the data, but <em>why</em>. The theme —
+                    <strong>Causation, Correlation & Causal Inference</strong> — challenges participants to move
+                    beyond surface-level patterns and build a rigorous understanding of cause and effect.
+                </p>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    At the heart of the challenge is <strong>causal inference</strong> — a framework for reasoning
+                    about the effect of interventions and counterfactuals in complex systems. Participants will
+                    work with <strong>Directed Acyclic Graphs (DAGs)</strong> to map out causal relationships
+                    between variables, identify confounders, and determine what can and cannot be inferred from
+                    observational data alone.
+                </p>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Probabilistic reasoning</strong> ties it all together — giving teams the tools to
+                    quantify uncertainty, model dependencies, and draw conclusions that are not just statistically
+                    sound, but causally meaningful. Whether you are building models, interpreting results, or
+                    designing interventions, thinking probabilistically is key to getting the right answer for
+                    the right reasons.
+                </p>
+
+                <h2 id="day1">Day 1 — April 17: Opening, Talks & Challenge Launch</h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Day 1 — April 17: Opening, Talks & Challenge Launch</strong>
+                </p>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    Day 1 sets the stage for the entire Datathon. After registration and a welcome from the organisers,
+                    the industry partner Insytes GmbH introduces the challenge problem — giving teams the real-world
+                    context, data, and deliverables they'll be working with over the next three days.
+
+                    The afternoon features a keynote talk on Artificial Intelligence by Omar Elshinawy, followed by an
+                    academic session on causal inference and probabilistic methods covering DAGs, do-calculus,
+                    counterfactuals, and the common pitfalls of correlation vs. causation.
+                </p>
+  
+                <br>
+
+                <p style="font-size: 1.15rem; line-height: 1.8;"><strong>Day 1 at a glance:</strong></p>
+                <table style="font-size: 1.15rem; line-height: 1.8; width: 100%; padding-left: 50px;">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">14:00</td>
+                            <td style="padding: 8px 0;">Registration & check-in</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">14:30</td>
+                            <td style="padding: 8px 0;">Opening remarks</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">14:45</td>
+                            <td style="padding: 8px 0;">Challenge introduction by Insytes GmbH</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">15:15</td>
+                            <td style="padding: 8px 0;">Technical briefing</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">15:45</td>
+                            <td style="padding: 8px 0;">Coffee break & networking</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">16:15</td>
+                            <td style="padding: 8px 0;">Keynote: Artificial Intelligence</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">16:45</td>
+                            <td style="padding: 8px 0;">Academic talk: Causal Inference & Probabilistic Methods</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">17:15</td>
+                            <td style="padding: 8px 0;">Panel discussion</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">17:45</td>
+                            <td style="padding: 8px 0;">Team work begins</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <br>
+                <h2 id="day2">Day 2 — April 18: Team Work & Support</h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Day 2 — April 18: Team Work & Support</strong>
+                </p>
+                <br>
+                
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    Day 2 is dedicated entirely to the teams. With the challenge framed and the dataset in hand,
+                    participants spend the day building, testing, and refining their causal models — supported by
+                    mentors from both Insytes GmbH and Constructor University faculty.
+                    The morning session focuses on formalising causal hypotheses using DAG structures and developing
+                    probabilistic models, while the afternoon shifts toward optimisation, sensitivity analysis, and
+                    preparing visualisations. Teams also begin drafting their presentation slides and final report.
+                </p>
+                <br>
+                
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    The day takes place in the IRC Seminar Room — a smaller, more collaborative setting ideal for
+                    focused work and one-on-one mentoring. Lunch is self-arranged on this day.
+                </p>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;"><strong>Day 2 at a glance:</strong></p>
+                <table style="font-size: 1.15rem; line-height: 1.8; width: 100%; padding-left: 50px;">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">09:00</td>
+                            <td style="padding: 8px 0;">Team work: model development</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">12:00</td>
+                            <td style="padding: 8px 0;">Lunch break (self-arranged)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">13:00</td>
+                            <td style="padding: 8px 0;">Team work: final development & visualisations</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">17:00</td>
+                            <td style="padding: 8px 0;">End of Day 2</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+
+                <h2 id="day3">Day 3 — April 19: Finalisation, Presentations & Awards</h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Day 3 — April 19: Finalisation, Presentations & Awards</strong>
+                </p>
+                <br>
+
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    The final day brings everything together. Teams spend the morning putting the finishing touches
+                    on their code, report, and slides before the submission deadline at 11:30. All submissions include
+                    a code repository, final report, and presentation slides.
+                    After lunch, teams take to the stage to present their work to a panel of judges from Constructor
+                    University and Insytes GmbH. Each team has 6 minutes to walk through their approach, causal
+                    methodology, and results — followexd by a Q&A. Judges evaluate teams on the creativity of their
+                    causal approach, technical rigour, real-world applicability, and clarity of presentation.
+                </p>
+                <br>
+
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    The event closes with an awards ceremony recognising the top teams, followed by a closing dinner
+                    and networking session — a chance to reflect, connect, and celebrate three days of hard work.
+                </p>
+
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;"><strong>Day 3 at a glance:</strong></p>
+                <table style="font-size: 1.15rem; line-height: 1.8; width: 100%; padding-left: 50px;">
+                    <tbody>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">09:00</td>
+                            <td style="padding: 8px 0;">Final team work & polishing</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">11:30</td>
+                            <td style="padding: 8px 0;">Submission deadline</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">12:00</td>
+                            <td style="padding: 8px 0;">Lunch break (self-arranged)</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">13:00</td>
+                            <td style="padding: 8px 0;">Team presentations & Q&A</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">15:30</td>
+                            <td style="padding: 8px 0;">Judging & deliberation</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">16:00</td>
+                            <td style="padding: 8px 0;">Awards ceremony & closing remarks</td>
+                        </tr>
+                        <tr>
+                            <td style="padding: 8px 16px 8px 0; white-space: nowrap; font-weight: bold;">Evening</td>
+                            <td style="padding: 8px 0;">Closing dinner & networking</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    The day wraps up with a panel discussion on AI and industry–academia collaboration, before teams
+                    dive into their first working session — exploring the dataset, sketching initial causal structures,
+                    and mapping out their approach.
+                </p>
+                <br>
+                
+                <!-- Before your judges image row -->
+                <h2 id="judges">Judges & Speakers</h2>
+                <div class="highlight-box" style="display: flex; flex-direction: row; justify-content: space-between; gap: 24px; width: 100%;">
+
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; flex: 1;">
+                        <img src="images/keivan.jpg" alt="Keivan Mallahi Karai" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px;">
+                        <strong>Dr. Keivan Mallahi Karai</strong>
+                    </div>
+                
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; flex: 1;">
+                        <img src="images/karim.jpg" alt="Karim Abualrish" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px;">
+                        <strong>Karim Abualrish</strong>
+                    </div>
+                
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 12px; flex: 1;">
+                        <img src="images/varun.jpg" alt="Varun Patel" style="width: 100%; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px;">
+                        <strong>Varun Patel</strong>
+                    </div>
+                
+                </div>
+
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <br>
+                    <!-- On your Prizes h1 -->
+                    <h1 id="prizes">Prizes & Awards</h1>
+                    <br>
+                    <div class="highlight-box">
+                        <p style="font-size: 1.15rem; line-height: 1.8;">
+                            Winning teams will be recognised at the awards ceremony on the evening of April 19. Prizes include:
+                        </p>
+                        <ul style="font-size: 1.15rem; line-height: 1.8; padding-left: 50px; font-weight: 700;">
+                            <li>3D-printed trophies produced by the Makers Club</li>
+                            <li>Certificates of achievement</li>
+                            <li>Internship opportunities at Insytes GmbH</li>
+                            <li>Recommendation letters</li>
+                        </ul>
+                        <br>
+                        <p style="font-size: 1.15rem; line-height: 1.8;">
+                            Special recognitions may also be awarded — details to be confirmed closer to the event.
+                        </p>
+
+                    </div>
+                </p>
+            
+
+                <br>
+                <p id="sponsors" style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Sponsors & Partners</strong>
+                </p>
+                
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    The Datathon 2026 is organised with the support of <strong>Constructor University</strong> as
+                    the host institution and <strong><a href="https://www.insytes.ai/">Insytes GmbH</a></strong> as the industry partner. Insytes GmbH
+                    contributes the challenge problem, dataset, mentorship, and judging — bringing real-world
+                    industry expertise directly into the competition.
+                    <br>
+                    <br>
+                </p>
+                
+                <div id="register" style="text-align: center; padding: 48px 24px; border-radius: 16px; margin: 32px 0;">
+                    <p style="font-size: 1.5rem; font-weight: bold; margin-bottom: 12px;">Ready to take part?</p>
+                    <p style="font-size: 1.15rem; line-height: 1.8; color: #555; margin-bottom: 32px;">
+                        Sign up now to secure your spot at the Constructor University Datathon 2026.
+                        Places are limited, so don't wait too long!
+                    </p>
+                    <a href="https://forms.gle/2eXuzkici3ezDcQq5" 
+                       target="_blank"
+                       style="display: inline-block; padding: 14px 36px; background-color: #800000; color: white; 
+                              text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold;
+                              transition: background-color 0.3s ease;">
+                        Register Now →
+                    </a>
+
+                    <br>
+                    <a href="#table" 
+                    style="display: inline-block; padding: 14px 36px; background-color: #800000; color: white; 
+                           text-decoration: none; border-radius: 8px; font-size: 1.1rem; font-weight: bold;
+                           transition: background-color 0.3s ease; margin-top: 100px">
+                     Back to table of contents
+                 </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-content">
+            <p>CONNECT WITH US:</p>
+                  <div class="socials">
+        <div class="link">
+          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/math__society/" target="_blank">Instagram</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-share"></i>
+          <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438" target="_blank">Sharepoint</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-youtube"></i>
+          <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:constructor.maths@gmail.com">Email</a>
+        </div>
+      </div>
+      <p>&copy; <span id="copyright-year"></span> The Math Society</p>
+        </div>
+    </footer>
+
+    <script src="../Home Page/landing.js"></script>
+</body>
+
+</html>
