@@ -1,147 +1,143 @@
-document.addEventListener('DOMContentLoaded', () => {
-
-    const hamburger = document.querySelector('.hamburger');
-
-    const navLinks = document.querySelector('.nav-links');
-
-    const dropdowns = document.querySelectorAll('.dropdown');
-
-
-
-    // ── Hamburger open/close ──────────────────────────────────────────────────
-
-    hamburger.addEventListener('click', () => {
-
-        navLinks.classList.toggle('active');
-
-        // Close all dropdowns when closing the menu
-
-        if (!navLinks.classList.contains('active')) {
-
-            dropdowns.forEach(d => d.classList.remove('active'));
-
-        }
-
-    });
-
-
-
-    // ── Dropdown toggle on mobile ─────────────────────────────────────────────
-
-    dropdowns.forEach(dropdown => {
-
-        const toggleArrow = dropdown.querySelector('.dropdown-toggle-mobile');
-
-        const toggleLabel = dropdown.querySelector('.dropdown-toggle'); // the text label
-
-
-
-        const handleToggle = (e) => {
-
-            if (window.innerWidth > 768) return; // desktop: CSS hover handles it
-
-            e.preventDefault();
-
-            e.stopPropagation();
-
-
-
-            const isOpen = dropdown.classList.contains('active');
-
-
-
-            // Close all dropdowns first
-
-            dropdowns.forEach(d => d.classList.remove('active'));
-
-
-
-            // Then open this one if it wasn't already open
-
-            if (!isOpen) {
-
-                dropdown.classList.add('active');
-
-            }
-
-        };
-
-
-
-        // Clicking the ▼ arrow toggles dropdown
-
-        if (toggleArrow) {
-
-            toggleArrow.addEventListener('click', handleToggle);
-
-            toggleArrow.addEventListener('touchstart', handleToggle, { passive: false });
-
-        }
-
-
-
-        // Clicking the label (e.g. "Events") with no href also toggles dropdown
-
-        if (toggleLabel && !toggleLabel.getAttribute('href')) {
-
-            toggleLabel.addEventListener('click', handleToggle);
-
-            toggleLabel.addEventListener('touchstart', handleToggle, { passive: false });
-
-        }
-
-    });
-
-
-
-    // ── Close menu when a non-toggle nav link is clicked ─────────────────────
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-
-        link.addEventListener('click', () => {
-
-            if (!link.classList.contains('dropdown-toggle') || link.getAttribute('href')) {
-
-                navLinks.classList.remove('active');
-
-                dropdowns.forEach(d => d.classList.remove('active'));
-
-            }
-
+const body = document.body;
+const navbar = document.getElementById("navbar");
+const menuToggle = document.getElementById("menuToggle");
+const mobileOverlay = document.getElementById("mobileOverlay");
+const dropdownTriggers = document.querySelectorAll("[data-dropdown-trigger]");
+const dropdownItems = document.querySelectorAll(".nav-dropdown");
+const navLinks = document.querySelectorAll(".nav-panel a[href]");
+const yearTarget = document.getElementById("copyright-year");
+const isDesktop = () => window.innerWidth > 900;
+
+function setYear() {
+    if (yearTarget) {
+        yearTarget.textContent = new Date().getFullYear();
+    }
+}
+
+function updateNavbarState() {
+    if (!navbar) return;
+    navbar.classList.toggle("scrolled", window.scrollY > 12);
+}
+
+function closeAllDropdowns(except = null) {
+    dropdownItems.forEach((item) => {
+        if (item === except) return;
+        item.classList.remove("open");
+        item.querySelectorAll("[data-dropdown-trigger]").forEach((trigger) => {
+            trigger.setAttribute("aria-expanded", "false");
         });
-
     });
+}
 
+function toggleDropdown(trigger) {
+    const parent = trigger.closest(".nav-dropdown");
+    if (!parent) return;
 
+    const isOpen = parent.classList.contains("open");
+    closeAllDropdowns(parent);
 
-    // ── Highlight active page ─────────────────────────────────────────────────
+    parent.classList.toggle("open", !isOpen);
+    parent.querySelectorAll("[data-dropdown-trigger]").forEach((button) => {
+        button.setAttribute("aria-expanded", String(!isOpen));
+    });
+}
 
-    const currentPage = window.location.pathname.split('/').pop() || 'landing.html';
+function setMobileMenu(open) {
+    if (!menuToggle) return;
+    body.classList.toggle("nav-open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
+}
 
-    document.querySelectorAll('.nav-link').forEach(link => {
+function handleNavLinkClick(event) {
+    const clickedLink = event.currentTarget;
+    const href = clickedLink.getAttribute("href") || "";
+    const shouldClose = !href.startsWith("#") || !clickedLink.closest(".nav-dropdown");
 
-        const href = link.getAttribute('href');
+    if (!isDesktop() && shouldClose) {
+        setMobileMenu(false);
+        closeAllDropdowns();
+    }
+}
 
-        if (!href) return;
+function handleDocumentClick(event) {
+    const clickedInsideNavbar = event.target.closest(".navbar") || event.target.closest(".nav-panel");
+    if (!clickedInsideNavbar) {
+        closeAllDropdowns();
+    }
+}
 
-        if (href.split('/').pop() === currentPage) {
+function setupScrollReveal() {
+    const revealItems = document.querySelectorAll("[data-reveal]");
+    if (!revealItems.length) return;
 
-            link.classList.add('active');
-
+    const observer = new IntersectionObserver(
+        (entries, revealObserver) => {
+            entries.forEach((entry) => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add("is-visible");
+                revealObserver.unobserve(entry.target);
+            });
+        },
+        {
+            threshold: 0.16,
+            rootMargin: "0px 0px -8% 0px",
         }
+    );
 
-    });
+    revealItems.forEach((item) => observer.observe(item));
+}
 
+function handleResize() {
+    if (isDesktop()) {
+        setMobileMenu(false);
+    }
+    closeAllDropdowns();
+}
 
-
-    // ── Auto-update copyright year ────────────────────────────────────────────
-
-    const copyrightYear = document.getElementById('copyright-year');
-
-    if (copyrightYear) {
-
-        copyrightYear.textContent = new Date().getFullYear();
-
+function initNavigation() {
+    if (menuToggle) {
+        menuToggle.addEventListener("click", () => {
+            const currentlyOpen = body.classList.contains("nav-open");
+            setMobileMenu(!currentlyOpen);
+            if (currentlyOpen) {
+                closeAllDropdowns();
+            }
+        });
     }
 
-});
+    if (mobileOverlay) {
+        mobileOverlay.addEventListener("click", () => {
+            setMobileMenu(false);
+            closeAllDropdowns();
+        });
+    }
+
+    dropdownTriggers.forEach((trigger) => {
+        trigger.addEventListener("click", (event) => {
+            event.preventDefault();
+            toggleDropdown(trigger);
+        });
+    });
+
+    navLinks.forEach((link) => {
+        link.addEventListener("click", handleNavLinkClick);
+    });
+
+    document.addEventListener("click", handleDocumentClick);
+
+    document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+            closeAllDropdowns();
+            setMobileMenu(false);
+        }
+    });
+
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("scroll", updateNavbarState, { passive: true });
+    updateNavbarState();
+}
+
+setYear();
+initNavigation();
+setupScrollReveal();
