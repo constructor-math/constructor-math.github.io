@@ -1,438 +1,473 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="The Math Society at Constructor University — a lively academic hub for talks, competitions, seminars, and mathematical exploration." />
-    <title>The Math Society | Constructor University</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Slab:wght@500;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="stylesheet" href="landing.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="The Math Society at Constructor University — a lively academic hub for talks, competitions, seminars, and mathematical exploration."
+  />
+  <title>The Math Society | Constructor University</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Roboto+Slab:wght@500;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+  <link rel="stylesheet" href="./landing.css" />
 </head>
-<body class="home-landing">
-    <div class="page-glow page-glow--one" aria-hidden="true"></div>
-    <div class="page-glow page-glow--two" aria-hidden="true"></div>
-    <div class="page-grid" aria-hidden="true"></div>
+<body>
+  <div class="page-glow page-glow--one" aria-hidden="true"></div>
+  <div class="page-glow page-glow--two" aria-hidden="true"></div>
+  <div class="page-grid" aria-hidden="true"></div>
 
-    <nav class="navbar" id="navbar">
-        <div class="nav-shell">
-            <a href="#home" class="brand" aria-label="The Math Society home">
-                <img src="images/logo_final.png" alt="The Math Society logo" class="brand__logo" />
-                <span class="brand__text">
-                    <strong>The Math Society</strong>
-                    <small>Constructor University</small>
-                </span>
-            </a>
+  <nav class="navbar" id="navbar">
+    <div class="nav-shell">
+      <a href="#home" class="brand" aria-label="The Math Society home">
+        <img src="./images/logo_final.png" alt="The Math Society logo" class="brand__logo" />
+        <span class="brand__text">
+          <strong>The Math Society</strong>
+          <small>Constructor University</small>
+        </span>
+      </a>
 
-            <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="navPanel" aria-label="Open navigation menu">
-                <span></span>
-                <span></span>
-                <span></span>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="navPanel"
+        aria-label="Open navigation menu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-panel" id="navPanel">
+        <ul class="nav-links">
+          <li class="nav-item">
+            <a href="#home" class="nav-link nav-link--active">Home</a>
+          </li>
+
+          <li class="nav-item nav-dropdown">
+            <button
+              class="nav-link nav-link--button dropdown-trigger"
+              type="button"
+              data-dropdown-trigger
+              aria-expanded="false"
+              aria-controls="eventsDropdown"
+            >
+              <span>Events</span>
+              <i class="fa-solid fa-chevron-down"></i>
             </button>
+            <ul class="dropdown-menu" id="eventsDropdown">
+              <li><a href="./Subpages/numbers-behind-trade.html">The Numbers Behind Trade</a></li>
+              <li><a href="./Subpages/causal-ml.html">Causal ML</a></li>
+              <li><a href="./Subpages/butterfly-theory.html">Butterfly Effect &amp; Chaos Theory</a></li>
+              <li><a href="./Subpages/cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
+              <li><a href="./Subpages/ai-ml.html">AI &amp; ML</a></li>
+              <li><a href="./Subpages/interstellar.html">Interstellar</a></li>
+              <li><a href="./Subpages/poker.html">Poker</a></li>
+              <li><a href="./Subpages/integration-bee.html" target="_blank" rel="noopener noreferrer">Integration Bee</a></li>
+            </ul>
+          </li>
 
-            <div class="nav-panel" id="navPanel">
-                <ul class="nav-links">
-                    <li class="nav-item">
-                        <a href="#home" class="nav-link nav-link--active">Home</a>
-                    </li>
+          <li class="nav-item">
+            <a href="./Subpages/olympiad.html" class="nav-link">Olympiad</a>
+          </li>
 
-                    <li class="nav-item nav-dropdown">
-                        <button class="nav-link nav-link--button dropdown-trigger" type="button" data-dropdown-trigger aria-expanded="false" aria-controls="eventsDropdown">
-                            <span>Events</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button>
-                        <ul class="dropdown-menu" id="eventsDropdown">
-                            <li><a href="../Subpages/numbers-behind-trade.html">The Numbers Behind Trade</a></li>
-                            <li><a href="../Subpages/causal-ml.html">Causal ML</a></li>
-                            <li><a href="../Subpages/butterfly-theory.html">Butterfly Effect &amp; Chaos Theory</a></li>
-                            <li><a href="../Subpages/cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
-                            <li><a href="../Subpages/ai-ml.html">AI &amp; ML</a></li>
-                            <li><a href="../Subpages/interstellar.html">Interstellar</a></li>
-                            <li><a href="../Subpages/poker.html">Poker</a></li>
-                            <li><a href="../Subpages/integration-bee.html" target="_blank" rel="noopener noreferrer">Integration Bee</a></li>
-                        </ul>
-                    </li>
+          <li class="nav-item">
+            <a href="./Subpages/datathon.html" class="nav-link">Datathon</a>
+          </li>
 
-                    <li class="nav-item">
-                        <a href="../Subpages/olympiad.html" class="nav-link">Olympiad</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="../Subpages/datathon.html" class="nav-link">Datathon</a>
-                    </li>
-
-                    <li class="nav-item nav-dropdown nav-dropdown--split">
-                        <div class="dropdown-split">
-                            <a href="../Subpages/ugs.html" class="nav-link">The Undergraduate Seminar</a>
-                            <button class="dropdown-caret" type="button" data-dropdown-trigger aria-expanded="false" aria-controls="ugsDropdown" aria-label="Open Undergraduate Seminar submenu">
-                                <i class="fa-solid fa-chevron-down"></i>
-                            </button>
-                        </div>
-                        <ul class="dropdown-menu" id="ugsDropdown">
-                            <li><a href="../Subpages/ugs1.html">UGS 1</a></li>
-                            <li><a href="../Subpages/ugs2.html">UGS 2</a></li>
-                            <li><a href="../Subpages/ugs3.html">UGS 3</a></li>
-                            <li><a href="../Subpages/ugs4.html">UGS 4</a></li>
-                        </ul>
-                    </li>
-                </ul>
-
-                <a href="#contact" class="nav-cta">Join Us</a>
+          <li class="nav-item nav-dropdown nav-dropdown--split">
+            <div class="dropdown-split">
+              <a href="./Subpages/ugs.html" class="nav-link">The Undergraduate Seminar</a>
+              <button
+                class="dropdown-caret"
+                type="button"
+                data-dropdown-trigger
+                aria-expanded="false"
+                aria-controls="ugsDropdown"
+                aria-label="Open Undergraduate Seminar submenu"
+              >
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
             </div>
+            <ul class="dropdown-menu" id="ugsDropdown">
+              <li><a href="./Subpages/ugs1.html">UGS 1</a></li>
+              <li><a href="./Subpages/ugs2.html">UGS 2</a></li>
+              <li><a href="./Subpages/ugs3.html">UGS 3</a></li>
+              <li><a href="./Subpages/ugs4.html">UGS 4</a></li>
+            </ul>
+          </li>
+        </ul>
+
+        <a href="#contact" class="nav-cta">Join Us</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+
+  <main>
+    <section class="hero section-anchor" id="home">
+      <div class="hero__inner site-width">
+        <div class="hero__content" data-reveal>
+          <span class="hero__eyebrow">A modern academic hub for curious minds</span>
+          <h1>The <span>Math Society</span></h1>
+          <p class="hero__lead">
+            From abstract theory to applied computation, The Math Society at Constructor University
+            brings together talks, competitions, seminars, and community for students who love
+            thinking deeply and building boldly.
+          </p>
+          <div class="hero__actions">
+            <a href="#mission" class="btn btn--primary">About Us</a>
+            <a href="#platform" class="btn btn--secondary">Explore the Hub</a>
+          </div>
+          <div class="hero__chips" aria-label="Highlights">
+            <span>Talks &amp; Special Sessions</span>
+            <span>Olympiad &amp; Datathon</span>
+            <span>Undergraduate Seminar</span>
+          </div>
         </div>
-    </nav>
 
-    <div class="mobile-overlay" id="mobileOverlay" aria-hidden="true"></div>
+        <aside class="hero__panel glass-card interactive-card" data-reveal style="--delay: 0.12s;">
+          <div class="hero__panel-top">
+            <p>Inside the platform</p>
+            <span class="status-pill"><span></span>Active community</span>
+          </div>
+          <div class="hero__panel-grid">
+            <article>
+              <i class="fa-solid fa-brain"></i>
+              <strong>Deep Ideas</strong>
+              <p>Pure math, models, and conceptual exploration.</p>
+            </article>
+            <article>
+              <i class="fa-solid fa-chart-line"></i>
+              <strong>Applied Reasoning</strong>
+              <p>AI, ML, data, cryptography, and real systems.</p>
+            </article>
+            <article>
+              <i class="fa-solid fa-trophy"></i>
+              <strong>Competitions</strong>
+              <p>Challenge-driven learning through Olympiads and the Integration Bee.</p>
+            </article>
+            <article>
+              <i class="fa-solid fa-users"></i>
+              <strong>Community</strong>
+              <p>Student-led events, creative projects, and shared momentum.</p>
+            </article>
+          </div>
+          <div class="hero__panel-footer">
+            <span>Causal ML</span>
+            <span>Chaos Theory</span>
+            <span>Cryptography</span>
+            <span>Interstellar</span>
+          </div>
+        </aside>
+      </div>
+    </section>
 
-    <main>
-        <section class="hero section-anchor" id="home">
-            <div class="hero__inner site-width">
-                <div class="hero__content" data-reveal>
-                    <span class="hero__eyebrow">A modern academic hub for curious minds</span>
-                    <h1>The <span>Math Society</span></h1>
-                    <p class="hero__lead">
-                        From abstract theory to applied computation, The Math Society at Constructor University brings together talks,
-                        competitions, seminars, and community for students who love thinking deeply and building boldly.
-                    </p>
+    <section class="pillars-overlap site-width" id="pillars">
+      <div class="feature-grid">
+        <article class="feature-card glass-card interactive-card" data-reveal>
+          <img src="./images/think.jpg" alt="Thinking deeply about mathematical ideas" loading="lazy" decoding="async" />
+          <div class="feature-card__body">
+            <span class="feature-card__tag">Pillar 01</span>
+            <h2>Think</h2>
+            <p>
+              We delve deep into abstract concepts, challenging our members to visualize the unseen
+              and ponder the impossible.
+            </p>
+          </div>
+        </article>
 
-                    <div class="hero__actions">
-                        <a href="#mission" class="btn btn--primary">About Us</a>
-                        <a href="#platform" class="btn btn--secondary">Explore the Hub</a>
-                    </div>
+        <article class="feature-card glass-card interactive-card" data-reveal style="--delay: 0.08s;">
+          <img src="./images/founders.jpg" alt="Collaborative and analytical mathematical work" loading="lazy" decoding="async" />
+          <div class="feature-card__body">
+            <span class="feature-card__tag">Pillar 02</span>
+            <h2>Calculate</h2>
+            <p>
+              Precision is key. Through competitions like the Integration Bee, we sharpen our analytical skills.
+            </p>
+          </div>
+        </article>
 
-                    <div class="hero__chips" aria-label="Highlights">
-                        <span>Talks &amp; Special Sessions</span>
-                        <span>Olympiad &amp; Datathon</span>
-                        <span>Undergraduate Seminar</span>
-                    </div>
-                </div>
+        <article class="feature-card glass-card interactive-card" data-reveal style="--delay: 0.16s;">
+          <img src="./images/seminar.jpg" alt="Applying mathematics to creative projects" loading="lazy" decoding="async" />
+          <div class="feature-card__body">
+            <span class="feature-card__tag">Pillar 03</span>
+            <h2>Create</h2>
+            <p>
+              Math isn't just theory. We apply logic to build AI models, simulations, and real-world solutions.
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-                <aside class="hero__panel glass-card interactive-card" data-reveal style="--delay: 0.12s;">
-                    <div class="hero__panel-top">
-                        <p>Inside the platform</p>
-                        <span class="status-pill"><span></span>Active community</span>
-                    </div>
-
-                    <div class="hero__panel-grid">
-                        <article>
-                            <i class="fa-solid fa-brain"></i>
-                            <strong>Deep Ideas</strong>
-                            <p>Pure math, models, and conceptual exploration.</p>
-                        </article>
-                        <article>
-                            <i class="fa-solid fa-chart-line"></i>
-                            <strong>Applied Reasoning</strong>
-                            <p>AI, ML, data, cryptography, and real systems.</p>
-                        </article>
-                        <article>
-                            <i class="fa-solid fa-trophy"></i>
-                            <strong>Competitions</strong>
-                            <p>Challenge-driven learning through Olympiads and the Integration Bee.</p>
-                        </article>
-                        <article>
-                            <i class="fa-solid fa-users"></i>
-                            <strong>Community</strong>
-                            <p>Student-led events, creative projects, and shared momentum.</p>
-                        </article>
-                    </div>
-
-                    <div class="hero__panel-footer">
-                        <span>Causal ML</span>
-                        <span>Chaos Theory</span>
-                        <span>Cryptography</span>
-                        <span>Interstellar</span>
-                    </div>
-                </aside>
-            </div>
-        </section>
-
-        <section class="pillars-overlap site-width" id="pillars">
-            <div class="feature-grid">
-                <article class="feature-card glass-card interactive-card" data-reveal>
-                    <img src="images/think.jpg" alt="Thinking deeply about mathematical ideas" loading="lazy" decoding="async" />
-                    <div class="feature-card__body">
-                        <span class="feature-card__tag">Pillar 01</span>
-                        <h2>Think</h2>
-                        <p>
-                            We delve deep into abstract concepts, challenging our members to visualize the unseen and ponder the impossible.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="feature-card glass-card interactive-card" data-reveal style="--delay: 0.08s;">
-                    <img src="images/founders.jpg" alt="Collaborative and analytical mathematical work" loading="lazy" decoding="async" />
-                    <div class="feature-card__body">
-                        <span class="feature-card__tag">Pillar 02</span>
-                        <h2>Calculate</h2>
-                        <p>
-                            Precision is key. Through competitions like the Integration Bee, we sharpen our analytical skills.
-                        </p>
-                    </div>
-                </article>
-
-                <article class="feature-card glass-card interactive-card" data-reveal style="--delay: 0.16s;">
-                    <img src="images/seminar.jpg" alt="Applying mathematics to creative projects" loading="lazy" decoding="async" />
-                    <div class="feature-card__body">
-                        <span class="feature-card__tag">Pillar 03</span>
-                        <h2>Create</h2>
-                        <p>
-                            Math isn't just theory. We apply logic to build AI models, simulations, and real-world solutions.
-                        </p>
-                    </div>
-                </article>
-            </div>
-        </section>
-
-        <section class="mission section-anchor" id="mission">
-            <div class="site-width mission__grid">
-                <div class="section-heading" data-reveal>
-                    <span class="section-label">Our Vision</span>
-                    <h2>Think. Calculate. Create.</h2>
-                    <p>
-                        We are building more than a club page. This is the Math Society's academic hub — a place where theory, competitions,
-                        and interdisciplinary curiosity come together in one lively platform.
-                    </p>
-                </div>
-
-                <div class="mission__card glass-card interactive-card" data-reveal style="--delay: 0.1s;">
-                    <div class="mission__quote-mark"><i class="fa-solid fa-quote-left"></i></div>
-                    <p>
-                        From student-led seminars to technical talks and challenge-based events, we create spaces where mathematics feels rigorous,
-                        social, ambitious, and alive.
-                    </p>
-                    <a href="#team" class="text-link">Meet our leads <i class="fa-solid fa-arrow-right"></i></a>
-                </div>
-            </div>
-        </section>
-
-        <section class="platform section-anchor" id="platform">
-            <div class="site-width">
-                <div class="section-heading section-heading--center" data-reveal>
-                    <span class="section-label">Academic Hub</span>
-                    <h2>Explore the platform</h2>
-                    <p>
-                        Navigate between speaker sessions, competitions, research-driven seminars, and collaborative challenges — all under one home.
-                    </p>
-                </div>
-
-                <div class="platform-grid">
-                    <a href="../Subpages/ai-ml.html" class="platform-card glass-card interactive-card" data-reveal>
-                        <div class="platform-card__icon"><i class="fa-solid fa-microchip"></i></div>
-                        <h3>Talks &amp; Special Sessions</h3>
-                        <p>From AI &amp; ML to cryptography, chaos theory, trade, poker, and space-inspired mathematics.</p>
-                        <span>Explore events <i class="fa-solid fa-arrow-right"></i></span>
-                    </a>
-
-                    <a href="../Subpages/ugs.html" class="platform-card glass-card interactive-card" data-reveal style="--delay: 0.08s;">
-                        <div class="platform-card__icon"><i class="fa-solid fa-book-open-reader"></i></div>
-                        <h3>Undergraduate Seminar</h3>
-                        <p>A student-focused seminar track designed for deeper discussion, presentation, and mathematical storytelling.</p>
-                        <span>See the seminar series <i class="fa-solid fa-arrow-right"></i></span>
-                    </a>
-
-                    <a href="../Subpages/olympiad.html" class="platform-card glass-card interactive-card" data-reveal style="--delay: 0.16s;">
-                        <div class="platform-card__icon"><i class="fa-solid fa-medal"></i></div>
-                        <h3>Olympiad</h3>
-                        <p>Train rigor, proof-writing, and creative problem-solving through challenge-driven mathematical practice.</p>
-                        <span>Go to Olympiad <i class="fa-solid fa-arrow-right"></i></span>
-                    </a>
-
-                    <a href="../Subpages/datathon.html" class="platform-card glass-card interactive-card" data-reveal style="--delay: 0.24s;">
-                        <div class="platform-card__icon"><i class="fa-solid fa-database"></i></div>
-                        <h3>Datathon</h3>
-                        <p>Apply mathematics, modeling, and computation to real datasets through fast-paced analytical challenges.</p>
-                        <span>Visit Datathon <i class="fa-solid fa-arrow-right"></i></span>
-                    </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="team section-anchor" id="team">
-            <div class="site-width">
-                <div class="section-heading" data-reveal>
-                    <span class="section-label">Leadership</span>
-                    <h2>Meet our leads</h2>
-                    <p>
-                        The Society is powered by students who care about ideas, execution, and building a memorable culture around mathematics.
-                    </p>
-                </div>
-
-                <div class="team-grid">
-                    <article class="profile-card glass-card interactive-card" data-reveal>
-                        <img src="images/ahmad.jpeg" alt="Ahmed Maghri, President" loading="lazy" decoding="async" />
-                        <div class="profile-card__body">
-                            <span class="profile-role">President</span>
-                            <h3>Ahmed Maghri</h3>
-                            <p>
-                                CS major with a minor in Mathematics &amp; Modeling. Passionate about the intersection of math and CS — and ranked top 0.5% worldwide in osu!
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="profile-card glass-card interactive-card" data-reveal style="--delay: 0.06s;">
-                        <img src="images/zakaria.jpeg" alt="Zakaria, Tech Lead" loading="lazy" decoding="async" />
-                        <div class="profile-card__body">
-                            <span class="profile-role">Tech Lead</span>
-                            <h3>Zakaria</h3>
-                            <p>
-                                Dev team lead with a passion for alpinism. Whether it's in code or high up in the mountains, I love a good challenge.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="profile-card glass-card interactive-card" data-reveal style="--delay: 0.12s;">
-                        <img src="images/Taha.jpeg" alt="Taha Hbirri, Media Lead" loading="lazy" decoding="async" />
-                        <div class="profile-card__body">
-                            <span class="profile-role">Media Lead</span>
-                            <h3>Taha Hbirri</h3>
-                            <p>
-                                CS major and audio-visual lead. You'll spot me behind every Math Society Instagram post.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="profile-card glass-card interactive-card" data-reveal style="--delay: 0.18s;">
-                        <img src="images/Yusuf.jpeg" alt="Yusuf Bugra Balta, Design Lead" loading="lazy" decoding="async" />
-                        <div class="profile-card__body">
-                            <span class="profile-role">Design Lead</span>
-                            <h3>Yusuf Bugra Balta</h3>
-                            <p>
-                                MMDA student from Turkey. Enjoys reading and gaming in his free time.
-                            </p>
-                        </div>
-                    </article>
-
-                    <article class="profile-card glass-card interactive-card" data-reveal style="--delay: 0.24s;">
-                        <img src="images/Eyosiyas.jpeg" alt="Eyosiyas, Logistics and Project Management Lead" loading="lazy" decoding="async" />
-                        <div class="profile-card__body">
-                            <span class="profile-role">Logistics &amp; Project Management Lead</span>
-                            <h3>Eyosiyas</h3>
-                            <p>
-                                Industrial Engineering &amp; Management student who genuinely loves planning events. When not optimizing schedules, I'm probably traveling or turning a quick outing into a full-day adventure. ✈️
-                            </p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="testimonials section-anchor" id="testimonials">
-            <div class="site-width">
-                <div class="section-heading section-heading--center" data-reveal>
-                    <span class="section-label">Community Voice</span>
-                    <h2>Testimonials</h2>
-                    <p>
-                        The strongest proof of impact is the experience people carry with them after each session.
-                    </p>
-                </div>
-
-                <div class="testimonial-grid">
-                    <article class="testimonial-card glass-card interactive-card" data-reveal>
-                        <div class="testimonial-card__header">
-                            <img src="images/Alex.png" alt="Alex testimonial photo" loading="lazy" decoding="async" />
-                            <div>
-                                <h3>Alex</h3>
-                                <p>1st Year CS</p>
-                            </div>
-                        </div>
-                        <blockquote>
-                            “Amazing and very helpful — especially the mathematical aspects of AI and ML. The passion here is infectious. Join and you will not regret it.”
-                        </blockquote>
-                    </article>
-
-                    <article class="testimonial-card glass-card interactive-card" data-reveal style="--delay: 0.08s;">
-                        <div class="testimonial-card__header">
-                            <img src="images/Rehmat.png" alt="Rehmatullah testimonial photo" loading="lazy" decoding="async" />
-                            <div>
-                                <h3>Rehmatullah</h3>
-                                <p>1st year CS minor in Robotics</p>
-                            </div>
-                        </div>
-                        <blockquote>
-                            “I wanted to understand the foundations behind how AI systems work. This session gave me deep knowledge that will genuinely help me in future work.”
-                        </blockquote>
-                    </article>
-
-                    <article class="testimonial-card glass-card interactive-card" data-reveal style="--delay: 0.16s;">
-                        <div class="testimonial-card__header">
-                            <img src="images/Harshal.png" alt="Harshal testimonial photo" loading="lazy" decoding="async" />
-                            <div>
-                                <h3>Harshal</h3>
-                                <p>1st year MDDA</p>
-                            </div>
-                        </div>
-                        <blockquote>
-                            “Hooked from the first sentence to the end. Ahmed's explanation — from basics all the way through LLMs — was clear, engaging, and showed real depth of knowledge.”
-                        </blockquote>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="contact section-anchor" id="contact">
-            <div class="site-width contact__wrap glass-card" data-reveal>
-                <div class="section-heading section-heading--center">
-                    <span class="section-label">Connect</span>
-                    <h2>Join the Math Society</h2>
-                    <p>
-                        Stay close to upcoming sessions, competitions, and community activity across our platforms.
-                    </p>
-                </div>
-
-                <div class="social-grid">
-                    <a class="social-card interactive-card" href="https://www.instagram.com/math__society/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-instagram"></i>
-                        <strong>Instagram</strong>
-                        <span>@math__society</span>
-                    </a>
-
-                    <a class="social-card interactive-card" href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-linkedin-in"></i>
-                        <strong>LinkedIn</strong>
-                        <span>Constructor University Maths Society</span>
-                    </a>
-
-                    <a class="social-card interactive-card" href="https://constructoruniversity.sharepoint.com/_forms/default.aspx" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-solid fa-share-nodes"></i>
-                        <strong>SharePoint</strong>
-                        <span>Resources and shared access</span>
-                    </a>
-
-                    <a class="social-card interactive-card" href="https://www.youtube.com/@MathClubCUB" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-youtube"></i>
-                        <strong>YouTube</strong>
-                        <span>@MathClubCUB</span>
-                    </a>
-
-                    <a class="social-card interactive-card" href="https://github.com/constructor-math/constructor-math.github.io" target="_blank" rel="noopener noreferrer">
-                        <i class="fa-brands fa-github"></i>
-                        <strong>GitHub</strong>
-                        <span>constructor-math.github.io</span>
-                    </a>
-
-                    <a class="social-card interactive-card" href="mailto:constructor.maths@gmail.com">
-                        <i class="fa-solid fa-envelope"></i>
-                        <strong>Email</strong>
-                        <span>constructor.maths@gmail.com</span>
-                    </a>
-                </div>
-
-                <div class="contact__cta">
-                    <a href="mailto:constructor.maths@gmail.com" class="btn btn--primary">Get in touch</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="site-width footer__inner">
-            <p>&copy; <span id="copyright-year"></span> The Math Society, Constructor University.</p>
-            <p>Built as a modern academic hub for events, ideas, and mathematical community.</p>
+    <section class="mission section-anchor" id="mission">
+      <div class="site-width mission__grid">
+        <div class="section-heading" data-reveal>
+          <span class="section-label">Our Vision</span>
+          <h2>Think. Calculate. Create.</h2>
+          <p>
+            We are building more than a club page. This is the Math Society's academic hub — a
+            place where theory, competitions, and interdisciplinary curiosity come together in one lively platform.
+          </p>
         </div>
-    </footer>
 
-    <script src="landing.js"></script>
+        <div class="mission__card glass-card interactive-card" data-reveal style="--delay: 0.1s;">
+          <div class="mission__quote-mark"><i class="fa-solid fa-quote-left"></i></div>
+          <p>
+            From student-led seminars to technical talks and challenge-based events, we create spaces
+            where mathematics feels rigorous, social, ambitious, and alive.
+          </p>
+          <a href="#team" class="text-link">Meet our leads <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="platform section-anchor" id="platform">
+      <div class="site-width">
+        <div class="section-heading section-heading--center" data-reveal>
+          <span class="section-label">Academic Hub</span>
+          <h2>Explore the platform</h2>
+          <p>
+            Navigate between speaker sessions, competitions, research-driven seminars, and collaborative
+            challenges — all under one home.
+          </p>
+        </div>
+
+        <div class="platform-grid">
+          <a href="./Subpages/ai-ml.html" class="platform-card glass-card interactive-card" data-reveal>
+            <div class="platform-card__icon"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Talks &amp; Special Sessions</h3>
+            <p>From AI &amp; ML to cryptography, chaos theory, trade, poker, and space-inspired mathematics.</p>
+            <span>Explore events <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="./Subpages/ugs.html" class="platform-card glass-card interactive-card" data-reveal style="--delay: 0.08s;">
+            <div class="platform-card__icon"><i class="fa-solid fa-book-open-reader"></i></div>
+            <h3>Undergraduate Seminar</h3>
+            <p>A student-focused seminar track designed for deeper discussion, presentation, and mathematical storytelling.</p>
+            <span>See the seminar series <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="./Subpages/olympiad.html" class="platform-card glass-card interactive-card" data-reveal style="--delay: 0.16s;">
+            <div class="platform-card__icon"><i class="fa-solid fa-medal"></i></div>
+            <h3>Olympiad</h3>
+            <p>Train rigor, proof-writing, and creative problem-solving through challenge-driven mathematical practice.</p>
+            <span>Go to Olympiad <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+
+          <a href="./Subpages/datathon.html" class="platform-card glass-card interactive-card" data-reveal style="--delay: 0.24s;">
+            <div class="platform-card__icon"><i class="fa-solid fa-database"></i></div>
+            <h3>Datathon</h3>
+            <p>Apply mathematics, modeling, and computation to real datasets through fast-paced analytical challenges.</p>
+            <span>Visit Datathon <i class="fa-solid fa-arrow-right"></i></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="team section-anchor" id="team">
+      <div class="site-width">
+        <div class="section-heading" data-reveal>
+          <span class="section-label">Leadership</span>
+          <h2>Meet our leads</h2>
+          <p>
+            The Society is powered by students who care about ideas, execution, and building a memorable
+            culture around mathematics.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <article class="profile-card glass-card interactive-card" data-reveal>
+            <img src="./images/ahmad.jpeg" alt="Ahmed Maghri, President" loading="lazy" decoding="async" />
+            <div class="profile-card__body">
+              <span class="profile-role">President</span>
+              <h3>Ahmed Maghri</h3>
+              <p>
+                CS major with a minor in Mathematics &amp; Modeling. Passionate about the intersection
+                of math and CS — and ranked top 0.5% worldwide in osu!
+              </p>
+            </div>
+          </article>
+
+          <article class="profile-card glass-card interactive-card" data-reveal style="--delay: 0.06s;">
+            <img src="./images/zakaria.jpeg" alt="Zakaria, Tech Lead" loading="lazy" decoding="async" />
+            <div class="profile-card__body">
+              <span class="profile-role">Tech Lead</span>
+              <h3>Zakaria</h3>
+              <p>
+                Dev team lead with a passion for alpinism. Whether it's in code or high up in the mountains,
+                I love a good challenge.
+              </p>
+            </div>
+          </article>
+
+          <article class="profile-card glass-card interactive-card" data-reveal style="--delay: 0.12s;">
+            <img src="./images/Taha.jpeg" alt="Taha Hbirri, Media Lead" loading="lazy" decoding="async" />
+            <div class="profile-card__body">
+              <span class="profile-role">Media Lead</span>
+              <h3>Taha Hbirri</h3>
+              <p>
+                CS major and audio-visual lead. You'll spot me behind every Math Society Instagram post.
+              </p>
+            </div>
+          </article>
+
+          <article class="profile-card glass-card interactive-card" data-reveal style="--delay: 0.18s;">
+            <img src="./images/Yusuf.jpeg" alt="Yusuf Bugra Balta, Design Lead" loading="lazy" decoding="async" />
+            <div class="profile-card__body">
+              <span class="profile-role">Design Lead</span>
+              <h3>Yusuf Bugra Balta</h3>
+              <p>MMDA student from Turkey. Enjoys reading and gaming in his free time.</p>
+            </div>
+          </article>
+
+          <article class="profile-card glass-card interactive-card" data-reveal style="--delay: 0.24s;">
+            <img src="./images/Eyosiyas.jpeg" alt="Eyosiyas, Logistics and Project Management Lead" loading="lazy" decoding="async" />
+            <div class="profile-card__body">
+              <span class="profile-role">Logistics &amp; Project Management Lead</span>
+              <h3>Eyosiyas</h3>
+              <p>
+                Industrial Engineering &amp; Management student who genuinely loves planning events.
+                When not optimizing schedules, I'm probably traveling or turning a quick outing into
+                a full-day adventure. ✈️
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials section-anchor" id="testimonials">
+      <div class="site-width">
+        <div class="section-heading section-heading--center" data-reveal>
+          <span class="section-label">Community Voice</span>
+          <h2>Testimonials</h2>
+          <p>
+            The strongest proof of impact is the experience people carry with them after each session.
+          </p>
+        </div>
+
+        <div class="testimonial-grid">
+          <article class="testimonial-card glass-card interactive-card" data-reveal>
+            <div class="testimonial-card__header">
+              <img src="./images/Alex.png" alt="Alex testimonial photo" loading="lazy" decoding="async" />
+              <div>
+                <h3>Alex</h3>
+                <p>1st Year CS</p>
+              </div>
+            </div>
+            <blockquote>
+              “Amazing and very helpful — especially the mathematical aspects of AI and ML.
+              The passion here is infectious. Join and you will not regret it.”
+            </blockquote>
+          </article>
+
+          <article class="testimonial-card glass-card interactive-card" data-reveal style="--delay: 0.08s;">
+            <div class="testimonial-card__header">
+              <img src="./images/Rehmat.png" alt="Rehmatullah testimonial photo" loading="lazy" decoding="async" />
+              <div>
+                <h3>Rehmatullah</h3>
+                <p>1st year CS minor in Robotics</p>
+              </div>
+            </div>
+            <blockquote>
+              “I wanted to understand the foundations behind how AI systems work.
+              This session gave me deep knowledge that will genuinely help me in future work.”
+            </blockquote>
+          </article>
+
+          <article class="testimonial-card glass-card interactive-card" data-reveal style="--delay: 0.16s;">
+            <div class="testimonial-card__header">
+              <img src="./images/Harshal.png" alt="Harshal testimonial photo" loading="lazy" decoding="async" />
+              <div>
+                <h3>Harshal</h3>
+                <p>1st year MDDA</p>
+              </div>
+            </div>
+            <blockquote>
+              “Hooked from the first sentence to the end. Ahmed's explanation — from basics all the way
+              through LLMs — was clear, engaging, and showed real depth of knowledge.”
+            </blockquote>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section-anchor" id="contact">
+      <div class="site-width contact__wrap glass-card" data-reveal>
+        <div class="section-heading section-heading--center">
+          <span class="section-label">Connect</span>
+          <h2>Join the Math Society</h2>
+          <p>
+            Stay close to upcoming sessions, competitions, and community activity across our platforms.
+          </p>
+        </div>
+
+        <div class="social-grid">
+          <a class="social-card interactive-card" href="https://www.instagram.com/math__society/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-instagram"></i>
+            <strong>Instagram</strong>
+            <span>@math__society</span>
+          </a>
+
+          <a class="social-card interactive-card" href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-linkedin-in"></i>
+            <strong>LinkedIn</strong>
+            <span>Constructor University Maths Society</span>
+          </a>
+
+          <a class="social-card interactive-card" href="https://constructoruniversity.sharepoint.com/_forms/default.aspx" target="_blank" rel="noopener noreferrer">
+            <i class="fa-solid fa-share-nodes"></i>
+            <strong>SharePoint</strong>
+            <span>Resources and shared access</span>
+          </a>
+
+          <a class="social-card interactive-card" href="https://www.youtube.com/@MathClubCUB" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-youtube"></i>
+            <strong>YouTube</strong>
+            <span>@MathClubCUB</span>
+          </a>
+
+          <a class="social-card interactive-card" href="https://github.com/constructor-math/constructor-math.github.io" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-github"></i>
+            <strong>GitHub</strong>
+            <span>constructor-math.github.io</span>
+          </a>
+
+          <a class="social-card interactive-card" href="mailto:constructor.maths@gmail.com">
+            <i class="fa-solid fa-envelope"></i>
+            <strong>Email</strong>
+            <span>constructor.maths@gmail.com</span>
+          </a>
+        </div>
+
+        <div class="contact__cta">
+          <a href="mailto:constructor.maths@gmail.com" class="btn btn--primary">Get in touch</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="site-width footer__inner">
+      <p>&copy; <span id="copyright-year"></span> The Math Society, Constructor University.</p>
+      <p>Built as a modern academic hub for events, ideas, and mathematical community.</p>
+    </div>
+  </footer>
+
+  <script src="./landing.js" defer></script>
 </body>
 </html>
