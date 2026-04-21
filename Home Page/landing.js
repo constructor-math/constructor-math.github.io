@@ -1,10 +1,10 @@
 const body = document.body;
-const navbar = document.getElementById("navbar");
-const menuToggle = document.getElementById("menuToggle");
+const navbar = document.getElementById("navbar") || document.querySelector(".navbar");
+const menuToggle = document.getElementById("menuToggle") || document.querySelector(".menu-toggle") || document.querySelector(".hamburger");
 const mobileOverlay = document.getElementById("mobileOverlay");
-const dropdownTriggers = document.querySelectorAll("[data-dropdown-trigger]");
-const dropdownItems = document.querySelectorAll(".nav-dropdown");
-const navLinks = document.querySelectorAll(".nav-panel a[href]");
+const dropdownTriggers = document.querySelectorAll("[data-dropdown-trigger], .dropdown-toggle-mobile, .dropdown-toggle");
+const dropdownItems = document.querySelectorAll(".nav-dropdown, .dropdown");
+const navLinks = document.querySelectorAll(".nav-panel a[href], .nav-links a[href]");
 const yearTarget = document.getElementById("copyright-year");
 
 const isDesktop = () => window.innerWidth > 900;
@@ -24,21 +24,22 @@ function closeAllDropdowns(except = null) {
   dropdownItems.forEach((item) => {
     if (item === except) return;
     item.classList.remove("open");
-    item.querySelectorAll("[data-dropdown-trigger]").forEach((trigger) => {
+
+    item.querySelectorAll("[data-dropdown-trigger], .dropdown-toggle-mobile, .dropdown-toggle").forEach((trigger) => {
       trigger.setAttribute("aria-expanded", "false");
     });
   });
 }
 
 function toggleDropdown(trigger) {
-  const parent = trigger.closest(".nav-dropdown");
+  const parent = trigger.closest(".nav-dropdown, .dropdown");
   if (!parent) return;
 
   const isOpen = parent.classList.contains("open");
   closeAllDropdowns(parent);
   parent.classList.toggle("open", !isOpen);
 
-  parent.querySelectorAll("[data-dropdown-trigger]").forEach((button) => {
+  parent.querySelectorAll("[data-dropdown-trigger], .dropdown-toggle-mobile, .dropdown-toggle").forEach((button) => {
     button.setAttribute("aria-expanded", String(!isOpen));
   });
 }
@@ -53,7 +54,7 @@ function setMobileMenu(open) {
 function handleNavLinkClick(event) {
   const clickedLink = event.currentTarget;
   const href = clickedLink.getAttribute("href") || "";
-  const shouldClose = !href.startsWith("#") || !clickedLink.closest(".nav-dropdown");
+  const shouldClose = !href.startsWith("#") || !clickedLink.closest(".nav-dropdown, .dropdown");
 
   if (!isDesktop() && shouldClose) {
     setMobileMenu(false);
@@ -62,7 +63,7 @@ function handleNavLinkClick(event) {
 }
 
 function handleDocumentClick(event) {
-  const clickedInsideNavbar = event.target.closest(".navbar") || event.target.closest(".nav-panel");
+  const clickedInsideNavbar = event.target.closest(".navbar") || event.target.closest(".nav-panel") || event.target.closest(".nav-links");
   if (!clickedInsideNavbar) {
     closeAllDropdowns();
   }
@@ -107,19 +108,19 @@ function initNavigation() {
     });
   }
 
-  if (mobileOverlay) {
-    mobileOverlay.addEventListener("click", () => {
-      setMobileMenu(false);
-      closeAllDropdowns();
-    });
-  }
-
   dropdownTriggers.forEach((trigger) => {
     trigger.addEventListener("click", (event) => {
       event.preventDefault();
       toggleDropdown(trigger);
     });
   });
+
+  if (mobileOverlay) {
+    mobileOverlay.addEventListener("click", () => {
+      setMobileMenu(false);
+      closeAllDropdowns();
+    });
+  }
 
   navLinks.forEach((link) => {
     link.addEventListener("click", handleNavLinkClick);
