@@ -89,6 +89,29 @@ function handleDocumentClick(event) {
 }
 
 function setupScrollReveal() {
+  // Subpage elements that should animate on scroll
+  const subpageSelectors = [
+    ".hero-content",
+    ".image-container",
+    ".highlight-box",
+    ".key-takeaway",
+    ".video-container",
+    ".intro-emphasis",
+    "#explanation h2",
+    "#explanation h3",
+    "#explanation p",
+    ".speaker-card",
+    ".card",
+    ".event-card",
+  ];
+  subpageSelectors.forEach((sel) => {
+    document.querySelectorAll(sel).forEach((el) => {
+      if (!el.hasAttribute("data-reveal")) {
+        el.setAttribute("data-reveal", "");
+      }
+    });
+  });
+
   const revealItems = document.querySelectorAll("[data-reveal]");
   if (!revealItems.length) return;
 

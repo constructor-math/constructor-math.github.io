@@ -92,7 +92,7 @@
       padding-bottom: 56.25%;
       height: 0;
       overflow: hidden;
-      max-width: 900px;
+      max-width: 1000px;
       margin: 2.5rem auto;
       border-radius: 8px;
       box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
@@ -115,7 +115,6 @@
       overflow: hidden;
       box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
       transition: transform 0.2s ease;
-      min-height: 200px;
     }
 
     .speaker-card:hover {
@@ -129,7 +128,6 @@
       display: block;
       border-radius: 12px 12px 0 0;
       box-shadow: 0 2px 8px rgba(128, 0, 0, 0.15);
-      background-color: rgba(128, 0, 0, 0.05);
     }
 
     .speaker-info {
@@ -218,18 +216,18 @@
       </div>
       <ul class="nav-links">
         <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
-        <li class="dropdown">
+        <li class="dropdown has-active-child">
           <div class="dropdown-header">
             <a class="nav-link dropdown-toggle">Events</a>
             <span class="dropdown-toggle-mobile">▼</span>
           </div>
           <ul class="dropdown-menu">
-            <li><a href="numbers-behind-trade.html">The Numbers Behind Trade</a></li>
+            <li><a href="numbers-behind-trade.html" class="active">The Numbers Behind Trade</a></li>
             <li><a href="causal-ml.html">Causal ML</a></li>
-            <li><a href="butterfly-theory.html" class="_blank">Butterfly Effect &amp; Chaos Theory</a></li>
+            <li><a href="butterfly-theory.html">Butterfly Effect &amp; Chaos Theory</a></li>
             <li><a href="cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
             <li><a href="ai-ml.html">AI &amp; ML</a></li>
-            <li><a href="interstellar.html" class="active">Interstellar</a></li>
+            <li><a href="interstellar.html">Interstellar</a></li>
             <li><a href="poker.html">Poker</a></li>
             <li><a href="integration-bee.html" target="_blank">Integration Bee</a></li>
           </ul>
@@ -248,7 +246,6 @@
             <li><a href="ugs4.html">UGS 4</a></li>
           </ul>
         </li>
-
       </ul>
       <div class="hamburger">
         <span></span>
@@ -275,7 +272,7 @@
 
   <!--CONTENT-->
   <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
-    <div class="container" style="max-width: 900px; padding-top: 0; margin-top: 0;">
+    <div class="container" style="padding-top: 0; margin-top: 0;">
       <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
 
         <p class="intro-emphasis">
@@ -289,8 +286,7 @@
 
         <!-- Eyosiyas - large image + caption -->
         <div class="speaker-card">
-          <img src="images/eyosiyas.JPG" alt="Eyosiyas presenting" class="speaker-img" loading="lazy" width="900"
-            height="460">
+          <img src="images/eyosiyas.jpg" alt="Eyosiyas presenting" class="speaker-img">
           <div class="speaker-info">
             <h3>Eyosiyas</h3>
             <p>Contributed to the seminar with insights into financial applications and helped connect the mathematical
@@ -301,8 +297,7 @@
 
         <!-- Ahmed - large image -->
         <div class="speaker-card">
-          <img src="images/ahmed.JPG" alt="Ahmed presenting the no-arbitrage theory" class="speaker-img" loading="lazy"
-            width="900" height="460">
+          <img src="images/ahmed.jpg" alt="Ahmed presenting the no-arbitrage theory" class="speaker-img">
           <div class="speaker-info">
             <h3>Ahmed</h3>
             <p>Formalised no-arbitrage theory, derived European call pricing via replicating portfolios and binomial
@@ -311,12 +306,11 @@
           </div>
         </div>
 
-        <!-- Adham - large image -->
+        <!-- Muhammad - large image -->
         <div class="speaker-card">
-          <img src="images/muhammad.JPG" alt="Adham on quantitative finance and HFT" class="speaker-img" loading="lazy"
-            width="900" height="460">
+          <img src="images/muhammad.jpg" alt="Muhammad on quantitative finance and HFT" class="speaker-img">
           <div class="speaker-info">
-            <h3>Adham</h3>
+            <h3>Muhammad</h3>
             <p>Contextualised it all through quantitative finance — who quants are, where they work, and how HFT
               strategies exploit market inefficiencies in milliseconds.</p>
             <p class="speaker-quote">"Math → Finance?"</p>
@@ -548,11 +542,14 @@
         </div>
         <div class="link">
           <i class="fa-solid fa-envelope"></i>
-          <a href="/cdn-cgi/l/email-protection#dfbcb0b1acabadaabcabb0adf1b2beabb7ac9fb8b2beb6b3f1bcb0b2">Email</a>
+          <a href="mailto:constructor.maths@gmail.com">Email</a>
         </div>
       </div>
       <p>&copy; <span id="copyright-year"></span> The Math Society</p>
     </div>
   </footer>
 
-  <script data-c
+  <script src="../Home Page/landing.js"></script>
+</body>
+
+</html>
