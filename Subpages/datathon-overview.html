@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Causal AI Datathon 2026 — Overview | Math Society</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../Home Page/landing.css">
+    <script src="https://kit.fontawesome.com/a2bed480e7.js" crossorigin="anonymous"></script>
+    <style>
+        #hero {
+            min-height: auto !important;
+            height: auto !important;
+            max-height: none !important;
+            padding-top: 180px !important;
+            padding-bottom: 2.5rem !important;
+            display: block !important;
+        }
+
+        /* Wider hero so the banner matches site content width (landing.css caps .hero-content at 820px) */
+        #hero .hero-content {
+            max-width: min(1200px, calc(100% - 2rem)) !important;
+            width: 100%;
+            box-sizing: border-box;
+            padding-left: clamp(1rem, 4vw, 2rem) !important;
+            padding-right: clamp(1rem, 4vw, 2rem) !important;
+        }
+
+        /* Slightly smaller than full hero width; center (override .highlight-box margin: 2rem 0 !important from landing.css) */
+        #hero .image-container.highlight-box {
+            max-width: min(880px, 90%) !important;
+            width: 100%;
+            margin: 2rem auto !important;
+            display: block;
+        }
+
+        /* landing.css caps .image-container img at 480px + object-fit:cover — that crops tall banners */
+        #hero .image-container img {
+            width: 100%;
+            max-width: 100%;
+            max-height: none !important;
+            height: auto !important;
+            object-fit: contain !important;
+        }
+
+        
+        .hero-content {
+            padding-top: 0 !important;
+            padding-bottom: 0 !important;
+        }
+
+        #explanation {
+            padding-top: 3rem !important;
+            margin-top: 0 !important;
+        }
+
+        .highlight-box {
+            background-color: rgba(128, 0, 0, 0.1);
+            padding: 1.5rem;
+            border-left: 4px solid var(--bg-maroon);
+            margin: 1.5rem 0;
+            border-radius: 4px;
+        }
+
+        .image-container {
+            text-align: center;
+            margin: 2rem auto;
+            max-width: 700px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+        }
+
+        .image-caption {
+            font-style: italic;
+            margin-top: 0.75rem;
+            color: var(--text-maroon);
+            font-size: 1rem;
+        }
+
+        /* Unified image blocks + short titles under photos */
+        figure.media-block {
+            margin: 1.5rem auto;
+            max-width: 720px;
+        }
+
+        figure.media-block img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 14px rgba(128, 0, 0, 0.2);
+        }
+
+        .photo-caption {
+            display: block;
+            margin-top: 0.6rem;
+            font-size: 0.92rem;
+            font-weight: 600;
+            color: var(--text-maroon);
+            text-align: center;
+            line-height: 1.35;
+        }
+
+        .media-grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.15rem;
+            margin: 1.75rem 0;
+            align-items: stretch;
+        }
+
+        .media-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 1.75rem 0;
+            align-items: stretch;
+        }
+
+        @media (max-width: 900px) {
+            .media-grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Presentations: row of slide previews (4 on desktop) */
+        .presentations-bento {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem 1.15rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+            align-items: stretch;
+        }
+
+        @media (max-width: 1024px) {
+            .presentations-bento {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        .presentations-bento .media-card {
+            padding: 0.85rem 0.75rem 1rem;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .presentations-bento .media-card img {
+            width: 100%;
+            min-height: clamp(180px, 22vw, 280px);
+            aspect-ratio: 16 / 10;
+            object-fit: contain;
+            background: rgba(255, 255, 255, 0.92);
+            flex: 1;
+        }
+
+        .presentations-bento .media-card .photo-caption {
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .presentations-bento {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+
+            .presentations-bento .media-card img {
+                min-height: clamp(220px, 40vw, 360px);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .media-grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        figure.media-card {
+            margin: 0;
+        }
+
+        .media-card {
+            margin: 0;
+            padding: 0.85rem 0.9rem 1rem;
+            background: rgba(128, 0, 0, 0.07);
+            border-radius: 10px;
+            border-left: 4px solid var(--bg-maroon);
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.1);
+        }
+
+        .media-card img {
+            width: 100%;
+            display: block;
+            border-radius: 8px;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+
+        .media-card.media-card--square img {
+            aspect-ratio: 1 / 1;
+        }
+
+        /* Insytes & Omar spotlight: portrait keynote photos — avoid forced 4:3 crop */
+        .spotlight-gallery .media-card img {
+            aspect-ratio: auto;
+            height: auto;
+            object-fit: contain;
+            max-height: min(520px, 78vh);
+            background: rgba(128, 0, 0, 0.05);
+        }
+
+        .spotlight-gallery .spotlight-row {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem 1.15rem;
+            max-width: min(1100px, 100%);
+            margin: 1.35rem auto 0;
+            align-items: stretch;
+        }
+
+        @media (max-width: 900px) {
+            .spotlight-gallery .spotlight-row {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 560px) {
+            .spotlight-gallery .spotlight-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Single photo in Day 1 spotlight — avoid a narrow column in a multi-column grid */
+        .spotlight-gallery .spotlight-row:has(> figure:only-child) {
+            grid-template-columns: 1fr;
+            max-width: min(640px, 100%);
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* Day 1 wide panel scene — preserve landscape framing */
+        .day1-panel-photo {
+            max-width: min(1100px, 100%);
+            margin: 0 auto;
+        }
+
+        .day1-panel-photo .media-card {
+            margin: 0;
+        }
+
+        .day1-panel-photo .media-card img {
+            aspect-ratio: auto;
+            height: auto;
+            max-height: min(560px, 85vh);
+            object-fit: contain;
+            background: rgba(128, 0, 0, 0.05);
+        }
+
+        .day1-panel-photo__caption strong {
+            display: block;
+            font-weight: 700;
+        }
+
+        .day1-panel-photo__caption .photo-caption-sub {
+            display: block;
+            margin-top: 0.4rem;
+            font-weight: 500;
+            font-size: 0.9rem;
+            line-height: 1.45;
+        }
+
+        .founders-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+
+        .founder-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 220px;
+        }
+
+        .founder-card img {
+            width: 190px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-bottom: 0.35rem;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.18);
+        }
+
+        .founder-card > strong {
+            color: var(--bg-maroon);
+            font-weight: 700;
+        }
+
+        .judges-grid {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 1.25rem;
+            width: 100%;
+        }
+
+        .judge-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.35rem;
+            flex: 1 1 160px;
+            text-align: center;
+        }
+
+        .judge-card img {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.15);
+        }
+
+        .winners-grid .winners-photo-figure {
+            margin: 0;
+        }
+
+        .section-divider {
+            text-align: center;
+            margin: 3rem 0;
+            color: var(--bg-maroon);
+            font-size: 1.5rem;
+        }
+
+        .intro-emphasis {
+            font-size: 1.2rem;
+            line-height: 1.9;
+            margin: 2rem 0;
+            padding-left: 1rem;
+            border-left: 3px solid rgba(128, 0, 0, 0.3);
+        }
+
+        .key-takeaway {
+            background-color: rgba(128, 0, 0, 0.05);
+            padding: 1.25rem;
+            margin: 1.5rem 0;
+            border-radius: 4px;
+            font-size: 1.05rem;
+        }
+
+        h2 {
+            color: var(--bg-maroon);
+        }
+
+        h2 {
+            margin-top: 3.5rem;
+            font-size: 2rem;
+        }
+
+        #hero h3,
+        section h3 {
+            color: var(--text-maroon);
+            margin-top: 2rem;
+            font-size: 1.4rem;
+        }
+
+        /* Video container */
+        .video-container { 
+            position: relative;
+            padding-bottom: 56.25%;
+            /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            max-width: 1000px;
+            margin: 2.5rem auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+        }
+
+        .video-container iframe,
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            object-fit: cover;
+        }
+
+        /* External link button */
+        .external-link {
+            display: inline-block;
+            background-color: var(--bg-maroon);
+            color: var(--text-beige);
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin: 1rem 0;
+            transition: opacity 0.3s;
+            font-weight: 600;
+        }
+
+        .external-link:hover {
+            opacity: 0.8;
+        }
+
+        /* Winners spotlight */
+        .winners-block {
+            margin: 2.75rem auto 2rem;
+            max-width: 1080px;
+            text-align: center;
+        }
+
+        .winners-title {
+            margin: 0 0 1.1rem;
+            font-size: clamp(1.65rem, 3.2vw, 2.15rem);
+            color: var(--bg-maroon);
+            line-height: 1.2;
+        }
+
+        .winners-card {
+            margin: 0 auto;
+            padding: 1.35rem 1.35rem 1.5rem;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.65) 0%, rgba(128, 0, 0, 0.06) 100%);
+            border: 1px solid rgba(128, 0, 0, 0.12);
+            border-left: 4px solid var(--bg-maroon);
+            border-radius: 12px;
+            box-shadow: 0 8px 22px rgba(80, 20, 20, 0.12);
+        }
+
+        .winners-card--place {
+            padding: 1.1rem 1.1rem 1.35rem;
+        }
+
+        .winners-photo-wrap {
+            margin: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 14px rgba(128, 0, 0, 0.22);
+            background: rgba(128, 0, 0, 0.04);
+        }
+
+        .winners-photo {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .winners-photos-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.15rem 1.25rem;
+            max-width: 1200px;
+            margin: 1.25rem auto 0;
+            text-align: left;
+        }
+
+        .winners-place-figure {
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+
+        .winners-place-meta {
+            font-size: 1rem;
+            line-height: 1.55;
+            margin: 0 0 0.65rem;
+            color: var(--text-maroon);
+        }
+
+        .winners-place-meta strong {
+            color: var(--bg-maroon);
+        }
+
+        .winners-place-names {
+            font-size: 0.95rem;
+            opacity: 0.95;
+        }
+
+        @media (max-width: 900px) {
+            .winners-photos-grid {
+                grid-template-columns: 1fr;
+                gap: 1.35rem;
+            }
+        }
+
+        .winners-caption {
+            margin: 1rem 0 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .winners-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.45rem 1.05rem;
+            border-radius: 999px;
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            background-color: var(--bg-maroon);
+            color: var(--text-beige);
+        }
+
+        .winners-badge i {
+            font-size: 0.95rem;
+        }
+
+        .countdown-wrapper {
+        text-align: center;
+        margin: 32px 0;
+    }
+
+    .countdown-label {
+        font-size: 1rem;
+        color: #800000;
+        font-weight: bold;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+    }
+
+    #countdown {
+        display: flex;
+        justify-content: center;
+        gap: 24px;
+        flex-wrap: wrap;
+    }
+
+    .countdown-box {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .countdown-number {
+        font-size: 3rem;
+        font-weight: bold;
+        color: #800000;
+        background-color: rgba(128, 0, 0, 0.08);
+        padding: 16px 24px;
+        border-radius: 10px;
+        min-width: 80px;
+        text-align: center;
+    }
+
+    .countdown-unit {
+        font-size: 0.85rem;
+        letter-spacing: 1px;
+        margin-top: 8px;
+        color: #555;
+    }
+
+    @media (max-width: 480px) {
+        #countdown {
+            gap: 12px;
+        }
+
+        .countdown-number {
+            font-size: 2rem;
+            padding: 12px 16px;
+            min-width: 60px;
+        }
+
+        .countdown-unit {
+            font-size: 0.75rem;
+        }
+    }
+
+    </style>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar" id="nav">
+        <div class="nav-container">
+            <div class="logo-container logo_title">
+                <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
+                <h3>Math Society</h3>
+            </div>
+                                    <ul class="nav-links">
+        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a class="nav-link dropdown-toggle">Events</a>
+            <span class="dropdown-toggle-mobile">▼</span>
+          </div>
+          <ul class="dropdown-menu">
+                        <li><a href="numbers-behind-trade.html">The Numbers Behind Trade</a></li>
+<li><a href="causal-ml.html">Causal ML</a></li>
+            <li><a href="butterfly-theory.html">Butterfly Effect &amp; Chaos Theory</a></li>
+            <li><a href="cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
+            <li><a href="ai-ml.html">AI &amp; ML</a></li>
+            <li><a href="interstellar.html">Interstellar</a></li>
+            <li><a href="poker.html">Poker</a></li>
+            <li><a href="integration-bee.html" target="_blank">Integration Bee</a></li>
+          </ul>
+        </li>
+        <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
+        <li><a href="datathon.html" class="nav-link">Datathon</a></li>
+        <li><a href="datathon-overview.html" class="nav-link active">Datathon Overview</a></li>
+        <li class="dropdown">
+          <div class="dropdown-header">
+            <a href="ugs.html" class="nav-link dropdown-toggle">The Undergraduate Seminar</a>
+            <span class="dropdown-toggle-mobile">▼</span>
+          </div>
+          <ul class="dropdown-menu">
+            <li><a href="ugs1.html">UGS 1</a></li>
+            <li><a href="ugs2.html">UGS 2</a></li>
+            <li><a href="ugs3.html">UGS 3</a></li>
+            <li><a href="ugs4.html">UGS 4</a></li>
+          </ul>
+        </li>
+      </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ------------------------------------------------------------------------------------------------------------------- -->
+
+    <!--HERO SECTION-->
+    <section id="hero" style="padding-top: 0; padding-bottom: 0; min-height: auto; margin-top: 0;">
+        <div class="hero-content" style="text-align: center; padding-top: 1rem;">
+            <h1 style="margin-top: 0;">Constructor University Datathon 2026 Review</h1>
+            <p style="font-size: 1.3rem; margin-top: 0.5rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+                Organised by the <strong>Mathematics Society at Constructor University Bremen</strong> · April 17–19, 2026
+            </p>
+
+            <div class="image-container highlight-box">
+                <img src="images/datathon-banner.jpg" alt="Datathon 2026 banner">
+            </div>
+        </div>
+    </section>
+
+
+    <section id="explanation" style="padding: 0; margin: 0; padding-bottom: 3rem;">
+        <div class="container" style="padding-top: 0; margin-top: 0;">
+            <div class="content-block" style="padding-top: 0; margin-top: 0; padding-bottom: 2rem;">
+                <p style="font-size: 1.2rem; line-height: 1.9; font-style: italic;">
+                    A look back at the first Constructor University Causal AI Datathon — three days of causal reasoning, industry collaboration, and hands-on optimization on real manufacturing data.
+                </p>
+
+                <p class="intro-emphasis">
+                    The <strong>Constructor University Causal AI Datathon 2026</strong> brought together <strong>50 registered teams</strong> at <strong>Constructor University Bremen</strong> for inverse causal optimization on an industry dataset — not a prediction contest, but a challenge in identification and intervention design, with <strong><a href="https://www.insytes.ai/">Insytes GmbH</a></strong> as industry partner.
+                </p>
+
+                <h1 id="overview">Overview</h1>
+
+                <h2 id="event-overview">Event summary</h2>
+                <div class="key-takeaway">
+                    <ul style="margin: 0; padding-left: 1.25rem; line-height: 1.85; font-size: 1.05rem;">
+                        <li><strong>Name:</strong> Constructor University Causal AI Datathon 2026</li>
+                        <li><strong>Dates:</strong> April 17–19, 2026</li>
+                        <li><strong>Organizer:</strong> Mathematics Society at Constructor University Bremen</li>
+                        <li><strong>Industry partner:</strong> <a href="https://www.insytes.ai/">Insytes GmbH</a></li>
+                        <li><strong>Registered teams:</strong> 50</li>
+                        <li><strong>Venue:</strong> Constructor University Bremen</li>
+                    </ul>
+                </div>
+
+                
+                <div class="highlight-box">
+                    <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 0;">
+                        <strong>About Insytes GmbH</strong>
+                    </p>
+                    <div class="image-container">
+                        <img src="images/insytes_ai_logo.jpg" alt="Insytes GmbH logo" style="max-width: 280px; width: 55%; height: auto; object-fit: contain;">
+                        <p class="photo-caption">Insytes GmbH — industry partner</p>
+                    </div>
+                    <p style="font-size: 1.15rem; line-height: 1.8;">
+                        Insytes GmbH is a Bremen-based startup founded by Constructor University alumni, working at the
+                        intersection of artificial intelligence and industrial data. The company is backed by the EXIST
+                        programme of the German Federal Ministry for Economic Affairs, supported through the University
+                        of Bremen and BRIDGE.
+                    </p>
+                    <p style="font-size: 1.15rem; line-height: 1.8;">
+                        The team is led by co-founders <strong>Karim Abualrish and Varun Patel</strong>. <strong>Karim Abualrish</strong> is also an active member of the Bremen startup
+                        community, helping foster connections between entrepreneurs, researchers, and industry, and <strong>Varun Patel</strong> co-leads Insytes as co-CEO.
+                    </p>
+
+
+                    <div class="founders-grid">
+                        <div class="founder-card">
+                            <img src="images/karim.jpg" alt="Karim Abualrish">
+                            <strong>Karim Abualrish</strong>
+                            <span class="photo-caption">Co-founder, Insytes GmbH</span>
+                        </div>
+                        <div class="founder-card">
+                            <img src="images/varun.jpg" alt="Varun Patel">
+                            <strong>Varun Patel</strong>
+                            <span class="photo-caption">Co-founder, Insytes GmbH</span>
+                        </div>
+                    </div>
+                </div>
+
+                <h2 id="theme">The problem</h2>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    Teams received a real-world <strong>injection molding</strong> manufacturing dataset and a <strong>causal DAG</strong>. The task was <strong>inverse causal optimization</strong>: given a target reduction in <strong>scrap rate</strong> (the KPI), identify which <strong>controllable process variables</strong> to intervene on — and by how much. This was not a data-science or prediction contest; it required causal identification and working backwards from a desired outcome to optimal interventions.
+                </p>
+
+                <h2 id="program">Program highlights</h2>
+                <h3>Day 1 — April 17</h3>
+                <ul style="font-size: 1.15rem; line-height: 1.85; margin-top: 0.5rem;">
+                    <li>Opening remarks by <strong>Prof. Keivan Mallahi-Karai</strong></li>
+                    <li>Keynote by <strong>Omar Elshinawy</strong> (former Math Society president)</li>
+                    <li>Industry talk: <em>Introduction to Causal AI</em> by <strong>Varun Patel</strong> (Co-CEO, Insytes GmbH)</li>
+                    <li>Panel: <em>From Proof to Product: How Mathematical Reasoning Shapes Industry</em> — <strong>Omar Elshinawy</strong>, <strong>Karim Abualrish</strong> (Co-CEO, Insytes GmbH), <strong>Prof. Keivan Mallahi-Karai</strong></li>
+                </ul>
+                <p style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Days 1–3:</strong> Open research and development period for all teams.
+                </p>
+                <h3>Day 3 — April 19</h3>
+                <ul style="font-size: 1.15rem; line-height: 1.85; margin-top: 0.5rem;">
+                    <li><strong>12:00</strong> — Paper submission deadline</li>
+                    <li><strong>15:30</strong> — Team presentations (6 minutes per team + Q&amp;A)</li>
+                    <li>Judging and deliberation</li>
+                    <li>Awards ceremony and closing dinner</li>
+                </ul>
+
+                <h2 id="judging-criteria">Judging</h2>
+                <div class="key-takeaway">
+                    <p style="font-size: 1.05rem; line-height: 1.75; margin: 0 0 0.75rem;">
+                        <strong>Judges:</strong> Prof. Keivan Mallahi-Karai (academic lead), <strong>Ahmed Maghri</strong> (Math Society president · panel moderator), <strong>Omar Elshinawy</strong> (keynote &amp; former Math Society president), <strong>Karim Abualrish</strong> and <strong>Varun Patel</strong> (Insytes GmbH).
+                    </p>
+                    <p style="font-size: 1.05rem; line-height: 1.75; margin: 0;">
+                        <strong>Evaluation:</strong> 60% written paper / 40% presentation.
+                    </p>
+                </div>
+
+                <h2 id="day1">Day 1 — April 17: Opening, talks &amp; challenge launch</h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    Opening by Prof. Keivan Mallahi-Karai, keynote by Omar Elshinawy, an industry talk on Causal AI by Varun Patel (Insytes), and the panel <em>From Proof to Product</em> — then teams entered the open R&amp;D period for the inverse optimization challenge.
+                </p>
+                <br>
+                <h3 id="day1-spotlight">Insytes co-founders &amp; Omar Elshinawy</h3>
+                <p style="font-size: 1.15rem; line-height: 1.8; margin-top: 0.5rem;">
+                    Day 1 brought together <strong>Karim Abualrish</strong> and <strong>Varun Patel</strong> (co-founders of Insytes GmbH) with <strong>Omar Elshinawy</strong> (former Math Society president) for the keynote and the <em>From Proof to Product</em> panel — connecting mathematical reasoning to industry — with <strong>Ahmed Maghri</strong> (Math Society president) helping anchor the opening day.
+                </p>
+                <div class="spotlight-gallery" aria-label="Day 1 — Omar Elshinawy, Karim Abualrish (Insytes), and Ahmed Maghri (Math Society president)">
+                    <div class="spotlight-row">
+                        <figure class="media-card">
+                            <img src="images/datathon-overview/omar.png" alt="Omar Elshinawy delivering keynote — acknowledgements slide on screen" loading="lazy">
+                            <figcaption class="photo-caption">Omar Elshinawy — keynote</figcaption>
+                        </figure>
+                        <figure class="media-card">
+                            <img src="images/datathon-overview/karim.png" alt="Karim Abualrish (Insytes co-founder) speaking on stage at the datathon" loading="lazy">
+                            <figcaption class="photo-caption">Karim Abualrish — Insytes co-founder</figcaption>
+                        </figure>
+                        <figure class="media-card">
+                            <img src="images/datathon-overview/ahmed_presentation.jpg" alt="Ahmed Maghri (Math Society president) at the datathon" loading="lazy">
+                            <figcaption class="photo-caption">Ahmed Maghri — Math Society president</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="day1-panel-photo" id="day1-from-proof-panel" aria-label="Panel — From Proof to Product: Ahmed Maghri, Karim Abualrish, Omar Elshinawy, and Prof. Keivan Mallahi-Karai">
+                    <figure class="media-card">
+                        <img src="images/datathon-overview/general_talk4.jpg" alt="From Proof to Product panel — Ahmed Maghri, Karim Abualrish, Omar Elshinawy, and Prof. Keivan Mallahi-Karai in discussion" loading="lazy">
+                        <figcaption class="photo-caption day1-panel-photo__caption">
+                            <strong>Panel — From Proof to Product</strong>
+                            <span class="photo-caption-sub">Ahmed Maghri, Karim Abualrish, Omar Elshinawy, and Prof. Keivan Mallahi-Karai</span>
+                        </figcaption>
+                    </figure>
+                </div>
+
+                <br>
+                <h2 id="day2">Day 2 — April 18: Research &amp; development</h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    Part of the three-day open R&amp;D window: teams continued inverse causal optimization — identifying interventions on controllable variables to hit the scrap-rate target — with support from peers and mentors as needed.
+                </p>
+                <br>
+
+                <h2 id="day3">Day 3 — April 19: Submissions, presentations &amp; awards</h2>
+                <br>
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    <strong>12:00</strong> — paper deadline · <strong>15:30</strong> — team presentations (6 min + Q&amp;A) · judging · awards ceremony and closing dinner.
+                </p>
+
+                <h2 id="presentation-highlights">Presentation highlights</h2>
+                <div class="presentations-bento">
+                    <figure class="media-card">
+                        <img src="images/datathon-overview/presentation_1(1).png" alt="Team presentation slide deck 1">
+                        <figcaption class="photo-caption">Presentation — team 1</figcaption>
+                    </figure>
+                    <figure class="media-card">
+                        <img src="images/datathon-overview/presentation_2.jpeg" alt="Team presentation slide deck 2">
+                        <figcaption class="photo-caption">Presentation — team 2</figcaption>
+                    </figure>
+                    <figure class="media-card">
+                        <img src="images/datathon-overview/presentation_3(1).png" alt="Team presentation slide deck 3">
+                        <figcaption class="photo-caption">Presentation — team 3</figcaption>
+                    </figure>
+                    <figure class="media-card">
+                        <img src="images/datathon-overview/presentation_4.jpeg" alt="Team presentation — A causal approach to scrap reduction (Sanam Tabalen, Denis Rosu, Tajwar Ali, Zerachael Mekasha)" loading="lazy">
+                        <figcaption class="photo-caption">Presentation — team 4</figcaption>
+                    </figure>
+                </div>
+
+                <section class="winners-block" id="winners" aria-labelledby="winners-title">
+                    <h2 id="winners-title" class="winners-title">Results</h2>
+                    <div class="key-takeaway" style="max-width: 720px; margin: 0 auto 1.5rem; text-align: left;">
+                        <p style="font-size: 1.1rem; line-height: 1.75; margin: 0 0 0.75rem;"><strong>1st place</strong> — <strong>Team PS</strong><br>Seyedpouria Seyedi</p>
+                        <p style="font-size: 1.1rem; line-height: 1.75; margin: 0 0 0.75rem;"><strong>2nd place</strong> — <strong>Team DonBathon</strong><br>Yaroslav Molybog, Ivan Balashov</p>
+                        <p style="font-size: 1.1rem; line-height: 1.75; margin: 0;"><strong>3rd place</strong> — <strong>Team OMEGA</strong><br>Amaan Shaikh, Vamshi Jinka</p>
+                    </div>
+                    <h3 id="winners-media-heading" class="winners-title" style="font-size: clamp(1.35rem, 2.8vw, 1.75rem); margin-bottom: 0.35rem;">Winner photos</h3>
+                    <p style="font-size: 1rem; color: var(--text-maroon); margin: 0 0 0.5rem; max-width: 720px; margin-left: auto; margin-right: auto; text-align: center;">
+                        First, second, and third place — podium moments for each team.
+                    </p>
+                    <div class="winners-photos-grid" role="group" aria-labelledby="winners-media-heading">
+                        <figure class="winners-card winners-card--place winners-place-figure">
+                            <p class="winners-place-meta">
+                                <strong>1st place</strong> — Team PS<br>
+                                <span class="winners-place-names">Seyedpouria Seyedi</span>
+                            </p>
+                            <div class="winners-photo-wrap">
+                                <img class="winners-photo" src="images/datathon-overview/first_place.png"
+                                    alt="First place — Team PS, Seyedpouria Seyedi at the awards ceremony" loading="lazy">
+                            </div>
+                        </figure>
+                        <figure class="winners-card winners-card--place winners-place-figure">
+                            <p class="winners-place-meta">
+                                <strong>2nd place</strong> — Team DonBathon<br>
+                                <span class="winners-place-names">Yaroslav Molybog, Ivan Balashov</span>
+                            </p>
+                            <div class="winners-photo-wrap">
+                                <img class="winners-photo" src="images/datathon-overview/second_place_winners.png"
+                                    alt="Second place — Team DonBathon at the awards ceremony" loading="lazy">
+                            </div>
+                        </figure>
+                        <figure class="winners-card winners-card--place winners-place-figure">
+                            <p class="winners-place-meta">
+                                <strong>3rd place</strong> — Team OMEGA<br>
+                                <span class="winners-place-names">Amaan Shaikh, Vamshi Jinka</span>
+                            </p>
+                            <div class="winners-photo-wrap">
+                                <img class="winners-photo" src="images/datathon-overview/third_place_winners.png"
+                                    alt="Third place — Team OMEGA at the awards ceremony" loading="lazy">
+                            </div>
+                        </figure>
+                    </div>
+                    <div class="winners-caption" style="margin-top: 1.35rem;">
+                        <span class="winners-badge"><i class="fa-solid fa-trophy" aria-hidden="true"></i> Winners</span>
+                    </div>
+                </section>
+                
+                <!-- Judges & speakers -->
+                <h2 id="judges">Judges &amp; speakers</h2>
+                <div class="highlight-box judges-grid">
+                    <div class="judge-card">
+                        <img src="images/keivan.jpg" alt="Prof. Keivan Mallahi-Karai">
+                        <strong>Prof. Keivan Mallahi-Karai</strong>
+                        <span class="photo-caption">Academic lead &amp; judge</span>
+                    </div>
+                    <div class="judge-card">
+                        <img src="images/datathon-overview/ahmed.jpg" alt="Ahmed Maghri">
+                        <strong>Ahmed Maghri</strong>
+                        <span class="photo-caption">President, Math Society · panel moderator</span>
+                    </div>
+                    <div class="judge-card">
+                        <img src="images/datathon-overview/omar.jpg" alt="Omar Elshinawy">
+                        <strong>Omar Elshinawy</strong>
+                        <span class="photo-caption">Judge · keynote speaker · former Math Society president</span>
+                    </div>
+                    <div class="judge-card">
+                        <img src="images/karim.jpg" alt="Karim Abualrish">
+                        <strong>Karim Abualrish</strong>
+                        <span class="photo-caption">Judge — Co-CEO, Insytes GmbH</span>
+                    </div>
+                    <div class="judge-card">
+                        <img src="images/varun.jpg" alt="Varun Patel">
+                        <strong>Varun Patel</strong>
+                        <span class="photo-caption">Judge — Co-CEO, Insytes GmbH</span>
+                    </div>
+                </div>
+            
+
+                <br>
+                <p id="sponsors" style="font-size: 1.15rem; line-height: 1.8;">
+                    <strong>Sponsors & Partners</strong>
+                </p>
+                
+                <p style="font-size: 1.15rem; line-height: 1.8;" class="highlight-box">
+                    The Datathon 2026 is organised with the support of <strong>Constructor University</strong> as
+                    the host institution and <strong><a href="https://www.insytes.ai/">Insytes GmbH</a></strong> as the industry partner. Insytes GmbH
+                    contributes the challenge problem, dataset, mentorship, and judging — bringing real-world
+                    industry expertise directly into the competition.
+                    <br>
+                    <br>
+                </p>
+            </div>
+        </div>
+    </section>
+
+
+    <!--FOOTER-->
+    <footer>
+        <div class="footer-content">
+            <p>CONNECT WITH US:</p>
+                  <div class="socials">
+        <div class="link">
+          <i class="fa-brands fa-instagram"></i>
+          <a href="https://www.instagram.com/math__society/" target="_blank">Instagram</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank">LinkedIn</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-share"></i>
+          <a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&response%5Fmode=form%5Fpost&response%5Ftype=code%20id%5Ftoken&resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&scope=openid&nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&state=OD0w&claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&wsucxt=1&cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438" target="_blank">Sharepoint</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-youtube"></i>
+          <a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+        </div>
+        <div class="link">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+        </div>
+        <div class="link">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:constructor.maths@gmail.com">Email</a>
+        </div>
+      </div>
+      <p>&copy; <span id="copyright-year"></span> The Math Society</p>
+        </div>
+    </footer>
+
+    <script src="../Home Page/landing.js"></script>
+</body>
+
+</html>
