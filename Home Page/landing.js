@@ -187,15 +187,18 @@ setYear();
 initNavigation();
 setupScrollReveal();
 
-// ---------------------------------------------------------------------------
-// Leadership archive
-// Add older/newer academic years here. Cards are matched by `role`:
-// - same `personId` in the same role -> card stays still
-// - only the Zakaria ↔ Shaz handoff uses the page-turn
-// - new 26–27 roles appear at the bottom of the grid
-// - roles absent from the destination year simply disappear
-// ---------------------------------------------------------------------------
 const leadershipArchive = {
+  "Spring 2025": [
+    {
+      role: "President",
+      personId: "omar-elshinawy",
+      name: "Omar Elshinawy",
+      image: "./images/Omar-Elshinawy.jpg",
+      alt: "Omar Elshinawy, President",
+      bio: "Hi everyone, Omar here! During my term, I graduated six (hear that, Maghri?) amazing seminarists from the UgS research mentorship program. I served the society's Maths Support Center with 108+ hours. I procured 10+ mega squared pizzas to an audience of 60+ attendees, and created one of the coolest posters of all time (haters will disagree!). The Student Mathematical Society is a testament to the intellectual curiosity this very campus holds. It is an honour of the highest decree to have shaped the rebirth of this society. As my term comes to an end, it is now your turn to uphold its profound legacy, and sustain its tradition for years to come. But hey, no pressure 😎",
+    },
+  ],
+
   "25–26": [
     {
       role: "President",
@@ -342,9 +345,12 @@ function initLeadershipArchive() {
   let currentIndex = years.length - 1;
 
   function updateControls() {
-    label.textContent = years[currentIndex] === "25–26"
-    ? "2025–2026"
-    : "2026–2027";
+    const yearLabels = {
+      "Spring 2025": "Spring 2025",
+      "25–26": "2025–2026",
+      "26–27": "2026–2027",
+    };
+    label.textContent = yearLabels[years[currentIndex]] || years[currentIndex];
     prev.disabled = currentIndex === 0;
     next.disabled = currentIndex === years.length - 1;
   }
