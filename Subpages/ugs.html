@@ -96,6 +96,70 @@
       margin: 0;
       font-size: 0.95rem;
     }
+
+
+    /* Student Mathematical Journal */
+    .journal-section {
+      margin: 4rem 0 3rem;
+      padding: 2.25rem;
+      background-color: rgba(128, 0, 0, 0.05);
+      border-radius: 10px;
+      border-left: 4px solid var(--bg-maroon);
+    }
+
+    .journal-layout {
+      display: grid;
+      grid-template-columns: minmax(190px, 280px) 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .journal-cover {
+      width: 100%;
+      display: block;
+      border-radius: 4px;
+      box-shadow: 0 6px 18px rgba(128, 0, 0, 0.22);
+      transition: transform 0.3s ease;
+    }
+
+    .journal-cover:hover {
+      transform: translateY(-3px);
+    }
+
+    .journal-section h2 {
+      margin-top: 0;
+    }
+
+    .journal-section h3 {
+      color: var(--bg-maroon);
+      margin: 0.25rem 0 1rem;
+      font-size: 1.35rem;
+    }
+
+    .journal-articles {
+      margin: 1.25rem 0;
+      padding-left: 1.25rem;
+      line-height: 1.7;
+    }
+
+    .journal-articles li {
+      margin-bottom: 0.45rem;
+    }
+
+    @media (max-width: 700px) {
+      .journal-section {
+        padding: 1.5rem;
+      }
+
+      .journal-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .journal-cover-link {
+        max-width: 260px;
+        margin: 0 auto;
+      }
+    }
   </style>
 </head>
 
@@ -231,8 +295,42 @@
 
           <a href="ugs5.html" class="session-card">
             <h3>UGS 5</h3>
-            <p>[DATE TBD]</p>
+            <p>23rd April 2026</p>
           </a>
+        </div>
+
+        <!-- Student Mathematical Journal -->
+        <div class="journal-section">
+          <div class="journal-layout">
+            <a class="journal-cover-link" href="pdfs/Student_Mathematical_Journal_2026.pdf" target="_blank"
+              aria-label="Open the Student Mathematical Journal 2026">
+              <img src="images/smj-2026-cover.jpg" alt="Cover of The Student Mathematical Journal 2026" class="journal-cover">
+            </a>
+
+            <div>
+              <h2>From UGS to Publication</h2>
+              <h3>The Student Mathematical Journal — 2026 Inaugural Volume</h3>
+              <p style="font-size: 1.1rem; line-height: 1.8;">
+                Research presented through the Undergraduate Seminar can continue beyond the talk. UGS projects are
+                developed into self-contained articles and published in <em>The Student Mathematical Journal (SMJ)</em>,
+                the undergraduate mathematics journal of Constructor University.
+              </p>
+              <p style="font-size: 1.05rem; line-height: 1.8;">
+                The inaugural 2026 volume features five published works originating from UGS:
+              </p>
+              <ul class="journal-articles">
+                <li><strong>Ahmed Maghri</strong> — <em>The Qubit and Shor’s Algorithm: A Step-by-Step Exploration</em>
+                </li>
+                <li><strong>Aly Assaf</strong> — <em>Shannon’s Theorem and Polar Codes</em></li>
+                <li><strong>Noah Horne</strong> — <em>Lagrangian Putt-Putt: A Holistic Investigation into Holonomically
+                    Constrained Forced-Geodesic Motion on Arbitrary C²-Surfaces</em></li>
+                <li><strong>Pablo Santos Guerrero</strong> — <em>A Classification of Principal Divisors on CP¹</em></li>
+                <li><strong>Taha Hbirri</strong> — <em>Reaching the Impossible Agreement</em></li>
+              </ul>
+              <a href="pdfs/Student_Mathematical_Journal_2026.pdf" target="_blank" class="external-link">Read the Student
+                Mathematical Journal →</a>
+            </div>
+          </div>
         </div>
 
         <!-- Join Section -->
