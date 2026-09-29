@@ -1272,6 +1272,12 @@ footer {
   gap: 1rem;
 }
 
+.nav-container a{
+  display: flex;
+  text-decoration: none;
+  color: inherit;
+}
+
 .logo-container,
 .logo_title {
   display: inline-flex;
