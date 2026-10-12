@@ -103,6 +103,7 @@ function setupScrollReveal() {
     ".speaker-card",
     ".card",
     ".event-card",
+    ".mission__card"
   ];
   subpageSelectors.forEach((sel) => {
     document.querySelectorAll(sel).forEach((el) => {
@@ -185,6 +186,38 @@ function initNavigation() {
 
 setYear();
 initNavigation();
+
+// < -- Add Upcoming Events data to this array -- >
+const upcomingEvents = [
+  // { title: "...", date: "...", time: "...", location: "...", tag: "...", link: "..." }
+];
+
+function renderUpcomingEvents() {
+  const grid = document.getElementById('upcomingEventsGrid');
+  if (!grid) return;
+
+  if (upcomingEvents.length === 0) {
+    grid.innerHTML = `
+      <div class="mission__card glass-card interactive-card" style="text-align:center; grid-column: 1 / -1;"> 
+        <div class="platform-card__icon" style="margin-bottom: 0"><i class="fa-solid fa-calendar-day"></i></div>
+        <p>No events are scheduled right now — but we're always planning the next one.</p>
+        <a href="#contact" class="text-link">Follow us to hear first <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+    `;
+    return;
+  }
+
+  grid.innerHTML = upcomingEvents.map(ev => `
+    <div class="platform-card glass-card interactive-card">
+      <div class="platform-card__icon"><i class="fa-solid fa-calendar-day"></i></div>
+      <h3>${ev.title}</h3>
+      <p>${ev.date} · ${ev.time} · ${ev.location}</p>
+      <span>${ev.link ? `<a href="${ev.link}">Learn more <i class="fa-solid fa-arrow-right"></i></a>` : ''}</span>
+    </div>
+  `).join('');
+}
+
+renderUpcomingEvents();
 setupScrollReveal();
 
 const leadershipArchive = {
