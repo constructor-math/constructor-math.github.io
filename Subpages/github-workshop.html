@@ -1,63 +1,131 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>GitHub Workshop | Math Society</title><link rel="stylesheet" href="../Home Page/landing.css"><style>
-.info-wrap{max-width:1080px;margin:auto;padding:35px 24px 90px}.info-wrap h1{font-size:clamp(2.4rem,5vw,4rem);line-height:1.12}.info-wrap h2{margin:2.4rem 0 1rem;color:var(--bg-maroon,#800000)}.info-wrap p,.info-wrap li{line-height:1.8}.info-hero{padding-top:155px;text-align:center}.info-lead{font-size:1.2rem;max-width:780px;margin:1rem auto 2rem}.info-cover{width:100%;max-height:540px;object-fit:cover;border-radius:18px}.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px}.info-tile{border:1px solid #ddd5ce;border-radius:12px;padding:22px;background:rgba(128,0,0,.035)}.info-tile h3{margin-top:0;color:var(--bg-maroon,#800000)}.info-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}.info-gallery figure{margin:0}.info-gallery img{width:100%;height:260px;object-fit:cover;border-radius:12px;display:block}@media(max-width:650px){.info-hero{padding-top:120px}.info-gallery img{height:220px}}
-.event-video{position:relative;aspect-ratio:16/9;width:100%;overflow:hidden;border-radius:16px;background:#181818}.event-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}.event-video-link{margin-top:12px}.event-video-link a,.event-contact a{color:#8b2433;text-decoration:underline;text-underline-offset:3px}.event-contact{border-top:1px solid #ddd5ce;margin-top:55px;padding:35px 0 0;text-align:center}.event-contact-links{display:flex;justify-content:center;gap:12px 25px;flex-wrap:wrap;margin-top:20px}.event-contact-links a{font-weight:600}.event-footer{text-align:center;padding:20px 12px 35px;font-size:.9rem;opacity:.75}</style></head><body>  <!--NAVBAR-->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo-container logo_title">
-        <img src="../Home Page/images/logo_final.png" alt="Math Soc Logo" class="nav-logo">
-        <h3>Math Society</h3>
-      </div>
-      <ul class="nav-links">
-        <li><a href="../Home Page/landing.html" class="nav-link">Home</a></li>
-        <li class="dropdown has-active-child">
-          <div class="dropdown-header">
-            <a class="nav-link dropdown-toggle">Events</a>
-            <span class="dropdown-toggle-mobile">▼</span>
-          </div>
-          <ul class="dropdown-menu">
-            <li><a href="info-session.html">Info Session</a></li>
-            <li><a href="github-workshop.html" class="active">GitHub Workshop</a></li>
-            <li><a href="numbers-behind-trade.html">The Numbers Behind Trade</a></li>
-            <li><a href="causal-ml.html">Causal ML</a></li>
-            <li><a href="butterfly-theory.html">Butterfly Effect &amp; Chaos Theory</a></li>
-            <li><a href="cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
-            <li><a href="ai-ml.html">AI &amp; ML</a></li>
-            <li><a href="interstellar.html">Interstellar</a></li>
-            <li><a href="poker.html">Poker</a></li>
-            <li><a href="integration-bee.html" target="_blank">Integration Bee</a></li>
-          </ul>
-        </li>
-        <li><a href="olympiad.html" class="nav-link">Olympiad</a></li>
-        <li><a href="datathon.html" class="nav-link">Datathon</a></li>
-        <li><a href="datathon-overview.html" class="nav-link">Datathon Overview</a></li>
-        <li class="dropdown">
-          <div class="dropdown-header">
-            <a href="ugs.html" class="nav-link dropdown-toggle">The Undergraduate Seminar</a>
-            <span class="dropdown-toggle-mobile">▼</span>
-          </div>
-          <ul class="dropdown-menu">
-            <li><a href="ugs1.html">UGS 1</a></li>
-            <li><a href="ugs2.html">UGS 2</a></li>
-            <li><a href="ugs3.html">UGS 3</a></li>
-            <li><a href="ugs4.html">UGS 4</a></li>
-            <li><a href="ugs5.html">UGS 5</a></li>
-          </ul>
-        </li>
-      </ul>
-
-      <div class="hamburger">
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-    </div>
-  </nav><main class="info-wrap"><header class="info-hero"><p>THE MATH SOCIETY · CONSTRUCTOR UNIVERSITY</p><h1>GitHub Workshop</h1><p class="info-lead">An introductory, hands-on workshop exploring Git, GitHub, version control and collaborative software development.</p><img class="info-cover" src="images/img_5920.jpg" alt="GitHub workshop participants and presentation"></header>
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><title>GitHub Workshop | Math Society</title><link href="../Home Page/landing.css" rel="stylesheet"/><link href="../Home Page/images/logo_final.png" rel="icon" type="image/png"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&amp;display=swap" rel="stylesheet"/><script crossorigin="anonymous" src="https://kit.fontawesome.com/a2bed480e7.js"></script><style>
+#hero{min-height:auto!important;height:auto!important;max-height:none!important;padding-top:180px!important;padding-bottom:2.5rem!important;display:block!important}
+#hero .hero-content{padding-top:0!important;padding-bottom:0!important;text-align:center}
+#hero h1{line-height:1.2!important;margin-top:0!important;text-align:center}
+#hero p{font-size:1.3rem;max-width:800px;margin:.65rem auto 0;line-height:1.75}
+.event-page-content{max-width:1100px;margin:0 auto;padding:0 24px 70px}
+.event-page-content section{margin:0 0 3.5rem}
+.event-page-content h2{color:var(--bg-maroon);margin:3rem 0 1.25rem;font-size:2rem}
+.event-page-content h3{color:var(--text-maroon);margin:1.5rem 0 .75rem;font-size:1.4rem}
+.event-page-content p,.event-page-content li{line-height:1.85}
+.event-page-content p{margin:0 0 1rem}
+.event-page-content ul{padding-left:1.5rem}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px;margin:1.75rem 0}
+.info-tile{background:rgba(128,0,0,.08);border-left:4px solid var(--bg-maroon);padding:1.5rem;border-radius:4px}
+.info-tile h3{margin-top:0}
+.info-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin:1.5rem 0}
+.info-gallery figure{margin:0}
+.info-gallery img{display:block;width:100%;height:250px;object-fit:cover;border-radius:8px;box-shadow:0 4px 12px rgba(128,0,0,.25)}
+.info-note{background:rgba(128,0,0,.08);padding:1.5rem;border-left:4px solid var(--bg-maroon);border-radius:4px;margin:1.5rem 0}
+.event-video{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:1000px;margin:2rem auto 1rem;border-radius:8px;box-shadow:0 4px 12px rgba(128,0,0,.3)}
+.event-video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.event-video-link{text-align:center}
+.event-video-link a{color:var(--bg-maroon);text-decoration:underline}
+.event-contact{display:none}
+@media(max-width:650px){#hero{padding-top:130px!important}.event-page-content{padding:0 18px 45px}.info-gallery img{height:210px}}
+</style></head><body> <!--NAVBAR-->
+<nav class="navbar">
+<div class="nav-container">
+<a href="../Home Page/landing.html">
+<div class="logo-container logo_title">
+<img alt="Math Soc Logo" class="nav-logo brand__logo" src="../Home Page/images/logo_final.png"/>
+<div class="brand__text">
+<strong>The Math Society</strong>
+<small>Constructor University</small>
+</div>
+</div>
+</a>
+<ul class="nav-links">
+<li><a class="nav-link" href="../Home Page/landing.html">Home</a></li>
+<li class="dropdown has-active-child">
+<div class="dropdown-header">
+<a class="nav-link dropdown-toggle">Events</a>
+<span class="dropdown-toggle-mobile">▼</span>
+</div>
+<ul class="dropdown-menu">
+<li><a class="active" href="github-workshop.html">GitHub Workshop</a></li>
+<li><a href="info-session.html">Info Session</a></li>
+<li><a href="numbers-behind-trade.html">The Numbers Behind Trade</a></li>
+<li><a href="causal-ml.html">Causal ML</a></li>
+<li><a href="butterfly-theory.html">Butterfly Effect &amp; Chaos Theory</a></li>
+<li><a href="cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
+<li><a href="ai-ml.html">AI &amp; ML</a></li>
+<li><a href="interstellar.html">Interstellar</a></li>
+<li><a href="poker.html">Poker</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<div class="dropdown-header">
+<a class="nav-link dropdown-toggle">Competitions</a>
+<span class="dropdown-toggle-mobile">▼</span>
+</div>
+<ul class="dropdown-menu">
+<li><a href="../Subpages/datathon.html">Datathon</a></li>
+<li><a href="../Subpages/integration-bee.html" rel="noopener noreferrer" target="_blank">Integration Bee</a>
+</li>
+<li><a href="../Subpages/olympiad.html">Olympiad</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="datathon-overview.html">Datathon Overview</a></li>
+<li class="dropdown">
+<div class="dropdown-header">
+<a class="nav-link dropdown-toggle" href="ugs.html">The Undergraduate Seminar</a>
+<span class="dropdown-toggle-mobile">▼</span>
+</div>
+<ul class="dropdown-menu">
+<li><a href="../Subpages/ugs5.html">Seminar 5: April 2026</a></li>
+<li><a href="../Subpages/ugs4.html">Seminar 4: November 2025</a></li>
+<li><a href="../Subpages/ugs3.html">Seminar 3: October 2025</a></li>
+<li><a href="../Subpages/ugs2.html">Seminar 2: May 2025</a></li>
+<li><a href="../Subpages/ugs1.html">Seminar 1: March 2025</a></li>
+</ul>
+</li>
+</ul>
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</nav><section id="hero"><div class="hero-content"><h1>GitHub Workshop</h1><p class="info-lead">An introductory, hands-on workshop exploring Git, GitHub, version control and collaborative software development.</p></div></section><main class="event-page-content">
 <section><h2>Learning Git and GitHub together</h2><p>The Math Society hosted a beginner-friendly GitHub workshop designed to help students build confidence with version control. Led by a third-year Computer Science student from the society’s audiovisual team, the session walked participants through a practical project, from creating a local repository to collaborating through GitHub.</p><p>The workshop began with the difference between <strong>Git</strong>, a distributed version-control tool, and <strong>GitHub</strong>, a platform for hosting repositories and collaborating on code.</p></section>
 <section><h2>What we explored</h2><div class="info-grid"><div class="info-tile"><h3>Getting started</h3><p>Initializing repositories, checking changes, staging files, making commits and writing useful commit messages.</p></div><div class="info-tile"><h3>Sharing projects</h3><p>Creating a GitHub repository, connecting a remote, pushing work, cloning repositories and pulling updates.</p></div><div class="info-tile"><h3>Working as a team</h3><p>Using branches to develop features independently, reviewing pull requests and merging contributions.</p></div><div class="info-tile"><h3>Managing changes</h3><p>Exploring commit history, cherry-picking, ignoring files, unstaging changes and understanding reset options.</p></div></div></section>
 <section><h2>From demonstration to discussion</h2><p>Through a live demonstration, attendees saw how version control supports real-world teamwork and how to recover from mistakes. The workshop also covered practical questions about SSH versus HTTPS authentication, avoiding unwanted files in repositories and why learning Git fundamentals remains valuable alongside AI coding tools.</p></section>
-<section><h2>Moments from the workshop</h2><div class="info-gallery"><figure><img src="images/img_5812.jpg" alt="Attendees and demonstrations during the GitHub workshop" loading="lazy"></figure>
-<figure><img src="images/img_5831.jpg" alt="Attendees and demonstrations during the GitHub workshop" loading="lazy"></figure>
-<figure><img src="images/img_5842.jpg" alt="Attendees and demonstrations during the GitHub workshop" loading="lazy"></figure>
-<figure><img src="images/img_5862.jpg" alt="Attendees and demonstrations during the GitHub workshop" loading="lazy"></figure>
-<figure><img src="images/img_5907.jpg" alt="Attendees and demonstrations during the GitHub workshop" loading="lazy"></figure>
-<figure><img src="images/img_5920.jpg" alt="Attendees and demonstrations during the GitHub workshop" loading="lazy"></figure></div></section><section aria-label="GitHub Workshop recording"><h2>Watch the GitHub Workshop</h2><div class="event-video"><iframe src="https://www.youtube-nocookie.com/embed/bY91FSIMEik" title="GitHub Workshop video recording" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><p class="event-video-link">Prefer YouTube? <a href="https://www.youtube.com/watch?v=bY91FSIMEik" target="_blank" rel="noopener noreferrer">Watch the full recording on YouTube</a>.</p></section><section class="event-contact" aria-label="Math Society contact information"><h2>Connect with us</h2><p>Have a question or want to join our next event? Stay in touch with the Math Society.</p><div class="event-contact-links"><a href="https://www.instagram.com/math__society/" target="_blank" rel="noopener noreferrer">Instagram</a><a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank" rel="noopener noreferrer">LinkedIn</a><a href="https://www.youtube.com/@MathClubCUB" target="_blank" rel="noopener noreferrer">YouTube</a><a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank" rel="noopener noreferrer">GitHub</a><a href="mailto:constructor.maths@gmail.com">Email</a></div></section></main><footer class="event-footer">&copy; <span id="copyright-year">2026</span> The Math Society, Constructor University.</footer><script src="../Home Page/landing.js"></script></body></html>
+<section><h2>Moments from the workshop</h2><div class="info-gallery"><figure><img alt="Attendees and demonstrations during the GitHub workshop" loading="lazy" src="images/img_5812.jpg"/></figure>
+<figure><img alt="Attendees and demonstrations during the GitHub workshop" loading="lazy" src="images/img_5831.jpg"/></figure>
+<figure><img alt="Attendees and demonstrations during the GitHub workshop" loading="lazy" src="images/img_5842.jpg"/></figure>
+<figure><img alt="Attendees and demonstrations during the GitHub workshop" loading="lazy" src="images/img_5862.jpg"/></figure>
+<figure><img alt="Attendees and demonstrations during the GitHub workshop" loading="lazy" src="images/img_5907.jpg"/></figure>
+<figure><img alt="Attendees and demonstrations during the GitHub workshop" loading="lazy" src="images/img_5920.jpg"/></figure></div></section><section aria-label="GitHub Workshop recording"><h2>Watch the GitHub Workshop</h2><div class="event-video"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/bY91FSIMEik" title="GitHub Workshop video recording"></iframe></div><p class="event-video-link">Prefer YouTube? <a href="https://www.youtube.com/watch?v=bY91FSIMEik" rel="noopener noreferrer" target="_blank">Watch the full recording on YouTube</a>.</p></section></main><footer>
+<div class="footer-content">
+<p>CONNECT WITH US:</p>
+<div class="socials">
+<div class="link">
+<i class="fa-brands fa-instagram"></i>
+<a href="https://www.instagram.com/math__society/" target="_blank">Instagram</a>
+</div>
+<div class="link">
+<i class="fa-brands fa-linkedin"></i>
+<a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank">LinkedIn</a>
+</div>
+<div class="link">
+<i class="fa-solid fa-share"></i>
+<a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&amp;response%5Fmode=form%5Fpost&amp;response%5Ftype=code%20id%5Ftoken&amp;resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&amp;scope=openid&amp;nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&amp;redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&amp;state=OD0w&amp;claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&amp;wsucxt=1&amp;cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&amp;client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438" target="_blank">Sharepoint</a>
+</div>
+<div class="link">
+<i class="fa-brands fa-youtube"></i>
+<a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+</div>
+<div class="link">
+<i class="fa-brands fa-github"></i>
+<a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+</div>
+<div class="link">
+<i class="fa-solid fa-envelope"></i>
+<a href="mailto:constructor.maths@gmail.com">Email</a>
+</div>
+</div>
+<p>© <span id="copyright-year"></span> The Math Society</p>
+</div>
+</footer><script src="../Home Page/landing.js"></script></body></html>
