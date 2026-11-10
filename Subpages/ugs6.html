@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UGS 6 – Undergraduate Seminar - Math Society</title>
+<link href="../Home Page/images/logo_final.png" rel="icon" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<link href="../Home Page/landing.css" rel="stylesheet"/>
+<script crossorigin="anonymous" src="https://kit.fontawesome.com/a2bed480e7.js"></script>
+<style>
+    #hero {
+      min-height: auto !important;
+      height: auto !important;
+      max-height: none !important;
+      padding-top: 180px !important;
+      padding-bottom: 2.5rem !important;
+      display: block !important;
+    }
+
+    .hero-content {
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
+    #explanation {
+      padding-top: 3rem !important;
+      margin-top: 0 !important;
+    }
+
+    .highlight-box {
+      background-color: rgba(128, 0, 0, 0.1);
+      padding: 1.5rem;
+      border-left: 4px solid var(--bg-maroon);
+      margin: 1.5rem 0;
+      border-radius: 4px;
+    }
+
+    .intro-emphasis {
+      font-size: 1.2rem;
+      line-height: 1.9;
+      margin: 2rem 0;
+      padding-left: 1rem;
+      border-left: 3px solid rgba(128, 0, 0, 0.3);
+    }
+
+    h2 {
+      color: var(--bg-maroon);
+      margin-top: 3.5rem;
+      font-size: 2rem;
+    }
+
+    #hero h3,
+    section h3 {
+      color: var(--text-maroon);
+      margin-top: 2rem;
+      font-size: 1.4rem;
+    }
+
+    /* Image carousel */
+    .image-carousel {
+      position: relative;
+      max-width: 1000px;
+      margin: 2rem auto;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
+    }
+
+    .carousel-container {
+      display: flex;
+      transition: transform 0.5s ease;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      max-height: 500px;
+      object-fit: contain;
+      border: 2px solid var(--bg-maroon);
+      border-radius: 8px;
+    }
+
+    .carousel-caption {
+      text-align: center;
+      margin-top: 0.75rem;
+      font-style: italic;
+      color: var(--text-maroon);
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(128, 0, 0, 0.7);
+      color: var(--text-beige);
+      border: none;
+      padding: 1rem;
+      cursor: pointer;
+      font-size: 1.5rem;
+      transition: background 0.3s;
+      z-index: 10;
+      border-radius: 4px;
+    }
+
+    .carousel-button:hover {
+      background: rgba(128, 0, 0, 0.9);
+    }
+
+    .carousel-button.prev {
+      left: 10px;
+    }
+
+    .carousel-button.next {
+      right: 10px;
+    }
+
+    .carousel-indicators {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      margin-top: 1rem;
+    }
+
+    .indicator {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: rgba(128, 0, 0, 0.3);
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .indicator.active {
+      background: var(--bg-maroon);
+    }
+
+    /* Talk list styling */
+    .talk-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.5rem 0;
+    }
+
+    .talk-list li {
+      background: rgba(128, 0, 0, 0.05);
+      padding: 1.25rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      border-left: 4px solid rgba(128, 0, 0, 0.3);
+    }
+
+    .talk-list li strong {
+      color: var(--bg-maroon);
+      font-size: 1.1rem;
+    }
+
+    .topic-explain {
+      display: block;
+      margin-top: 0.75rem;
+      font-style: italic;
+      color: #555;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    @media (max-width: 768px) {
+      .carousel-button {
+        padding: 0.5rem;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<!--NAVBAR-->
+<nav class="navbar">
+<div class="nav-container">
+<a href="../Home Page/landing.html">
+<div class="logo-container logo_title">
+<img alt="Math Soc Logo" class="nav-logo brand__logo" src="../Home Page/images/logo_final.png"/>
+<div class="brand__text">
+<strong>The Math Society</strong>
+<small>Constructor University</small>
+</div>
+</div>
+</a>
+<ul class="nav-links">
+<li><a class="nav-link" href="../Home Page/landing.html">Home</a></li>
+<li class="dropdown">
+<div class="dropdown-header">
+<a class="nav-link dropdown-toggle">Events</a>
+<span class="dropdown-toggle-mobile">▼</span>
+</div>
+<ul class="dropdown-menu"><li><a href="imitation-game-movie-night.html">The Imitation Game — Movie Night</a></li><li><a href="from-microscopic-dynamics-to-macroscopic-laws.html">From Microscopic Dynamics to Macroscopic Laws</a></li><li><a href="when-math-learned-to-think.html">When Math Learned to Think</a></li>
+<li><a href="github-workshop.html">GitHub Workshop</a></li>
+<li><a href="info-session.html">Info Session</a></li>
+<li><a href="numbers-behind-trade.html">The Numbers Behind Trade</a></li>
+<li><a href="causal-ml.html">Causal ML</a></li>
+<li><a href="butterfly-theory.html">Butterfly Effect &amp; Chaos Theory</a></li>
+<li><a href="cryptography-and-cybersecurity.html">Cryptography &amp; Cybersecurity</a></li>
+<li><a href="ai-ml.html">AI &amp; ML</a></li>
+<li><a href="interstellar.html">Interstellar</a></li>
+<li><a href="poker.html">Poker</a></li>
+</ul>
+</li>
+<li class="dropdown">
+<div class="dropdown-header">
+<a class="nav-link dropdown-toggle">Competitions</a>
+<span class="dropdown-toggle-mobile">▼</span>
+</div>
+<ul class="dropdown-menu">
+<li><a href="../Subpages/datathon.html">Datathon</a></li>
+<li><a href="../Subpages/integration-bee.html" rel="noopener noreferrer" target="_blank">Integration Bee</a>
+</li>
+<li><a href="../Subpages/olympiad.html">Olympiad</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="datathon-overview.html">Datathon Overview</a></li>
+<li class="dropdown has-active-child">
+<div class="dropdown-header">
+<a class="nav-link dropdown-toggle" href="ugs.html">The Undergraduate Seminar</a>
+<span class="dropdown-toggle-mobile">▼</span>
+</div>
+<ul class="dropdown-menu">
+<li><a class="active" href="ugs6.html">Seminar 6: November 2026</a></li>
+<li><a href="../Subpages/ugs5.html">Seminar 5: April 2026</a></li>
+<li><a href="../Subpages/ugs4.html">Seminar 4: November 2025</a></li>
+<li><a href="../Subpages/ugs3.html">Seminar 3: October 2025</a></li>
+<li><a href="../Subpages/ugs2.html">Seminar 2: May 2025</a></li>
+<li><a href="../Subpages/ugs1.html">Seminar 1: March 2025</a></li>
+</ul>
+</li>
+</ul>
+<div class="hamburger">
+<span></span>
+<span></span>
+<span></span>
+</div>
+</div>
+</nav>
+<!--HEADER-->
+<section id="hero"><div class="hero-content"><h1>The Mathematics Undergraduate Seminar<br/>(VI)</h1><p style="font-size: 1.1rem; font-style: italic; margin-top: 0.5rem;">14th November 2026 · 14:00 · IRC East Wing</p></div></section>
+<section id="explanation"><div class="container"><div class="content-block">
+<h2 style="margin-top:0">The Sixth Undergraduate Seminar Session</h2>
+<p class="intro-emphasis">Experience innovative undergraduate research at the intersection of mathematics, computing, and discovery.</p>
+<div class="highlight-box"><strong>Date:</strong> Saturday, 14 November 2026<br/><strong>Time:</strong> 14:00<br/><strong>Venue:</strong> IRC East Wing</div>
+<img alt="Official poster for the Undergraduate Seminar VI" src="images/ugs6-seminar-poster.jpg" style="display:block;width:100%;max-width:680px;height:auto;margin:2rem auto;border:2px solid var(--bg-maroon);border-radius:8px;box-shadow:0 4px 12px rgba(128,0,0,.18);"/>
+<h2>The Seminars</h2>
+<p>Undergraduate researchers share their work through accessible presentations.</p>
+<ul class="talk-list"><li><strong>Tatiana Egorova</strong> (1st year BCCB) — <em>Stability and Memory Degradation in Hopfield Networks</em></li><li><strong>Vano Kakiashvili</strong> (3rd year MMDA) — <em>Island structures in isogeny graphs via supersingular elliptic curves</em></li><li><strong>Surprise seminar</strong> — To be revealed at the seminar!</li></ul>
+<h2 id="panel">NEW: Panel Discussion</h2>
+<p><strong>Research From an Undergraduate Perspective</strong> — meet researchers and learn about their experiences.</p>
+<ul class="talk-list"><li><strong>Ahmed Maghri</strong> — Implementing AI in next-gen computer networks (York University, Toronto, Canada)</li><li><strong>Pablo Santos Guerrero</strong> — On the Lefschetz properties for Artinian reductions of binomial edge ideal quotients (Williams College, Massachusetts, USA)</li><li><strong>Aly Assaf</strong> — Pre-clinical Testing of a Microwave Device for Brain Stroke Follow-up (Polytechnic University of Turin, Italy)</li><li><strong>Thushar Venkataramanaiah</strong> — Electromagnetic imaging for brain stroke follow-up (Polytechnic University of Turin, Italy)</li></ul>
+<img alt="Official Undergraduate Seminar VI panel discussion poster with speakers" src="images/ugs6-panel-poster.jpg" style="display:block;width:100%;max-width:680px;height:auto;margin:2rem auto;border:2px solid var(--bg-maroon);border-radius:8px;box-shadow:0 4px 12px rgba(128,0,0,.18);"/>
+<h2>What to Expect</h2><p>Undergraduate presentations, a panel discussion, pizza, networking opportunities, and conference attendance certificates :)</p>
+</div></div></section>
+<footer>
+<div class="footer-content">
+<p>CONNECT WITH US:</p>
+<div class="socials">
+<div class="link">
+<i class="fa-brands fa-instagram"></i>
+<a href="https://www.instagram.com/math__society/" target="_blank">Instagram</a>
+</div>
+<div class="link">
+<i class="fa-brands fa-linkedin"></i>
+<a href="https://www.linkedin.com/in/constructor-university-maths-society-768a13388/" target="_blank">LinkedIn</a>
+</div>
+<div class="link">
+<i class="fa-solid fa-share"></i>
+<a href="https://login.microsoftonline.com/f78e973e-5c0b-4ab8-bbd7-9887c95a8ebd/oauth2/authorize?client%5Fid=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&amp;response%5Fmode=form%5Fpost&amp;response%5Ftype=code%20id%5Ftoken&amp;resource=00000003%2D0000%2D0ff1%2Dce00%2D000000000000&amp;scope=openid&amp;nonce=760C08CB1EEF8BE83CC3B1914A97BD00EEDAB8A0CA433156%2D588466EE8EA0419D2AE9F444B4B962BE29922E1DC4A2BE080DCAC7BAF02D9225&amp;redirect%5Furi=https%3A%2F%2Fconstructoruniversity%2Esharepoint%2Ecom%2F%5Fforms%2Fdefault%2Easpx&amp;state=OD0w&amp;claims=%7B%22id%5Ftoken%22%3A%7B%22xms%5Fcc%22%3A%7B%22values%22%3A%5B%22CP1%22%5D%7D%7D%7D&amp;wsucxt=1&amp;cobrandid=11bd8083%2D87e0%2D41b5%2Dbb78%2D0bc43c8a8e8a&amp;client%2Drequest%2Did=4970d6a1%2D60d1%2De000%2D714b%2D67dfac5f9438" target="_blank">Sharepoint</a>
+</div>
+<div class="link">
+<i class="fa-brands fa-youtube"></i>
+<a href="https://www.youtube.com/@MathClubCUB" target="_blank">Youtube</a>
+</div>
+<div class="link">
+<i class="fa-brands fa-github"></i>
+<a href="https://github.com/constructor-math/constructor-math.github.io" target="_blank">Github</a>
+</div>
+<div class="link">
+<i class="fa-solid fa-envelope"></i>
+<a href="mailto:constructor.maths@gmail.com">Email</a>
+</div>
+</div>
+<p>© <span id="copyright-year"></span> The Math Society</p>
+</div>
+</footer>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+<script src="../Home Page/landing.js"></script>
+</body>
+</html>

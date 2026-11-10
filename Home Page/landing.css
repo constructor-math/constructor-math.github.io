@@ -1973,3 +1973,40 @@ section#hero {
     animation: none;
   }
 }
+
+/* UGS VI featured event: expands the existing Upcoming Events section without altering site theme */
+#upcoming .platform-grid { display: grid; grid-template-columns: 1fr; }
+.upcoming-feature { display:grid; grid-template-columns:minmax(0,1.2fr) minmax(260px,.8fr); gap:clamp(1.5rem,4vw,3.5rem); padding:clamp(1.5rem,4vw,3.25rem); align-items:center; overflow:hidden; }
+.upcoming-feature__content { min-width:0; }
+.upcoming-feature__eyebrow { display:inline-flex; align-items:center; gap:.5rem; font-size:.8rem; font-weight:800; letter-spacing:.11em; text-transform:uppercase; margin-bottom:1rem; color:var(--accent, #a94765); }
+.upcoming-feature h3 { font-family:'Roboto Slab',serif; font-size:clamp(2rem,4vw,3.6rem); line-height:1.15; letter-spacing:-.035em; margin:0 0 1.1rem; }
+.upcoming-feature h3 span { color:var(--accent, #a94765); }
+.upcoming-feature__intro { font-size:clamp(1rem,1.4vw,1.15rem); line-height:1.75; max-width:58ch; margin:0 0 1.5rem; }
+.upcoming-feature__facts { display:flex; flex-wrap:wrap; gap:.75rem; margin-bottom:1.5rem; }
+.upcoming-feature__facts>div { display:flex; align-items:center; gap:.75rem; padding:.85rem 1rem; border:1px solid rgba(140,140,160,.25); border-radius:14px; flex:1 1 150px; }
+.upcoming-feature__facts i { font-size:1.25rem; color:var(--accent, #a94765); }
+.upcoming-feature__facts strong,.upcoming-feature__highlights strong { display:block; font-size:.92rem; }
+.upcoming-feature__facts small,.upcoming-feature__highlights small { display:block; opacity:.72; line-height:1.45; margin-top:.25rem; }
+.upcoming-feature__highlights { display:grid; gap:.95rem; margin:0 0 1.75rem; }
+.upcoming-feature__highlights>div { display:flex; align-items:flex-start; gap:.85rem; }
+.upcoming-feature__highlights i { color:var(--accent, #a94765); width:1.5rem; padding-top:.2rem; text-align:center; }
+.upcoming-feature__actions { display:flex; flex-wrap:wrap; gap:.8rem; }
+.upcoming-feature__visual { text-align:center; }
+.upcoming-feature__visual a { display:block; max-width:390px; margin:auto; }
+.upcoming-feature__visual img { display:block; width:100%; height:auto; max-height:590px; object-fit:contain; border-radius:14px; box-shadow:0 14px 40px rgba(0,0,0,.15); }
+.upcoming-feature__poster-caption { font-size:.83rem; font-weight:700; opacity:.7; margin-top:.85rem; }
+@media(max-width:800px) { .upcoming-feature { grid-template-columns:1fr; } .upcoming-feature__visual a { max-width:330px; } }
+@media(max-width:480px) { .upcoming-feature__facts { flex-direction:column; } .upcoming-feature__facts>div { flex-basis:auto; } .upcoming-feature__actions .btn { width:100%; text-align:center; } }
+
+/* Society identity masthead: keeps the established site palette and layout intact. */
+.society-masthead { position:relative; padding:clamp(2.1rem,5vw,4rem) 0 clamp(1.6rem,3vw,2.5rem); border-bottom:1px solid var(--line); }
+.society-masthead__inner { display:flex; align-items:end; justify-content:space-between; gap:1.5rem; }
+.society-masthead__eyebrow { display:block; color:var(--gold-2); font-size:.77rem; font-weight:750; letter-spacing:.16em; text-transform:uppercase; margin-bottom:.6rem; }
+.society-masthead h1 { font-family:'Roboto Slab',Georgia,serif; font-size:clamp(2.6rem,6.5vw,5.8rem); letter-spacing:-.055em; line-height:1.1; margin:0 0 .75rem; }
+.society-masthead h1 span { color:var(--gold-2); }
+.society-masthead p { margin:0; color:var(--muted); font-size:clamp(.95rem,1.5vw,1.13rem); }
+.society-masthead__link { display:inline-flex; align-items:center; gap:.65rem; white-space:nowrap; font-weight:700; color:var(--gold-2); padding-bottom:.3rem; }
+.society-masthead__link:hover { color:var(--white); }
+.hero h2.hero__headline { font-family:'Roboto Slab',Georgia,serif; font-size:clamp(2.8rem,5.2vw,5.4rem); line-height:1.13; letter-spacing:-.055em; margin:0 0 1.25rem; }
+.hero h2.hero__headline span { color:var(--gold-2); }
+@media(max-width:650px) { .society-masthead__inner { align-items:start; flex-direction:column; gap:1rem; } .society-masthead__link { font-size:.88rem; } .hero h2.hero__headline { font-size:clamp(2.4rem,11vw,3.6rem); } }
