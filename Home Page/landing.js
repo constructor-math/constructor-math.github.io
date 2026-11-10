@@ -189,7 +189,7 @@ initNavigation();
 
 // < -- Add Upcoming Events data to this array -- >
 const upcomingEvents = [
-  // { title: "...", date: "...", time: "...", location: "...", tag: "...", link: "..." }
+  { title: "The Undergraduate Seminar (VI)", date: "14 November 2026", time: "14:00", location: "IRC East Wing", tag: "Seminar & Panel Discussion", link: "../Subpages/ugs6.html" }
 ];
 
 function renderUpcomingEvents() {
@@ -207,7 +207,35 @@ function renderUpcomingEvents() {
     return;
   }
 
-  grid.innerHTML = upcomingEvents.map(ev => `
+  grid.innerHTML = upcomingEvents.map(ev => ev.link && ev.link.includes('ugs6.html') ? `
+    <article class="upcoming-feature glass-card" aria-label="Featured upcoming event: Undergraduate Seminar VI">
+      <div class="upcoming-feature__content">
+        <div class="upcoming-feature__eyebrow"><i class="fa-solid fa-bolt"></i> NEXT UP · 14 NOVEMBER 2026</div>
+        <h3>The Undergraduate<br><span>Seminar (VI)</span></h3>
+        <p class="upcoming-feature__intro">Big ideas, fresh perspectives, and exciting undergraduate research at the intersection of mathematics, computing, and discovery.</p>
+        <div class="upcoming-feature__facts">
+          <div><i class="fa-regular fa-calendar"></i><span><strong>Saturday, 14 November</strong><small>2026</small></span></div>
+          <div><i class="fa-regular fa-clock"></i><span><strong>14:00</strong><small>Afternoon event</small></span></div>
+          <div><i class="fa-solid fa-location-dot"></i><span><strong>IRC East Wing</strong><small>Constructor University</small></span></div>
+        </div>
+        <div class="upcoming-feature__highlights">
+          <div><i class="fa-solid fa-microphone-lines"></i><span><strong>Undergraduate seminars</strong><small>Student-led research presentations across mathematics and computing</small></span></div>
+          <div><i class="fa-solid fa-users"></i><span><strong>NEW: Research panel</strong><small>Meet researchers and hear undergraduate perspectives</small></span></div>
+          <div><i class="fa-solid fa-certificate"></i><span><strong>Pizza, networking & certificates</strong><small>Connect with curious minds and take home an attendance certificate</small></span></div>
+        </div>
+        <div class="upcoming-feature__actions">
+          <a class="btn btn--primary" href="../Subpages/ugs6.html">Explore UGS VI <i class="fa-solid fa-arrow-right"></i></a>
+          <a class="btn btn--secondary" href="../Subpages/ugs6.html#panel">Meet the panel</a>
+        </div>
+      </div>
+      <div class="upcoming-feature__visual">
+        <a href="../Subpages/ugs6.html" aria-label="View Undergraduate Seminar VI event details">
+          <img src="../Subpages/images/ugs6-seminar-poster.jpg" alt="Official Undergraduate Seminar VI event poster" loading="eager" />
+        </a>
+        <div class="upcoming-feature__poster-caption"><i class="fa-solid fa-star"></i> The Math Society presents UGS VI</div>
+      </div>
+    </article>
+  ` : `
     <div class="platform-card glass-card interactive-card">
       <div class="platform-card__icon"><i class="fa-solid fa-calendar-day"></i></div>
       <h3>${ev.title}</h3>
