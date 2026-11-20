@@ -188,9 +188,7 @@ setYear();
 initNavigation();
 
 // < -- Add Upcoming Events data to this array -- >
-const upcomingEvents = [
-  { title: "The Undergraduate Seminar (VI)", date: "14 November 2026", time: "14:00", location: "IRC East Wing", tag: "Seminar & Panel Discussion", link: "../Subpages/ugs6.html" }
-];
+const upcomingEvents = [];
 
 function renderUpcomingEvents() {
   const grid = document.getElementById('upcomingEventsGrid');

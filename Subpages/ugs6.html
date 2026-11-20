@@ -11,179 +11,30 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&amp;display=swap" rel="stylesheet"/>
 <link href="../Home Page/landing.css" rel="stylesheet"/>
 <script crossorigin="anonymous" src="https://kit.fontawesome.com/a2bed480e7.js"></script>
+
 <style>
-    #hero {
-      min-height: auto !important;
-      height: auto !important;
-      max-height: none !important;
-      padding-top: 180px !important;
-      padding-bottom: 2.5rem !important;
-      display: block !important;
-    }
-
-    .hero-content {
-      padding-top: 0 !important;
-      padding-bottom: 0 !important;
-    }
-
-    #explanation {
-      padding-top: 3rem !important;
-      margin-top: 0 !important;
-    }
-
-    .highlight-box {
-      background-color: rgba(128, 0, 0, 0.1);
-      padding: 1.5rem;
-      border-left: 4px solid var(--bg-maroon);
-      margin: 1.5rem 0;
-      border-radius: 4px;
-    }
-
-    .intro-emphasis {
-      font-size: 1.2rem;
-      line-height: 1.9;
-      margin: 2rem 0;
-      padding-left: 1rem;
-      border-left: 3px solid rgba(128, 0, 0, 0.3);
-    }
-
-    h2 {
-      color: var(--bg-maroon);
-      margin-top: 3.5rem;
-      font-size: 2rem;
-    }
-
-    #hero h3,
-    section h3 {
-      color: var(--text-maroon);
-      margin-top: 2rem;
-      font-size: 1.4rem;
-    }
-
-    /* Image carousel */
-    .image-carousel {
-      position: relative;
-      max-width: 1000px;
-      margin: 2rem auto;
-      overflow: hidden;
-      border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(128, 0, 0, 0.3);
-    }
-
-    .carousel-container {
-      display: flex;
-      transition: transform 0.5s ease;
-    }
-
-    .carousel-slide {
-      min-width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .carousel-slide img {
-      width: 100%;
-      height: auto;
-      max-height: 500px;
-      object-fit: contain;
-      border: 2px solid var(--bg-maroon);
-      border-radius: 8px;
-    }
-
-    .carousel-caption {
-      text-align: center;
-      margin-top: 0.75rem;
-      font-style: italic;
-      color: var(--text-maroon);
-      font-size: 1rem;
-      padding: 0 1rem;
-    }
-
-    .carousel-button {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      background: rgba(128, 0, 0, 0.7);
-      color: var(--text-beige);
-      border: none;
-      padding: 1rem;
-      cursor: pointer;
-      font-size: 1.5rem;
-      transition: background 0.3s;
-      z-index: 10;
-      border-radius: 4px;
-    }
-
-    .carousel-button:hover {
-      background: rgba(128, 0, 0, 0.9);
-    }
-
-    .carousel-button.prev {
-      left: 10px;
-    }
-
-    .carousel-button.next {
-      right: 10px;
-    }
-
-    .carousel-indicators {
-      display: flex;
-      justify-content: center;
-      gap: 0.5rem;
-      margin-top: 1rem;
-    }
-
-    .indicator {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background: rgba(128, 0, 0, 0.3);
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-
-    .indicator.active {
-      background: var(--bg-maroon);
-    }
-
-    /* Talk list styling */
-    .talk-list {
-      list-style: none;
-      padding: 0;
-      margin: 1.5rem 0;
-    }
-
-    .talk-list li {
-      background: rgba(128, 0, 0, 0.05);
-      padding: 1.25rem;
-      margin-bottom: 1rem;
-      border-radius: 8px;
-      border-left: 4px solid rgba(128, 0, 0, 0.3);
-    }
-
-    .talk-list li strong {
-      color: var(--bg-maroon);
-      font-size: 1.1rem;
-    }
-
-    .topic-explain {
-      display: block;
-      margin-top: 0.75rem;
-      font-style: italic;
-      color: #555;
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-
-    @media (max-width: 768px) {
-      .carousel-button {
-        padding: 0.5rem;
-        font-size: 1.2rem;
-      }
-    }
-  </style>
-</head>
+#hero{min-height:auto!important;height:auto!important;max-height:none!important;padding-top:180px!important;padding-bottom:2.5rem!important;display:block!important}
+.hero-content{padding-top:0!important;padding-bottom:0!important}
+#explanation{padding-top:3rem!important;margin-top:0!important}
+#explanation h2{color:var(--bg-maroon);margin-top:3.5rem;font-size:2rem}
+#explanation h3{color:var(--text-maroon);font-size:1.4rem;margin-top:1.9rem}
+#explanation p{line-height:1.85}
+.intro-emphasis{font-size:1.18rem;line-height:1.9;margin:1.8rem 0;padding-left:1rem;border-left:3px solid rgba(128,0,0,.3)}
+.highlight-box{background:rgba(128,0,0,.08);padding:1.5rem;border-left:4px solid var(--bg-maroon);margin:1.5rem 0;border-radius:4px}
+.research-entry{margin:2.8rem 0 3.8rem;display:flow-root}
+.research-entry+.research-entry{border-top:1px solid rgba(128,0,0,.2);padding-top:1rem}
+.speaker-line{font-weight:700;color:var(--bg-maroon);margin-top:.25rem!important}
+.feature-image{float:right;width:min(43%,380px);margin:.5rem 0 1.25rem 2rem}
+.feature-image img{width:100%;height:240px;object-fit:cover;border-radius:7px;box-shadow:0 4px 12px rgba(128,0,0,.17)}
+.feature-image figcaption{text-align:center;color:var(--text-maroon);font-size:.88rem;font-style:italic;margin-top:.5rem}
+.video-container{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;max-width:1000px;margin:2rem auto;border-radius:8px;box-shadow:0 4px 12px rgba(128,0,0,.25)}
+.video-container iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:2rem 0}
+.gallery-photo{margin:0;overflow:hidden;border-radius:6px;background:rgba(128,0,0,.06)}
+.gallery-photo img{width:100%;height:210px;object-fit:cover;display:block;transition:transform .3s}
+.gallery-photo img:hover{transform:scale(1.035)}
+@media(max-width:750px){.feature-image{float:none;width:100%;margin:1.5rem 0}.feature-image img{height:auto;max-height:350px}.photo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.gallery-photo img{height:150px}}
+</style></head>
 <body>
 <!--NAVBAR-->
 <nav class="navbar">
@@ -236,7 +87,6 @@
 </div>
 <ul class="dropdown-menu">
 <li><a class="active" href="ugs6.html">Seminar 6: November 2026</a></li>
-<li><a href="../Subpages/ugs6.html">Seminar 6: November 2026</a></li>
 <li><a href="../Subpages/ugs5.html">Seminar 5: April 2026</a></li>
 <li><a href="../Subpages/ugs4.html">Seminar 4: November 2025</a></li>
 <li><a href="../Subpages/ugs3.html">Seminar 3: October 2025</a></li>
@@ -255,19 +105,33 @@
 <!--HEADER-->
 <section id="hero"><div class="hero-content"><h1>The Mathematics Undergraduate Seminar<br/>(VI)</h1><p style="font-size: 1.1rem; font-style: italic; margin-top: 0.5rem;">14th November 2026 · 14:00 · IRC East Wing</p></div></section>
 <section id="explanation"><div class="container"><div class="content-block">
-<h2 style="margin-top:0">The Sixth Undergraduate Seminar Session</h2>
-<p class="intro-emphasis">Experience innovative undergraduate research at the intersection of mathematics, computing, and discovery.</p>
-<div class="highlight-box"><strong>Date:</strong> Saturday, 14 November 2026<br/><strong>Time:</strong> 14:00<br/><strong>Venue:</strong> IRC East Wing</div>
-<img alt="Official poster for the Undergraduate Seminar VI" src="images/ugs6-seminar-poster.jpg" style="display:block;width:100%;max-width:680px;height:auto;margin:2rem auto;border:2px solid var(--bg-maroon);border-radius:8px;box-shadow:0 4px 12px rgba(128,0,0,.18);"/>
-<h2>The Seminars</h2>
-<p>Undergraduate researchers share their work through accessible presentations.</p>
-<ul class="talk-list"><li><strong>Tatiana Egorova</strong> (1st year BCCB) — <em>Stability and Memory Degradation in Hopfield Networks</em></li><li><strong>Vano Kakiashvili</strong> (3rd year MMDA) — <em>Island structures in isogeny graphs via supersingular elliptic curves</em></li><li><strong>Surprise seminar</strong> — To be revealed at the seminar!</li></ul>
-<h2 id="panel">NEW: Panel Discussion</h2>
-<p><strong>Research From an Undergraduate Perspective</strong> — meet researchers and learn about their experiences.</p>
-<ul class="talk-list"><li><strong>Ahmed Maghri</strong> — Implementing AI in next-gen computer networks (York University, Toronto, Canada)</li><li><strong>Pablo Santos Guerrero</strong> — On the Lefschetz properties for Artinian reductions of binomial edge ideal quotients (Williams College, Massachusetts, USA)</li><li><strong>Aly Assaf</strong> — Pre-clinical Testing of a Microwave Device for Brain Stroke Follow-up (Polytechnic University of Turin, Italy)</li><li><strong>Thushar Venkataramanaiah</strong> — Electromagnetic imaging for brain stroke follow-up (Polytechnic University of Turin, Italy)</li></ul>
-<img alt="Official Undergraduate Seminar VI panel discussion poster with speakers" src="images/ugs6-panel-poster.jpg" style="display:block;width:100%;max-width:680px;height:auto;margin:2rem auto;border:2px solid var(--bg-maroon);border-radius:8px;box-shadow:0 4px 12px rgba(128,0,0,.18);"/>
-<h2>What to Expect</h2><p>Undergraduate presentations, a panel discussion, pizza, networking opportunities, and conference attendance certificates :)</p>
-</div></div></section>
+<h2 id="overview">Where undergraduate curiosity becomes research</h2>
+<p class="intro-emphasis">The sixth Mathematics Undergraduate Seminar brought students together for an afternoon of original research, ambitious questions and conversations across mathematics, artificial intelligence, computational neuroscience and robotics. The seminar is built around a simple idea: undergraduate students should have the opportunity not only to learn research, but to do it and share it.</p>
+
+<div class="highlight-box"><strong>Saturday, 14 November 2026</strong> · 14:00 · IRC East Wing, Constructor University<br/>Full seminar recording and event photographs available below.</div>
+
+<h2 id="talks">Research Presentations</h2>
+<p>From modeling how memories break down to reconstructing physical systems from noisy observations and exploring the geometry of elliptic curves, UGS VI showcased how mathematical thinking connects seemingly distant disciplines.</p>
+
+<div class="research-entry"><h3>Hopfield Networks, Synaptic Damage, and the Geometry of Memory Failure</h3><p class="speaker-line">Tatiana Egorova</p><figure class="feature-image"><img alt="Hopfield networks and the geometry of memory" loading="lazy" src="images/ugs6-p1320672.jpg"/><figcaption>Hopfield networks and the geometry of memory</figcaption></figure><p>What happens to a memory when connections between neurons disappear? Using Hopfield networks—mathematical systems that store patterns as stable states—this project explored two different models of synaptic disruption. Random deletion of connections was used as a simplified model associated with Alzheimer’s disease, while distance-dependent pruning represented a mechanism investigated in schizophrenia.</p><p>Simulations tested whether a network could recover an original memory after it had been partially disturbed. The striking result was that <strong>different patterns of damage produced different patterns of memory failure</strong>: random deletion led to a comparatively gradual decline, whereas the pruning model initially tolerated some changes before recall performance fell much more sharply. These are findings from a simplified computational model, not clinical predictions.</p></div>
+<div class="research-entry"><h3>Hunting μ in the Noise: Recovering a Dynamical Parameter with Physics-Informed Neural Networks</h3><p class="speaker-line">Undergraduate robotics research presentation</p><figure class="feature-image"><img alt="Physics-informed neural networks and noisy observations" loading="lazy" src="images/ugs6-p1320838.jpg"/><figcaption>Physics-informed neural networks and noisy observations</figcaption></figure><p>How can we infer the hidden parameter of an oscillating system when all we have is noisy measurements? Starting with the Van der Pol oscillator—a model connected to electrical circuits and rhythmic phenomena—the speaker compared classical least-squares fitting with neural approaches, including multilayer perceptrons (MLPs) and Kolmogorov–Arnold networks (KANs).</p><p>The project combined data fitting with physical constraints and continuity between short trajectory segments. Across experiments with different oscillator parameters and noise levels, <strong>no single method won every test</strong>. Classical fitting performed especially well in some settings, MLPs were more robust across the reported Van der Pol experiments, and KANs showed promise in a separate Duffing-oscillator test. The takeaway: newer architectures are not automatically better; the model and the problem must fit each other.</p></div>
+<div class="research-entry"><h3>Island Structures in Isogeny Graphs via Supersingular Elliptic Curves</h3><p class="speaker-line">Vano Kakiashvili</p><figure class="feature-image"><img alt="Endomorphisms preserving level structure" loading="lazy" src="images/ugs6-p1320527.jpg"/><figcaption>Endomorphisms preserving level structure</figcaption></figure><p>This presentation journeyed from the geometry of elliptic curves to the graphs formed by relationships between them. Elliptic curves can be connected by special maps called <em>isogenies</em>, and those connections turn algebraic objects into a graph whose distances and local structure can be studied.</p><p>By investigating endomorphisms that preserve chosen subgroup structures and their links to arithmetic orders, the talk developed the idea of <strong>“islands” of supersingular elliptic curves</strong>—clusters that emerge under particular structural constraints. It was an example of how abstract algebra, geometry and graph theory illuminate one another.</p></div>
+
+
+<h2 id="panel">Undergraduate Research Panel</h2><p>UGS VI also introduced a research panel focused on the experience behind the results: finding opportunities, joining research groups, navigating unfamiliar topics and learning to ask worthwhile questions. The discussion brought together students with research experiences in computer science, mathematics and biomedical engineering.</p>
+<article><strong>Ahmed Maghri</strong><small>York University · Toronto, Canada</small><p>Implementing AI in next-generation computer networks.</p></article><article><strong>Pablo Santos Guerrero</strong><small>Williams College · Massachusetts, USA</small><p>Lefschetz properties for Artinian reductions of binomial edge ideal quotients.</p></article><article><strong>Aly Assaf</strong><small>Polytechnic University of Turin · Italy</small><p>Pre-clinical testing of a microwave device for brain stroke follow-up.</p></article><article><strong>Thushar Venkataramanaiah</strong><small>Polytechnic University of Turin · Italy</small><p>Electromagnetic imaging for brain stroke follow-up.</p></article>
+<p>The panel moved beyond finished projects to the practical and personal sides of undergraduate research. Its message complemented the talks: research starts with curiosity and develops through persistence, mentorship, iteration and the willingness to explore questions without knowing the answer in advance.</p>
+<h2 id="experience">A Community of Research and Curiosity</h2><p>Throughout the afternoon, the audience engaged with the speakers through questions and short interactive quizzes. The event concluded with opportunities to continue the conversation informally over pizza and meet other students interested in research.</p><p>The opening remarks also situated UGS within the Mathematics Society’s broader efforts to connect students with research and publishing opportunities. The seminar is intended as a starting point: students develop ideas, present them publicly and can continue refining their work beyond the stage.</p>
+<div><h2 id="ugs6-recording-heading">Watch the Seminar</h2><p>Watch the recording of the sixth Undergraduate Seminar, including research talks and the panel discussion.</p><div class="video-container"><iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/euPcj5rbwkw" title="Undergraduate Seminar VI — full recording"></iframe></div><p><a href="https://www.youtube.com/watch?v=euPcj5rbwkw" rel="noopener noreferrer" target="_blank">Watch on YouTube</a></p></div><div><h2 id="ugs6-gallery-heading">Photo Gallery</h2><p>Highlights from the presentations and research panel at UGS VI.</p><div class="photo-grid"><div class="gallery-photo"><img alt="Undergraduate Seminar VI: Research presentation on neural networks" loading="lazy" src="images/ugs6-p1320838.jpg"/></div>
+<div class="gallery-photo"><img alt="Undergraduate Seminar VI: Undergraduate research presentation" loading="lazy" src="images/ugs6-p1320726.jpg"/></div>
+<div class="gallery-photo"><img alt="Undergraduate Seminar VI: Presentation on Hopfield networks and memory" loading="lazy" src="images/ugs6-p1320672.jpg"/></div>
+<div class="gallery-photo"><img alt="Undergraduate Seminar VI: Research panel introduction" loading="lazy" src="images/ugs6-p1320636.jpg"/></div>
+<div class="gallery-photo"><img alt="Undergraduate Seminar VI: Presentation on endomorphisms and level structure" loading="lazy" src="images/ugs6-p1320527.jpg"/></div>
+<div class="gallery-photo"><img alt="Undergraduate Seminar VI: Mathematics seminar presentation" loading="lazy" src="images/ugs6-p1320494.jpg"/></div>
+<div class="gallery-photo"><img alt="Undergraduate Seminar VI: Undergraduate research discussion" loading="lazy" src="images/ugs6-p1320482.jpg"/></div>
+<div class="gallery-photo"><img alt="Undergraduate Seminar VI: Seminar presentation at Constructor University" loading="lazy" src="images/ugs6-p1320465.jpg"/></div>
+<div class="gallery-photo"><img alt="Undergraduate Seminar VI: Speaker presenting research" loading="lazy" src="images/ugs6-img_0213.jpg"/></div>
+<div class="gallery-photo"><img alt="Undergraduate Seminar VI: Undergraduate Seminar VI speaker" loading="lazy" src="images/ugs6-img_0212.jpg"/></div></div></div></div></div></section>
 <footer>
 <div class="footer-content">
 <p>CONNECT WITH US:</p>
